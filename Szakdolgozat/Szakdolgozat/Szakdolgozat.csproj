@@ -76,6 +76,7 @@
     <Compile Include="FormTenyfelhasznalas.Designer.cs">
       <DependentUpon>FormTenyfelhasznalas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\PalyazatDatabase.cs" />
     <Compile Include="Model\Palyazat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
