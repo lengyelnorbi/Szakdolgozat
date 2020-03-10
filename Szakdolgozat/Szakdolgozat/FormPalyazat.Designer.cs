@@ -295,6 +295,7 @@
             this.buttonKoltsegTerv.TabIndex = 28;
             this.buttonKoltsegTerv.Text = "Költség terv";
             this.buttonKoltsegTerv.UseVisualStyleBackColor = true;
+            this.buttonKoltsegTerv.Click += new System.EventHandler(this.buttonKoltsegTerv_Click);
             // 
             // buttonTenyfelhasznalas
             // 
@@ -305,6 +306,7 @@
             this.buttonTenyfelhasznalas.TabIndex = 29;
             this.buttonTenyfelhasznalas.Text = "Tényfelhasználás";
             this.buttonTenyfelhasznalas.UseVisualStyleBackColor = true;
+            this.buttonTenyfelhasznalas.Click += new System.EventHandler(this.buttonTenyfelhasznalas_Click);
             // 
             // buttonPalyazatUjPalyazatForm
             // 

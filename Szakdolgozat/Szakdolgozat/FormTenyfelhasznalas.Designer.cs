@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(526, 278);
             this.Controls.Add(this.textBoxModositottOsszeg);
             this.Controls.Add(this.textBoxOsszeg);
             this.Controls.Add(this.textBoxKoltsegTipus);
