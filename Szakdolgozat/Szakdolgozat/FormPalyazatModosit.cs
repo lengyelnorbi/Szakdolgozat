@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Szakdolgozat
 {
-    public partial class FormPalyazatMegsem : Form
+    public partial class FormPalyazatModosit : Form
     {
-        public FormPalyazatMegsem()
+        public FormPalyazatModosit()
         {
             InitializeComponent();
         }
