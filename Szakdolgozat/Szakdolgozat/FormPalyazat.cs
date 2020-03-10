@@ -16,5 +16,16 @@ namespace Szakdolgozat
         {
             InitializeComponent();
         }
+        FormPalyazatModosit FormModosit = new FormPalyazatModosit();
+        FormPalyazatUjHozzaad FormUjHozzaad = new FormPalyazatUjHozzaad();
+        private void buttonPalyazatUjPalyazatForm_Click(object sender, EventArgs e)
+        {
+            FormUjHozzaad.Show();
+        }
+        
+        private void buttonPalyazatModositForm_Click(object sender, EventArgs e)
+        {
+            FormModosit.Show();
+        }
     }
 }

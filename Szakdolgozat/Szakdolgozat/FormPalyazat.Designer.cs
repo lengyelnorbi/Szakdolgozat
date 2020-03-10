@@ -315,6 +315,7 @@
             this.buttonPalyazatUjPalyazatForm.TabIndex = 30;
             this.buttonPalyazatUjPalyazatForm.Text = "Új pályázat";
             this.buttonPalyazatUjPalyazatForm.UseVisualStyleBackColor = true;
+            this.buttonPalyazatUjPalyazatForm.Click += new System.EventHandler(this.buttonPalyazatUjPalyazatForm_Click);
             // 
             // buttonPalyazatTorol
             // 
@@ -335,6 +336,7 @@
             this.buttonPalyazatModositForm.TabIndex = 32;
             this.buttonPalyazatModositForm.Text = "Módosít";
             this.buttonPalyazatModositForm.UseVisualStyleBackColor = true;
+            this.buttonPalyazatModositForm.Click += new System.EventHandler(this.buttonPalyazatModositForm_Click);
             // 
             // FormPalyazat
             // 
