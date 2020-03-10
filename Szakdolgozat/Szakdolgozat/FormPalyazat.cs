@@ -16,28 +16,53 @@ namespace Szakdolgozat
         {
             InitializeComponent();
         }
-        FormPalyazatModosit FormModosit = new FormPalyazatModosit();
-        FormPalyazatUjHozzaad FormUjHozzaad = new FormPalyazatUjHozzaad();
-        FormTenyfelhasznalas FormTenyfelhasznalas = new FormTenyfelhasznalas();
-        FormKoltsegTerv FormKoltsegTerv = new FormKoltsegTerv();
+        private FormPalyazatModosit FormModosit;
+        private FormPalyazatUjHozzaad FormUjHozzaad;
+        private FormKoltsegTerv FormKoltsegTerv;
+        private FormTenyfelhasznalas FormTenyfelhasznalas;
+        void f_Closed(object sender, EventArgs e)
+        {
+            FormUjHozzaad = null;
+            FormModosit = null;
+            FormKoltsegTerv = null;
+            FormTenyfelhasznalas = null;
+        }
         private void buttonPalyazatUjPalyazatForm_Click(object sender, EventArgs e)
         {
-            FormUjHozzaad.Show();
+            if (FormUjHozzaad == null)
+            {
+                FormUjHozzaad = new FormPalyazatUjHozzaad();
+                FormUjHozzaad.Closed += f_Closed;
+                FormUjHozzaad.Show();
+            }
         }
-        
         private void buttonPalyazatModositForm_Click(object sender, EventArgs e)
         {
-            FormModosit.Show();
+            if (FormModosit == null)
+            {
+                FormModosit = new FormPalyazatModosit();
+                FormModosit.Closed += f_Closed;
+                FormModosit.Show();
+            }
         }
 
         private void buttonKoltsegTerv_Click(object sender, EventArgs e)
         {
-            FormKoltsegTerv.Show();
+            if (FormKoltsegTerv == null)
+            {
+                FormKoltsegTerv = new FormKoltsegTerv();
+                FormKoltsegTerv.Closed += f_Closed;
+                FormKoltsegTerv.Show();
+            }
         }
-
         private void buttonTenyfelhasznalas_Click(object sender, EventArgs e)
         {
-            FormTenyfelhasznalas.Show();
+            if (FormTenyfelhasznalas == null)
+            {
+                FormTenyfelhasznalas = new FormTenyfelhasznalas();
+                FormTenyfelhasznalas.Closed += f_Closed;
+                FormTenyfelhasznalas.Show();
+            }
         }
     }
 }
