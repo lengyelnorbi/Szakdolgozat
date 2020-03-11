@@ -8,12 +8,12 @@ namespace Szakdolgozat.Model
 {
     partial class Palyazat
     {
-        /*public string getInsert()
+        public string getInsert()
         {
             return "INSERT INTO `palyazat`" +
-                    "(`id`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_típus`, `Devizanem`, `Tervezett_osszeg`, `TervOssz_penznem`, `Elnyert_osszeg`, `ElnyOssz_penznem`, `Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Penzugyi_vezeto_kod`, `Szakmai_vezeto_kod`, `Tudomanyterulet`, `Tenyfelhasznalas_kod`)" +
+                    "(`id`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Tervezett_osszeg`, `Elnyert_osszeg`, `Penznem`, `Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`, `Tenyfelhasznalas_kod`)" +
                     "VALUES ('" +
-                    id +
+                    getAzonosito() +
                     "', '" +
                     getPalyazatTipus() +
                     "', '" +
@@ -21,23 +21,15 @@ namespace Szakdolgozat.Model
                     "', '" +
                     getFinanszirozasTipus() +
                     "', '" +
-                    getDevizanem() +
-                    "', '" +
                     getTervezettOsszeg() +
-                    "', '" +
-                    getTervOsszPenznem() +
                     "', '" +
                     getElnyertOsszeg() +
                     "', '" +
-                    getElnyertOsszPenznem() +
+                    getPenznem() +
                     "', '" +
                     getFelhasznalasiIdoKezd() +
                     "', '" +
                     getFelhasznalasiIdoVege() +
-                    "', '" +
-                    getPenzugyiVezetoKod() +
-                    "', '" +
-                    getSzakmaiVezetoKod() +
                     "', '" +
                     getTudomanyterulet() +
                     "', '" +
@@ -52,32 +44,24 @@ namespace Szakdolgozat.Model
                    getPalyazatTipus() +
                    "', `Palyazat_neve ` = '" +
                    getPalyazatNev() +
-                   "', `Finanszirozas_típus` = '" +
+                   "', `Finanszirozas_tipus` = '" +
                    getFinanszirozasTipus() +
-                   "', `Devizanem` = '" +
-                   getDevizanem() +
                    "', `Tervezett_osszeg  ` = '" +
                    getTervezettOsszeg() +
-                   "', `TervOssz_penznem  ` = '" +
-                   getTervOsszPenznem() +
                    "', `Elnyert_osszeg  ` = '" +
-                   getElnyertOsszeg() +
-                   "', `ElnyOssz_penznem  ` = '" +
-                   getElnyertOsszPenznem() +
-                   "', `Felhasznalasi_ido_kezd 	 ` = '" +
+                   getElnyertOsszeg() + 
+                   "', `Penznem` = '" +
+                   getPenznem() +
+                   "', `Felhasznalasi_ido_kezd` = '" +
                    getFelhasznalasiIdoKezd() +
-                   "', `Felhasznalasi_ido_vege ` = '" +
+                   "', `Felhasznalasi_ido_vege` = '" +
                    getFelhasznalasiIdoVege() +
-                   "', `Penzugyi_vezeto_kod ` = '" +
-                   getPenzugyiVezetoKod() +
-                   "', `Szakmai_vezeto_kod ` = '" +
-                   getSzakmaiVezetoKod() +
                    "', `Tudomanyterulet` = '" +
                    getTudomanyterulet() +
                    "', `Tenyfelhasznalas_kod` = '" +
                    getTenyfelhasznalasKod() +
-                   "' WHERE `palyazat`.`id` = " +
-                   id;
+                   "' WHERE `palyazat`.`Azonosito` = " +
+                   getAzonosito();
         }
         public static string getAllRecord()
         {
@@ -87,6 +71,6 @@ namespace Szakdolgozat.Model
         public static string getDeleteAllRecord()
         {
             return "DELETE FROM palyazat";
-        }*/
+        }
     }
 }

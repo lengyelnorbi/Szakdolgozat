@@ -76,11 +76,26 @@
     <Compile Include="FormTenyfelhasznalas.Designer.cs">
       <DependentUpon>FormTenyfelhasznalas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\KoltsegTervDatabase.cs" />
+    <Compile Include="Model\KoltsegTerv.cs" />
+    <Compile Include="Model\KoltsegTipusDatabase.cs" />
+    <Compile Include="Model\KoltsegTipus.cs" />
     <Compile Include="Model\PalyazatDatabase.cs" />
     <Compile Include="Model\Palyazat.cs" />
+    <Compile Include="Model\PosztDatabase.cs" />
+    <Compile Include="Model\Poszt.cs" />
+    <Compile Include="Model\TenyfelhasznalasDatabase.cs" />
+    <Compile Include="Model\Tenyfelhasznalas.cs" />
+    <Compile Include="Model\VezetoDatabase.cs" />
+    <Compile Include="Model\Vezeto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\RepositoryPalyazat.cs" />
+    <Compile Include="Repository\Palyazat\RepositoryPalyazat.cs" />
+    <Compile Include="Repository\KoltsegTipus\RepositoryKoltsegTerv.cs" />
+    <Compile Include="Repository\KoltsegTerv\RepositoryKoltsegTipus.cs" />
+    <Compile Include="Repository\Poszt\RepositoryPoszt.cs" />
+    <Compile Include="Repository\Tenyfelhasznalas\RepositoryTenyfelhasznalas.cs" />
+    <Compile Include="Repository\Vezeto\RepositoryVezeto.cs" />
     <EmbeddedResource Include="FormKoltsegTerv.resx">
       <DependentUpon>FormKoltsegTerv.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,5 +133,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

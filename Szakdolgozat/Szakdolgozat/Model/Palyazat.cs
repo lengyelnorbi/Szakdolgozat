@@ -8,7 +8,7 @@ namespace Szakdolgozat.Model
 {
     partial class Palyazat
     {
-        private int id;
+        private string azonosito;
         private string palyazatTipus;
         private string palyazatNeve;
         private string finanszirozasTipus;
@@ -21,10 +21,10 @@ namespace Szakdolgozat.Model
         private int tenyfelhasznalasKod;
 
         //Konstruktor
-        public Palyazat(int id, string palyazatTipus, string palyazatNeve, string finanszirozasTipus, float tervezettOsszeg, float elnyertOsszeg, string penznem,
+        public Palyazat(string azonosito, string palyazatTipus, string palyazatNeve, string finanszirozasTipus, float tervezettOsszeg, float elnyertOsszeg, string penznem,
             string felhasznalasiIdoKezd, string felhasznalasiIdoVege, string tudomanyterulet, int tenyfelhasznalasKod)
         {
-            this.id = id;
+            this.azonosito = azonosito;
             this.palyazatTipus = palyazatTipus;
             this.palyazatNeve = palyazatNeve;
             this.finanszirozasTipus = finanszirozasTipus;
@@ -38,9 +38,9 @@ namespace Szakdolgozat.Model
         }
 
         // Setterek kezdete
-        public void setId(int id)
+        public void setAzonosito(string azonosito)
         {
-            this.id = id;
+            this.azonosito = azonosito;
         }
 
         public void setPalyazatTipus(string palyazatTipus)
@@ -95,9 +95,9 @@ namespace Szakdolgozat.Model
         // Setterek vége
 
         // Getterek kezdete
-        public int getId()
+        public string getAzonosito()
         {
-            return id;
+            return azonosito;
         }
 
         public string getPalyazatTipus()
