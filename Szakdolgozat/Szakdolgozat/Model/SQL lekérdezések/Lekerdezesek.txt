@@ -1,0 +1,4 @@
+﻿//Pályázat lekérdezése - szummázott tervezett össz költséggel
+SELECT Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_penzosszeg),
+Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet, Tenyfelhasznalas_kod
+FROM palyazat INNER JOIN koltseg_terv on palyazat.Azonosito = koltseg_terv.Palyazat_Azonosito 
