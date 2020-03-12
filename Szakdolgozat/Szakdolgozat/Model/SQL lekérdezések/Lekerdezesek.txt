@@ -1,4 +1,36 @@
 ﻿//Pályázat lekérdezése - szummázott tervezett össz költséggel
-SELECT Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_penzosszeg),
-Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet, Tenyfelhasznalas_kod
-FROM palyazat INNER JOIN koltseg_terv on palyazat.Azonosito = koltseg_terv.Palyazat_Azonosito 
+
+SELECT Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_penzosszeg) AS Tervezett_összeg,
+Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet, vezetok.Nev AS Pénzügyi_vezető, tenyfelhasznalas.id AS Tényfelhasználás_Azonosító
+FROM koltseg_terv INNER JOIN palyazat ON koltseg_terv.Palyazat_Azonosito = palyazat.Azonosito INNER JOIN tenyfelhasznalas
+ON palyazat.Azonosito = tenyfelhasznalas.Palyazat_Azonosito INNER JOIN posztok ON posztok.Palyazat_Azonosito = palyazat.Azonosito
+INNER JOIN vezetok ON posztok.Vezeto_id = vezetok.id INNER JOIN koltseg_tipusok ON koltseg_tipusok.id = koltseg_terv.KoltTip_id
+WHERE Azonosito = "LNPTEST0312"
+
+//Tényfelhasználás lekérdezése 
+
+SELECT tenyfelhasznalas.id, tenyfelhasznalas.Palyazat_Azonosito, koltseg_tipusok.Koltseg_tipus, tenyfelhasznalas.Fizetett_osszeg, tenyfelhasznalas.Fizetes_datum
+FROM tenyfelhasznalas INNER JOIN koltseg_tipusok ON tenyfelhasznalas.KoltTip_id = koltseg_tipusok.id INNER JOIN palyazat ON palyazat.Azonosito = tenyfelhasznalas.Palyazat_Azonosito
+WHERE palyazat.Azonosito = "LNPTEST0312"
+
+//Insertek 
+
+INSERT INTO `koltseg_tipusok` (`id`, `Koltseg_tipus`) VALUES (NULL, 'Bérköltség');
+
+INSERT INTO `tenyfelhasznalas` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Fizetett_osszeg`, `Fizetes_datum`) VALUES ('1', 'LNPTEST0312', '1', '10000', '2020.02.27');
+
+INSERT INTO `palyazat` (`Azonosito`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Tervezett_osszeg`, `Elnyert_osszeg`, `Penznem`,
+`Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`)
+VALUES ('LNPTEST0312', 'OSZTV', 'Lengyel Kft', 'Előfinanszírozott', '100000', '100000', 'Forint', '2020.03.12', '2020.03.31', 'Informatika');
+
+INSERT INTO `koltseg_terv` (`Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_penzosszeg`, `Modositott_penzosszeg`) VALUES ('LNPTEST0312', '1', '102121', '');
+
+INSERT INTO `posztok` (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `Poszt`) VALUES (NULL, 'LNPTEST0312', '1', 'Pénzügyi Vezető');
+
+INSERT INTO `vezetok` (`id`, `Nev`, `Telefonszam`, `Email`) VALUES (NULL, 'Lengyel Norbert', '06205681468', 'lengyelnorbi5@gmail.com');
+
+//INNER JOIN
+
+FROM koltseg_terv INNER JOIN palyazat ON koltseg_terv.Palyazat_Azonosito = palyazat.Azonosito INNER JOIN tenyfelhasznalas
+ON palyazat.Azonosito = tenyfelhasznalas.Palyazat_Azonosito INNER JOIN posztok ON posztok.Palyazat_Azonosito = palyazat.Azonosito
+INNER JOIN vezetok ON posztok.Vezeto_id = vezetok.id INNER JOIN koltseg_tipusok ON koltseg_tipusok.id = koltseg_terv.KoltTip_id
