@@ -9,13 +9,15 @@ namespace Szakdolgozat.model
     partial class Tenyfelhasznalas
     {
         private int id;
+        private string palyazatAzonosito;
         private int koltTipusId;
         private float fizetettOsszeg;
         private string fizetesDatuma;
 
         //Konstruktor
-        public Tenyfelhasznalas(int id, int koltTipusId, float fizetettOsszeg, string fizetesDatuma)
+        public Tenyfelhasznalas(string palyazatAzonosito, int id, int koltTipusId, float fizetettOsszeg, string fizetesDatuma)
         {
+            this.palyazatAzonosito = palyazatAzonosito;
             this.id = id;
             this.koltTipusId = koltTipusId;
             this.fizetettOsszeg = fizetettOsszeg;
@@ -26,6 +28,11 @@ namespace Szakdolgozat.model
         public void setId(int id)
         {
             this.id = id;
+        }
+
+        public void setPalyazatAzonosito(string palyazatAzonosito)
+        {
+            this.palyazatAzonosito = palyazatAzonosito;
         }
 
         public void setKoltTipusId(int koltTipusId)
@@ -48,6 +55,11 @@ namespace Szakdolgozat.model
         public int getId()
         {
             return id;
+        }
+
+        public string getPalyazatAzonosito()
+        {
+            return palyazatAzonosito;
         }
 
         public int getKoltTipusId()

@@ -11,9 +11,11 @@ namespace Szakdolgozat.model
         public string getInsert()
         {
             return "INSERT INTO `tenyfelhasznalas`" +
-                    "(`id`, `KoltTip_id`, `Fizetett_osszeg`, `Fizetes_datum`)" +
+                    "(`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Fizetett_osszeg`, `Fizetes_datum`)" +
                     "VALUES ('" +
                     id +
+                    "', '" +
+                    getPalyazatAzonosito() +
                     "', '" +
                     getKoltTipusId() +
                     "', '" +
@@ -26,7 +28,9 @@ namespace Szakdolgozat.model
         public string getUpdate()
         {
             return
-                   "UPDATE `tenyfelhasznalas` SET `KoltTip_id ` = '" +
+                   "UPDATE `tenyfelhasznalas` SET `Palyazat_Azonosito` = '" +
+                   getPalyazatAzonosito() +
+                   "', `KoltTip_id` = '" +
                    getKoltTipusId() +
                    "', `Fizetett_osszeg` = '" +
                    getFizetettOsszeg() +

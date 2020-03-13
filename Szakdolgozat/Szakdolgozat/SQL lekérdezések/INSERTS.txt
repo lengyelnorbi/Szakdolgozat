@@ -1,0 +1,14 @@
+﻿INSERT INTO `koltseg_tipusok` (`id`, `Koltseg_tipus`) VALUES (NULL, 'Bérköltség');
+
+INSERT INTO `tenyfelhasznalas` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Fizetett_osszeg`, `Fizetes_datum`) VALUES ('1', 'LNPTEST0312', '1', '10000', '2020.02.27');
+
+INSERT INTO `palyazat` (`Azonosito`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Tervezett_osszeg`, `Elnyert_osszeg`, `Penznem`,
+`Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`)
+VALUES ('LNPTEST0312', 'OSZTV', 'Lengyel Kft', 'Előfinanszírozott', '100000', '100000', 'Forint', '2020.03.12', '2020.03.31', 'Informatika');
+
+INSERT INTO `koltseg_terv` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_penzosszeg`, `Modositott_penzosszeg`) VALUES ('NULL', 'LNPTEST0312', '1', '102121', '');
+
+INSERT INTO `vezetok` (`id`, `Nev`, `Telefonszam`, `Email`) VALUES (NULL, 'Lengyel Norbert', '06205681468', 'lengyelnorbi5@gmail.com');
+
+INSERT INTO `posztok` (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `Poszt`) VALUES (NULL, 'LNPTEST0312', '1', 'Pénzügyi Vezető');
+

@@ -8,14 +8,16 @@ namespace Szakdolgozat.model
 {
     partial class KoltsegTerv
     {
+        private int id;
         private string palyazatAzonosito;
         private int koltTipusId;
         private float tervezettPenzOsszeg;
         private float modositottPenzOsszeg;
 
         //Konstruktor
-        public KoltsegTerv(string palyazatAzonosito, int koltTipusId, float tervezettPenzOsszeg, float modositottPenzOsszeg)
+        public KoltsegTerv(int id, string palyazatAzonosito, int koltTipusId, float tervezettPenzOsszeg, float modositottPenzOsszeg)
         {
+            this.id = id;
             this.palyazatAzonosito = palyazatAzonosito;
             this.koltTipusId = koltTipusId;
             this.tervezettPenzOsszeg = tervezettPenzOsszeg;
@@ -23,6 +25,10 @@ namespace Szakdolgozat.model
         }
 
         //Setterek kezdete
+        public void setId(int id)
+        {
+            this.id = id;
+        }
         public void setPalyazatAzonosito(string palyazatAzonosito)
         {
             this.palyazatAzonosito = palyazatAzonosito;
@@ -45,6 +51,10 @@ namespace Szakdolgozat.model
         //Setterek vége
 
         //Getterek kezdete
+        public int getId()
+        {
+            return id;
+        }
         public string getPalyazatAzonosito()
         {
             return palyazatAzonosito;

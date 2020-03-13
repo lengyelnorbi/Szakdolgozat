@@ -134,7 +134,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\SQL lekérdezések\Lekerdezesek.txt" />
+    <Content Include="SQL lekérdezések\INNERJOIN.txt" />
+    <Content Include="SQL lekérdezések\SELECTS.txt" />
+    <Content Include="SQL lekérdezések\INSERTS.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

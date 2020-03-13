@@ -11,7 +11,7 @@ namespace Szakdolgozat.Model
         public string getInsert()
         {
             return "INSERT INTO `palyazat`" +
-                    "(`id`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Tervezett_osszeg`, `Elnyert_osszeg`, `Penznem`, `Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`, `Tenyfelhasznalas_kod`)" +
+                    "(`id`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Tervezett_osszeg`, `Elnyert_osszeg`, `Penznem`, `Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`)" +
                     "VALUES ('" +
                     getAzonosito() +
                     "', '" +
@@ -32,8 +32,6 @@ namespace Szakdolgozat.Model
                     getFelhasznalasiIdoVege() +
                     "', '" +
                     getTudomanyterulet() +
-                    "', '" +
-                    getTenyfelhasznalasKod() +
                     "');";
         }
 
@@ -58,8 +56,6 @@ namespace Szakdolgozat.Model
                    getFelhasznalasiIdoVege() +
                    "', `Tudomanyterulet` = '" +
                    getTudomanyterulet() +
-                   "', `Tenyfelhasznalas_kod` = '" +
-                   getTenyfelhasznalasKod() +
                    "' WHERE `palyazat`.`Azonosito` = " +
                    getAzonosito();
         }

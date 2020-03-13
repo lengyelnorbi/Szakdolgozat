@@ -11,8 +11,10 @@ namespace Szakdolgozat.model
         public string getInsert()
         {
             return "INSERT INTO `koltseg_terv`" +
-                    "(`Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_penzosszeg`, `Modositott_penzosszeg`)" +
+                    "(`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_penzosszeg`, `Modositott_penzosszeg`)" +
                     "VALUES ('" +
+                    id +
+                    "', '" +
                     getPalyazatAzonosito() +
                     "', '" +
                     getKoltTipusId() +
@@ -26,14 +28,16 @@ namespace Szakdolgozat.model
         public string getUpdate()
         {
             return
-                   "UPDATE `koltseg_terv` SET `KoltTip_id ` = '" +
+                   "UPDATE `koltseg_terv` SET `Palyazat_Azonosito ` = '" +
+                   getPalyazatAzonosito() +
+                   "', `KoltTip_id` = '" +
                    getKoltTipusId() +
                    "', `Tervezett_penzosszeg` = '" +
                    getTervezettPenzOsszeg() +
                    "', `Modositott_penzosszeg` = '" +
                    getModositottPenzOsszeg() +
                    "' WHERE `koltseg_terv`.`Palyazat_Azonosito` = " +
-                   getPalyazatAzonosito();
+                   id;
         }
 
         public static string getAllRecord()
