@@ -1,4 +1,4 @@
-﻿//Pályázat lekérdezése - szummázott tervezett össz költséggel
+﻿//Pályázat lekérdezése - szummázott tervezett össz költséggel - rossz inner join
 
 SELECT Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_penzosszeg) AS Tervezett_összeg,
 Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet, vezetok.Nev AS Pénzügyi_vezető, tenyfelhasznalas.id AS Tényfelhasználás_Azonosító
@@ -12,3 +12,13 @@ WHERE Azonosito = "LNPTEST0312"
 SELECT tenyfelhasznalas.id, tenyfelhasznalas.Palyazat_Azonosito, koltseg_tipusok.Koltseg_tipus, tenyfelhasznalas.Fizetett_osszeg, tenyfelhasznalas.Fizetes_datum
 FROM tenyfelhasznalas INNER JOIN koltseg_tipusok ON tenyfelhasznalas.KoltTip_id = koltseg_tipusok.id INNER JOIN palyazat ON palyazat.Azonosito = tenyfelhasznalas.Palyazat_Azonosito
 WHERE palyazat.Azonosito = "LNPTEST0312"
+
+SELECT Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_penzosszeg) AS Tervezett_összeg,
+Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet, vezetok.Nev AS Pénzügyi_vezető
+FROM koltseg_tipusok, koltseg_terv, palyazat, posztok, vezetok
+WHERE koltseg_tipusok.id = koltseg_terv.KoltTip_id
+AND koltseg_terv.Palyazat_Azonosito = palyazat.Azonosito
+AND palyazat.Azonosito = posztok.Palyazat_Azonosito
+AND posztok.Vezeto_id = vezetok.id AND Azonosito = "LNPTEST0312"
+
+//A tényfelhasználás tábla elrontja a teljes lekérdezést (összegek lekérdezését stb.)

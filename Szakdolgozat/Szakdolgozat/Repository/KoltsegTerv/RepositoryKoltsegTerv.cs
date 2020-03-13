@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Szakdolgozat.model;
 
-namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
+namespace Szakdolgozat.Repository
 {
     partial class Repository
     {

@@ -9,10 +9,17 @@ using Szakdolgozat.Model;
 using MySql.Data.MySqlClient;
 using System.Diagnostics;
 
-namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
+namespace Szakdolgozat.Repository
 {
-    partial class RepositoryDatabaseTablePalyazat
+    partial class RepositoryDatabaseTablePalyazatSQL
     {
+        public RepositoryDatabaseTablePalyazatSQL()
+        {
+            ConnectionString cs = new ConnectionString();
+            connectionStringCreate = cs.getCreateString();
+            connectionString = cs.getConnectionString();
+        }
+
         public List<Palyazat> getPalyazatokFromDatabaseTable()
         {
             List<Palyazat> palyazatok = new List<Palyazat>();

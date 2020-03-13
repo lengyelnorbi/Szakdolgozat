@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TobbbformosPizzaAlkalmazasTobbTabla.Repository;
+using Szakdolgozat.Repository;
 
 namespace Szakdolgozat
 {
@@ -17,7 +17,7 @@ namespace Szakdolgozat
         {
             InitializeComponent();
         }
-        Repository repo = new Repository();
+        RepositoryDatabaseTablePalyazat reps = new RepositoryDatabaseTablePalyazat();
         private DataTable palyazatDT = new DataTable();
         private FormPalyazatModosit FormModosit;
         private FormPalyazatUjHozzaad FormUjHozzaad;
@@ -28,7 +28,6 @@ namespace Szakdolgozat
             frissitAdatokkalDataGriedViewt();
             beallitPalyazatDataGriViewt();
             dataGridViewPalyazatok.SelectionChanged += dataGridViewPalyazatok_SelectionChanged;
-            repo.setPalyazat(getPalyazatokFromDatabaseTable());
         }
         private void frissitAdatokkalDataGriedViewt()
         {

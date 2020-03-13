@@ -7,7 +7,7 @@ using System.Data;
 using Szakdolgozat.model;
 using Szakdolgozat.Model;
 
-namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
+namespace Szakdolgozat.Repository
 {
     partial class Repository
     {
