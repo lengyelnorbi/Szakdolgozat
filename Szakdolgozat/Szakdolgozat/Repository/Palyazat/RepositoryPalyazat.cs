@@ -13,16 +13,15 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
     {
         List<Palyazat> palyazatok;
 
-        public List<Palyazat> GetPalyazatok()
+        public List<Palyazat> getPalyazatok()
         {
             return palyazatok;
         }
-
         public void setPalyazat(List<Palyazat> palyazatok)
         {
             this.palyazatok = palyazatok;
         }
-        public DataTable PalyazatListToDataTable()
+        public DataTable getPalyazatListToDataTable()
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Azonosito", typeof(string));
@@ -37,12 +36,12 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
             dt.Columns.Add("Tudományterület", typeof(string));
             foreach (Palyazat p in palyazatok)
             {
-                dt.Rows.Add(p.getAzonosito(), p.getPalyazatNev(), p.getFinanszirozasTipus(), p.getTervezettOsszeg(), p.getElnyertOsszeg(), p.getPenznem(),
+                dt.Rows.Add(p.getAzonosito(), p.getPalyazatTipus(), p.getPalyazatNev(), p.getFinanszirozasTipus(), p.getTervezettOsszeg(), p.getElnyertOsszeg(), p.getPenznem(),
                     p.getFelhasznalasiIdoKezd(), p.getFelhasznalasiIdoVege(), p.getTudomanyterulet());
             }
             return dt;
         }
-        public void DataTableToPalyazatList(DataTable dt)
+        public void fillDataTableToPalyazatList(DataTable dt)
         {
             foreach (DataRow row in dt.Rows)
             {

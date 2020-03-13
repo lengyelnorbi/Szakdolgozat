@@ -63,10 +63,5 @@ namespace Szakdolgozat.Model
         {
             return "SELECT * FROM palyazat";
         }
-
-        public static string getDeleteAllRecord()
-        {
-            return "DELETE FROM palyazat";
-        }
     }
 }

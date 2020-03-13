@@ -45,7 +45,6 @@
             this.textBoxElnyertOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxTervezettOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxFelhasznIdoKezd = new System.Windows.Forms.TextBox();
-            this.textBoxTudomanyTerulet = new System.Windows.Forms.TextBox();
             this.textBoxPenznem = new System.Windows.Forms.TextBox();
             this.textBoxTenyfelhasznalasAZ = new System.Windows.Forms.TextBox();
             this.textBoxFelhasznIdoVege = new System.Windows.Forms.TextBox();
@@ -59,6 +58,7 @@
             this.buttonPalyazatUjPalyazatForm = new System.Windows.Forms.Button();
             this.buttonPalyazatTorol = new System.Windows.Forms.Button();
             this.buttonPalyazatModositForm = new System.Windows.Forms.Button();
+            this.comboBoxTudomanyterulet = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPalyazatok)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,9 +104,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.Location = new System.Drawing.Point(62, 119);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 17);
+            this.label3.Size = new System.Drawing.Size(101, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Pályzat neve:";
+            this.label3.Text = "Pályázat neve:";
             // 
             // label4
             // 
@@ -215,13 +215,6 @@
             this.textBoxFelhasznIdoKezd.Name = "textBoxFelhasznIdoKezd";
             this.textBoxFelhasznIdoKezd.Size = new System.Drawing.Size(121, 20);
             this.textBoxFelhasznIdoKezd.TabIndex = 20;
-            // 
-            // textBoxTudomanyTerulet
-            // 
-            this.textBoxTudomanyTerulet.Location = new System.Drawing.Point(211, 201);
-            this.textBoxTudomanyTerulet.Name = "textBoxTudomanyTerulet";
-            this.textBoxTudomanyTerulet.Size = new System.Drawing.Size(121, 20);
-            this.textBoxTudomanyTerulet.TabIndex = 19;
             // 
             // textBoxPenznem
             // 
@@ -340,12 +333,21 @@
             this.buttonPalyazatModositForm.UseVisualStyleBackColor = true;
             this.buttonPalyazatModositForm.Click += new System.EventHandler(this.buttonPalyazatModositForm_Click);
             // 
+            // comboBoxTudomanyterulet
+            // 
+            this.comboBoxTudomanyterulet.FormattingEnabled = true;
+            this.comboBoxTudomanyterulet.Location = new System.Drawing.Point(211, 204);
+            this.comboBoxTudomanyterulet.Name = "comboBoxTudomanyterulet";
+            this.comboBoxTudomanyterulet.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTudomanyterulet.TabIndex = 33;
+            // 
             // FormPalyazat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1165, 622);
+            this.Controls.Add(this.comboBoxTudomanyterulet);
             this.Controls.Add(this.buttonPalyazatModositForm);
             this.Controls.Add(this.buttonPalyazatTorol);
             this.Controls.Add(this.buttonPalyazatUjPalyazatForm);
@@ -359,7 +361,6 @@
             this.Controls.Add(this.textBoxTenyfelhasznalasAZ);
             this.Controls.Add(this.textBoxFelhasznIdoVege);
             this.Controls.Add(this.textBoxFelhasznIdoKezd);
-            this.Controls.Add(this.textBoxTudomanyTerulet);
             this.Controls.Add(this.textBoxPenznem);
             this.Controls.Add(this.textBoxElnyertOsszeg);
             this.Controls.Add(this.textBoxTervezettOsszeg);
@@ -379,6 +380,7 @@
             this.Controls.Add(this.dataGridViewPalyazatok);
             this.Name = "FormPalyazat";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormPalyazat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPalyazatok)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -404,7 +406,6 @@
         private System.Windows.Forms.TextBox textBoxElnyertOsszeg;
         private System.Windows.Forms.TextBox textBoxTervezettOsszeg;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoKezd;
-        private System.Windows.Forms.TextBox textBoxTudomanyTerulet;
         private System.Windows.Forms.TextBox textBoxPenznem;
         private System.Windows.Forms.TextBox textBoxTenyfelhasznalasAZ;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoVege;
@@ -418,6 +419,7 @@
         private System.Windows.Forms.Button buttonPalyazatUjPalyazatForm;
         private System.Windows.Forms.Button buttonPalyazatTorol;
         private System.Windows.Forms.Button buttonPalyazatModositForm;
+        private System.Windows.Forms.ComboBox comboBoxTudomanyterulet;
     }
 }
 
