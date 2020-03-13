@@ -24,13 +24,14 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
         public DataTable KoltsegTervekListToDataTable()
         {
             DataTable dt = new DataTable();
+            dt.Columns.Add("id", typeof(int));
             dt.Columns.Add("Pályázat Azonosító", typeof(string));
             dt.Columns.Add("Koltség Típus Azonosító", typeof(int));
             dt.Columns.Add("Tervezett Pénz Összeg", typeof(float));
             dt.Columns.Add("Módosított Pénz Összeg", typeof(float));
             foreach (KoltsegTerv k in koltsegtervek)
             {
-                dt.Rows.Add(k.getPalyazatAzonosito(), k.getKoltTipusId(), k.getTervezettPenzOsszeg(), k.getModositottPenzOsszeg());
+                dt.Rows.Add(k.getId(), k.getPalyazatAzonosito(), k.getKoltTipusId(), k.getTervezettPenzOsszeg(), k.getModositottPenzOsszeg());
             }
             return dt;
         }
@@ -38,12 +39,13 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
         {
             foreach (DataRow row in dt.Rows)
             {
-                string palyazatAzonosito = row[0].ToString();
-                int koltsegTervId = Convert.ToInt32(row[1]);
-                float tervezettPenzOsszeg = Convert.ToSingle(row[2]);
-                float modositottPenzOsszeg = Convert.ToSingle(row[3]);
+                int id = Convert.ToInt32(row[0]);
+                string palyazatAzonosito = row[1].ToString();
+                int koltsegTervId = Convert.ToInt32(row[2]);
+                float tervezettPenzOsszeg = Convert.ToSingle(row[3]);
+                float modositottPenzOsszeg = Convert.ToSingle(row[4]);
 
-                KoltsegTerv k = new KoltsegTerv(palyazatAzonosito, koltsegTervId, tervezettPenzOsszeg, modositottPenzOsszeg);
+                KoltsegTerv k = new KoltsegTerv(id, palyazatAzonosito, koltsegTervId, tervezettPenzOsszeg, modositottPenzOsszeg);
                 koltsegtervek.Add(k);
             }
         }

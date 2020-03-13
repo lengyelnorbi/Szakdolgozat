@@ -35,11 +35,10 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
             dt.Columns.Add("Felhasználási Idő Kezdete", typeof(string));
             dt.Columns.Add("Felhasználási Idő Vége", typeof(string));
             dt.Columns.Add("Tudományterület", typeof(string));
-            dt.Columns.Add("Tényfelhasználás Kód", typeof(int));
             foreach (Palyazat p in palyazatok)
             {
                 dt.Rows.Add(p.getAzonosito(), p.getPalyazatNev(), p.getFinanszirozasTipus(), p.getTervezettOsszeg(), p.getElnyertOsszeg(), p.getPenznem(),
-                    p.getFelhasznalasiIdoKezd(), p.getFelhasznalasiIdoVege(), p.getTudomanyterulet(), p.getTenyfelhasznalasKod());
+                    p.getFelhasznalasiIdoKezd(), p.getFelhasznalasiIdoVege(), p.getTudomanyterulet());
             }
             return dt;
         }
@@ -57,9 +56,8 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
                 string felhasznalasiIdoKezdete = row[7].ToString();
                 string felhasznalasiIdoVege = row[8].ToString();
                 string tudomanyterulet = row[9].ToString();
-                int tenyfelhasznalasKod = Convert.ToInt32(row[10]);
                 Palyazat p = new Palyazat(Azonosito, palyazatTipus, palyazatNev, finanszirozasTipus, tervezettOsszeg, elnyertOsszeg, penznem, felhasznalasiIdoKezdete,
-                    felhasznalasiIdoVege, tudomanyterulet, tenyfelhasznalasKod);
+                    felhasznalasiIdoVege, tudomanyterulet);
                 palyazatok.Add(p);
             }
         }

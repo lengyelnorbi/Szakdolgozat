@@ -15,7 +15,7 @@ namespace Szakdolgozat.model
         private string fizetesDatuma;
 
         //Konstruktor
-        public Tenyfelhasznalas(string palyazatAzonosito, int id, int koltTipusId, float fizetettOsszeg, string fizetesDatuma)
+        public Tenyfelhasznalas(int id, string palyazatAzonosito, int koltTipusId, float fizetettOsszeg, string fizetesDatuma)
         {
             this.palyazatAzonosito = palyazatAzonosito;
             this.id = id;

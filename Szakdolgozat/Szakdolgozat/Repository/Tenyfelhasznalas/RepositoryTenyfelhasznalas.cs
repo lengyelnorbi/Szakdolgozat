@@ -25,12 +25,13 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Azonosító", typeof(int));
+            dt.Columns.Add("Pályázat Azonosító", typeof(string));
             dt.Columns.Add("Költség Típus Azonosító", typeof(int));
             dt.Columns.Add("Fizetett Összeg", typeof(float));
             dt.Columns.Add("Fizetés Dátuma", typeof(string));
             foreach (Tenyfelhasznalas t in tenyfelhasznalasok)
             {
-                dt.Rows.Add(t.getId(), t.getKoltTipusId(), t.getFizetettOsszeg(), t.getFizetesDatuma());
+                dt.Rows.Add(t.getId(), t.getPalyazatAzonosito(), t.getKoltTipusId(), t.getFizetettOsszeg(), t.getFizetesDatuma());
             }
             return dt;
         }
@@ -39,11 +40,12 @@ namespace TobbbformosPizzaAlkalmazasTobbTabla.Repository
             foreach (DataRow row in dt.Rows)
             {
                 int id = Convert.ToInt32(row[0]);
-                int koltsegTipusId = Convert.ToInt32(row[1]);
-                float fizetettOsszeg = Convert.ToSingle(row[2]);
-                string fizetesDatuma = Convert.ToString(row[3]);
+                string palyazatAzonosito = row[1].ToString();
+                int koltsegTipusId = Convert.ToInt32(row[2]);
+                float fizetettOsszeg = Convert.ToSingle(row[3]);
+                string fizetesDatuma = Convert.ToString(row[4]);
 
-                Tenyfelhasznalas t = new Tenyfelhasznalas(id, koltsegTipusId, fizetettOsszeg, fizetesDatuma);
+                Tenyfelhasznalas t = new Tenyfelhasznalas(id, palyazatAzonosito, koltsegTipusId, fizetettOsszeg, fizetesDatuma);
                 tenyfelhasznalasok.Add(t);
             }
         }
