@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using Szakdolgozat.model;
 using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Repository
 {
-    partial class Repository
+    partial class Tarolo
     {
         List<Palyazat> palyazatok;
 
@@ -21,29 +20,29 @@ namespace Szakdolgozat.Repository
         {
             this.palyazatok = palyazatok;
         }
-        public DataTable getPalyazatListToDataTable()
+        public DataTable getPalyazatDataTableFromList()
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Azonosito", typeof(string));
-            dt.Columns.Add("Tipus", typeof(string));
-            dt.Columns.Add("Név", typeof(string));
-            dt.Columns.Add("Finanszírozás Típus", typeof(string));
-            dt.Columns.Add("Tervezett Összeg", typeof(float));
-            dt.Columns.Add("Elnyert Összeg", typeof(float));
-            dt.Columns.Add("Pénznem", typeof(string));
-            dt.Columns.Add("Felhasználási Idő Kezdete", typeof(string));
-            dt.Columns.Add("Felhasználási Idő Vége", typeof(string));
-            dt.Columns.Add("Tudományterület", typeof(string));
+            DataTable palyazatDT = new DataTable();
+            palyazatDT.Columns.Add("Azonosito", typeof(string));
+            palyazatDT.Columns.Add("Palyazat_tipus", typeof(string));
+            palyazatDT.Columns.Add("Palyazat_neve", typeof(string));
+            palyazatDT.Columns.Add("Finanszirozas_tipus", typeof(string));
+            palyazatDT.Columns.Add("Tervezett_osszeg", typeof(float));
+            palyazatDT.Columns.Add("Elnyert_osszeg", typeof(float));    
+            palyazatDT.Columns.Add("Penznem", typeof(string));
+            palyazatDT.Columns.Add("Felhasznalasi_ido_kezd", typeof(string));
+            palyazatDT.Columns.Add("Felhasznalasi_ido_vege", typeof(string));
+            palyazatDT.Columns.Add("Tudomanyterulet", typeof(string));
             foreach (Palyazat p in palyazatok)
             {
-                dt.Rows.Add(p.getAzonosito(), p.getPalyazatTipus(), p.getPalyazatNev(), p.getFinanszirozasTipus(), p.getTervezettOsszeg(), p.getElnyertOsszeg(), p.getPenznem(),
+                palyazatDT.Rows.Add(p.getAzonosito(), p.getPalyazatTipus(), p.getPalyazatNev(), p.getFinanszirozasTipus(), p.getTervezettOsszeg(), p.getElnyertOsszeg(), p.getPenznem(),
                     p.getFelhasznalasiIdoKezd(), p.getFelhasznalasiIdoVege(), p.getTudomanyterulet());
             }
-            return dt;
+            return palyazatDT;
         }
-        public void fillDataTableToPalyazatList(DataTable dt)
+        public void fillPalyazatListFromDataTable(DataTable palyazatdt)
         {
-            foreach (DataRow row in dt.Rows)
+            foreach (DataRow row in palyazatdt.Rows)
             {
                 string Azonosito = row[0].ToString();
                 string palyazatTipus = row[1].ToString();

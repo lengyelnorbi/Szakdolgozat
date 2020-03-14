@@ -7,8 +7,11 @@ using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Repository
 {
-    partial class Repository
+    partial class Tarolo
     {
-        List<Palyazat> palyazato;
+        public Tarolo()
+        {
+            palyazatok = new List<Palyazat>();
+        }
     }
 }

@@ -40,13 +40,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.textBoxPalyazatNev = new System.Windows.Forms.TextBox();
             this.textBoxElnyertOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxTervezettOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxFelhasznIdoKezd = new System.Windows.Forms.TextBox();
             this.textBoxPenznem = new System.Windows.Forms.TextBox();
-            this.textBoxTenyfelhasznalasAZ = new System.Windows.Forms.TextBox();
             this.textBoxFelhasznIdoVege = new System.Windows.Forms.TextBox();
             this.comboBoxPalyazatTipus = new System.Windows.Forms.ComboBox();
             this.comboBoxKeresesTipus = new System.Windows.Forms.ComboBox();
@@ -64,6 +62,7 @@
             // 
             // dataGridViewPalyazatok
             // 
+            this.dataGridViewPalyazatok.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPalyazatok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPalyazatok.Location = new System.Drawing.Point(13, 249);
             this.dataGridViewPalyazatok.Name = "dataGridViewPalyazatok";
@@ -178,16 +177,6 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Felhasználási idő vége:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label11.Location = new System.Drawing.Point(838, 35);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(188, 17);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Tényfelhasználás azonosító:";
-            // 
             // textBoxPalyazatNev
             // 
             this.textBoxPalyazatNev.Location = new System.Drawing.Point(211, 119);
@@ -223,14 +212,6 @@
             this.textBoxPenznem.Size = new System.Drawing.Size(121, 20);
             this.textBoxPenznem.TabIndex = 18;
             // 
-            // textBoxTenyfelhasznalasAZ
-            // 
-            this.textBoxTenyfelhasznalasAZ.Enabled = false;
-            this.textBoxTenyfelhasznalasAZ.Location = new System.Drawing.Point(1032, 35);
-            this.textBoxTenyfelhasznalasAZ.Name = "textBoxTenyfelhasznalasAZ";
-            this.textBoxTenyfelhasznalasAZ.Size = new System.Drawing.Size(99, 20);
-            this.textBoxTenyfelhasznalasAZ.TabIndex = 22;
-            // 
             // textBoxFelhasznIdoVege
             // 
             this.textBoxFelhasznIdoVege.Location = new System.Drawing.Point(646, 201);
@@ -249,7 +230,7 @@
             // comboBoxKeresesTipus
             // 
             this.comboBoxKeresesTipus.FormattingEnabled = true;
-            this.comboBoxKeresesTipus.Location = new System.Drawing.Point(841, 159);
+            this.comboBoxKeresesTipus.Location = new System.Drawing.Point(839, 159);
             this.comboBoxKeresesTipus.Name = "comboBoxKeresesTipus";
             this.comboBoxKeresesTipus.Size = new System.Drawing.Size(185, 21);
             this.comboBoxKeresesTipus.TabIndex = 24;
@@ -257,7 +238,7 @@
             // buttonPalyazatKereses
             // 
             this.buttonPalyazatKereses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonPalyazatKereses.Location = new System.Drawing.Point(1049, 156);
+            this.buttonPalyazatKereses.Location = new System.Drawing.Point(1047, 156);
             this.buttonPalyazatKereses.Name = "buttonPalyazatKereses";
             this.buttonPalyazatKereses.Size = new System.Drawing.Size(82, 23);
             this.buttonPalyazatKereses.TabIndex = 25;
@@ -266,7 +247,7 @@
             // 
             // textBoxKeresesSzoveg
             // 
-            this.textBoxKeresesSzoveg.Location = new System.Drawing.Point(841, 204);
+            this.textBoxKeresesSzoveg.Location = new System.Drawing.Point(839, 204);
             this.textBoxKeresesSzoveg.Name = "textBoxKeresesSzoveg";
             this.textBoxKeresesSzoveg.Size = new System.Drawing.Size(290, 20);
             this.textBoxKeresesSzoveg.TabIndex = 26;
@@ -282,29 +263,29 @@
             // buttonKoltsegTerv
             // 
             this.buttonKoltsegTerv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonKoltsegTerv.Location = new System.Drawing.Point(841, 72);
+            this.buttonKoltsegTerv.Location = new System.Drawing.Point(839, 35);
             this.buttonKoltsegTerv.Name = "buttonKoltsegTerv";
-            this.buttonKoltsegTerv.Size = new System.Drawing.Size(131, 23);
+            this.buttonKoltsegTerv.Size = new System.Drawing.Size(292, 23);
             this.buttonKoltsegTerv.TabIndex = 28;
-            this.buttonKoltsegTerv.Text = "Költség terv";
+            this.buttonKoltsegTerv.Text = "Pályázat költségtervének lékérése";
             this.buttonKoltsegTerv.UseVisualStyleBackColor = true;
             this.buttonKoltsegTerv.Click += new System.EventHandler(this.buttonKoltsegTerv_Click);
             // 
             // buttonTenyfelhasznalas
             // 
             this.buttonTenyfelhasznalas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonTenyfelhasznalas.Location = new System.Drawing.Point(999, 71);
+            this.buttonTenyfelhasznalas.Location = new System.Drawing.Point(839, 74);
             this.buttonTenyfelhasznalas.Name = "buttonTenyfelhasznalas";
-            this.buttonTenyfelhasznalas.Size = new System.Drawing.Size(132, 23);
+            this.buttonTenyfelhasznalas.Size = new System.Drawing.Size(292, 23);
             this.buttonTenyfelhasznalas.TabIndex = 29;
-            this.buttonTenyfelhasznalas.Text = "Tényfelhasználás";
+            this.buttonTenyfelhasznalas.Text = "Pályázat tényfelhasználásának lekérdezése";
             this.buttonTenyfelhasznalas.UseVisualStyleBackColor = true;
             this.buttonTenyfelhasznalas.Click += new System.EventHandler(this.buttonTenyfelhasznalas_Click);
             // 
             // buttonPalyazatUjPalyazatForm
             // 
             this.buttonPalyazatUjPalyazatForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonPalyazatUjPalyazatForm.Location = new System.Drawing.Point(841, 115);
+            this.buttonPalyazatUjPalyazatForm.Location = new System.Drawing.Point(839, 115);
             this.buttonPalyazatUjPalyazatForm.Name = "buttonPalyazatUjPalyazatForm";
             this.buttonPalyazatUjPalyazatForm.Size = new System.Drawing.Size(82, 23);
             this.buttonPalyazatUjPalyazatForm.TabIndex = 30;
@@ -315,7 +296,7 @@
             // buttonPalyazatTorol
             // 
             this.buttonPalyazatTorol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonPalyazatTorol.Location = new System.Drawing.Point(1049, 116);
+            this.buttonPalyazatTorol.Location = new System.Drawing.Point(1047, 116);
             this.buttonPalyazatTorol.Name = "buttonPalyazatTorol";
             this.buttonPalyazatTorol.Size = new System.Drawing.Size(82, 23);
             this.buttonPalyazatTorol.TabIndex = 31;
@@ -325,7 +306,7 @@
             // buttonPalyazatModositForm
             // 
             this.buttonPalyazatModositForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonPalyazatModositForm.Location = new System.Drawing.Point(944, 116);
+            this.buttonPalyazatModositForm.Location = new System.Drawing.Point(942, 116);
             this.buttonPalyazatModositForm.Name = "buttonPalyazatModositForm";
             this.buttonPalyazatModositForm.Size = new System.Drawing.Size(82, 23);
             this.buttonPalyazatModositForm.TabIndex = 32;
@@ -358,7 +339,6 @@
             this.Controls.Add(this.buttonPalyazatKereses);
             this.Controls.Add(this.comboBoxKeresesTipus);
             this.Controls.Add(this.comboBoxPalyazatTipus);
-            this.Controls.Add(this.textBoxTenyfelhasznalasAZ);
             this.Controls.Add(this.textBoxFelhasznIdoVege);
             this.Controls.Add(this.textBoxFelhasznIdoKezd);
             this.Controls.Add(this.textBoxPenznem);
@@ -368,7 +348,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -401,13 +380,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxPalyazatNev;
         private System.Windows.Forms.TextBox textBoxElnyertOsszeg;
         private System.Windows.Forms.TextBox textBoxTervezettOsszeg;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoKezd;
         private System.Windows.Forms.TextBox textBoxPenznem;
-        private System.Windows.Forms.TextBox textBoxTenyfelhasznalasAZ;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoVege;
         private System.Windows.Forms.ComboBox comboBoxPalyazatTipus;
         private System.Windows.Forms.ComboBox comboBoxKeresesTipus;

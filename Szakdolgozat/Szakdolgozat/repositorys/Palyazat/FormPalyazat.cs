@@ -17,7 +17,7 @@ namespace Szakdolgozat
         {
             InitializeComponent();
         }
-        RepositoryDatabaseTablePalyazat reps = new RepositoryDatabaseTablePalyazat();
+        private Tarolo palyazatRepo = new Tarolo();
         private DataTable palyazatDT = new DataTable();
         private FormPalyazatModosit FormModosit;
         private FormPalyazatUjHozzaad FormUjHozzaad;
@@ -25,13 +25,15 @@ namespace Szakdolgozat
         private FormTenyfelhasznalas FormTenyfelhasznalas;
         private void FormPalyazat_Load(object sender, EventArgs e)
         {
+            RepositoryDatabaseTablePalyazatSQL repoSql = new RepositoryDatabaseTablePalyazatSQL();
+            palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
             frissitAdatokkalDataGriedViewt();
             beallitPalyazatDataGriViewt();
             dataGridViewPalyazatok.SelectionChanged += dataGridViewPalyazatok_SelectionChanged;
         }
         private void frissitAdatokkalDataGriedViewt()
         {
-            palyazatDT = repo.getPalyazatListToDataTable();
+            palyazatDT = palyazatRepo.getPalyazatDataTableFromList();
             dataGridViewPalyazatok.DataSource = null;
             dataGridViewPalyazatok.DataSource = palyazatDT;
         }

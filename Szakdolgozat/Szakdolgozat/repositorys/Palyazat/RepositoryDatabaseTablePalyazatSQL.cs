@@ -13,6 +13,8 @@ namespace Szakdolgozat.Repository
 {
     partial class RepositoryDatabaseTablePalyazatSQL
     {
+        private readonly string connectionStringCreate;
+        private readonly string connectionString;
         public RepositoryDatabaseTablePalyazatSQL()
         {
             ConnectionString cs = new ConnectionString();
