@@ -65,8 +65,8 @@ namespace Szakdolgozat.Repository
             try
             {
                 connection.Open();
-                string query = "DELETE FROM palyazatok WHERE Azonosito=" + Azonosito;
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                string queryDelete = "DELETE FROM palyazat WHERE Azonosito = " + "'" + Azonosito + "'";
+                MySqlCommand cmd = new MySqlCommand(queryDelete, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }

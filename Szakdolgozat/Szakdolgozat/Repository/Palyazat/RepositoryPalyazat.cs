@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Szakdolgozat.Model;
+using System.Diagnostics;
 
 namespace Szakdolgozat.Repository
 {
@@ -12,6 +13,18 @@ namespace Szakdolgozat.Repository
     {
         List<Palyazat> palyazatok;
 
+        public void deletePalyazatFromList(string azonosito)
+        {
+            Palyazat f = palyazatok.Find(x => x.getAzonosito() == azonosito);
+            if (f != null)
+                palyazatok.Remove(f);
+            else
+                throw new RepositoryExceptionCantDelete("A pályázatot nem lehetett törölni.");
+        }
+        public void torolAzonositokodAlapjan(string Azonositokod)
+        {
+            palyazatok.RemoveAt(palyazatok.FindIndex(p => p.getAzonosito() == Azonositokod));
+        }
         public List<Palyazat> getPalyazatok()
         {
             return palyazatok;

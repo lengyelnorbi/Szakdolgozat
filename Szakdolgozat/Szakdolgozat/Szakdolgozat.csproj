@@ -98,15 +98,18 @@
     <Compile Include="Model\Vezeto\Vezeto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="repositorys\Palyazat\RepositoryDatabaseTablePalyazatSQL.cs" />
-    <Compile Include="repositorys\Palyazat\RepositoryException.cs" />
-    <Compile Include="repositorys\Palyazat\RepositoryPalyazat.cs" />
-    <Compile Include="repositorys\KoltsegTipus\RepositoryKoltsegTipus.cs" />
-    <Compile Include="repositorys\KoltsegTerv\RepositoryKoltsegTerv.cs" />
-    <Compile Include="repositorys\Poszt\RepositoryPoszt.cs" />
-    <Compile Include="repositorys\Tarolo.cs" />
-    <Compile Include="repositorys\Tenyfelhasznalas\RepositoryTenyfelhasznalas.cs" />
-    <Compile Include="repositorys\Vezeto\RepositoryVezeto.cs" />
+    <Compile Include="Repository\Palyazat\RepositoryExceptionCantDelete.cs" />
+    <Compile Include="Repository\Palyazat\RepositoryPalyazatRecordModify.cs" />
+    <Compile Include="Repository\Palyazat\RepositoryDatabaseTablePalyazatSQL.cs" />
+    <Compile Include="Repository\Palyazat\RepositoryException.cs" />
+    <Compile Include="Repository\Palyazat\RepositoryPalyazat.cs" />
+    <Compile Include="Repository\KoltsegTipus\RepositoryKoltsegTipus.cs" />
+    <Compile Include="Repository\KoltsegTerv\RepositoryKoltsegTerv.cs" />
+    <Compile Include="Exceptions\TaroloException.cs" />
+    <Compile Include="Repository\Poszt\RepositoryPoszt.cs" />
+    <Compile Include="Repository\Tarolo.cs" />
+    <Compile Include="Repository\Tenyfelhasznalas\RepositoryTenyfelhasznalas.cs" />
+    <Compile Include="Repository\Vezeto\RepositoryVezeto.cs" />
     <EmbeddedResource Include="Formok\KoltsegTervForm\FormKoltsegTerv.resx">
       <DependentUpon>FormKoltsegTerv.cs</DependentUpon>
     </EmbeddedResource>

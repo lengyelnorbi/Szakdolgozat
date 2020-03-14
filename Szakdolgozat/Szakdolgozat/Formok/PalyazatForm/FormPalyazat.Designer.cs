@@ -179,6 +179,7 @@
             // 
             // textBoxPalyazatNev
             // 
+            this.textBoxPalyazatNev.Enabled = false;
             this.textBoxPalyazatNev.Location = new System.Drawing.Point(211, 119);
             this.textBoxPalyazatNev.Name = "textBoxPalyazatNev";
             this.textBoxPalyazatNev.Size = new System.Drawing.Size(121, 20);
@@ -186,6 +187,7 @@
             // 
             // textBoxElnyertOsszeg
             // 
+            this.textBoxElnyertOsszeg.Enabled = false;
             this.textBoxElnyertOsszeg.Location = new System.Drawing.Point(645, 76);
             this.textBoxElnyertOsszeg.Name = "textBoxElnyertOsszeg";
             this.textBoxElnyertOsszeg.Size = new System.Drawing.Size(121, 20);
@@ -201,6 +203,7 @@
             // 
             // textBoxFelhasznIdoKezd
             // 
+            this.textBoxFelhasznIdoKezd.Enabled = false;
             this.textBoxFelhasznIdoKezd.Location = new System.Drawing.Point(645, 162);
             this.textBoxFelhasznIdoKezd.Name = "textBoxFelhasznIdoKezd";
             this.textBoxFelhasznIdoKezd.Size = new System.Drawing.Size(121, 20);
@@ -208,6 +211,7 @@
             // 
             // textBoxFelhasznIdoVege
             // 
+            this.textBoxFelhasznIdoVege.Enabled = false;
             this.textBoxFelhasznIdoVege.Location = new System.Drawing.Point(646, 201);
             this.textBoxFelhasznIdoVege.Name = "textBoxFelhasznIdoVege";
             this.textBoxFelhasznIdoVege.Size = new System.Drawing.Size(120, 20);
@@ -215,6 +219,7 @@
             // 
             // comboBoxPalyazatTipus
             // 
+            this.comboBoxPalyazatTipus.Enabled = false;
             this.comboBoxPalyazatTipus.FormattingEnabled = true;
             this.comboBoxPalyazatTipus.Items.AddRange(new object[] {
             "Minisztériumi",
@@ -255,6 +260,7 @@
             // 
             // comboBoxFinanszirozasTipus
             // 
+            this.comboBoxFinanszirozasTipus.Enabled = false;
             this.comboBoxFinanszirozasTipus.FormattingEnabled = true;
             this.comboBoxFinanszirozasTipus.Items.AddRange(new object[] {
             "Előfinanszírozott",
@@ -306,6 +312,7 @@
             this.buttonPalyazatTorol.TabIndex = 31;
             this.buttonPalyazatTorol.Text = "Töröl";
             this.buttonPalyazatTorol.UseVisualStyleBackColor = true;
+            this.buttonPalyazatTorol.Click += new System.EventHandler(this.buttonPalyazatTorol_Click);
             // 
             // buttonPalyazatModositForm
             // 
@@ -320,6 +327,7 @@
             // 
             // comboBoxTudomanyterulet
             // 
+            this.comboBoxTudomanyterulet.Enabled = false;
             this.comboBoxTudomanyterulet.FormattingEnabled = true;
             this.comboBoxTudomanyterulet.Items.AddRange(new object[] {
             "Műszaki",
@@ -333,6 +341,7 @@
             // 
             // comboBoxPenznem
             // 
+            this.comboBoxPenznem.Enabled = false;
             this.comboBoxPenznem.FormattingEnabled = true;
             this.comboBoxPenznem.Items.AddRange(new object[] {
             "Forint",
