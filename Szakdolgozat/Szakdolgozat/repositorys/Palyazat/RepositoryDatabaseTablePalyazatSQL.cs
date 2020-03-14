@@ -99,7 +99,7 @@ namespace Szakdolgozat.Repository
             }
         }
 
-        public void insertPizzaToDatabase(Palyazat ujPalyazat)
+        public void insertPalyazatToDatabase(Palyazat ujPalyazat)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try

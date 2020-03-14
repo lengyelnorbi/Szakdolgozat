@@ -47,34 +47,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormKoltsegTerv.cs">
+    <Compile Include="Formok\KoltsegTervForm\FormKoltsegTerv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormKoltsegTerv.Designer.cs">
+    <Compile Include="Formok\KoltsegTervForm\FormKoltsegTerv.Designer.cs">
       <DependentUpon>FormKoltsegTerv.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPalyazat.cs">
+    <Compile Include="Formok\PalyazatForm\FormPalyazatGombok.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPalyazat.Designer.cs">
+    <Compile Include="Formok\PalyazatForm\FormPalyazatValidations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\PalyazatForm\FormPalyazat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\PalyazatForm\FormPalyazat.Designer.cs">
       <DependentUpon>FormPalyazat.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPalyazatModosit.cs">
+    <Compile Include="Formok\PalyazatModositForm\FormPalyazatModosit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPalyazatModosit.Designer.cs">
+    <Compile Include="Formok\PalyazatModositForm\FormPalyazatModosit.Designer.cs">
       <DependentUpon>FormPalyazatModosit.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPalyazatUjHozzaad.cs">
+    <Compile Include="Formok\UjPalyazatForm\FormPalyazatUjHozzaad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPalyazatUjHozzaad.Designer.cs">
+    <Compile Include="Formok\UjPalyazatForm\FormPalyazatUjHozzaad.Designer.cs">
       <DependentUpon>FormPalyazatUjHozzaad.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTenyfelhasznalas.cs">
+    <Compile Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTenyfelhasznalas.Designer.cs">
+    <Compile Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalas.Designer.cs">
       <DependentUpon>FormTenyfelhasznalas.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ConnectionString.cs" />
@@ -101,19 +107,19 @@
     <Compile Include="repositorys\Tarolo.cs" />
     <Compile Include="repositorys\Tenyfelhasznalas\RepositoryTenyfelhasznalas.cs" />
     <Compile Include="repositorys\Vezeto\RepositoryVezeto.cs" />
-    <EmbeddedResource Include="FormKoltsegTerv.resx">
+    <EmbeddedResource Include="Formok\KoltsegTervForm\FormKoltsegTerv.resx">
       <DependentUpon>FormKoltsegTerv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPalyazat.resx">
+    <EmbeddedResource Include="Formok\PalyazatForm\FormPalyazat.resx">
       <DependentUpon>FormPalyazat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPalyazatModosit.resx">
+    <EmbeddedResource Include="Formok\PalyazatModositForm\FormPalyazatModosit.resx">
       <DependentUpon>FormPalyazatModosit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPalyazatUjHozzaad.resx">
+    <EmbeddedResource Include="Formok\UjPalyazatForm\FormPalyazatUjHozzaad.resx">
       <DependentUpon>FormPalyazatUjHozzaad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTenyfelhasznalas.resx">
+    <EmbeddedResource Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalas.resx">
       <DependentUpon>FormTenyfelhasznalas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -140,8 +146,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SQL lekérdezések\INNERJOIN.txt" />
+    <Content Include="SQL lekérdezések\TeljesINSERTS.txt" />
     <Content Include="SQL lekérdezések\SELECTS.txt" />
     <Content Include="SQL lekérdezések\INSERTS.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -294,7 +294,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPalyazatAzonosito);
             this.Name = "FormPalyazatModosit";
-            this.Text = "FormPalyazatModosit";
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,0 +1,9 @@
+﻿//Költség típus tábla teljes feltöltése
+
+INSERT INTO `koltseg_tipusok` (`id`, `Koltseg_tipus`) VALUES (NULL, 'Bérköltség'),
+(NULL, 'Járulék'),
+(NULL, 'Szakmai anyag'),
+(NULL, 'Szolgáltatás'),
+(NULL, 'Rezsi'),
+(NULL, 'Tárgyi eszköz'),
+(NULL, 'Beruházás/Felújítás');

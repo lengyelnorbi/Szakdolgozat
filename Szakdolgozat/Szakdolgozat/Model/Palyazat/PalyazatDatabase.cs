@@ -11,7 +11,7 @@ namespace Szakdolgozat.Model
         public string getInsert()
         {
             return "INSERT INTO `palyazat`" +
-                    "(`id`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Tervezett_osszeg`, `Elnyert_osszeg`, `Penznem`, `Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`)" +
+                    "(`id`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Elnyert_osszeg`, `Penznem`, `Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`)" +
                     "VALUES ('" +
                     getAzonosito() +
                     "', '" +
@@ -20,8 +20,6 @@ namespace Szakdolgozat.Model
                     getPalyazatNev() +
                     "', '" +
                     getFinanszirozasTipus() +
-                    "', '" +
-                    getTervezettOsszeg() +
                     "', '" +
                     getElnyertOsszeg() +
                     "', '" +
@@ -44,8 +42,6 @@ namespace Szakdolgozat.Model
                    getPalyazatNev() +
                    "', `Finanszirozas_tipus` = '" +
                    getFinanszirozasTipus() +
-                   "', `Tervezett_osszeg  ` = '" +
-                   getTervezettOsszeg() +
                    "', `Elnyert_osszeg  ` = '" +
                    getElnyertOsszeg() + 
                    "', `Penznem` = '" +
@@ -61,7 +57,7 @@ namespace Szakdolgozat.Model
         }
         public static string getAllRecord()
         {
-            return "SELECT * FROM palyazat";
+            return "SELECT Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_osszeg) AS Tervezett_osszeg, Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet FROM palyazat INNER JOIN koltseg_terv ON palyazat.Azonosito = koltseg_terv.Palyazat_Azonosito GROUP BY palyazat.Azonosito";
         }
     }
 }

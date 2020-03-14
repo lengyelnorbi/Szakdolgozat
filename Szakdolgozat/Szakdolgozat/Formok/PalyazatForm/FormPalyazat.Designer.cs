@@ -44,7 +44,6 @@
             this.textBoxElnyertOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxTervezettOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxFelhasznIdoKezd = new System.Windows.Forms.TextBox();
-            this.textBoxPenznem = new System.Windows.Forms.TextBox();
             this.textBoxFelhasznIdoVege = new System.Windows.Forms.TextBox();
             this.comboBoxPalyazatTipus = new System.Windows.Forms.ComboBox();
             this.comboBoxKeresesTipus = new System.Windows.Forms.ComboBox();
@@ -57,6 +56,7 @@
             this.buttonPalyazatTorol = new System.Windows.Forms.Button();
             this.buttonPalyazatModositForm = new System.Windows.Forms.Button();
             this.comboBoxTudomanyterulet = new System.Windows.Forms.ComboBox();
+            this.comboBoxPenznem = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPalyazatok)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,6 +193,7 @@
             // 
             // textBoxTervezettOsszeg
             // 
+            this.textBoxTervezettOsszeg.Enabled = false;
             this.textBoxTervezettOsszeg.Location = new System.Drawing.Point(645, 35);
             this.textBoxTervezettOsszeg.Name = "textBoxTervezettOsszeg";
             this.textBoxTervezettOsszeg.Size = new System.Drawing.Size(121, 20);
@@ -205,13 +206,6 @@
             this.textBoxFelhasznIdoKezd.Size = new System.Drawing.Size(121, 20);
             this.textBoxFelhasznIdoKezd.TabIndex = 20;
             // 
-            // textBoxPenznem
-            // 
-            this.textBoxPenznem.Location = new System.Drawing.Point(645, 116);
-            this.textBoxPenznem.Name = "textBoxPenznem";
-            this.textBoxPenznem.Size = new System.Drawing.Size(121, 20);
-            this.textBoxPenznem.TabIndex = 18;
-            // 
             // textBoxFelhasznIdoVege
             // 
             this.textBoxFelhasznIdoVege.Location = new System.Drawing.Point(646, 201);
@@ -222,6 +216,13 @@
             // comboBoxPalyazatTipus
             // 
             this.comboBoxPalyazatTipus.FormattingEnabled = true;
+            this.comboBoxPalyazatTipus.Items.AddRange(new object[] {
+            "Minisztériumi",
+            "NTKA",
+            "NKFIH",
+            "NKA",
+            "EFOP",
+            "GINOP"});
             this.comboBoxPalyazatTipus.Location = new System.Drawing.Point(211, 77);
             this.comboBoxPalyazatTipus.Name = "comboBoxPalyazatTipus";
             this.comboBoxPalyazatTipus.Size = new System.Drawing.Size(121, 21);
@@ -255,6 +256,9 @@
             // comboBoxFinanszirozasTipus
             // 
             this.comboBoxFinanszirozasTipus.FormattingEnabled = true;
+            this.comboBoxFinanszirozasTipus.Items.AddRange(new object[] {
+            "Előfinanszírozott",
+            "Utófinanszírozott"});
             this.comboBoxFinanszirozasTipus.Location = new System.Drawing.Point(211, 159);
             this.comboBoxFinanszirozasTipus.Name = "comboBoxFinanszirozasTipus";
             this.comboBoxFinanszirozasTipus.Size = new System.Drawing.Size(121, 21);
@@ -317,10 +321,27 @@
             // comboBoxTudomanyterulet
             // 
             this.comboBoxTudomanyterulet.FormattingEnabled = true;
+            this.comboBoxTudomanyterulet.Items.AddRange(new object[] {
+            "Műszaki",
+            "Társadalom tudomány",
+            "Természet tudomány",
+            "Informatika"});
             this.comboBoxTudomanyterulet.Location = new System.Drawing.Point(211, 204);
             this.comboBoxTudomanyterulet.Name = "comboBoxTudomanyterulet";
             this.comboBoxTudomanyterulet.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTudomanyterulet.TabIndex = 33;
+            // 
+            // comboBoxPenznem
+            // 
+            this.comboBoxPenznem.FormattingEnabled = true;
+            this.comboBoxPenznem.Items.AddRange(new object[] {
+            "Forint",
+            "Euro",
+            "Dollár"});
+            this.comboBoxPenznem.Location = new System.Drawing.Point(645, 119);
+            this.comboBoxPenznem.Name = "comboBoxPenznem";
+            this.comboBoxPenznem.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPenznem.TabIndex = 34;
             // 
             // FormPalyazat
             // 
@@ -328,6 +349,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1165, 622);
+            this.Controls.Add(this.comboBoxPenznem);
             this.Controls.Add(this.comboBoxTudomanyterulet);
             this.Controls.Add(this.buttonPalyazatModositForm);
             this.Controls.Add(this.buttonPalyazatTorol);
@@ -341,7 +363,6 @@
             this.Controls.Add(this.comboBoxPalyazatTipus);
             this.Controls.Add(this.textBoxFelhasznIdoVege);
             this.Controls.Add(this.textBoxFelhasznIdoKezd);
-            this.Controls.Add(this.textBoxPenznem);
             this.Controls.Add(this.textBoxElnyertOsszeg);
             this.Controls.Add(this.textBoxTervezettOsszeg);
             this.Controls.Add(this.textBoxPalyazatNev);
@@ -384,7 +405,6 @@
         private System.Windows.Forms.TextBox textBoxElnyertOsszeg;
         private System.Windows.Forms.TextBox textBoxTervezettOsszeg;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoKezd;
-        private System.Windows.Forms.TextBox textBoxPenznem;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoVege;
         private System.Windows.Forms.ComboBox comboBoxPalyazatTipus;
         private System.Windows.Forms.ComboBox comboBoxKeresesTipus;
@@ -397,6 +417,7 @@
         private System.Windows.Forms.Button buttonPalyazatTorol;
         private System.Windows.Forms.Button buttonPalyazatModositForm;
         private System.Windows.Forms.ComboBox comboBoxTudomanyterulet;
+        private System.Windows.Forms.ComboBox comboBoxPenznem;
     }
 }
 

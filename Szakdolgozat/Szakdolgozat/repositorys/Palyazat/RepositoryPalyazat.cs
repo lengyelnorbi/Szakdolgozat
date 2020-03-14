@@ -27,7 +27,7 @@ namespace Szakdolgozat.Repository
             palyazatDT.Columns.Add("Palyazat_tipus", typeof(string));
             palyazatDT.Columns.Add("Palyazat_neve", typeof(string));
             palyazatDT.Columns.Add("Finanszirozas_tipus", typeof(string));
-            palyazatDT.Columns.Add("Tervezett_osszeg", typeof(float));
+            palyazatDT.Columns.Add("Tervezett_osszeg", typeof(float));    
             palyazatDT.Columns.Add("Elnyert_osszeg", typeof(float));    
             palyazatDT.Columns.Add("Penznem", typeof(string));
             palyazatDT.Columns.Add("Felhasznalasi_ido_kezd", typeof(string));
