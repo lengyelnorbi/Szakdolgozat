@@ -18,10 +18,12 @@ namespace Szakdolgozat.Model
         private string felhasznalasiIdoKezd;
         private string felhasznalasiIdoVege;
         private string tudomanyterulet;
+        private string szakmaiVezeto;
+        private string penzugyiVezeto;
 
         //Konstruktor
         public Palyazat(string azonosito, string palyazatTipus, string palyazatNeve, string finanszirozasTipus, float tervezettOsszeg, float elnyertOsszeg, string penznem,
-            string felhasznalasiIdoKezd, string felhasznalasiIdoVege, string tudomanyterulet)
+            string felhasznalasiIdoKezd, string felhasznalasiIdoVege, string tudomanyterulet, string szakmaiVezeto, string penzugyiVezeto)
         {
             this.azonosito = azonosito;
             this.palyazatTipus = palyazatTipus;
@@ -33,6 +35,8 @@ namespace Szakdolgozat.Model
             this.felhasznalasiIdoKezd = felhasznalasiIdoKezd;
             this.felhasznalasiIdoVege = felhasznalasiIdoVege;
             this.tudomanyterulet = tudomanyterulet;
+            this.szakmaiVezeto = szakmaiVezeto;
+            this.penzugyiVezeto = penzugyiVezeto;
         }
 
         // Setterek kezdete
@@ -85,6 +89,14 @@ namespace Szakdolgozat.Model
         {
             this.tudomanyterulet = tudomanyterulet;
         }
+        public void setSzakmaiVezeto(string szakmaiVezeto)
+        {
+            this.szakmaiVezeto = szakmaiVezeto;
+        }
+        public void setPenzugyiVezeto(string penzugyiVezeto)
+        {
+            this.penzugyiVezeto = penzugyiVezeto;
+        }
         // Setterek vége
 
         // Getterek kezdete
@@ -136,6 +148,14 @@ namespace Szakdolgozat.Model
         public string getTudomanyterulet()
         {
             return tudomanyterulet;
+        }
+        public string getSzakmaiVezeto()
+        {
+            return szakmaiVezeto;
+        }
+        public string getPenzugyiVezeto()
+        {
+            return penzugyiVezeto;
         }
         // Getterek vége
     }

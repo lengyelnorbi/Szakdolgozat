@@ -45,7 +45,9 @@ namespace Szakdolgozat.Repository
                     string felhasznIdoKezd = dr["Felhasznalasi_ido_kezd"].ToString();
                     string felhasznIdoVege = dr["Felhasznalasi_ido_vege"].ToString();
                     string tudomanyterulet = dr["Tudomanyterulet"].ToString();
-                    Palyazat p = new Palyazat(azonosito, palyazatTipus, palyazatNev, finanszirozasTipus, tervezettOsszeg, elnyertOsszeg, penznem, felhasznIdoKezd, felhasznIdoVege, tudomanyterulet);
+                    string szakmaiVezeto = dr["Szakmai_vezeto"].ToString();
+                    string penzugyiVezeto = dr["Penzugyi_vezeto"].ToString();
+                    Palyazat p = new Palyazat(azonosito, palyazatTipus, palyazatNev, finanszirozasTipus, tervezettOsszeg, elnyertOsszeg, penznem, felhasznIdoKezd, felhasznIdoVege, tudomanyterulet, szakmaiVezeto, penzugyiVezeto);
                     palyazatok.Add(p);
                 }
                 connection.Close();

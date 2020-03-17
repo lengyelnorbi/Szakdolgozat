@@ -29,15 +29,9 @@
         private void InitializeComponent()
         {
             this.buttonMentes = new System.Windows.Forms.Button();
-            this.textBoxTenyfelhasznalasAZ = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.buttonVissza = new System.Windows.Forms.Button();
-            this.comboBoxFinanszirozasTipus = new System.Windows.Forms.ComboBox();
-            this.comboBoxPalyazatTipus = new System.Windows.Forms.ComboBox();
             this.textBoxFelhasznIdoVege = new System.Windows.Forms.TextBox();
             this.textBoxFelhasznIdoKezd = new System.Windows.Forms.TextBox();
-            this.textBoxTudomanyTerulet = new System.Windows.Forms.TextBox();
-            this.textBoxPenznem = new System.Windows.Forms.TextBox();
             this.textBoxElnyertOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxTervezettOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxPalyazatNev = new System.Windows.Forms.TextBox();
@@ -52,107 +46,68 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPalyazatAzonosito = new System.Windows.Forms.TextBox();
+            this.textBoxSzakmaiVezeto = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxPenzugyiVezeto = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxPenznem = new System.Windows.Forms.ComboBox();
+            this.comboBoxTudomanyTerulet = new System.Windows.Forms.ComboBox();
+            this.comboBoxFinanszirozasTipus = new System.Windows.Forms.ComboBox();
+            this.comboBoxPalyazatTipus = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonMentes
             // 
-            this.buttonMentes.Location = new System.Drawing.Point(424, 228);
+            this.buttonMentes.Location = new System.Drawing.Point(427, 263);
             this.buttonMentes.Name = "buttonMentes";
             this.buttonMentes.Size = new System.Drawing.Size(121, 23);
             this.buttonMentes.TabIndex = 76;
             this.buttonMentes.Text = "Mentés";
             this.buttonMentes.UseVisualStyleBackColor = true;
             // 
-            // textBoxTenyfelhasznalasAZ
-            // 
-            this.textBoxTenyfelhasznalasAZ.Enabled = false;
-            this.textBoxTenyfelhasznalasAZ.Location = new System.Drawing.Point(220, 231);
-            this.textBoxTenyfelhasznalasAZ.Name = "textBoxTenyfelhasznalasAZ";
-            this.textBoxTenyfelhasznalasAZ.Size = new System.Drawing.Size(121, 20);
-            this.textBoxTenyfelhasznalasAZ.TabIndex = 75;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label11.Location = new System.Drawing.Point(26, 231);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(188, 17);
-            this.label11.TabIndex = 74;
-            this.label11.Text = "Tényfelhasználás azonosító:";
-            // 
             // buttonVissza
             // 
-            this.buttonVissza.Location = new System.Drawing.Point(609, 228);
+            this.buttonVissza.Location = new System.Drawing.Point(645, 263);
             this.buttonVissza.Name = "buttonVissza";
             this.buttonVissza.Size = new System.Drawing.Size(121, 23);
             this.buttonVissza.TabIndex = 73;
             this.buttonVissza.Text = "Mégsem";
             this.buttonVissza.UseVisualStyleBackColor = true;
             // 
-            // comboBoxFinanszirozasTipus
-            // 
-            this.comboBoxFinanszirozasTipus.FormattingEnabled = true;
-            this.comboBoxFinanszirozasTipus.Location = new System.Drawing.Point(220, 141);
-            this.comboBoxFinanszirozasTipus.Name = "comboBoxFinanszirozasTipus";
-            this.comboBoxFinanszirozasTipus.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxFinanszirozasTipus.TabIndex = 72;
-            // 
-            // comboBoxPalyazatTipus
-            // 
-            this.comboBoxPalyazatTipus.FormattingEnabled = true;
-            this.comboBoxPalyazatTipus.Location = new System.Drawing.Point(220, 59);
-            this.comboBoxPalyazatTipus.Name = "comboBoxPalyazatTipus";
-            this.comboBoxPalyazatTipus.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPalyazatTipus.TabIndex = 71;
-            // 
             // textBoxFelhasznIdoVege
             // 
-            this.textBoxFelhasznIdoVege.Location = new System.Drawing.Point(610, 184);
+            this.textBoxFelhasznIdoVege.Location = new System.Drawing.Point(610, 225);
             this.textBoxFelhasznIdoVege.Name = "textBoxFelhasznIdoVege";
-            this.textBoxFelhasznIdoVege.Size = new System.Drawing.Size(120, 20);
+            this.textBoxFelhasznIdoVege.Size = new System.Drawing.Size(156, 20);
             this.textBoxFelhasznIdoVege.TabIndex = 70;
             // 
             // textBoxFelhasznIdoKezd
             // 
-            this.textBoxFelhasznIdoKezd.Location = new System.Drawing.Point(609, 145);
+            this.textBoxFelhasznIdoKezd.Location = new System.Drawing.Point(610, 186);
             this.textBoxFelhasznIdoKezd.Name = "textBoxFelhasznIdoKezd";
-            this.textBoxFelhasznIdoKezd.Size = new System.Drawing.Size(121, 20);
+            this.textBoxFelhasznIdoKezd.Size = new System.Drawing.Size(156, 20);
             this.textBoxFelhasznIdoKezd.TabIndex = 69;
-            // 
-            // textBoxTudomanyTerulet
-            // 
-            this.textBoxTudomanyTerulet.Location = new System.Drawing.Point(220, 183);
-            this.textBoxTudomanyTerulet.Name = "textBoxTudomanyTerulet";
-            this.textBoxTudomanyTerulet.Size = new System.Drawing.Size(121, 20);
-            this.textBoxTudomanyTerulet.TabIndex = 68;
-            // 
-            // textBoxPenznem
-            // 
-            this.textBoxPenznem.Location = new System.Drawing.Point(609, 99);
-            this.textBoxPenznem.Name = "textBoxPenznem";
-            this.textBoxPenznem.Size = new System.Drawing.Size(121, 20);
-            this.textBoxPenznem.TabIndex = 67;
             // 
             // textBoxElnyertOsszeg
             // 
-            this.textBoxElnyertOsszeg.Location = new System.Drawing.Point(609, 59);
+            this.textBoxElnyertOsszeg.Location = new System.Drawing.Point(610, 100);
             this.textBoxElnyertOsszeg.Name = "textBoxElnyertOsszeg";
-            this.textBoxElnyertOsszeg.Size = new System.Drawing.Size(121, 20);
+            this.textBoxElnyertOsszeg.Size = new System.Drawing.Size(156, 20);
             this.textBoxElnyertOsszeg.TabIndex = 66;
             // 
             // textBoxTervezettOsszeg
             // 
-            this.textBoxTervezettOsszeg.Location = new System.Drawing.Point(609, 18);
+            this.textBoxTervezettOsszeg.Enabled = false;
+            this.textBoxTervezettOsszeg.Location = new System.Drawing.Point(610, 59);
             this.textBoxTervezettOsszeg.Name = "textBoxTervezettOsszeg";
-            this.textBoxTervezettOsszeg.Size = new System.Drawing.Size(121, 20);
+            this.textBoxTervezettOsszeg.Size = new System.Drawing.Size(156, 20);
             this.textBoxTervezettOsszeg.TabIndex = 65;
             // 
             // textBoxPalyazatNev
             // 
             this.textBoxPalyazatNev.Location = new System.Drawing.Point(220, 101);
             this.textBoxPalyazatNev.Name = "textBoxPalyazatNev";
-            this.textBoxPalyazatNev.Size = new System.Drawing.Size(121, 20);
+            this.textBoxPalyazatNev.Size = new System.Drawing.Size(155, 20);
             this.textBoxPalyazatNev.TabIndex = 64;
             // 
             // label8
@@ -169,7 +124,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(421, 145);
+            this.label9.Location = new System.Drawing.Point(424, 186);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(175, 17);
             this.label9.TabIndex = 62;
@@ -179,7 +134,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(421, 185);
+            this.label10.Location = new System.Drawing.Point(424, 226);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(156, 17);
             this.label10.TabIndex = 61;
@@ -189,7 +144,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(421, 102);
+            this.label7.Location = new System.Drawing.Point(424, 143);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 17);
             this.label7.TabIndex = 60;
@@ -199,7 +154,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(421, 60);
+            this.label6.Location = new System.Drawing.Point(424, 101);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 17);
             this.label6.TabIndex = 59;
@@ -209,7 +164,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(421, 18);
+            this.label5.Location = new System.Drawing.Point(424, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 17);
             this.label5.TabIndex = 58;
@@ -260,8 +215,93 @@
             this.textBoxPalyazatAzonosito.Enabled = false;
             this.textBoxPalyazatAzonosito.Location = new System.Drawing.Point(220, 17);
             this.textBoxPalyazatAzonosito.Name = "textBoxPalyazatAzonosito";
-            this.textBoxPalyazatAzonosito.Size = new System.Drawing.Size(121, 20);
+            this.textBoxPalyazatAzonosito.Size = new System.Drawing.Size(155, 20);
             this.textBoxPalyazatAzonosito.TabIndex = 53;
+            // 
+            // textBoxSzakmaiVezeto
+            // 
+            this.textBoxSzakmaiVezeto.Location = new System.Drawing.Point(220, 228);
+            this.textBoxSzakmaiVezeto.Name = "textBoxSzakmaiVezeto";
+            this.textBoxSzakmaiVezeto.Size = new System.Drawing.Size(155, 20);
+            this.textBoxSzakmaiVezeto.TabIndex = 82;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label12.Location = new System.Drawing.Point(26, 228);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(111, 17);
+            this.label12.TabIndex = 81;
+            this.label12.Text = "Szakmai vezető:";
+            // 
+            // textBoxPenzugyiVezeto
+            // 
+            this.textBoxPenzugyiVezeto.Location = new System.Drawing.Point(610, 18);
+            this.textBoxPenzugyiVezeto.Name = "textBoxPenzugyiVezeto";
+            this.textBoxPenzugyiVezeto.Size = new System.Drawing.Size(156, 20);
+            this.textBoxPenzugyiVezeto.TabIndex = 80;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.Location = new System.Drawing.Point(424, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(116, 17);
+            this.label11.TabIndex = 79;
+            this.label11.Text = "Pénzügyi vezető:";
+            // 
+            // comboBoxPenznem
+            // 
+            this.comboBoxPenznem.FormattingEnabled = true;
+            this.comboBoxPenznem.Items.AddRange(new object[] {
+            "Forint",
+            "Euro",
+            "Dollár"});
+            this.comboBoxPenznem.Location = new System.Drawing.Point(610, 143);
+            this.comboBoxPenznem.Name = "comboBoxPenznem";
+            this.comboBoxPenznem.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxPenznem.TabIndex = 86;
+            // 
+            // comboBoxTudomanyTerulet
+            // 
+            this.comboBoxTudomanyTerulet.FormattingEnabled = true;
+            this.comboBoxTudomanyTerulet.Items.AddRange(new object[] {
+            "Műszaki",
+            "Társadalom tudomány",
+            "Természet tudomány",
+            "Informatika"});
+            this.comboBoxTudomanyTerulet.Location = new System.Drawing.Point(220, 185);
+            this.comboBoxTudomanyTerulet.Name = "comboBoxTudomanyTerulet";
+            this.comboBoxTudomanyTerulet.Size = new System.Drawing.Size(155, 21);
+            this.comboBoxTudomanyTerulet.TabIndex = 85;
+            // 
+            // comboBoxFinanszirozasTipus
+            // 
+            this.comboBoxFinanszirozasTipus.FormattingEnabled = true;
+            this.comboBoxFinanszirozasTipus.Items.AddRange(new object[] {
+            "Előfinanszírozott",
+            "Utófinanszírozott"});
+            this.comboBoxFinanszirozasTipus.Location = new System.Drawing.Point(220, 144);
+            this.comboBoxFinanszirozasTipus.Name = "comboBoxFinanszirozasTipus";
+            this.comboBoxFinanszirozasTipus.Size = new System.Drawing.Size(155, 21);
+            this.comboBoxFinanszirozasTipus.TabIndex = 84;
+            // 
+            // comboBoxPalyazatTipus
+            // 
+            this.comboBoxPalyazatTipus.FormattingEnabled = true;
+            this.comboBoxPalyazatTipus.Items.AddRange(new object[] {
+            "Minisztériumi",
+            "NTKA",
+            "NKFIH",
+            "NKA",
+            "EFOP",
+            "GINOP"});
+            this.comboBoxPalyazatTipus.Location = new System.Drawing.Point(220, 60);
+            this.comboBoxPalyazatTipus.Name = "comboBoxPalyazatTipus";
+            this.comboBoxPalyazatTipus.Size = new System.Drawing.Size(155, 21);
+            this.comboBoxPalyazatTipus.TabIndex = 83;
             // 
             // FormPalyazatModosit
             // 
@@ -269,16 +309,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(791, 298);
-            this.Controls.Add(this.buttonMentes);
-            this.Controls.Add(this.textBoxTenyfelhasznalasAZ);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.buttonVissza);
+            this.Controls.Add(this.comboBoxPenznem);
+            this.Controls.Add(this.comboBoxTudomanyTerulet);
             this.Controls.Add(this.comboBoxFinanszirozasTipus);
             this.Controls.Add(this.comboBoxPalyazatTipus);
+            this.Controls.Add(this.textBoxSzakmaiVezeto);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBoxPenzugyiVezeto);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.buttonMentes);
+            this.Controls.Add(this.buttonVissza);
             this.Controls.Add(this.textBoxFelhasznIdoVege);
             this.Controls.Add(this.textBoxFelhasznIdoKezd);
-            this.Controls.Add(this.textBoxTudomanyTerulet);
-            this.Controls.Add(this.textBoxPenznem);
             this.Controls.Add(this.textBoxElnyertOsszeg);
             this.Controls.Add(this.textBoxTervezettOsszeg);
             this.Controls.Add(this.textBoxPalyazatNev);
@@ -295,6 +337,7 @@
             this.Controls.Add(this.textBoxPalyazatAzonosito);
             this.Name = "FormPalyazatModosit";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.FormPalyazatModosit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,15 +346,9 @@
         #endregion
 
         private System.Windows.Forms.Button buttonMentes;
-        private System.Windows.Forms.TextBox textBoxTenyfelhasznalasAZ;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonVissza;
-        private System.Windows.Forms.ComboBox comboBoxFinanszirozasTipus;
-        private System.Windows.Forms.ComboBox comboBoxPalyazatTipus;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoVege;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoKezd;
-        private System.Windows.Forms.TextBox textBoxTudomanyTerulet;
-        private System.Windows.Forms.TextBox textBoxPenznem;
         private System.Windows.Forms.TextBox textBoxElnyertOsszeg;
         private System.Windows.Forms.TextBox textBoxTervezettOsszeg;
         private System.Windows.Forms.TextBox textBoxPalyazatNev;
@@ -326,5 +363,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPalyazatAzonosito;
+        private System.Windows.Forms.TextBox textBoxSzakmaiVezeto;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxPenzugyiVezeto;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBoxPenznem;
+        private System.Windows.Forms.ComboBox comboBoxTudomanyTerulet;
+        private System.Windows.Forms.ComboBox comboBoxFinanszirozasTipus;
+        private System.Windows.Forms.ComboBox comboBoxPalyazatTipus;
     }
 }

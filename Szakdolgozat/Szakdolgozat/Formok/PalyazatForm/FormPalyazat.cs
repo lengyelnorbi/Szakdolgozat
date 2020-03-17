@@ -17,6 +17,7 @@ namespace Szakdolgozat
         {
             InitializeComponent();
         }
+        string Azonosito;
         private Tarolo palyazatRepo = new Tarolo();
         private DataTable palyazatDT = new DataTable();
         RepositoryDatabaseTablePalyazatSQL repoSql = new RepositoryDatabaseTablePalyazatSQL();
@@ -59,6 +60,10 @@ namespace Szakdolgozat
             palyazatDT.Columns[8].Caption = "Felhasználási idő vége";
             palyazatDT.Columns[9].ColumnName = "Tudományterület";
             palyazatDT.Columns[9].Caption = "Tudományterület";
+            palyazatDT.Columns[10].ColumnName = "Szakmai vezető";
+            palyazatDT.Columns[10].Caption = "Szakmai vezető";
+            palyazatDT.Columns[11].ColumnName = "Pénzügyi vezető";
+            palyazatDT.Columns[11].Caption = "Pénzügyi vezető";
 
             dataGridViewPalyazatok.SelectionMode =
                 DataGridViewSelectionMode.FullRowSelect;
@@ -71,7 +76,7 @@ namespace Szakdolgozat
         {
             if (dataGridViewPalyazatok.SelectedRows.Count == 1)
             {
-                textBoxPalyazatAzonosito.Text =
+                textBoxAzonosito.Text =
                     dataGridViewPalyazatok.SelectedRows[0].Cells[0].Value.ToString();
                 comboBoxPalyazatTipus.Text =
                     dataGridViewPalyazatok.SelectedRows[0].Cells[1].Value.ToString();
@@ -91,6 +96,10 @@ namespace Szakdolgozat
                     dataGridViewPalyazatok.SelectedRows[0].Cells[8].Value.ToString();
                 comboBoxTudomanyterulet.Text =
                     dataGridViewPalyazatok.SelectedRows[0].Cells[9].Value.ToString();
+                textBoxSzakmaiVezeto.Text = 
+                    dataGridViewPalyazatok.SelectedRows[0].Cells[10].Value.ToString();
+                textBoxPenzugyiVezeto.Text =
+                    dataGridViewPalyazatok.SelectedRows[0].Cells[11].Value.ToString();
             }
         }
     }

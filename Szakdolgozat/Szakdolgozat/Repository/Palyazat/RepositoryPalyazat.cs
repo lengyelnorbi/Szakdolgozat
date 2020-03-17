@@ -43,13 +43,15 @@ namespace Szakdolgozat.Repository
             palyazatDT.Columns.Add("Tervezett_osszeg", typeof(float));    
             palyazatDT.Columns.Add("Elnyert_osszeg", typeof(float));    
             palyazatDT.Columns.Add("Penznem", typeof(string));
-            palyazatDT.Columns.Add("Felhasznalasi_ido_kezd", typeof(string));
-            palyazatDT.Columns.Add("Felhasznalasi_ido_vege", typeof(string));
+            palyazatDT.Columns.Add("Felhasznalasi_ido_kezd", typeof(DateTime));
+            palyazatDT.Columns.Add("Felhasznalasi_ido_vege", typeof(DateTime));
             palyazatDT.Columns.Add("Tudomanyterulet", typeof(string));
+            palyazatDT.Columns.Add("Szakmai_vezeto", typeof(string));
+            palyazatDT.Columns.Add("Penzugyi_vezeto", typeof(string));
             foreach (Palyazat p in palyazatok)
             {
                 palyazatDT.Rows.Add(p.getAzonosito(), p.getPalyazatTipus(), p.getPalyazatNev(), p.getFinanszirozasTipus(), p.getTervezettOsszeg(), p.getElnyertOsszeg(), p.getPenznem(),
-                    p.getFelhasznalasiIdoKezd(), p.getFelhasznalasiIdoVege(), p.getTudomanyterulet());
+                    p.getFelhasznalasiIdoKezd(), p.getFelhasznalasiIdoVege(), p.getTudomanyterulet(), p.getSzakmaiVezeto(), p.getPenzugyiVezeto());
             }
             return palyazatDT;
         }
@@ -67,8 +69,10 @@ namespace Szakdolgozat.Repository
                 string felhasznalasiIdoKezdete = row[7].ToString();
                 string felhasznalasiIdoVege = row[8].ToString();
                 string tudomanyterulet = row[9].ToString();
+                string szakmaiVezeto = row[10].ToString();
+                string penzugyiVezeto = row[11].ToString();
                 Palyazat p = new Palyazat(Azonosito, palyazatTipus, palyazatNev, finanszirozasTipus, tervezettOsszeg, elnyertOsszeg, penznem, felhasznalasiIdoKezdete,
-                    felhasznalasiIdoVege, tudomanyterulet);
+                    felhasznalasiIdoVege, tudomanyterulet, szakmaiVezeto, penzugyiVezeto);
                 palyazatok.Add(p);
             }
         }

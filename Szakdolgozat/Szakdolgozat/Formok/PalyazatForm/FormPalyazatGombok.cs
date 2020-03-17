@@ -34,7 +34,7 @@ namespace Szakdolgozat
         {
             if (FormModosit == null)
             {
-                FormModosit = new FormPalyazatModosit();
+                FormModosit = new FormPalyazatModosit(textBoxAzonosito.Text, comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text, textBoxTervezettOsszeg.Text, textBoxElnyertOsszeg.Text, comboBoxPenznem.Text, textBoxFelhasznIdoKezd.Text, textBoxFelhasznIdoVege.Text, comboBoxTudomanyterulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
                 FormModosit.Closed += f_Closed;
                 FormModosit.Show();
             }
@@ -72,8 +72,7 @@ namespace Szakdolgozat
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                string Azonosito = "";
-                Azonosito = textBoxPalyazatAzonosito.Text;
+                Azonosito = textBoxAzonosito.Text;
                 //1. törölni kell a listából
                 if (Azonosito == string.Empty)
                     return;

@@ -8,21 +8,6 @@ namespace Szakdolgozat.model
 {
     partial class Poszt
     {
-        public string getInsert()
-        {
-            return "INSERT INTO `posztok`" +
-                    "(`id`, `Palyazat_Azonosito`, `Vezeto_id`, `poszt`)" +
-                    "VALUES ('" +
-                    getId() +
-                    "', '" +
-                    getPalyazatAzonosito() +
-                    "', '" +
-                    getVezetoId() +
-                    "', '" +
-                    getPoszt() +
-                    "');";
-        }
-
         public string getUpdate()
         {
             return
