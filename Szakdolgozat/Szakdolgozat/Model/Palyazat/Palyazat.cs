@@ -38,7 +38,20 @@ namespace Szakdolgozat.Model
             this.szakmaiVezeto = szakmaiVezeto;
             this.penzugyiVezeto = penzugyiVezeto;
         }
-
+        public void update(Palyazat modified)
+        {
+            this.palyazatTipus = modified.getPalyazatTipus();
+            this.palyazatNeve = modified.getPalyazatNev();
+            this.finanszirozasTipus = modified.getFinanszirozasTipus();
+            this.tervezettOsszeg = modified.getTervezettOsszeg();
+            this.elnyertOsszeg = modified.getElnyertOsszeg();
+            this.penznem = modified.getPenznem();
+            this.felhasznalasiIdoKezd = modified.getFelhasznalasiIdoKezd();
+            this.felhasznalasiIdoVege = modified.getFelhasznalasiIdoVege();
+            this.tudomanyterulet = modified.getTudomanyterulet();
+            this.szakmaiVezeto = modified.getSzakmaiVezeto();
+            this.penzugyiVezeto = modified.getPenzugyiVezeto();
+        }
         // Setterek kezdete
         public void setAzonosito(string azonosito)
         {

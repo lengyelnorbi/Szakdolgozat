@@ -33,27 +33,34 @@ namespace Szakdolgozat.Model
                     "');";
         }
 
-        public string getUpdate()
+        public string getUpdate(string Azonosito)
         {
             return
-                   "UPDATE `palyazat` SET `Palyazat_tipus ` = '" +
+                   "UPDATE palyazat, posztok, vezetok SET Palyazat_tipus = '" +
                    getPalyazatTipus() +
-                   "', `Palyazat_neve ` = '" +
+                   "', Palyazat_neve = '" +
                    getPalyazatNev() +
-                   "', `Finanszirozas_tipus` = '" +
+                   "', Finanszirozas_tipus = '" +
                    getFinanszirozasTipus() +
-                   "', `Elnyert_osszeg  ` = '" +
-                   getElnyertOsszeg() + 
-                   "', `Penznem` = '" +
+                   "', Elnyert_osszeg = '" +
+                   getElnyertOsszeg() +
+                   "', Penznem = '" +
                    getPenznem() +
-                   "', `Felhasznalasi_ido_kezd` = '" +
+                   "', Felhasznalasi_ido_kezd = '" +
                    getFelhasznalasiIdoKezd() +
-                   "', `Felhasznalasi_ido_vege` = '" +
+                   "', Felhasznalasi_ido_vege = '" +
                    getFelhasznalasiIdoVege() +
-                   "', `Tudomanyterulet` = '" +
+                   "', Tudomanyterulet = '" +
                    getTudomanyterulet() +
-                   "' WHERE `palyazat`.`Azonosito` = " +
-                   getAzonosito();
+                   "', vezetok.Nev = '" +
+                   getSzakmaiVezeto() +
+                   "' WHERE palyazat.Azonosito = '" +
+                   azonosito + 
+                   "' AND vezetok.id = (SELECT posztok.Vezeto_id FROM posztok WHERE posztok.poszt = 'Szakmai Vezető');" +
+                   " UPDATE palyazat, vezetok SET vezetok.Nev = '" +
+                   getPenzugyiVezeto() +
+                   "' WHERE palyazat.Azonosito = '" +
+                   azonosito + "' AND vezetok.id = (SELECT posztok.Vezeto_id FROM posztok WHERE posztok.poszt = 'Pénzügyi Vezető');";
         }
         public static string getAllRecord()
         {

@@ -99,6 +99,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Palyazat\RepositoryExceptionCantDelete.cs" />
+    <Compile Include="Repository\Palyazat\RepositoryExceptionCantModified.cs" />
     <Compile Include="Repository\Palyazat\RepositoryPalyazatRecordModify.cs" />
     <Compile Include="Repository\Palyazat\RepositoryDatabaseTablePalyazatSQL.cs" />
     <Compile Include="Repository\Palyazat\RepositoryException.cs" />

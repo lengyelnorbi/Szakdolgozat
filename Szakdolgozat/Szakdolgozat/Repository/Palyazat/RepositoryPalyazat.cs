@@ -15,6 +15,7 @@ namespace Szakdolgozat.Repository
 
         public void deletePalyazatFromList(string azonosito)
         {
+            int palyazatCount = palyazatok.Count();
             Palyazat f = palyazatok.Find(x => x.getAzonosito() == azonosito);
             if (f != null)
                 palyazatok.Remove(f);
@@ -24,6 +25,14 @@ namespace Szakdolgozat.Repository
         public void torolAzonositokodAlapjan(string Azonositokod)
         {
             palyazatok.RemoveAt(palyazatok.FindIndex(p => p.getAzonosito() == Azonositokod));
+        }
+        public void updatePalyazatInList(string Azonosito, Palyazat modified)
+        {
+            Palyazat f = palyazatok.Find(x => x.getAzonosito() == Azonosito);
+            if (f != null)
+                f.update(modified);
+            else
+                throw new RepositoryExceptionCantModified("A pályázat módosítása nem sikerült");
         }
         public List<Palyazat> getPalyazatok()
         {
@@ -43,8 +52,8 @@ namespace Szakdolgozat.Repository
             palyazatDT.Columns.Add("Tervezett_osszeg", typeof(float));    
             palyazatDT.Columns.Add("Elnyert_osszeg", typeof(float));    
             palyazatDT.Columns.Add("Penznem", typeof(string));
-            palyazatDT.Columns.Add("Felhasznalasi_ido_kezd", typeof(DateTime));
-            palyazatDT.Columns.Add("Felhasznalasi_ido_vege", typeof(DateTime));
+            palyazatDT.Columns.Add("Felhasznalasi_ido_kezd", typeof(string));
+            palyazatDT.Columns.Add("Felhasznalasi_ido_vege", typeof(string));
             palyazatDT.Columns.Add("Tudomanyterulet", typeof(string));
             palyazatDT.Columns.Add("Szakmai_vezeto", typeof(string));
             palyazatDT.Columns.Add("Penzugyi_vezeto", typeof(string));

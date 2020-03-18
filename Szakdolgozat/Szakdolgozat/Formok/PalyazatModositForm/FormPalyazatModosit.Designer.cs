@@ -64,6 +64,7 @@
             this.buttonMentes.TabIndex = 76;
             this.buttonMentes.Text = "Mentés";
             this.buttonMentes.UseVisualStyleBackColor = true;
+            this.buttonMentes.Click += new System.EventHandler(this.buttonMentes_Click);
             // 
             // buttonVissza
             // 

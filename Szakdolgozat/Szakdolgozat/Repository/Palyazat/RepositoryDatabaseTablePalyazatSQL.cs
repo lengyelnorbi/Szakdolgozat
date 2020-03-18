@@ -81,13 +81,13 @@ namespace Szakdolgozat.Repository
             }
         }
 
-        public void updatePalyazatInDatabase(Palyazat modified)
+        public void updatePalyazatInDatabase(string Azonosito, Palyazat modified)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = modified.getUpdate();
+                string query = modified.getUpdate(Azonosito);
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

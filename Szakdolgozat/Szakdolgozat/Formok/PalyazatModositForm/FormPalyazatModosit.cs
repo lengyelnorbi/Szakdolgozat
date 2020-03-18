@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
+using Szakdolgozat.Repository;
 
 namespace Szakdolgozat
 {
     public partial class FormPalyazatModosit : Form
     {
+        string Azonosito;
+        private Tarolo palyazatRepo = new Tarolo();
+        private DataTable palyazatDT = new DataTable();
+        RepositoryDatabaseTablePalyazatSQL repoSql = new RepositoryDatabaseTablePalyazatSQL();
         public FormPalyazatModosit(string pAZ, string pTipus, string pNev, string pFin, string pTOszz, string pEOssz, string pPenznem, string pFIK, string pFIV, string pTudomany, string pSzvezeto, string pPenzvezeto)
         {
             InitializeComponent();
@@ -31,6 +37,29 @@ namespace Szakdolgozat
         private void FormPalyazatModosit_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonMentes_Click(object sender, EventArgs e)
+        {
+            Palyazat modosult = new Palyazat(textBoxPalyazatAzonosito.Text,
+            comboBoxPalyazatTipus.Text,
+            textBoxPalyazatNev.Text,
+            comboBoxFinanszirozasTipus.Text,
+            Convert.ToInt32(textBoxTervezettOsszeg.Text),
+            Convert.ToInt32(textBoxElnyertOsszeg.Text),
+            comboBoxPenznem.Text,
+            textBoxFelhasznIdoKezd.Text,
+            textBoxFelhasznIdoVege.Text,
+            comboBoxTudomanyTerulet.Text,
+            textBoxSzakmaiVezeto.Text,
+            textBoxPenzugyiVezeto.Text
+            );
+            Azonosito = textBoxPalyazatAzonosito.Text;
+            //1. módosítani a listába
+            palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
+            palyazatRepo.updatePalyazatInList(Azonosito, modosult);
+            //2. módosítani az adatbázisban
+            repoSql.updatePalyazatInDatabase(Azonosito, modosult);
         }
     }
 }
