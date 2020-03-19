@@ -25,14 +25,14 @@ namespace Szakdolgozat.model
                     "');";
         }
 
-        public string getUpdate(string palyazatAzonosito)
+        public string getUpdate(int id)
         {
             return
                    "UPDATE `tenyfelhasznalas` SET `Palyazat_Azonosito` = '" +
                    getPalyazatAzonosito() +
-                   "', `KoltTip_id` = '" +
-                   getKoltsegTipus() +
-                   "', `Fizetett_osszeg` = '" +
+                   "', `KoltTip_id` = " +
+                   "(SELECT Koltseg_tipusok.id FROM Koltseg_tipusok WHERE koltseg_tipusok.Koltseg_tipus = '" + getKoltsegTipus() + "')" +
+                   ", `Fizetett_osszeg` = '" +
                    getFizetettOsszeg() +
                    "', `Fizetes_datum` = '" +
                    getFizetesDatuma() +

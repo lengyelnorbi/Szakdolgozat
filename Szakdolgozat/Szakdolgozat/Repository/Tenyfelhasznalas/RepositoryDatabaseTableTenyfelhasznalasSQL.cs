@@ -74,13 +74,13 @@ namespace Szakdolgozat.Repository
             }
         }
 
-        public void updateTenyfelhasznalasInDatabase(string palyazatAzonosito, Tenyfelhasznalas modified)
+        public void updateTenyfelhasznalasInDatabase(int id, Tenyfelhasznalas modified)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = modified.getUpdate(palyazatAzonosito);
+                string query = modified.getUpdate(id);
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

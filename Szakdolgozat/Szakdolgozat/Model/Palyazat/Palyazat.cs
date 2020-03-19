@@ -40,6 +40,7 @@ namespace Szakdolgozat.Model
         }
         public void update(Palyazat modified)
         {
+            this.azonosito = modified.getAzonosito();
             this.palyazatTipus = modified.getPalyazatTipus();
             this.palyazatNeve = modified.getPalyazatNev();
             this.finanszirozasTipus = modified.getFinanszirozasTipus();

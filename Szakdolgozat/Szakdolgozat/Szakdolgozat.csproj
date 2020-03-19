@@ -74,6 +74,18 @@
     <Compile Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalasGombok.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalasModosit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalasModosit.Designer.cs">
+      <DependentUpon>FormTenyfelhasznalasModosit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formok\TenyfelhasznalasForm\FormUjTenyfelhasznHozzaad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\TenyfelhasznalasForm\FormUjTenyfelhasznHozzaad.Designer.cs">
+      <DependentUpon>FormUjTenyfelhasznHozzaad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formok\UjPalyazatForm\FormPalyazatUjHozzaad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\PalyazatModositForm\FormPalyazatModosit.resx">
       <DependentUpon>FormPalyazatModosit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalasModosit.resx">
+      <DependentUpon>FormTenyfelhasznalasModosit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\UjPalyazatForm\FormPalyazatUjHozzaad.resx">
       <DependentUpon>FormPalyazatUjHozzaad.cs</DependentUpon>

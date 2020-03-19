@@ -37,14 +37,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewTenyfelhasznalas = new System.Windows.Forms.DataGridView();
             this.buttonTorol = new System.Windows.Forms.Button();
-            this.buttonModosit = new System.Windows.Forms.Button();
-            this.buttonHozzaad = new System.Windows.Forms.Button();
+            this.buttonTenyfelhasznalasModositForm = new System.Windows.Forms.Button();
+            this.buttonUjTenyfelhasznalasForm = new System.Windows.Forms.Button();
             this.comboBoxKoltsegTipus = new System.Windows.Forms.ComboBox();
+            this.buttonVissza = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTenyfelhasznalas)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxFizetesDatuma
             // 
+            this.textBoxFizetesDatuma.Enabled = false;
             this.textBoxFizetesDatuma.Location = new System.Drawing.Point(486, 22);
             this.textBoxFizetesDatuma.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFizetesDatuma.Name = "textBoxFizetesDatuma";
@@ -53,6 +55,7 @@
             // 
             // textBoxFizetettOsszeg
             // 
+            this.textBoxFizetettOsszeg.Enabled = false;
             this.textBoxFizetettOsszeg.Location = new System.Drawing.Point(177, 116);
             this.textBoxFizetettOsszeg.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFizetettOsszeg.Name = "textBoxFizetettOsszeg";
@@ -125,43 +128,63 @@
             // buttonTorol
             // 
             this.buttonTorol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonTorol.Location = new System.Drawing.Point(440, 116);
+            this.buttonTorol.Location = new System.Drawing.Point(363, 116);
             this.buttonTorol.Name = "buttonTorol";
-            this.buttonTorol.Size = new System.Drawing.Size(90, 23);
+            this.buttonTorol.Size = new System.Drawing.Size(98, 23);
             this.buttonTorol.TabIndex = 18;
             this.buttonTorol.Text = "Töröl";
             this.buttonTorol.UseVisualStyleBackColor = true;
             this.buttonTorol.Click += new System.EventHandler(this.buttonTorol_Click);
             // 
-            // buttonModosit
+            // buttonTenyfelhasznalasModositForm
             // 
-            this.buttonModosit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonModosit.Location = new System.Drawing.Point(507, 68);
-            this.buttonModosit.Name = "buttonModosit";
-            this.buttonModosit.Size = new System.Drawing.Size(90, 23);
-            this.buttonModosit.TabIndex = 19;
-            this.buttonModosit.Text = "Módosít";
-            this.buttonModosit.UseVisualStyleBackColor = true;
-            this.buttonModosit.Click += new System.EventHandler(this.buttonModosit_Click);
+            this.buttonTenyfelhasznalasModositForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonTenyfelhasznalasModositForm.Location = new System.Drawing.Point(507, 68);
+            this.buttonTenyfelhasznalasModositForm.Name = "buttonTenyfelhasznalasModositForm";
+            this.buttonTenyfelhasznalasModositForm.Size = new System.Drawing.Size(98, 23);
+            this.buttonTenyfelhasznalasModositForm.TabIndex = 19;
+            this.buttonTenyfelhasznalasModositForm.Text = "Módosít";
+            this.buttonTenyfelhasznalasModositForm.UseVisualStyleBackColor = true;
+            this.buttonTenyfelhasznalasModositForm.Click += new System.EventHandler(this.buttonTenyfelhasznalasModositForm_Click);
             // 
-            // buttonHozzaad
+            // buttonUjTenyfelhasznalasForm
             // 
-            this.buttonHozzaad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonHozzaad.Location = new System.Drawing.Point(363, 68);
-            this.buttonHozzaad.Name = "buttonHozzaad";
-            this.buttonHozzaad.Size = new System.Drawing.Size(98, 23);
-            this.buttonHozzaad.TabIndex = 20;
-            this.buttonHozzaad.Text = "Hozzáad";
-            this.buttonHozzaad.UseVisualStyleBackColor = true;
-            this.buttonHozzaad.Click += new System.EventHandler(this.buttonHozzaad_Click);
+            this.buttonUjTenyfelhasznalasForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonUjTenyfelhasznalasForm.Location = new System.Drawing.Point(363, 68);
+            this.buttonUjTenyfelhasznalasForm.Name = "buttonUjTenyfelhasznalasForm";
+            this.buttonUjTenyfelhasznalasForm.Size = new System.Drawing.Size(98, 23);
+            this.buttonUjTenyfelhasznalasForm.TabIndex = 20;
+            this.buttonUjTenyfelhasznalasForm.Text = "Hozzáad";
+            this.buttonUjTenyfelhasznalasForm.UseVisualStyleBackColor = true;
+            this.buttonUjTenyfelhasznalasForm.Click += new System.EventHandler(this.buttonUjTenyfelhasznalasForm_Click);
             // 
             // comboBoxKoltsegTipus
             // 
+            this.comboBoxKoltsegTipus.Enabled = false;
             this.comboBoxKoltsegTipus.FormattingEnabled = true;
+            this.comboBoxKoltsegTipus.Items.AddRange(new object[] {
+            "Bérköltség",
+            "Járulék",
+            "Szakmai anyag",
+            "Szolgáltatás",
+            "Rezsi",
+            "Tárgyi eszköz",
+            "Beruházás/Felújítás"});
             this.comboBoxKoltsegTipus.Location = new System.Drawing.Point(177, 68);
             this.comboBoxKoltsegTipus.Name = "comboBoxKoltsegTipus";
             this.comboBoxKoltsegTipus.Size = new System.Drawing.Size(132, 24);
             this.comboBoxKoltsegTipus.TabIndex = 25;
+            // 
+            // buttonVissza
+            // 
+            this.buttonVissza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonVissza.Location = new System.Drawing.Point(507, 115);
+            this.buttonVissza.Name = "buttonVissza";
+            this.buttonVissza.Size = new System.Drawing.Size(98, 23);
+            this.buttonVissza.TabIndex = 26;
+            this.buttonVissza.Text = "Vissza";
+            this.buttonVissza.UseVisualStyleBackColor = true;
+            this.buttonVissza.Click += new System.EventHandler(this.buttonVissza_Click);
             // 
             // FormTenyfelhasznalas
             // 
@@ -169,9 +192,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(666, 371);
+            this.Controls.Add(this.buttonVissza);
             this.Controls.Add(this.comboBoxKoltsegTipus);
-            this.Controls.Add(this.buttonHozzaad);
-            this.Controls.Add(this.buttonModosit);
+            this.Controls.Add(this.buttonUjTenyfelhasznalasForm);
+            this.Controls.Add(this.buttonTenyfelhasznalasModositForm);
             this.Controls.Add(this.buttonTorol);
             this.Controls.Add(this.textBoxFizetesDatuma);
             this.Controls.Add(this.textBoxFizetettOsszeg);
@@ -203,8 +227,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewTenyfelhasznalas;
         private System.Windows.Forms.Button buttonTorol;
-        private System.Windows.Forms.Button buttonModosit;
-        private System.Windows.Forms.Button buttonHozzaad;
+        private System.Windows.Forms.Button buttonTenyfelhasznalasModositForm;
+        private System.Windows.Forms.Button buttonUjTenyfelhasznalasForm;
         private System.Windows.Forms.ComboBox comboBoxKoltsegTipus;
+        private System.Windows.Forms.Button buttonVissza;
     }
 }

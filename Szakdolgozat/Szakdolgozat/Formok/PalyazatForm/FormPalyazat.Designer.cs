@@ -292,7 +292,7 @@
             this.buttonTenyfelhasznalas.Name = "buttonTenyfelhasznalas";
             this.buttonTenyfelhasznalas.Size = new System.Drawing.Size(254, 24);
             this.buttonTenyfelhasznalas.TabIndex = 29;
-            this.buttonTenyfelhasznalas.Text = "Pályázat tényfelhasználásának lekérdezése";
+            this.buttonTenyfelhasznalas.Text = "Pályázat tényfelhasználásának lekérése";
             this.buttonTenyfelhasznalas.UseVisualStyleBackColor = true;
             this.buttonTenyfelhasznalas.Click += new System.EventHandler(this.buttonTenyfelhasznalas_Click);
             // 

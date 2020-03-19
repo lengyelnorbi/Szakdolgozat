@@ -13,6 +13,12 @@ namespace Szakdolgozat
 {
     public partial class FormPalyazat : Form
     {
+        private void F2_UpdateEventHandler1(object sender, FormPalyazatModosit.UpdateEventArgs args)
+        {
+            palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
+            frissitAdatokkalDataGriedViewt();
+        }
+
         public FormPalyazat()
         {
             InitializeComponent();
@@ -34,7 +40,7 @@ namespace Szakdolgozat
         }
         private void frissitAdatokkalDataGriedViewt()
         {
-            palyazatDT = palyazatRepo.getPalyazatDataTableFromList();
+            palyazatDT = palyazatRepo.getPalyazatDataTableFromList();//szarul frissít
             dataGridViewPalyazatok.DataSource = null;
             dataGridViewPalyazatok.DataSource = palyazatDT;
         }

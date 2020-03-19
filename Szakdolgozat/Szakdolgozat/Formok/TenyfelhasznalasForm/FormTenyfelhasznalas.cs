@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Formok.TenyfelhasznalasForm;
 using Szakdolgozat.Repository;
 
 namespace Szakdolgozat
 {
     public partial class FormTenyfelhasznalas : Form
     {
+
         string Azonosito;
         private Tarolo tenyfelhasznalasRepo = new Tarolo();
         private DataTable tenyfelhasznalasDT = new DataTable();

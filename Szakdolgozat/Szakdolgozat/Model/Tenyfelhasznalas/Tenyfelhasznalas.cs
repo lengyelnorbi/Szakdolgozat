@@ -26,7 +26,6 @@ namespace Szakdolgozat.model
 
         public void update(Tenyfelhasznalas modified)
         {
-            this.palyazatAzonosito = modified.palyazatAzonosito;
             this.id = modified.id;
             this.koltsegTipus = modified.koltsegTipus;
             this.fizetettOsszeg = modified.fizetettOsszeg;

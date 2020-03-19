@@ -8,20 +8,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Formok.TenyfelhasznalasForm;
 using Szakdolgozat.Repository;
 
 namespace Szakdolgozat
 {
     public partial class FormTenyfelhasznalas : Form
     {
-        private void buttonHozzaad_Click(object sender, EventArgs e)
+        private FormUjTenyfelhasznHozzaad FormUjTenyfelhasznHozzaad;
+        private FormTenyfelhasznalasModosit FormModosit;
+        void f_Closed(object sender, EventArgs e)
         {
-
+            FormUjTenyfelhasznHozzaad = null;
+            FormModosit = null;
         }
 
-        private void buttonModosit_Click(object sender, EventArgs e)
+        private void buttonTenyfelhasznalasModositForm_Click(object sender, EventArgs e)
         {
+            if (FormModosit == null)
+            {
+                FormModosit = new FormTenyfelhasznalasModosit(dataGridViewTenyfelhasznalas.SelectedRows[0].Cells[0].Value.ToString(), textBoxPalyazatAZ.Text, comboBoxKoltsegTipus.Text, textBoxFizetettOsszeg.Text, textBoxFizetesDatuma.Text);
+                FormModosit.Closed += f_Closed;
+                FormModosit.Show();
+                this.Close();
+            }
+        }
 
+        private void buttonUjTenyfelhasznalasForm_Click(object sender, EventArgs e)
+        {
+            if (FormUjTenyfelhasznHozzaad == null)
+            {
+                FormUjTenyfelhasznHozzaad = new FormUjTenyfelhasznHozzaad();
+                FormUjTenyfelhasznHozzaad.Closed += f_Closed;
+                FormUjTenyfelhasznHozzaad.Show();
+            }
         }
 
         private void buttonTorol_Click(object sender, EventArgs e)
@@ -63,6 +83,10 @@ namespace Szakdolgozat
                 frissitAdatokkalDataGriedViewt();
                 //beallitFutarDataGriViewt();
             }
+        }
+        private void buttonVissza_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
