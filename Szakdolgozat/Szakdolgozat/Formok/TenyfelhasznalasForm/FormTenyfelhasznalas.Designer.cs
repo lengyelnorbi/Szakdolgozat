@@ -28,42 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxModositottOsszeg = new System.Windows.Forms.TextBox();
-            this.textBoxOsszeg = new System.Windows.Forms.TextBox();
+            this.textBoxFizetesDatuma = new System.Windows.Forms.TextBox();
+            this.textBoxFizetettOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxPalyazatAZ = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewTenyfelhasznalas = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonTorol = new System.Windows.Forms.Button();
+            this.buttonModosit = new System.Windows.Forms.Button();
+            this.buttonHozzaad = new System.Windows.Forms.Button();
             this.comboBoxKoltsegTipus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTenyfelhasznalas)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxModositottOsszeg
+            // textBoxFizetesDatuma
             // 
-            this.textBoxModositottOsszeg.Location = new System.Drawing.Point(486, 22);
-            this.textBoxModositottOsszeg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxModositottOsszeg.Name = "textBoxModositottOsszeg";
-            this.textBoxModositottOsszeg.Size = new System.Drawing.Size(132, 23);
-            this.textBoxModositottOsszeg.TabIndex = 17;
+            this.textBoxFizetesDatuma.Location = new System.Drawing.Point(486, 22);
+            this.textBoxFizetesDatuma.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFizetesDatuma.Name = "textBoxFizetesDatuma";
+            this.textBoxFizetesDatuma.Size = new System.Drawing.Size(132, 23);
+            this.textBoxFizetesDatuma.TabIndex = 17;
             // 
-            // textBoxOsszeg
+            // textBoxFizetettOsszeg
             // 
-            this.textBoxOsszeg.Location = new System.Drawing.Point(177, 116);
-            this.textBoxOsszeg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxOsszeg.Name = "textBoxOsszeg";
-            this.textBoxOsszeg.Size = new System.Drawing.Size(132, 23);
-            this.textBoxOsszeg.TabIndex = 16;
+            this.textBoxFizetettOsszeg.Location = new System.Drawing.Point(177, 116);
+            this.textBoxFizetettOsszeg.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFizetettOsszeg.Name = "textBoxFizetettOsszeg";
+            this.textBoxFizetettOsszeg.Size = new System.Drawing.Size(132, 23);
+            this.textBoxFizetettOsszeg.TabIndex = 16;
             // 
             // textBoxPalyazatAZ
             // 
             this.textBoxPalyazatAZ.Enabled = false;
             this.textBoxPalyazatAZ.Location = new System.Drawing.Point(177, 21);
-            this.textBoxPalyazatAZ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPalyazatAZ.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPalyazatAZ.Name = "textBoxPalyazatAZ";
             this.textBoxPalyazatAZ.Size = new System.Drawing.Size(132, 23);
             this.textBoxPalyazatAZ.TabIndex = 14;
@@ -114,42 +114,46 @@
             // 
             // dataGridViewTenyfelhasznalas
             // 
+            this.dataGridViewTenyfelhasznalas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTenyfelhasznalas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTenyfelhasznalas.Location = new System.Drawing.Point(43, 173);
-            this.dataGridViewTenyfelhasznalas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewTenyfelhasznalas.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewTenyfelhasznalas.Name = "dataGridViewTenyfelhasznalas";
             this.dataGridViewTenyfelhasznalas.Size = new System.Drawing.Size(585, 185);
             this.dataGridViewTenyfelhasznalas.TabIndex = 9;
             // 
-            // button1
+            // buttonTorol
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button1.Location = new System.Drawing.Point(440, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Töröl";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonTorol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonTorol.Location = new System.Drawing.Point(440, 116);
+            this.buttonTorol.Name = "buttonTorol";
+            this.buttonTorol.Size = new System.Drawing.Size(90, 23);
+            this.buttonTorol.TabIndex = 18;
+            this.buttonTorol.Text = "Töröl";
+            this.buttonTorol.UseVisualStyleBackColor = true;
+            this.buttonTorol.Click += new System.EventHandler(this.buttonTorol_Click);
             // 
-            // button2
+            // buttonModosit
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button2.Location = new System.Drawing.Point(507, 68);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 23);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Módosít";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonModosit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonModosit.Location = new System.Drawing.Point(507, 68);
+            this.buttonModosit.Name = "buttonModosit";
+            this.buttonModosit.Size = new System.Drawing.Size(90, 23);
+            this.buttonModosit.TabIndex = 19;
+            this.buttonModosit.Text = "Módosít";
+            this.buttonModosit.UseVisualStyleBackColor = true;
+            this.buttonModosit.Click += new System.EventHandler(this.buttonModosit_Click);
             // 
-            // button3
+            // buttonHozzaad
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button3.Location = new System.Drawing.Point(363, 68);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 23);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Hozzáad";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonHozzaad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonHozzaad.Location = new System.Drawing.Point(363, 68);
+            this.buttonHozzaad.Name = "buttonHozzaad";
+            this.buttonHozzaad.Size = new System.Drawing.Size(98, 23);
+            this.buttonHozzaad.TabIndex = 20;
+            this.buttonHozzaad.Text = "Hozzáad";
+            this.buttonHozzaad.UseVisualStyleBackColor = true;
+            this.buttonHozzaad.Click += new System.EventHandler(this.buttonHozzaad_Click);
             // 
             // comboBoxKoltsegTipus
             // 
@@ -166,11 +170,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(666, 371);
             this.Controls.Add(this.comboBoxKoltsegTipus);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBoxModositottOsszeg);
-            this.Controls.Add(this.textBoxOsszeg);
+            this.Controls.Add(this.buttonHozzaad);
+            this.Controls.Add(this.buttonModosit);
+            this.Controls.Add(this.buttonTorol);
+            this.Controls.Add(this.textBoxFizetesDatuma);
+            this.Controls.Add(this.textBoxFizetettOsszeg);
             this.Controls.Add(this.textBoxPalyazatAZ);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -178,9 +182,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewTenyfelhasznalas);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTenyfelhasznalas";
             this.Text = "FormTenyfelhasznalas";
+            this.Load += new System.EventHandler(this.FormTenyfelhasznalas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTenyfelhasznalas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,17 +194,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxModositottOsszeg;
-        private System.Windows.Forms.TextBox textBoxOsszeg;
+        private System.Windows.Forms.TextBox textBoxFizetesDatuma;
+        private System.Windows.Forms.TextBox textBoxFizetettOsszeg;
         private System.Windows.Forms.TextBox textBoxPalyazatAZ;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewTenyfelhasznalas;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonTorol;
+        private System.Windows.Forms.Button buttonModosit;
+        private System.Windows.Forms.Button buttonHozzaad;
         private System.Windows.Forms.ComboBox comboBoxKoltsegTipus;
     }
 }

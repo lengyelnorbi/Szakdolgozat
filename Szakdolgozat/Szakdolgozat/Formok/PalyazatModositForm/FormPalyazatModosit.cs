@@ -36,7 +36,7 @@ namespace Szakdolgozat
         }
         private void FormPalyazatModosit_Load(object sender, EventArgs e)
         {
-
+            palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
         }
 
         private void buttonMentes_Click(object sender, EventArgs e)
@@ -56,10 +56,14 @@ namespace Szakdolgozat
             );
             Azonosito = textBoxPalyazatAzonosito.Text;
             //1. módosítani a listába
-            palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
             palyazatRepo.updatePalyazatInList(Azonosito, modosult);
             //2. módosítani az adatbázisban
             repoSql.updatePalyazatInDatabase(Azonosito, modosult);
+            this.Close();
+        }
+        private void buttonVissza_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

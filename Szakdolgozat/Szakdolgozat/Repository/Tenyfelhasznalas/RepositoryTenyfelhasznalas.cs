@@ -8,10 +8,30 @@ using Szakdolgozat.model;
 
 namespace Szakdolgozat.Repository
 {
-    partial class Repository
+    partial class Tarolo
     {
         List<Tenyfelhasznalas> tenyfelhasznalasok;
 
+        public void deleteTenyfelhasznalasFromList(int id)
+        {
+            Tenyfelhasznalas f = tenyfelhasznalasok.Find(x => x.getId() == id);
+            if (f != null)
+                tenyfelhasznalasok.Remove(f);
+            else
+                throw new RepositoryExceptionCantDelete("A tényfelhasználást nem lehetett törölni.");
+        }
+        public void torolTenyfelhasznalasAzonositokodAlapjan(int id)
+        {
+            tenyfelhasznalasok.RemoveAt(tenyfelhasznalasok.FindIndex(p => p.getId() == id));
+        }
+        public void updateTenyfelhasznalasInList(int id, Tenyfelhasznalas modified)
+        {
+            Tenyfelhasznalas f = tenyfelhasznalasok.Find(x => x.getId() == id);
+            if (f != null)
+                f.update(modified);
+            else
+                throw new RepositoryExceptionCantModified("A tényfelhasználás módosítása nem sikerült");
+        }
         public List<Tenyfelhasznalas> GetTenyfelhasznalas()
         {
             return tenyfelhasznalasok;
@@ -21,31 +41,31 @@ namespace Szakdolgozat.Repository
         {
             this.tenyfelhasznalasok = tenyfelhasznalasok;
         }
-        public DataTable TenyfelhasznalasListToDataTable()
+        public DataTable getTenyfelhasznalasDataTableFromList()
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Azonosító", typeof(int));
-            dt.Columns.Add("Pályázat Azonosító", typeof(string));
-            dt.Columns.Add("Költség Típus Azonosító", typeof(int));
-            dt.Columns.Add("Fizetett Összeg", typeof(float));
-            dt.Columns.Add("Fizetés Dátuma", typeof(string));
+            DataTable tenyfelhasznalasDT = new DataTable();
+            tenyfelhasznalasDT.Columns.Add("Azonosító", typeof(int));
+            tenyfelhasznalasDT.Columns.Add("Pályázat Azonosító", typeof(string));
+            tenyfelhasznalasDT.Columns.Add("Költség Típus", typeof(string));
+            tenyfelhasznalasDT.Columns.Add("Fizetett Összeg", typeof(float));
+            tenyfelhasznalasDT.Columns.Add("Fizetés Dátuma", typeof(string));
             foreach (Tenyfelhasznalas t in tenyfelhasznalasok)
             {
-                dt.Rows.Add(t.getId(), t.getPalyazatAzonosito(), t.getKoltTipusId(), t.getFizetettOsszeg(), t.getFizetesDatuma());
+                tenyfelhasznalasDT.Rows.Add(t.getId(), t.getPalyazatAzonosito(), t.getKoltsegTipus(), t.getFizetettOsszeg(), t.getFizetesDatuma());
             }
-            return dt;
+            return tenyfelhasznalasDT;
         }
-        public void DataTableToTenyfelhasznalasList(DataTable dt)
+        public void fillTenyfelhasznalasListFromDataTable(DataTable tenyfelhasznalasdt)
         {
-            foreach (DataRow row in dt.Rows)
+            foreach (DataRow row in tenyfelhasznalasdt.Rows)
             {
                 int id = Convert.ToInt32(row[0]);
                 string palyazatAzonosito = row[1].ToString();
-                int koltsegTipusId = Convert.ToInt32(row[2]);
+                string koltsegTipus = row[2].ToString();
                 float fizetettOsszeg = Convert.ToSingle(row[3]);
                 string fizetesDatuma = Convert.ToString(row[4]);
 
-                Tenyfelhasznalas t = new Tenyfelhasznalas(id, palyazatAzonosito, koltsegTipusId, fizetettOsszeg, fizetesDatuma);
+                Tenyfelhasznalas t = new Tenyfelhasznalas(id, palyazatAzonosito, koltsegTipus, fizetettOsszeg, fizetesDatuma);
                 tenyfelhasznalasok.Add(t);
             }
         }

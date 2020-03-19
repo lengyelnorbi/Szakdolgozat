@@ -17,7 +17,7 @@ namespace Szakdolgozat.model
                     "', '" +
                     getPalyazatAzonosito() +
                     "', '" +
-                    getKoltTipusId() +
+                    getKoltsegTipus() +
                     "', '" +
                     getFizetettOsszeg() +
                     "', '" +
@@ -25,13 +25,13 @@ namespace Szakdolgozat.model
                     "');";
         }
 
-        public string getUpdate()
+        public string getUpdate(string palyazatAzonosito)
         {
             return
                    "UPDATE `tenyfelhasznalas` SET `Palyazat_Azonosito` = '" +
                    getPalyazatAzonosito() +
                    "', `KoltTip_id` = '" +
-                   getKoltTipusId() +
+                   getKoltsegTipus() +
                    "', `Fizetett_osszeg` = '" +
                    getFizetettOsszeg() +
                    "', `Fizetes_datum` = '" +
@@ -39,10 +39,11 @@ namespace Szakdolgozat.model
                    "' WHERE `tenyfelhasznalas`.`id` = " +
                    id;
         }
-
-        public static string getAllRecord()
+        public static string getTenyfelhasznalasRecords(string palyazatAzonosito)
         {
-            return "SELECT * FROM tenyfelhasznalas";
+            return "SELECT tenyfelhasznalas.id, tenyfelhasznalas.Palyazat_Azonosito, koltseg_tipusok.Koltseg_tipus, tenyfelhasznalas.Fizetett_osszeg, tenyfelhasznalas.Fizetes_datum "
+                + "FROM tenyfelhasznalas INNER JOIN palyazat ON tenyfelhasznalas.Palyazat_Azonosito = palyazat.Azonosito INNER JOIN koltseg_tipusok ON tenyfelhasznalas.KoltTip_id = koltseg_tipusok.id WHERE tenyfelhasznalas.Palyazat_Azonosito = '"
+                + palyazatAzonosito + "' ;";
         }
 
         public static string getDeleteAllRecord()

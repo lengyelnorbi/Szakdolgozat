@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Szakdolgozat.model;
 using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Repository
@@ -12,6 +13,7 @@ namespace Szakdolgozat.Repository
         public Tarolo()
         {
             palyazatok = new List<Palyazat>();
+            tenyfelhasznalasok = new List<Tenyfelhasznalas>();
         }
     }
 }

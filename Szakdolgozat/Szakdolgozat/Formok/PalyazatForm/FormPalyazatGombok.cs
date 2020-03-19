@@ -53,7 +53,7 @@ namespace Szakdolgozat
         {
             if (FormTenyfelhasznalas == null)
             {
-                FormTenyfelhasznalas = new FormTenyfelhasznalas();
+                FormTenyfelhasznalas = new FormTenyfelhasznalas(textBoxAzonosito.Text);
                 FormTenyfelhasznalas.Closed += f_Closed;
                 FormTenyfelhasznalas.Show();
             }

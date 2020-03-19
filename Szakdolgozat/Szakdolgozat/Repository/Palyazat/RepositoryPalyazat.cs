@@ -15,7 +15,6 @@ namespace Szakdolgozat.Repository
 
         public void deletePalyazatFromList(string azonosito)
         {
-            int palyazatCount = palyazatok.Count();
             Palyazat f = palyazatok.Find(x => x.getAzonosito() == azonosito);
             if (f != null)
                 palyazatok.Remove(f);

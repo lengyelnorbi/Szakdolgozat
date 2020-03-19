@@ -74,6 +74,7 @@
             this.buttonVissza.TabIndex = 73;
             this.buttonVissza.Text = "Mégsem";
             this.buttonVissza.UseVisualStyleBackColor = true;
+            this.buttonVissza.Click += new System.EventHandler(this.buttonVissza_Click);
             // 
             // textBoxFelhasznIdoVege
             // 

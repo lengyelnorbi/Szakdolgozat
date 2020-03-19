@@ -21,4 +21,8 @@ AND koltseg_terv.Palyazat_Azonosito = palyazat.Azonosito
 AND palyazat.Azonosito = posztok.Palyazat_Azonosito
 AND posztok.Vezeto_id = vezetok.id AND Azonosito = "LNPTEST0312"
 
+
+SELECT tenyfelhasznalas.id, tenyfelhasznalas.Palyazat_Azonosito, koltseg_tipusok.Koltseg_tipus, tenyfelhasznalas.Fizetett_osszeg, tenyfelhasznalas.Fizetes_datum
+FROM tenyfelhasznalas INNER JOIN palyazat ON tenyfelhasznalas.Palyazat_Azonosito = palyazat.Azonosito INNER JOIN koltseg_tipusok ON tenyfelhasznalas.KoltTip_id = koltseg_tipusok.id WHERE tenyfelhasznalas.Palyazat_Azonosito = "LNPTEST0312"
+
 //A tényfelhasználás tábla elrontja a teljes lekérdezést (összegek lekérdezését stb.)

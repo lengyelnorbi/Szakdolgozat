@@ -10,18 +10,27 @@ namespace Szakdolgozat.model
     {
         private int id;
         private string palyazatAzonosito;
-        private int koltTipusId;
+        private string koltsegTipus;
         private float fizetettOsszeg;
         private string fizetesDatuma;
 
         //Konstruktor
-        public Tenyfelhasznalas(int id, string palyazatAzonosito, int koltTipusId, float fizetettOsszeg, string fizetesDatuma)
+        public Tenyfelhasznalas(int id, string palyazatAzonosito, string koltsegTipus, float fizetettOsszeg, string fizetesDatuma)
         {
             this.palyazatAzonosito = palyazatAzonosito;
             this.id = id;
-            this.koltTipusId = koltTipusId;
+            this.koltsegTipus = koltsegTipus;
             this.fizetettOsszeg = fizetettOsszeg;
             this.fizetesDatuma = fizetesDatuma;
+        }
+
+        public void update(Tenyfelhasznalas modified)
+        {
+            this.palyazatAzonosito = modified.palyazatAzonosito;
+            this.id = modified.id;
+            this.koltsegTipus = modified.koltsegTipus;
+            this.fizetettOsszeg = modified.fizetettOsszeg;
+            this.fizetesDatuma = modified.fizetesDatuma;
         }
 
         //Setterek kezdete
@@ -35,9 +44,9 @@ namespace Szakdolgozat.model
             this.palyazatAzonosito = palyazatAzonosito;
         }
 
-        public void setKoltTipusId(int koltTipusId)
+        public void setKoltsegTipus(string koltsegTipus)
         {
-            this.koltTipusId = koltTipusId;
+            this.koltsegTipus = koltsegTipus;
         }
 
         public void setFizetettOsszeg(float fizetettOsszeg)
@@ -62,9 +71,9 @@ namespace Szakdolgozat.model
             return palyazatAzonosito;
         }
 
-        public int getKoltTipusId()
+        public string getKoltsegTipus()
         {
-            return koltTipusId;
+            return koltsegTipus;
         }
 
         public float getFizetettOsszeg()
