@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonTenyfelhasznMentes = new System.Windows.Forms.Button();
-            this.buttonTenyfelhasznalasModositForm = new System.Windows.Forms.Button();
+            this.buttonMegsem = new System.Windows.Forms.Button();
             this.textBoxFizetesDatuma = new System.Windows.Forms.TextBox();
             this.textBoxFizetettOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxPalyazatAZ = new System.Windows.Forms.TextBox();
@@ -51,16 +51,16 @@
             this.buttonTenyfelhasznMentes.UseVisualStyleBackColor = true;
             this.buttonTenyfelhasznMentes.Click += new System.EventHandler(this.buttonTenyfelhasznMentes_Click);
             // 
-            // buttonTenyfelhasznalasModositForm
+            // buttonMegsem
             // 
-            this.buttonTenyfelhasznalasModositForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonTenyfelhasznalasModositForm.Location = new System.Drawing.Point(214, 214);
-            this.buttonTenyfelhasznalasModositForm.Name = "buttonTenyfelhasznalasModositForm";
-            this.buttonTenyfelhasznalasModositForm.Size = new System.Drawing.Size(90, 23);
-            this.buttonTenyfelhasznalasModositForm.TabIndex = 34;
-            this.buttonTenyfelhasznalasModositForm.Text = "Mégse";
-            this.buttonTenyfelhasznalasModositForm.UseVisualStyleBackColor = true;
-            this.buttonTenyfelhasznalasModositForm.Click += new System.EventHandler(this.buttonTenyfelhasznalasModositForm_Click);
+            this.buttonMegsem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonMegsem.Location = new System.Drawing.Point(214, 214);
+            this.buttonMegsem.Name = "buttonMegsem";
+            this.buttonMegsem.Size = new System.Drawing.Size(90, 23);
+            this.buttonMegsem.TabIndex = 34;
+            this.buttonMegsem.Text = "Mégse";
+            this.buttonMegsem.UseVisualStyleBackColor = true;
+            this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
             // 
             // textBoxFizetesDatuma
             // 
@@ -155,7 +155,7 @@
             this.ClientSize = new System.Drawing.Size(335, 264);
             this.Controls.Add(this.comboBoxKoltsegTipus);
             this.Controls.Add(this.buttonTenyfelhasznMentes);
-            this.Controls.Add(this.buttonTenyfelhasznalasModositForm);
+            this.Controls.Add(this.buttonMegsem);
             this.Controls.Add(this.textBoxFizetesDatuma);
             this.Controls.Add(this.textBoxFizetettOsszeg);
             this.Controls.Add(this.textBoxPalyazatAZ);
@@ -173,7 +173,7 @@
 
         #endregion
         private System.Windows.Forms.Button buttonTenyfelhasznMentes;
-        private System.Windows.Forms.Button buttonTenyfelhasznalasModositForm;
+        private System.Windows.Forms.Button buttonMegsem;
         private System.Windows.Forms.TextBox textBoxFizetesDatuma;
         private System.Windows.Forms.TextBox textBoxFizetettOsszeg;
         private System.Windows.Forms.TextBox textBoxPalyazatAZ;

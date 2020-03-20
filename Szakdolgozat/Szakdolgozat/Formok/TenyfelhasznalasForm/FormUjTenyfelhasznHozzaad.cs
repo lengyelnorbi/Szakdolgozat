@@ -15,21 +15,17 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
     public partial class FormUjTenyfelhasznHozzaad : Form
     {
         private Tarolo tenyfelhasznalasRepo = new Tarolo();
-        private DataTable tenyfelhasznalasDT = new DataTable();
         RepositoryDatabaseTableTenyfelhasznalasSQL repoSql = new RepositoryDatabaseTableTenyfelhasznalasSQL();
         public FormUjTenyfelhasznHozzaad(string palyazatAZ)
         {
             InitializeComponent();
             textBoxPalyazatAZ.Text = palyazatAZ;
         }
-
-        private void FormUjTenyfelhasznHozzaad_Load(object sender, EventArgs e)
-        {
-        }
-
         private void buttonMegsem_Click(object sender, EventArgs e)
         {
+            FormTenyfelhasznalas tenyfelhasznalas = new FormTenyfelhasznalas(textBoxPalyazatAZ.Text);
             this.Close();
+            tenyfelhasznalas.ShowDialog();
         }
 
         private void buttonTenyfelhasznalasLetrehoz_Click(object sender, EventArgs e)

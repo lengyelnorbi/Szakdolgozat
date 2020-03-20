@@ -11,14 +11,14 @@ namespace Szakdolgozat.model
         public string getInsert()
         {
             return "INSERT INTO `koltseg_terv`" +
-                    "(`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_penzosszeg`, `Modositott_penzosszeg`)" +
+                    "(`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_osszeg`, `Modositott_osszeg`)" +
                     "VALUES ('" +
-                    id +
+                    getId() +
                     "', '" +
                     getPalyazatAzonosito() +
-                    "', '" +
-                    getKoltsegTipus() +
-                    "', '" +
+                    "', " +
+                    "(SELECT koltseg_tipusok.id FROM koltseg_tipusok WHERE koltseg_tipusok.Koltseg_tipus = '" + getKoltsegTipus() +
+                    "'), '" +
                     getTervezettOsszeg() +
                     "', '" +
                     getModositottOsszeg() +
@@ -45,6 +45,11 @@ namespace Szakdolgozat.model
             return "SELECT koltseg_terv.id, koltseg_terv.Palyazat_Azonosito, koltseg_tipusok.Koltseg_tipus, koltseg_terv.Tervezett_osszeg, koltseg_terv.Modositott_osszeg "
                 + "FROM koltseg_terv INNER JOIN palyazat ON koltseg_terv.Palyazat_Azonosito = palyazat.Azonosito INNER JOIN koltseg_tipusok ON koltseg_terv.KoltTip_id = koltseg_tipusok.id WHERE koltseg_terv.Palyazat_Azonosito = '"
                 + palyazatAzonosito + "' ;";
+        }
+
+        public static string getLegnagyobbKoltsegTervID()
+        {
+            return "SELECT koltseg_terv.id FROM koltseg_terv ORDER BY koltseg_terv.id";
         }
     }
 }

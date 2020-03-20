@@ -48,7 +48,7 @@ namespace Szakdolgozat.model
 
         public static string getLegnagyobbTenyfelhasznalasID()
         {
-            return "SELECT tenyfelhasznalas.id FROM tenyfelhasznalas ORDER BY tenyfelhasznalas.id DESC LIMIT 1";
+            return "SELECT tenyfelhasznalas.id FROM tenyfelhasznalas ORDER BY tenyfelhasznalas.id";
         }
     }
 }

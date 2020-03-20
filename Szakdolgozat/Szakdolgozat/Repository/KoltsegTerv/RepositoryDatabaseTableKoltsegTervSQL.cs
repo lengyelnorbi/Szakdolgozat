@@ -94,7 +94,36 @@ namespace Szakdolgozat.Repository
             }
         }
 
-        public void insertKoltsegTervToDatabase(KoltsegTerv ujKoltsegTerv)
+        public int getKoltsegTervID()
+        {
+            int legnagyobbID;
+            List<int> id = new List<int>();
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = KoltsegTerv.getLegnagyobbKoltsegTervID();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    int koltsegTervID = Convert.ToInt32(dr["id"]);
+                    id.Add(koltsegTervID);
+                }
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                throw new RepositoryException("A legnagyobb költségterv id lekérése nem sikerült az adatbázisból nem sikerült!");
+            }
+            legnagyobbID = id.Max();
+            return legnagyobbID;
+        }
+
+        public void insertKoltsegTervIntoDatabase(KoltsegTerv ujKoltsegTerv)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try

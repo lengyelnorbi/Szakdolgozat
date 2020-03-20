@@ -26,13 +26,6 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
             textBoxFizetesDatuma.Text = datum;
             tenyfelhasznID = Convert.ToInt32(id);
         }
-
-        private void buttonTenyfelhasznalasModositForm_Click(object sender, EventArgs e)
-        {
-            FormTenyfelhasznalas tenyfelhasznalas = new FormTenyfelhasznalas(textBoxPalyazatAZ.Text);
-            this.Close();
-            tenyfelhasznalas.ShowDialog();
-        }
         private void FormTenyfelhasznalasModosit_Load(object sender, EventArgs e)
         {
             tenyfelhasznalasRepo.setTenyfelhasznalas(repoSql.getTenyfelhasznalasFromDatabaseTable(textBoxPalyazatAZ.Text));
@@ -52,5 +45,13 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
             this.Close();
             tenyfelhasznalas.ShowDialog();
         }
+
+        private void buttonMegsem_Click(object sender, EventArgs e)
+        {
+            FormTenyfelhasznalas tenyfelhasznalas = new FormTenyfelhasznalas(textBoxPalyazatAZ.Text);
+            this.Close();
+            tenyfelhasznalas.ShowDialog();
+        }
+            
     }
 }

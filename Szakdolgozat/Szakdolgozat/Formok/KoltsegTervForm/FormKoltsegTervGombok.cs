@@ -16,10 +16,12 @@ namespace Szakdolgozat
     public partial class FormKoltsegTerv : Form
     {
         private FormKoltsegTervModosit koltsegTervModosit;
+        private FormUjKoltsegTervHozzaad ujKoltsegTervHozzaad;
 
         void f_Closed(object sender, EventArgs e)
         {
             koltsegTervModosit = null;
+            ujKoltsegTervHozzaad = null;
         }
         private void buttonKoltsegTervModositForm_Click(object sender, EventArgs e)
         {
@@ -28,6 +30,16 @@ namespace Szakdolgozat
                 koltsegTervModosit = new FormKoltsegTervModosit(dataGridViewKoltsegTerv.SelectedRows[0].Cells[0].Value.ToString(), textBoxPalyazatAZ.Text, comboBoxKoltsegTipus.Text, textBoxTervezettOsszeg.Text, textBoxModositottOsszeg.Text);
                 koltsegTervModosit.Closed += f_Closed;
                 koltsegTervModosit.Show();
+                this.Close();
+            }
+        }
+        private void buttonUjKoltsegTervForm_Click(object sender, EventArgs e)
+        {
+            if (ujKoltsegTervHozzaad == null)
+            {
+                ujKoltsegTervHozzaad = new FormUjKoltsegTervHozzaad(palyazatAzonosito);
+                ujKoltsegTervHozzaad.Closed += f_Closed;
+                ujKoltsegTervHozzaad.Show();
                 this.Close();
             }
         }
@@ -71,7 +83,6 @@ namespace Szakdolgozat
                 //beallitFutarDataGriViewt();
             }
         }
-
         private void buttonVissza_Click(object sender, EventArgs e)
         {
             this.Close();

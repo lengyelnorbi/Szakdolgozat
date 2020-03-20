@@ -42,6 +42,19 @@ namespace Szakdolgozat.Repository
         {
             this.koltsegtervek = koltsegtervek;
         }
+
+        public void koltsegTervHozzaadListahoz(KoltsegTerv ujKoltsegTerv)
+        {
+            try
+            {
+                koltsegtervek.Add(ujKoltsegTerv);
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryExceptionCantAdd("A tényfelhasználás hozzáadása nem sikerült");
+            }
+        }
+
         public DataTable getKoltsegTervDataTableFromList()
         {
             DataTable koltsegtervDT = new DataTable();

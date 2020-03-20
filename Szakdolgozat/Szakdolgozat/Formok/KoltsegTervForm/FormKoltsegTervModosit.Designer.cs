@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxModositottOsszeg = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonVissza = new System.Windows.Forms.Button();
+            this.buttonMegsem = new System.Windows.Forms.Button();
             this.buttonKoltsegTervMentes = new System.Windows.Forms.Button();
             this.comboBoxKoltsegTipus = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -102,16 +102,16 @@
             this.label3.TabIndex = 31;
             this.label3.Text = "Módosított összeg:";
             // 
-            // buttonVissza
+            // buttonMegsem
             // 
-            this.buttonVissza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonVissza.Location = new System.Drawing.Point(176, 222);
-            this.buttonVissza.Name = "buttonVissza";
-            this.buttonVissza.Size = new System.Drawing.Size(101, 23);
-            this.buttonVissza.TabIndex = 34;
-            this.buttonVissza.Text = "Vissza";
-            this.buttonVissza.UseVisualStyleBackColor = true;
-            this.buttonVissza.Click += new System.EventHandler(this.buttonVissza_Click);
+            this.buttonMegsem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonMegsem.Location = new System.Drawing.Point(176, 222);
+            this.buttonMegsem.Name = "buttonMegsem";
+            this.buttonMegsem.Size = new System.Drawing.Size(101, 23);
+            this.buttonMegsem.TabIndex = 34;
+            this.buttonMegsem.Text = "Mégsem";
+            this.buttonMegsem.UseVisualStyleBackColor = true;
+            this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
             // 
             // buttonKoltsegTervMentes
             // 
@@ -146,7 +146,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(310, 283);
             this.Controls.Add(this.comboBoxKoltsegTipus);
-            this.Controls.Add(this.buttonVissza);
+            this.Controls.Add(this.buttonMegsem);
             this.Controls.Add(this.buttonKoltsegTervMentes);
             this.Controls.Add(this.textBoxModositottOsszeg);
             this.Controls.Add(this.label3);
@@ -171,7 +171,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxModositottOsszeg;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonVissza;
+        private System.Windows.Forms.Button buttonMegsem;
         private System.Windows.Forms.Button buttonKoltsegTervMentes;
         private System.Windows.Forms.ComboBox comboBoxKoltsegTipus;
     }

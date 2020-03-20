@@ -36,7 +36,7 @@
             this.textBoxPalyazatAZ = new System.Windows.Forms.TextBox();
             this.textBoxTervezettOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxModositottOsszeg = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonUjKoltsegTervForm = new System.Windows.Forms.Button();
             this.buttonKoltsegTervModositForm = new System.Windows.Forms.Button();
             this.buttonKoltsegTervTorol = new System.Windows.Forms.Button();
             this.buttonVissza = new System.Windows.Forms.Button();
@@ -116,15 +116,16 @@
             this.textBoxModositottOsszeg.Size = new System.Drawing.Size(100, 20);
             this.textBoxModositottOsszeg.TabIndex = 8;
             // 
-            // button3
+            // buttonUjKoltsegTervForm
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button3.Location = new System.Drawing.Point(317, 69);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 23);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Hozzáad";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonUjKoltsegTervForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonUjKoltsegTervForm.Location = new System.Drawing.Point(317, 69);
+            this.buttonUjKoltsegTervForm.Name = "buttonUjKoltsegTervForm";
+            this.buttonUjKoltsegTervForm.Size = new System.Drawing.Size(98, 23);
+            this.buttonUjKoltsegTervForm.TabIndex = 23;
+            this.buttonUjKoltsegTervForm.Text = "Hozzáad";
+            this.buttonUjKoltsegTervForm.UseVisualStyleBackColor = true;
+            this.buttonUjKoltsegTervForm.Click += new System.EventHandler(this.buttonUjKoltsegTervForm_Click);
             // 
             // buttonKoltsegTervModositForm
             // 
@@ -184,7 +185,7 @@
             this.ClientSize = new System.Drawing.Size(592, 370);
             this.Controls.Add(this.comboBoxKoltsegTipus);
             this.Controls.Add(this.buttonVissza);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonUjKoltsegTervForm);
             this.Controls.Add(this.buttonKoltsegTervModositForm);
             this.Controls.Add(this.buttonKoltsegTervTorol);
             this.Controls.Add(this.textBoxModositottOsszeg);
@@ -214,7 +215,7 @@
         private System.Windows.Forms.TextBox textBoxPalyazatAZ;
         private System.Windows.Forms.TextBox textBoxTervezettOsszeg;
         private System.Windows.Forms.TextBox textBoxModositottOsszeg;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonUjKoltsegTervForm;
         private System.Windows.Forms.Button buttonKoltsegTervModositForm;
         private System.Windows.Forms.Button buttonKoltsegTervTorol;
         private System.Windows.Forms.Button buttonVissza;

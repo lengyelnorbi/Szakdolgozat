@@ -62,6 +62,12 @@
     <Compile Include="Formok\KoltsegTervForm\FormKoltsegTervModosit.Designer.cs">
       <DependentUpon>FormKoltsegTervModosit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formok\KoltsegTervForm\FormUjKoltsegTervHozzaad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\KoltsegTervForm\FormUjKoltsegTervHozzaad.Designer.cs">
+      <DependentUpon>FormUjKoltsegTervHozzaad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formok\PalyazatForm\FormPalyazatGombok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\KoltsegTervForm\FormKoltsegTervModosit.resx">
       <DependentUpon>FormKoltsegTervModosit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formok\KoltsegTervForm\FormUjKoltsegTervHozzaad.resx">
+      <DependentUpon>FormUjKoltsegTervHozzaad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\PalyazatForm\FormPalyazat.resx">
       <DependentUpon>FormPalyazat.cs</DependentUpon>
