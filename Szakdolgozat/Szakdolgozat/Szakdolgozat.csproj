@@ -136,6 +136,7 @@
     <Compile Include="Repository\Poszt\RepositoryPoszt.cs" />
     <Compile Include="Repository\Tarolo.cs" />
     <Compile Include="Repository\Tenyfelhasznalas\RepositoryDatabaseTableTenyfelhasznalasSQL.cs" />
+    <Compile Include="Exceptions\RepositoryExceptionCantAdd.cs" />
     <Compile Include="Repository\Tenyfelhasznalas\RepositoryTenyfelhasznalasRecordModify.cs" />
     <Compile Include="Repository\Tenyfelhasznalas\RepositoryTenyfelhasznalas.cs" />
     <Compile Include="Repository\Vezeto\RepositoryVezeto.cs" />
@@ -153,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalasModosit.resx">
       <DependentUpon>FormTenyfelhasznalasModosit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formok\TenyfelhasznalasForm\FormUjTenyfelhasznHozzaad.resx">
+      <DependentUpon>FormUjTenyfelhasznHozzaad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\UjPalyazatForm\FormPalyazatUjHozzaad.resx">
       <DependentUpon>FormPalyazatUjHozzaad.cs</DependentUpon>

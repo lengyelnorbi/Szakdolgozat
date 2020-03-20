@@ -7,14 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.model;
+using Szakdolgozat.Repository;
 
 namespace Szakdolgozat.Formok.TenyfelhasznalasForm
 {
     public partial class FormUjTenyfelhasznHozzaad : Form
     {
-        public FormUjTenyfelhasznHozzaad()
+        private Tarolo tenyfelhasznalasRepo = new Tarolo();
+        private DataTable tenyfelhasznalasDT = new DataTable();
+        RepositoryDatabaseTableTenyfelhasznalasSQL repoSql = new RepositoryDatabaseTableTenyfelhasznalasSQL();
+        public FormUjTenyfelhasznHozzaad(string palyazatAZ)
         {
             InitializeComponent();
+            textBoxPalyazatAZ.Text = palyazatAZ;
+        }
+
+        private void FormUjTenyfelhasznHozzaad_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void buttonMegsem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonTenyfelhasznalasLetrehoz_Click(object sender, EventArgs e)
+        {
+            int id = repoSql.getTenyfelhasznalasID() + 1;
+            Tenyfelhasznalas ujTenyfelhasznalas = new Tenyfelhasznalas(id, textBoxPalyazatAZ.Text, comboBoxKoltsegTipus.Text, Convert.ToSingle(textBoxFizetettOsszeg.Text), textBoxFizetesDatuma.Text);
+
+            tenyfelhasznalasRepo.tenyfelhasznalasHozzaadListahoz(ujTenyfelhasznalas);
+
+            repoSql.insertTenyfelhasznalasIntoDatabase(ujTenyfelhasznalas);
+
+            FormTenyfelhasznalas tenyfelhasznalas = new FormTenyfelhasznalas(textBoxPalyazatAZ.Text);
+            this.Close();
+            tenyfelhasznalas.ShowDialog();
         }
     }
 }

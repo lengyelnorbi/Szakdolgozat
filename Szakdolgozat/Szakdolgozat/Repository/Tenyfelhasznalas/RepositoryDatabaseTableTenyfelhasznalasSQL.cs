@@ -22,6 +22,33 @@ namespace Szakdolgozat.Repository
             connectionString = cs.getConnectionString();
         }
 
+        public int getTenyfelhasznalasID()
+        {
+            int legnagyobbID;
+            List<int> id = new List<int>();
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = Tenyfelhasznalas.getLegnagyobbTenyfelhasznalasID();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                while (dr.Read()) {
+                    int tenyfelhasznalasID = Convert.ToInt32(dr["id"]);
+                    id.Add(tenyfelhasznalasID);
+                }
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                throw new RepositoryException("A legnagyobb tényfelhasználás id lekérése nem sikerült az adatbázisból nem sikerült!");
+            }
+            legnagyobbID = id.Max();
+            return legnagyobbID;
+        }
         public List<Tenyfelhasznalas> getTenyfelhasznalasFromDatabaseTable(string Azonosito)
         {
             List<Tenyfelhasznalas> tenyfelhasznalas = new List<Tenyfelhasznalas>();
@@ -94,13 +121,13 @@ namespace Szakdolgozat.Repository
             }
         }
 
-        public void insertPalyazatToDatabase(Palyazat ujPalyazat)
+        public void insertTenyfelhasznalasIntoDatabase(Tenyfelhasznalas ujTenyfelhasznalas)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = ujPalyazat.getInsert();
+                string query = ujTenyfelhasznalas.getInsert();
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -109,8 +136,8 @@ namespace Szakdolgozat.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine(ujPalyazat + " palyazat beszúrása adatbázisba nem sikerült.");
-                throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
+                Debug.WriteLine(ujTenyfelhasznalas + " tényfelhasználás beszúrása adatbázisba nem sikerült.");
+                throw new RepositoryException("Sikertelen beszúrás az adatbázisba.");
             }
         }
     }

@@ -32,6 +32,17 @@ namespace Szakdolgozat.Repository
             else
                 throw new RepositoryExceptionCantModified("A tényfelhasználás módosítása nem sikerült");
         }
+        public void tenyfelhasznalasHozzaadListahoz(Tenyfelhasznalas ujTenyfelhasznalas)
+        {
+            try
+            {
+                tenyfelhasznalasok.Add(ujTenyfelhasznalas);
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryExceptionCantAdd("A tényfelhasználás hozzáadása nem sikerült");
+            }
+        }
         public List<Tenyfelhasznalas> GetTenyfelhasznalas()
         {
             return tenyfelhasznalasok;

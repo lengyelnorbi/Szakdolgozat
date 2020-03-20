@@ -38,9 +38,10 @@ namespace Szakdolgozat
         {
             if (FormUjTenyfelhasznHozzaad == null)
             {
-                FormUjTenyfelhasznHozzaad = new FormUjTenyfelhasznHozzaad();
+                FormUjTenyfelhasznHozzaad = new FormUjTenyfelhasznHozzaad(Azonosito);
                 FormUjTenyfelhasznHozzaad.Closed += f_Closed;
                 FormUjTenyfelhasznHozzaad.Show();
+                this.Close();
             }
         }
 

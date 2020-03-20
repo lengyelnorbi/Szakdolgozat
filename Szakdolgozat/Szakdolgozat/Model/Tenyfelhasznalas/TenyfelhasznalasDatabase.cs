@@ -13,12 +13,12 @@ namespace Szakdolgozat.model
             return "INSERT INTO `tenyfelhasznalas`" +
                     "(`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Fizetett_osszeg`, `Fizetes_datum`)" +
                     "VALUES ('" +
-                    id +
+                    getId() +
                     "', '" +
                     getPalyazatAzonosito() +
-                    "', '" +
-                    getKoltsegTipus() +
-                    "', '" +
+                    "', " +
+                    "(SELECT koltseg_tipusok.id FROM koltseg_tipusok WHERE koltseg_tipusok.Koltseg_tipus = '" + getKoltsegTipus() +
+                    "'), '" +
                     getFizetettOsszeg() +
                     "', '" +
                     getFizetesDatuma() +
@@ -46,9 +46,9 @@ namespace Szakdolgozat.model
                 + palyazatAzonosito + "' ;";
         }
 
-        public static string getDeleteAllRecord()
+        public static string getLegnagyobbTenyfelhasznalasID()
         {
-            return "DELETE FROM tenyfelhasznalas";
+            return "SELECT tenyfelhasznalas.id FROM tenyfelhasznalas ORDER BY tenyfelhasznalas.id DESC LIMIT 1";
         }
     }
 }
