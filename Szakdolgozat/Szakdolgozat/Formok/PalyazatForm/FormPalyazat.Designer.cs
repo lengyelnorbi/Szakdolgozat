@@ -61,6 +61,7 @@
             this.textBoxPenzugyiVezeto = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxSzakmaiVezeto = new System.Windows.Forms.TextBox();
+            this.buttonDataTableFrissit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPalyazatok)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,7 +156,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(62, 204);
+            this.label8.Location = new System.Drawing.Point(62, 201);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 17);
             this.label8.TabIndex = 12;
@@ -299,9 +300,9 @@
             // buttonPalyazatUjPalyazatForm
             // 
             this.buttonPalyazatUjPalyazatForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonPalyazatUjPalyazatForm.Location = new System.Drawing.Point(1253, 35);
+            this.buttonPalyazatUjPalyazatForm.Location = new System.Drawing.Point(1195, 31);
             this.buttonPalyazatUjPalyazatForm.Name = "buttonPalyazatUjPalyazatForm";
-            this.buttonPalyazatUjPalyazatForm.Size = new System.Drawing.Size(163, 23);
+            this.buttonPalyazatUjPalyazatForm.Size = new System.Drawing.Size(103, 23);
             this.buttonPalyazatUjPalyazatForm.TabIndex = 30;
             this.buttonPalyazatUjPalyazatForm.Text = "Új pályázat";
             this.buttonPalyazatUjPalyazatForm.UseVisualStyleBackColor = true;
@@ -310,9 +311,9 @@
             // buttonPalyazatTorol
             // 
             this.buttonPalyazatTorol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonPalyazatTorol.Location = new System.Drawing.Point(1253, 73);
+            this.buttonPalyazatTorol.Location = new System.Drawing.Point(1195, 90);
             this.buttonPalyazatTorol.Name = "buttonPalyazatTorol";
-            this.buttonPalyazatTorol.Size = new System.Drawing.Size(163, 23);
+            this.buttonPalyazatTorol.Size = new System.Drawing.Size(103, 23);
             this.buttonPalyazatTorol.TabIndex = 31;
             this.buttonPalyazatTorol.Text = "Töröl";
             this.buttonPalyazatTorol.UseVisualStyleBackColor = true;
@@ -321,9 +322,9 @@
             // buttonPalyazatModositForm
             // 
             this.buttonPalyazatModositForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonPalyazatModositForm.Location = new System.Drawing.Point(1253, 107);
+            this.buttonPalyazatModositForm.Location = new System.Drawing.Point(1313, 31);
             this.buttonPalyazatModositForm.Name = "buttonPalyazatModositForm";
-            this.buttonPalyazatModositForm.Size = new System.Drawing.Size(163, 23);
+            this.buttonPalyazatModositForm.Size = new System.Drawing.Size(103, 23);
             this.buttonPalyazatModositForm.TabIndex = 32;
             this.buttonPalyazatModositForm.Text = "Módosít";
             this.buttonPalyazatModositForm.UseVisualStyleBackColor = true;
@@ -338,7 +339,7 @@
             "Társadalom tudomány",
             "Természet tudomány",
             "Informatika"});
-            this.comboBoxTudomanyterulet.Location = new System.Drawing.Point(211, 204);
+            this.comboBoxTudomanyterulet.Location = new System.Drawing.Point(211, 201);
             this.comboBoxTudomanyterulet.Name = "comboBoxTudomanyterulet";
             this.comboBoxTudomanyterulet.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTudomanyterulet.TabIndex = 33;
@@ -371,7 +372,7 @@
             this.textBoxPenzugyiVezeto.Enabled = false;
             this.textBoxPenzugyiVezeto.Location = new System.Drawing.Point(995, 90);
             this.textBoxPenzugyiVezeto.Name = "textBoxPenzugyiVezeto";
-            this.textBoxPenzugyiVezeto.Size = new System.Drawing.Size(222, 20);
+            this.textBoxPenzugyiVezeto.Size = new System.Drawing.Size(172, 20);
             this.textBoxPenzugyiVezeto.TabIndex = 36;
             // 
             // label12
@@ -389,8 +390,19 @@
             this.textBoxSzakmaiVezeto.Enabled = false;
             this.textBoxSzakmaiVezeto.Location = new System.Drawing.Point(995, 35);
             this.textBoxSzakmaiVezeto.Name = "textBoxSzakmaiVezeto";
-            this.textBoxSzakmaiVezeto.Size = new System.Drawing.Size(222, 20);
+            this.textBoxSzakmaiVezeto.Size = new System.Drawing.Size(172, 20);
             this.textBoxSzakmaiVezeto.TabIndex = 38;
+            // 
+            // buttonDataTableFrissit
+            // 
+            this.buttonDataTableFrissit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonDataTableFrissit.Location = new System.Drawing.Point(1313, 90);
+            this.buttonDataTableFrissit.Name = "buttonDataTableFrissit";
+            this.buttonDataTableFrissit.Size = new System.Drawing.Size(103, 23);
+            this.buttonDataTableFrissit.TabIndex = 39;
+            this.buttonDataTableFrissit.Text = "Frissít";
+            this.buttonDataTableFrissit.UseVisualStyleBackColor = true;
+            this.buttonDataTableFrissit.Click += new System.EventHandler(this.buttonDataTableFrissit_Click);
             // 
             // FormPalyazat
             // 
@@ -398,6 +410,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1438, 622);
+            this.Controls.Add(this.buttonDataTableFrissit);
             this.Controls.Add(this.textBoxSzakmaiVezeto);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBoxPenzugyiVezeto);
@@ -475,6 +488,7 @@
         private System.Windows.Forms.TextBox textBoxPenzugyiVezeto;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxSzakmaiVezeto;
+        private System.Windows.Forms.Button buttonDataTableFrissit;
     }
 }
 

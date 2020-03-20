@@ -11,15 +11,15 @@ using System.Diagnostics;
 
 namespace Szakdolgozat.Repository
 {
-    partial class RepositoryDatabaseTableTenyfelhasznalasSQL
+    partial class RepositoryDatabaseTableKoltsegTervSQL
     {
-        public void torolTenyfelhasznalasAzonositokodAlapjan(int id)
+        public void torolKoltsegTervAzonositokodAlapjan(int id)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = "DELETE FROM `tenyfelhasznalas` WHERE id=" + id;
+                string query = "DELETE FROM `koltseg_terv` WHERE id=" + id;
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

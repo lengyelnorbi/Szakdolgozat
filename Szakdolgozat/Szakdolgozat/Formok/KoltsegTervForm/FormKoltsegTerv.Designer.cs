@@ -34,11 +34,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxPalyazatAZ = new System.Windows.Forms.TextBox();
-            this.textBoxOsszeg = new System.Windows.Forms.TextBox();
+            this.textBoxTervezettOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxModositottOsszeg = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonKoltsegTervModositForm = new System.Windows.Forms.Button();
+            this.buttonKoltsegTervTorol = new System.Windows.Forms.Button();
+            this.buttonVissza = new System.Windows.Forms.Button();
             this.comboBoxKoltsegTipus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKoltsegTerv)).BeginInit();
             this.SuspendLayout();
@@ -87,9 +88,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.Location = new System.Drawing.Point(39, 116);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.Size = new System.Drawing.Size(121, 17);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Összeg:";
+            this.label4.Text = "Tervezett összeg:";
             // 
             // textBoxPalyazatAZ
             // 
@@ -99,15 +100,17 @@
             this.textBoxPalyazatAZ.Size = new System.Drawing.Size(100, 20);
             this.textBoxPalyazatAZ.TabIndex = 5;
             // 
-            // textBoxOsszeg
+            // textBoxTervezettOsszeg
             // 
-            this.textBoxOsszeg.Location = new System.Drawing.Point(175, 116);
-            this.textBoxOsszeg.Name = "textBoxOsszeg";
-            this.textBoxOsszeg.Size = new System.Drawing.Size(100, 20);
-            this.textBoxOsszeg.TabIndex = 7;
+            this.textBoxTervezettOsszeg.Enabled = false;
+            this.textBoxTervezettOsszeg.Location = new System.Drawing.Point(175, 116);
+            this.textBoxTervezettOsszeg.Name = "textBoxTervezettOsszeg";
+            this.textBoxTervezettOsszeg.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTervezettOsszeg.TabIndex = 7;
             // 
             // textBoxModositottOsszeg
             // 
+            this.textBoxModositottOsszeg.Enabled = false;
             this.textBoxModositottOsszeg.Location = new System.Drawing.Point(457, 24);
             this.textBoxModositottOsszeg.Name = "textBoxModositottOsszeg";
             this.textBoxModositottOsszeg.Size = new System.Drawing.Size(100, 20);
@@ -123,33 +126,55 @@
             this.button3.Text = "Hozzáad";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonKoltsegTervModositForm
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button2.Location = new System.Drawing.Point(457, 69);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Módosít";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonKoltsegTervModositForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonKoltsegTervModositForm.Location = new System.Drawing.Point(457, 69);
+            this.buttonKoltsegTervModositForm.Name = "buttonKoltsegTervModositForm";
+            this.buttonKoltsegTervModositForm.Size = new System.Drawing.Size(98, 23);
+            this.buttonKoltsegTervModositForm.TabIndex = 22;
+            this.buttonKoltsegTervModositForm.Text = "Módosít";
+            this.buttonKoltsegTervModositForm.UseVisualStyleBackColor = true;
+            this.buttonKoltsegTervModositForm.Click += new System.EventHandler(this.buttonKoltsegTervModositForm_Click);
             // 
-            // button1
+            // buttonKoltsegTervTorol
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button1.Location = new System.Drawing.Point(389, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Töröl";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonKoltsegTervTorol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonKoltsegTervTorol.Location = new System.Drawing.Point(317, 116);
+            this.buttonKoltsegTervTorol.Name = "buttonKoltsegTervTorol";
+            this.buttonKoltsegTervTorol.Size = new System.Drawing.Size(98, 23);
+            this.buttonKoltsegTervTorol.TabIndex = 21;
+            this.buttonKoltsegTervTorol.Text = "Töröl";
+            this.buttonKoltsegTervTorol.UseVisualStyleBackColor = true;
+            this.buttonKoltsegTervTorol.Click += new System.EventHandler(this.buttonKoltsegTervTorol_Click);
+            // 
+            // buttonVissza
+            // 
+            this.buttonVissza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonVissza.Location = new System.Drawing.Point(457, 116);
+            this.buttonVissza.Name = "buttonVissza";
+            this.buttonVissza.Size = new System.Drawing.Size(98, 23);
+            this.buttonVissza.TabIndex = 25;
+            this.buttonVissza.Text = "Vissza";
+            this.buttonVissza.UseVisualStyleBackColor = true;
+            this.buttonVissza.Click += new System.EventHandler(this.buttonVissza_Click);
             // 
             // comboBoxKoltsegTipus
             // 
+            this.comboBoxKoltsegTipus.Enabled = false;
             this.comboBoxKoltsegTipus.FormattingEnabled = true;
+            this.comboBoxKoltsegTipus.Items.AddRange(new object[] {
+            "Bérköltség",
+            "Járulék",
+            "Szakmai anyag",
+            "Szolgáltatás",
+            "Rezsi",
+            "Tárgyi eszköz",
+            "Beruházás/Felújítás"});
             this.comboBoxKoltsegTipus.Location = new System.Drawing.Point(175, 71);
             this.comboBoxKoltsegTipus.Name = "comboBoxKoltsegTipus";
             this.comboBoxKoltsegTipus.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxKoltsegTipus.TabIndex = 24;
+            this.comboBoxKoltsegTipus.TabIndex = 26;
             // 
             // FormKoltsegTerv
             // 
@@ -158,11 +183,12 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(592, 370);
             this.Controls.Add(this.comboBoxKoltsegTipus);
+            this.Controls.Add(this.buttonVissza);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonKoltsegTervModositForm);
+            this.Controls.Add(this.buttonKoltsegTervTorol);
             this.Controls.Add(this.textBoxModositottOsszeg);
-            this.Controls.Add(this.textBoxOsszeg);
+            this.Controls.Add(this.textBoxTervezettOsszeg);
             this.Controls.Add(this.textBoxPalyazatAZ);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -171,6 +197,7 @@
             this.Controls.Add(this.dataGridViewKoltsegTerv);
             this.Name = "FormKoltsegTerv";
             this.Text = "FormKoltsegTerv";
+            this.Load += new System.EventHandler(this.FormKoltsegTerv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKoltsegTerv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,11 +212,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxPalyazatAZ;
-        private System.Windows.Forms.TextBox textBoxOsszeg;
+        private System.Windows.Forms.TextBox textBoxTervezettOsszeg;
         private System.Windows.Forms.TextBox textBoxModositottOsszeg;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonKoltsegTervModositForm;
+        private System.Windows.Forms.Button buttonKoltsegTervTorol;
+        private System.Windows.Forms.Button buttonVissza;
         private System.Windows.Forms.ComboBox comboBoxKoltsegTipus;
     }
 }

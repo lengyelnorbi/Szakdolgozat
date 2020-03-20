@@ -29,7 +29,9 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
 
         private void buttonTenyfelhasznalasModositForm_Click(object sender, EventArgs e)
         {
+            FormTenyfelhasznalas tenyfelhasznalas = new FormTenyfelhasznalas(textBoxPalyazatAZ.Text);
             this.Close();
+            tenyfelhasznalas.ShowDialog();
         }
         private void FormTenyfelhasznalasModosit_Load(object sender, EventArgs e)
         {

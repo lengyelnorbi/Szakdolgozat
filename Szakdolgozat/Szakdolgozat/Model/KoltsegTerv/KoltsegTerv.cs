@@ -10,18 +10,25 @@ namespace Szakdolgozat.model
     {
         private int id;
         private string palyazatAzonosito;
-        private int koltTipusId;
-        private float tervezettPenzOsszeg;
-        private float modositottPenzOsszeg;
+        private string koltsegTipus;
+        private float tervezettOsszeg;
+        private float modositottOsszeg;
 
         //Konstruktor
-        public KoltsegTerv(int id, string palyazatAzonosito, int koltTipusId, float tervezettPenzOsszeg, float modositottPenzOsszeg)
+        public KoltsegTerv(int id, string palyazatAzonosito, string koltsegTipus, float tervezettOsszeg, float modositottOsszeg)
         {
             this.id = id;
             this.palyazatAzonosito = palyazatAzonosito;
-            this.koltTipusId = koltTipusId;
-            this.tervezettPenzOsszeg = tervezettPenzOsszeg;
-            this.modositottPenzOsszeg = modositottPenzOsszeg;
+            this.koltsegTipus = koltsegTipus;
+            this.tervezettOsszeg = tervezettOsszeg;
+            this.modositottOsszeg = modositottOsszeg;
+        }
+        public void update(KoltsegTerv modified)
+        {
+            this.id = modified.id;
+            this.koltsegTipus = modified.koltsegTipus;
+            this.tervezettOsszeg = modified.tervezettOsszeg;
+            this.modositottOsszeg = modified.modositottOsszeg;
         }
 
         //Setterek kezdete
@@ -34,19 +41,19 @@ namespace Szakdolgozat.model
             this.palyazatAzonosito = palyazatAzonosito;
         }
 
-        public void setKoltTipusId(int koltTipusId)
+        public void setKoltsegTipus(string koltsegTipus)
         {
-            this.koltTipusId = koltTipusId;
+            this.koltsegTipus = koltsegTipus;
         }
 
-        public void setTervezettPenzOsszeg(float tervezettPenzOsszeg)
+        public void setTervezettPenzOsszeg(float tervezettOsszeg)
         {
-            this.tervezettPenzOsszeg = tervezettPenzOsszeg;
+            this.tervezettOsszeg = tervezettOsszeg;
         }
 
-        public void setModositottPenzOsszeg(float modositottPenzOsszeg)
+        public void setModositottOsszeg(float modositottOsszeg)
         {
-            this.modositottPenzOsszeg = modositottPenzOsszeg;
+            this.modositottOsszeg = modositottOsszeg;
         }
         //Setterek vége
 
@@ -60,19 +67,19 @@ namespace Szakdolgozat.model
             return palyazatAzonosito;
         }
 
-        public int getKoltTipusId()
+        public string getKoltsegTipus()
         {
-            return koltTipusId;
+            return koltsegTipus;
         }
 
-        public float getTervezettPenzOsszeg()
+        public float getTervezettOsszeg()
         {
-            return tervezettPenzOsszeg;
+            return tervezettOsszeg;
         }
 
-        public float getModositottPenzOsszeg()
+        public float getModositottOsszeg()
         {
-            return modositottPenzOsszeg;
+            return modositottOsszeg;
         }
         //Getterek vége
     }

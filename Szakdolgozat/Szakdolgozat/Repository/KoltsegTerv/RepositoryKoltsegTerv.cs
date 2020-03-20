@@ -8,8 +8,29 @@ using Szakdolgozat.model;
 
 namespace Szakdolgozat.Repository
 {
-    partial class Repository
+    partial class Tarolo
     {
+        public void deleteKoltsegTervFromList(int azonosito)
+        {
+            KoltsegTerv k = koltsegtervek.Find(x => x.getId() == azonosito);
+            if (k != null)
+                koltsegtervek.Remove(k);
+            else
+                throw new RepositoryExceptionCantDelete("A költségtervet nem lehetett törölni.");
+        }
+        public void torolAzonositokodAlapjan(int Azonositokod)
+        {
+            koltsegtervek.RemoveAt(koltsegtervek.FindIndex(p => p.getId() == Azonositokod));
+        }
+        public void updateKoltsegTervInList(int Azonosito, KoltsegTerv modified)
+        {
+            KoltsegTerv f = koltsegtervek.Find(x => x.getId() == Azonosito);
+            if (f != null)
+                f.update(modified);
+            else
+                throw new RepositoryExceptionCantModified("A költségterv módosítása nem sikerült");
+        }
+
         List<KoltsegTerv> koltsegtervek;
 
         public List<KoltsegTerv> GetKoltsegTervek()
@@ -21,19 +42,19 @@ namespace Szakdolgozat.Repository
         {
             this.koltsegtervek = koltsegtervek;
         }
-        public DataTable KoltsegTervekListToDataTable()
+        public DataTable getKoltsegTervDataTableFromList()
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("id", typeof(int));
-            dt.Columns.Add("Pályázat Azonosító", typeof(string));
-            dt.Columns.Add("Koltség Típus Azonosító", typeof(int));
-            dt.Columns.Add("Tervezett Pénz Összeg", typeof(float));
-            dt.Columns.Add("Módosított Pénz Összeg", typeof(float));
+            DataTable koltsegtervDT = new DataTable();
+            koltsegtervDT.Columns.Add("id", typeof(int));
+            koltsegtervDT.Columns.Add("Pályázat Azonosító", typeof(string));
+            koltsegtervDT.Columns.Add("Koltség Típus Azonosító", typeof(string));
+            koltsegtervDT.Columns.Add("Tervezett Pénz Összeg", typeof(float));
+            koltsegtervDT.Columns.Add("Módosított Pénz Összeg", typeof(float));
             foreach (KoltsegTerv k in koltsegtervek)
             {
-                dt.Rows.Add(k.getId(), k.getPalyazatAzonosito(), k.getKoltTipusId(), k.getTervezettPenzOsszeg(), k.getModositottPenzOsszeg());
+                koltsegtervDT.Rows.Add(k.getId(), k.getPalyazatAzonosito(), k.getKoltsegTipus(), k.getTervezettOsszeg(), k.getModositottOsszeg());
             }
-            return dt;
+            return koltsegtervDT;
         }
         public void DataTableToKoltsegTervList(DataTable dt)
         {
@@ -41,11 +62,11 @@ namespace Szakdolgozat.Repository
             {
                 int id = Convert.ToInt32(row[0]);
                 string palyazatAzonosito = row[1].ToString();
-                int koltsegTervId = Convert.ToInt32(row[2]);
+                string koltsegTipus = row[2].ToString();
                 float tervezettPenzOsszeg = Convert.ToSingle(row[3]);
                 float modositottPenzOsszeg = Convert.ToSingle(row[4]);
 
-                KoltsegTerv k = new KoltsegTerv(id, palyazatAzonosito, koltsegTervId, tervezettPenzOsszeg, modositottPenzOsszeg);
+                KoltsegTerv k = new KoltsegTerv(id, palyazatAzonosito, koltsegTipus, tervezettPenzOsszeg, modositottPenzOsszeg);
                 koltsegtervek.Add(k);
             }
         }

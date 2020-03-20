@@ -108,5 +108,13 @@ namespace Szakdolgozat
                     dataGridViewPalyazatok.SelectedRows[0].Cells[11].Value.ToString();
             }
         }
+
+        private void buttonDataTableFrissit_Click(object sender, EventArgs e)
+        {
+            palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
+            frissitAdatokkalDataGriedViewt();
+            beallitPalyazatDataGriViewt();
+            dataGridViewPalyazatok.SelectionChanged += dataGridViewPalyazatok_SelectionChanged;
+        }
     }
 }

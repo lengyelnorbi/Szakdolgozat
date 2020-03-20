@@ -47,11 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formok\KoltsegTervForm\FormKoltsegTervGombok.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formok\KoltsegTervForm\FormKoltsegTerv.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formok\KoltsegTervForm\FormKoltsegTerv.Designer.cs">
       <DependentUpon>FormKoltsegTerv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formok\KoltsegTervForm\FormKoltsegTervModosit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\KoltsegTervForm\FormKoltsegTervModosit.Designer.cs">
+      <DependentUpon>FormKoltsegTervModosit.cs</DependentUpon>
     </Compile>
     <Compile Include="Formok\PalyazatForm\FormPalyazatGombok.cs">
       <SubType>Form</SubType>
@@ -115,6 +124,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exceptions\RepositoryExceptionCantDelete.cs" />
     <Compile Include="Exceptions\RepositoryExceptionCantModified.cs" />
+    <Compile Include="Repository\KoltsegTerv\RepositoryDatabaseTableKoltsegTervSQL.cs" />
+    <Compile Include="Repository\KoltsegTerv\RepositoryKoltsegTervRecordModify.cs" />
     <Compile Include="Repository\Palyazat\RepositoryPalyazatRecordModify.cs" />
     <Compile Include="Repository\Palyazat\RepositoryDatabaseTablePalyazatSQL.cs" />
     <Compile Include="Exceptions\RepositoryException.cs" />
@@ -130,6 +141,9 @@
     <Compile Include="Repository\Vezeto\RepositoryVezeto.cs" />
     <EmbeddedResource Include="Formok\KoltsegTervForm\FormKoltsegTerv.resx">
       <DependentUpon>FormKoltsegTerv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formok\KoltsegTervForm\FormKoltsegTervModosit.resx">
+      <DependentUpon>FormKoltsegTervModosit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\PalyazatForm\FormPalyazat.resx">
       <DependentUpon>FormPalyazat.cs</DependentUpon>

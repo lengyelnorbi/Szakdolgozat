@@ -45,11 +45,12 @@ namespace Szakdolgozat
         {
             if (FormKoltsegTerv == null)
             {
-                FormKoltsegTerv = new FormKoltsegTerv();
+                FormKoltsegTerv = new FormKoltsegTerv(textBoxAzonosito.Text);
                 FormKoltsegTerv.Closed += f_Closed;
                 FormKoltsegTerv.Show();
             }
         }
+
         private void buttonTenyfelhasznalas_Click(object sender, EventArgs e)
         {
             if (FormTenyfelhasznalas == null)

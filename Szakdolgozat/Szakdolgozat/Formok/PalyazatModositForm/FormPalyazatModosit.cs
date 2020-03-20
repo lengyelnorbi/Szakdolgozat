@@ -36,7 +36,6 @@ namespace Szakdolgozat
 
         string Azonosito;
         private Tarolo palyazatRepo = new Tarolo();
-        private DataTable palyazatDT = new DataTable();
         RepositoryDatabaseTablePalyazatSQL repoSql = new RepositoryDatabaseTablePalyazatSQL();
         public FormPalyazatModosit(FormPalyazat form1, string pAZ, string pTipus, string pNev, string pFin, string pTOszz, string pEOssz, string pPenznem, string pFIK, string pFIV, string pTudomany, string pSzvezeto, string pPenzvezeto)
         {

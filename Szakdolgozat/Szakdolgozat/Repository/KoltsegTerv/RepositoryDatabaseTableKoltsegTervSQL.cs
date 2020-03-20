@@ -11,25 +11,25 @@ using System.Diagnostics;
 
 namespace Szakdolgozat.Repository
 {
-    partial class RepositoryDatabaseTableTenyfelhasznalasSQL
+    partial class RepositoryDatabaseTableKoltsegTervSQL
     {
         private readonly string connectionStringCreate;
         private readonly string connectionString;
-        public RepositoryDatabaseTableTenyfelhasznalasSQL()
+        public RepositoryDatabaseTableKoltsegTervSQL()
         {
             ConnectionString cs = new ConnectionString();
             connectionStringCreate = cs.getCreateString();
             connectionString = cs.getConnectionString();
         }
 
-        public List<Tenyfelhasznalas> getTenyfelhasznalasFromDatabaseTable(string Azonosito)
+        public List<KoltsegTerv> getKoltsegTervFromDatabaseTable(string Azonosito)
         {
-            List<Tenyfelhasznalas> tenyfelhasznalas = new List<Tenyfelhasznalas>();
+            List<KoltsegTerv> koltsegtervek = new List<KoltsegTerv>();
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = Tenyfelhasznalas.getTenyfelhasznalasRecords(Azonosito);
+                string query = KoltsegTerv.getKoltsegTervRecords(Azonosito);
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dr;
                 dr = cmd.ExecuteReader();
@@ -38,10 +38,10 @@ namespace Szakdolgozat.Repository
                     int id = Convert.ToInt32(dr["id"]);
                     string palyazatAzonosito = dr["Palyazat_Azonosito"].ToString();
                     string koltsegTipus = dr["Koltseg_tipus"].ToString();
-                    float fizetettOsszeg = Convert.ToSingle(dr["Fizetett_osszeg"]);
-                    string fizetesDatuma = dr["Fizetes_datum"].ToString();
-                    Tenyfelhasznalas t = new Tenyfelhasznalas(id, palyazatAzonosito, koltsegTipus, fizetettOsszeg, fizetesDatuma);
-                    tenyfelhasznalas.Add(t);
+                    float tervezettOsszeg = Convert.ToSingle(dr["Tervezett_osszeg"]);
+                    float modositottOsszeg = Convert.ToSingle(dr["Modositott_osszeg"]);
+                    KoltsegTerv k = new KoltsegTerv(id, palyazatAzonosito, koltsegTipus, tervezettOsszeg, modositottOsszeg);
+                    koltsegtervek.Add(k);
                 }
                 connection.Close();
             } 
@@ -49,18 +49,18 @@ namespace Szakdolgozat.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                throw new RepositoryException("Tényfelhasználás adatok beolvasása az adatbázisból nem sikerült!");
+                throw new RepositoryException("Költségterv adatok beolvasása az adatbázisból nem sikerült!");
             }
-            return tenyfelhasznalas;
+            return koltsegtervek;
         }
 
-        public void deleteTenyfelhasznalasFromDatabase(int id)
+        public void deleteKoltsegTervFromDatabase(int id)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string queryDelete = "DELETE FROM tenyfelhasznalas WHERE id = " + id;
+                string queryDelete = "DELETE FROM koltseg_terv WHERE id = " + id;
                 MySqlCommand cmd = new MySqlCommand(queryDelete, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -69,12 +69,12 @@ namespace Szakdolgozat.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine(id + " -jú tényfelhasználás törlése nem sikerült.");
+                Debug.WriteLine(id + " -jú költségterv törlése nem sikerült.");
                 throw new RepositoryException("Sikertelen törlés az adatbázisból.");
             }
         }
 
-        public void updateTenyfelhasznalasInDatabase(int id, Tenyfelhasznalas modified)
+        public void updateKoltsegTervInDatabase(int id, KoltsegTerv modified)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
@@ -89,18 +89,18 @@ namespace Szakdolgozat.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine("Tényfelhasználás módosítása nem sikerült.");
+                Debug.WriteLine("Költségterv módosítása nem sikerült.");
                 throw new RepositoryException("Sikertelen módosítás az adatbázisból.");
             }
         }
 
-        public void insertPalyazatToDatabase(Palyazat ujPalyazat)
+        public void insertKoltsegTervToDatabase(KoltsegTerv ujKoltsegTerv)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = ujPalyazat.getInsert();
+                string query = ujKoltsegTerv.getInsert();
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -109,7 +109,7 @@ namespace Szakdolgozat.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine(ujPalyazat + " palyazat beszúrása adatbázisba nem sikerült.");
+                Debug.WriteLine(ujKoltsegTerv + " költségterv beszúrása adatbázisba nem sikerült.");
                 throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
             }
         }
