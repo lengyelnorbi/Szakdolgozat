@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonMentes = new System.Windows.Forms.Button();
-            this.buttonVissza = new System.Windows.Forms.Button();
+            this.buttonMegsem = new System.Windows.Forms.Button();
             this.textBoxFelhasznIdoVege = new System.Windows.Forms.TextBox();
             this.textBoxFelhasznIdoKezd = new System.Windows.Forms.TextBox();
             this.textBoxElnyertOsszeg = new System.Windows.Forms.TextBox();
@@ -66,15 +66,15 @@
             this.buttonMentes.UseVisualStyleBackColor = true;
             this.buttonMentes.Click += new System.EventHandler(this.buttonMentes_Click);
             // 
-            // buttonVissza
+            // buttonMegsem
             // 
-            this.buttonVissza.Location = new System.Drawing.Point(645, 263);
-            this.buttonVissza.Name = "buttonVissza";
-            this.buttonVissza.Size = new System.Drawing.Size(121, 23);
-            this.buttonVissza.TabIndex = 73;
-            this.buttonVissza.Text = "Mégsem";
-            this.buttonVissza.UseVisualStyleBackColor = true;
-            this.buttonVissza.Click += new System.EventHandler(this.buttonVissza_Click);
+            this.buttonMegsem.Location = new System.Drawing.Point(645, 263);
+            this.buttonMegsem.Name = "buttonMegsem";
+            this.buttonMegsem.Size = new System.Drawing.Size(121, 23);
+            this.buttonMegsem.TabIndex = 73;
+            this.buttonMegsem.Text = "Mégsem";
+            this.buttonMegsem.UseVisualStyleBackColor = true;
+            this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
             // 
             // textBoxFelhasznIdoVege
             // 
@@ -320,7 +320,7 @@
             this.Controls.Add(this.textBoxPenzugyiVezeto);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.buttonMentes);
-            this.Controls.Add(this.buttonVissza);
+            this.Controls.Add(this.buttonMegsem);
             this.Controls.Add(this.textBoxFelhasznIdoVege);
             this.Controls.Add(this.textBoxFelhasznIdoKezd);
             this.Controls.Add(this.textBoxElnyertOsszeg);
@@ -348,7 +348,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttonMentes;
-        private System.Windows.Forms.Button buttonVissza;
+        private System.Windows.Forms.Button buttonMegsem;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoVege;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoKezd;
         private System.Windows.Forms.TextBox textBoxElnyertOsszeg;

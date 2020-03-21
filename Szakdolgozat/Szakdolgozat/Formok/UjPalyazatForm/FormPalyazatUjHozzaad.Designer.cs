@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonMentes = new System.Windows.Forms.Button();
-            this.textBoxTenyfelhasznalasAZ = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.buttonVissza = new System.Windows.Forms.Button();
+            this.buttonMegsem = new System.Windows.Forms.Button();
             this.comboBoxFinanszirozasTipus = new System.Windows.Forms.ComboBox();
             this.comboBoxPalyazatTipus = new System.Windows.Forms.ComboBox();
             this.textBoxFelhasznIdoVege = new System.Windows.Forms.TextBox();
@@ -62,33 +60,17 @@
             this.buttonMentes.TabIndex = 100;
             this.buttonMentes.Text = "Mentés";
             this.buttonMentes.UseVisualStyleBackColor = true;
+            this.buttonMentes.Click += new System.EventHandler(this.buttonMentes_Click);
             // 
-            // textBoxTenyfelhasznalasAZ
+            // buttonMegsem
             // 
-            this.textBoxTenyfelhasznalasAZ.Enabled = false;
-            this.textBoxTenyfelhasznalasAZ.Location = new System.Drawing.Point(220, 239);
-            this.textBoxTenyfelhasznalasAZ.Name = "textBoxTenyfelhasznalasAZ";
-            this.textBoxTenyfelhasznalasAZ.Size = new System.Drawing.Size(121, 20);
-            this.textBoxTenyfelhasznalasAZ.TabIndex = 99;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label11.Location = new System.Drawing.Point(26, 239);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(188, 17);
-            this.label11.TabIndex = 98;
-            this.label11.Text = "Tényfelhasználás azonosító:";
-            // 
-            // buttonVissza
-            // 
-            this.buttonVissza.Location = new System.Drawing.Point(609, 236);
-            this.buttonVissza.Name = "buttonVissza";
-            this.buttonVissza.Size = new System.Drawing.Size(121, 23);
-            this.buttonVissza.TabIndex = 97;
-            this.buttonVissza.Text = "Mégsem";
-            this.buttonVissza.UseVisualStyleBackColor = true;
+            this.buttonMegsem.Location = new System.Drawing.Point(609, 236);
+            this.buttonMegsem.Name = "buttonMegsem";
+            this.buttonMegsem.Size = new System.Drawing.Size(121, 23);
+            this.buttonMegsem.TabIndex = 97;
+            this.buttonMegsem.Text = "Mégsem";
+            this.buttonMegsem.UseVisualStyleBackColor = true;
+            this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
             // 
             // comboBoxFinanszirozasTipus
             // 
@@ -270,9 +252,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(760, 290);
             this.Controls.Add(this.buttonMentes);
-            this.Controls.Add(this.textBoxTenyfelhasznalasAZ);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.buttonVissza);
+            this.Controls.Add(this.buttonMegsem);
             this.Controls.Add(this.comboBoxFinanszirozasTipus);
             this.Controls.Add(this.comboBoxPalyazatTipus);
             this.Controls.Add(this.textBoxFelhasznIdoVege);
@@ -295,6 +275,7 @@
             this.Controls.Add(this.textBoxPalyazatAzonosito);
             this.Name = "FormPalyazatUjHozzaad";
             this.Text = "FormPalyazatUjHozzaad";
+            this.Load += new System.EventHandler(this.FormPalyazatUjHozzaad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,9 +284,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttonMentes;
-        private System.Windows.Forms.TextBox textBoxTenyfelhasznalasAZ;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button buttonVissza;
+        private System.Windows.Forms.Button buttonMegsem;
         private System.Windows.Forms.ComboBox comboBoxFinanszirozasTipus;
         private System.Windows.Forms.ComboBox comboBoxPalyazatTipus;
         private System.Windows.Forms.TextBox textBoxFelhasznIdoVege;

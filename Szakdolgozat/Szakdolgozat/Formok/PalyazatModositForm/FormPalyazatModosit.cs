@@ -14,12 +14,6 @@ namespace Szakdolgozat
 {
     public partial class FormPalyazatModosit : Form
     {
-        private FormPalyazat FormModosit;
-        void f_Closed(object sender, EventArgs e)
-        {
-            FormModosit = null;
-        }
-
         public delegate void UpdateDelegate(object sender, UpdateEventArgs args);
         public event UpdateDelegate UpdateEventHandler;
 
@@ -84,10 +78,11 @@ namespace Szakdolgozat
             //1. módosítani a listába
             palyazatRepo.updatePalyazatInList(Azonosito, modosult);
             //2. módosítani az adatbázisban
-            repoSql.updatePalyazatInDatabase(Azonosito, modosult);
+            repoSql.updatePalyazatInDatabase(/*Azonosito,*/ modosult);
             formModosit();
         }
-        private void buttonVissza_Click(object sender, EventArgs e)
+
+        private void buttonMegsem_Click(object sender, EventArgs e)
         {
             this.Close();
         }

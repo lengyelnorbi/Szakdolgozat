@@ -33,7 +33,7 @@ namespace Szakdolgozat.Model
                     "');";
         }
 
-        public string getUpdate(string Azonosito)
+        public string getUpdate()
         {
             return
                    "UPDATE palyazat, posztok, vezetok SET Palyazat_tipus = '" +
