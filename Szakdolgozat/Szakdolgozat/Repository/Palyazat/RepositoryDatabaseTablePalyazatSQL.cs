@@ -101,7 +101,7 @@ namespace Szakdolgozat.Repository
             }
         }
 
-        public void insertPalyazatToDatabase(Palyazat ujPalyazat)
+        public void insertPalyazatIntoDatabase(Palyazat ujPalyazat)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try

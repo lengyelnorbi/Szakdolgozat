@@ -52,7 +52,8 @@ namespace Szakdolgozat
 
         private void buttonMentes_Click(object sender, EventArgs e)
         {
-            Palyazat ujPalyazat = new Palyazat();
+            Palyazat ujPalyazat = new Palyazat(textBoxPalyazatAzonosito.Text + "Pótlék azonosító", comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text,
+                Convert.ToSingle(textBoxTervezettOsszeg.Text), Convert.ToSingle(textBoxElnyertOsszeg.Text), textBoxPenznem.Text, textBoxFelhasznIdoKezd.Text, textBoxFelhasznIdoVege.Text, textBoxTudomanyTerulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
 
             palyazatRepo.palyazatHozzaadListahoz(ujPalyazat);
 

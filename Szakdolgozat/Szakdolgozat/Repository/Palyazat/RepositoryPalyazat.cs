@@ -33,6 +33,17 @@ namespace Szakdolgozat.Repository
             else
                 throw new RepositoryExceptionCantModified("A pályázat módosítása nem sikerült");
         }
+        public void palyazatHozzaadListahoz(Palyazat ujPalyazat)
+        {
+            try
+            {
+                palyazatok.Add(ujPalyazat);
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryExceptionCantAdd("A pályázat hozzáadása nem sikerült");
+            }
+        }
         public List<Palyazat> getPalyazatok()
         {
             return palyazatok;
