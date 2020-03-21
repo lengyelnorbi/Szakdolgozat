@@ -80,10 +80,10 @@
     <Compile Include="Formok\PalyazatForm\FormPalyazat.Designer.cs">
       <DependentUpon>FormPalyazat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formok\PalyazatModositForm\FormPalyazatModosit.cs">
+    <Compile Include="Formok\PalyazatForm\FormPalyazatModosit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formok\PalyazatModositForm\FormPalyazatModosit.Designer.cs">
+    <Compile Include="Formok\PalyazatForm\FormPalyazatModosit.Designer.cs">
       <DependentUpon>FormPalyazatModosit.cs</DependentUpon>
     </Compile>
     <Compile Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalasGombok.cs">
@@ -101,10 +101,10 @@
     <Compile Include="Formok\TenyfelhasznalasForm\FormUjTenyfelhasznHozzaad.Designer.cs">
       <DependentUpon>FormUjTenyfelhasznHozzaad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formok\UjPalyazatForm\FormPalyazatUjHozzaad.cs">
+    <Compile Include="Formok\PalyazatForm\FormPalyazatUjHozzaad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formok\UjPalyazatForm\FormPalyazatUjHozzaad.Designer.cs">
+    <Compile Include="Formok\PalyazatForm\FormPalyazatUjHozzaad.Designer.cs">
       <DependentUpon>FormPalyazatUjHozzaad.cs</DependentUpon>
     </Compile>
     <Compile Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalas.cs">
@@ -113,11 +113,23 @@
     <Compile Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalas.Designer.cs">
       <DependentUpon>FormTenyfelhasznalas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formok\UjVezetoForm\FormUjVezetoHozzaad.cs">
+    <Compile Include="Formok\VezetoForm\FormUjVezetoHozzaad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formok\UjVezetoForm\FormUjVezetoHozzaad.Designer.cs">
+    <Compile Include="Formok\VezetoForm\FormUjVezetoHozzaad.Designer.cs">
       <DependentUpon>FormUjVezetoHozzaad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formok\VezetoForm\FormVezetok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\VezetoForm\FormVezetok.Designer.cs">
+      <DependentUpon>FormVezetok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formok\VezetoForm\FormVezetoModosit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\VezetoForm\FormVezetoModosit.Designer.cs">
+      <DependentUpon>FormVezetoModosit.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ConnectionString.cs" />
     <Compile Include="Model\KoltsegTerv\KoltsegTervDatabase.cs" />
@@ -164,7 +176,7 @@
     <EmbeddedResource Include="Formok\PalyazatForm\FormPalyazat.resx">
       <DependentUpon>FormPalyazat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formok\PalyazatModositForm\FormPalyazatModosit.resx">
+    <EmbeddedResource Include="Formok\PalyazatForm\FormPalyazatModosit.resx">
       <DependentUpon>FormPalyazatModosit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalasModosit.resx">
@@ -173,14 +185,20 @@
     <EmbeddedResource Include="Formok\TenyfelhasznalasForm\FormUjTenyfelhasznHozzaad.resx">
       <DependentUpon>FormUjTenyfelhasznHozzaad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formok\UjPalyazatForm\FormPalyazatUjHozzaad.resx">
+    <EmbeddedResource Include="Formok\PalyazatForm\FormPalyazatUjHozzaad.resx">
       <DependentUpon>FormPalyazatUjHozzaad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalas.resx">
       <DependentUpon>FormTenyfelhasznalas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formok\UjVezetoForm\FormUjVezetoHozzaad.resx">
+    <EmbeddedResource Include="Formok\VezetoForm\FormUjVezetoHozzaad.resx">
       <DependentUpon>FormUjVezetoHozzaad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formok\VezetoForm\FormVezetok.resx">
+      <DependentUpon>FormVezetok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formok\VezetoForm\FormVezetoModosit.resx">
+      <DependentUpon>FormVezetoModosit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
