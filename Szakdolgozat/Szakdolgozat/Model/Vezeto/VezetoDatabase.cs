@@ -21,7 +21,7 @@ namespace Szakdolgozat.model
             return "INSERT INTO vezetok (`id`, `nev`, `telefonszam`, `email`)" +
                 "VALUES(NULL,'" + getNev() + "', " + getTelefonszam() + ",' " + getEmail() + "');" + 
                 "INSERT INTO posztok (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `poszt`)" +
-                "VALUES(NULL,'" + palyazatAzonosito + "',(SELECT vezetok.id FROM vezetok WHERE vezetok.nev = '" + getNev() + "), '" + poszt + "');";
+                "VALUES(NULL,'" + palyazatAzonosito + "',(SELECT vezetok.id FROM vezetok WHERE vezetok.nev = '" + getNev() + "'), '" + poszt + "');";
         }
 
         public string getUpdate()

@@ -113,6 +113,12 @@
     <Compile Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalas.Designer.cs">
       <DependentUpon>FormTenyfelhasznalas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formok\UjVezetoForm\FormUjVezetoHozzaad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\UjVezetoForm\FormUjVezetoHozzaad.Designer.cs">
+      <DependentUpon>FormUjVezetoHozzaad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ConnectionString.cs" />
     <Compile Include="Model\KoltsegTerv\KoltsegTervDatabase.cs" />
     <Compile Include="Model\KoltsegTerv\KoltsegTerv.cs" />
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\TenyfelhasznalasForm\FormTenyfelhasznalas.resx">
       <DependentUpon>FormTenyfelhasznalas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formok\UjVezetoForm\FormUjVezetoHozzaad.resx">
+      <DependentUpon>FormUjVezetoHozzaad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

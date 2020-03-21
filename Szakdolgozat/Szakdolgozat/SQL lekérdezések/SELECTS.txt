@@ -26,3 +26,10 @@ SELECT tenyfelhasznalas.id, tenyfelhasznalas.Palyazat_Azonosito, koltseg_tipusok
 FROM tenyfelhasznalas INNER JOIN palyazat ON tenyfelhasznalas.Palyazat_Azonosito = palyazat.Azonosito INNER JOIN koltseg_tipusok ON tenyfelhasznalas.KoltTip_id = koltseg_tipusok.id WHERE tenyfelhasznalas.Palyazat_Azonosito = "LNPTEST0312"
 
 //A tényfelhasználás tábla elrontja a teljes lekérdezést (összegek lekérdezését stb.)
+
+SELECT * FROM palyazat inner join posztok on palyazat.Azonosito = posztok.Palyazat_Azonosito inner join vezetok on posztok.Vezeto_id = vezetok.id WHERE posztok.poszt = "Szakmai vezető" GROUP BY palyazat.Azonosito
+
+SELECT palyazat.Azonosito, (SELECT vezetok.Nev
+FROM palyazat inner join posztok on palyazat.Azonosito = posztok.Palyazat_Azonosito INNER JOIN vezetok ON posztok.Vezeto_id = vezetok.id WHERE posztok.Poszt = 'Szakmai vezető' GROUP BY palyazat.Azonosito) AS "Szakmai vezető",
+(SELECT vezetok.Nev
+FROM palyazat inner join posztok on palyazat.Azonosito = posztok.Palyazat_Azonosito INNER JOIN vezetok ON posztok.Vezeto_id = vezetok.id WHERE posztok.Poszt = 'Pénzügyi vezető' GROUP BY palyazat.Azonosito) AS "Pénzügyi vezető" FROM palyazat INNER JOIN posztok ON palyazat.Azonosito = posztok.Palyazat_Azonosito inner join vezetok on posztok.Vezeto_id = vezetok.id GROUP BY palyazat.Azonosito
