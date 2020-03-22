@@ -68,6 +68,7 @@ namespace Szakdolgozat
             repoSql.insertPalyazatIntoDatabase(ujPalyazat);
             repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxSzakmaiVezeto.Text, "Szakmai vezető");
             repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxPenzugyiVezeto.Text, "Pénzügyi vezető");
+            repoSql.insertEmptyKoltsegTervIntoDatabase(palyazatAzonosito);
 
             formModosit();
             this.Close();

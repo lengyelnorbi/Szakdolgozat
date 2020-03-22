@@ -55,22 +55,39 @@ namespace Szakdolgozat.Model
                    "', vezetok.Nev = '" +
                    getSzakmaiVezeto() +
                    "' WHERE palyazat.Azonosito = '" +
-                   azonosito + 
+                   azonosito +
                    "' AND vezetok.id = (SELECT posztok.Vezeto_id FROM posztok WHERE posztok.poszt = 'Szakmai Vezető');" +
                    " UPDATE palyazat, vezetok SET vezetok.Nev = '" +
                    getPenzugyiVezeto() +
                    "' WHERE palyazat.Azonosito = '" +
                    azonosito + "' AND vezetok.id = (SELECT posztok.Vezeto_id FROM posztok WHERE posztok.poszt = 'Pénzügyi Vezető');";
         }
-        public static string getAllRecord()
+        /*public static string getAllRecord()
         {
-            return "SELECT Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, IF(CASE WHEN koltseg_terv.TervezettOsszeg > 0 THEN SUM(koltseg_terv.Tervezett_osszeg)/2 ELSE NULL END) AS Tervezett_osszeg, Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet," +
+            return "SELECT Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_osszeg)/2 AS Tervezett_osszeg, Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet," +
                 "MAX(CASE WHEN posztok.poszt = 'Szakmai vezető' THEN vezetok.Nev ELSE NULL END) AS Szakmai_vezeto, MAX(CASE WHEN posztok.poszt = 'Pénzügyi vezető' THEN vezetok.Nev ELSE NULL END) AS Penzugyi_vezeto" +
                 " FROM palyazat inner join koltseg_terv on palyazat.Azonosito = koltseg_terv.Palyazat_Azonosito inner join posztok on palyazat.Azonosito = posztok.Palyazat_Azonosito inner join vezetok on posztok.Vezeto_id = vezetok.id group by Azonosito;";
+        }*/
+
+        public static string getAllRecord()
+        {
+            return "SELECT ALL Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_osszeg) AS Tervezett_osszeg, Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet FROM palyazat inner join koltseg_terv on palyazat.Azonosito = koltseg_terv.Palyazat_Azonosito GROUP BY Azonosito";
         }
-        public static string getPosztokInsert(string palyazatAzonosito,string nev, string poszt)
+        public static string getSzakmaiVezetoNeve(string palyazatAZ)
+        {
+            return "SELECT (CASE WHEN vezetok.nev IS NOT NULL THEN vezetok.Nev ELSE NULL END) AS Szakmai_vezeto FROM palyazat inner join posztok on palyazat.Azonosito = posztok.Palyazat_Azonosito inner join vezetok on posztok.Vezeto_id = vezetok.id WHERE Azonosito = '" + palyazatAZ + "' AND posztok.poszt = 'Szakmai vezető';";
+        }
+        public static string getPenzugyiVezetoNeve(string palyazatAZ)
+        {
+            return "SELECT (CASE WHEN vezetok.nev IS NOT NULL THEN vezetok.Nev ELSE NULL END) AS Penzugyi_vezeto FROM palyazat inner join posztok on palyazat.Azonosito = posztok.Palyazat_Azonosito inner join vezetok on posztok.Vezeto_id = vezetok.id WHERE Azonosito = '" + palyazatAZ + "' AND posztok.poszt = 'Pénzügyi vezető';";
+        }
+        public static string getPosztokInsert(string palyazatAzonosito, string nev, string poszt)
         {
             return "INSERT INTO posztok (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `poszt`) VALUES (NULL,'" + palyazatAzonosito + "',(SELECT id FROM vezetok WHERE vezetok.nev = '" + nev + "'),'" + poszt + "');";
+        }
+        public static string getInsertEmptyKoltsegTerv(string palyazatAzonosito)
+        {
+            return "INSERT INTO `koltseg_terv` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_osszeg`, `Modositott_Osszeg`) VALUES ('NULL', '" + palyazatAzonosito + "', '1', '', '');";
         }
     }
 }

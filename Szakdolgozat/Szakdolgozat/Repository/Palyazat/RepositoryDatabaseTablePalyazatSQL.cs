@@ -15,11 +15,15 @@ namespace Szakdolgozat.Repository
     {
         private readonly string connectionStringCreate;
         private readonly string connectionString;
+        private readonly string connectionString2;
+        private readonly string connectionString3;
         public RepositoryDatabaseTablePalyazatSQL()
         {
             ConnectionString cs = new ConnectionString();
             connectionStringCreate = cs.getCreateString();
             connectionString = cs.getConnectionString();
+            connectionString2 = cs.getConnectionString();
+            connectionString3 = cs.getConnectionString();
         }
 
         public List<Palyazat> getPalyazatokFromDatabaseTable()
@@ -33,6 +37,8 @@ namespace Szakdolgozat.Repository
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dr;
                 dr = cmd.ExecuteReader();
+                string szakmaiVezetoNeve = "";
+                string penzugyiVezetoNeve = "";
                 while (dr.Read())
                 {
                     string azonosito = dr["Azonosito"].ToString();
@@ -45,8 +51,45 @@ namespace Szakdolgozat.Repository
                     string felhasznIdoKezd = dr["Felhasznalasi_ido_kezd"].ToString();
                     string felhasznIdoVege = dr["Felhasznalasi_ido_vege"].ToString();
                     string tudomanyterulet = dr["Tudomanyterulet"].ToString();
-                    string szakmaiVezeto = dr["Szakmai_vezeto"].ToString();
-                    string penzugyiVezeto = dr["Penzugyi_vezeto"].ToString();
+                    MySqlConnection connection2 = new MySqlConnection(connectionString2);
+                    try
+                    {
+                        connection2.Open();
+                        string query2 = Palyazat.getSzakmaiVezetoNeve(azonosito);
+                        MySqlCommand cmd2 = new MySqlCommand(query2, connection2);
+                        MySqlDataReader dr2;
+                        dr2 = cmd2.ExecuteReader();
+                        while (dr2.Read())
+                        {
+                            szakmaiVezetoNeve = dr2["Szakmai_vezeto"].ToString();
+                        }
+                        connection2.Close();
+                    }
+                    catch (Exception e)
+                    {
+                        connection2.Close();
+                    }
+                    string szakmaiVezeto = szakmaiVezetoNeve;
+                    MySqlConnection connection3 = new MySqlConnection(connectionString3);
+                    try
+                    {
+                        connection3.Open();
+                        string query3 = Palyazat.getPenzugyiVezetoNeve(azonosito);
+                        MySqlCommand cmd3 = new MySqlCommand(query3, connection3);
+                        MySqlDataReader dr3;
+                        dr3 = cmd3.ExecuteReader();
+
+                        while (dr3.Read())
+                        {
+                            penzugyiVezetoNeve = dr3["Penzugyi_vezeto"].ToString();
+                        }
+                        connection3.Close();
+                    }
+                    catch(Exception e)
+                    {
+                        connection3.Close();
+                    }
+                    string penzugyiVezeto = penzugyiVezetoNeve;
                     Palyazat p = new Palyazat(azonosito, palyazatTipus, palyazatNev, finanszirozasTipus, tervezettOsszeg, elnyertOsszeg, penznem, felhasznIdoKezd, felhasznIdoVege, tudomanyterulet, szakmaiVezeto, penzugyiVezeto);
                     palyazatok.Add(p);
                 }
@@ -136,6 +179,25 @@ namespace Szakdolgozat.Repository
                 connection.Close();
                 Debug.WriteLine(e.Message);
                 Debug.WriteLine(poszt + " beszúrása adatbázisba nem sikerült.");
+                throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
+            }
+        }
+        public void insertEmptyKoltsegTervIntoDatabase(string palyazatAzonosito)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = Palyazat.getInsertEmptyKoltsegTerv(palyazatAzonosito);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine("Üres költségterv beszúrása adatbázisba nem sikerült.");
                 throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
             }
         }
