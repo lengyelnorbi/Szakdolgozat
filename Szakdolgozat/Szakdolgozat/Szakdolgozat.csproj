@@ -119,6 +119,9 @@
     <Compile Include="Formok\VezetoForm\FormUjVezetoHozzaad.Designer.cs">
       <DependentUpon>FormUjVezetoHozzaad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formok\VezetoForm\FormVezetokGombok.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formok\VezetoForm\FormVezetok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +166,8 @@
     <Compile Include="Exceptions\RepositoryExceptionCantAdd.cs" />
     <Compile Include="Repository\Tenyfelhasznalas\RepositoryTenyfelhasznalasRecordModify.cs" />
     <Compile Include="Repository\Tenyfelhasznalas\RepositoryTenyfelhasznalas.cs" />
+    <Compile Include="Repository\Vezeto\RepositoryDatabaseTableVezetoSQL.cs" />
+    <Compile Include="Repository\Vezeto\RepositoryVezetoRecordModify.cs" />
     <Compile Include="Repository\Vezeto\RepositoryVezeto.cs" />
     <EmbeddedResource Include="Formok\KoltsegTervForm\FormKoltsegTerv.resx">
       <DependentUpon>FormKoltsegTerv.cs</DependentUpon>

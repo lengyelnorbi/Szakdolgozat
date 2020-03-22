@@ -15,6 +15,7 @@ namespace Szakdolgozat.Repository
             palyazatok = new List<Palyazat>();
             tenyfelhasznalasok = new List<Tenyfelhasznalas>();
             koltsegtervek = new List<KoltsegTerv>();
+            vezetok = new List<Vezeto>();
         }
     }
 }

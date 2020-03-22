@@ -11,44 +11,35 @@ using System.Diagnostics;
 
 namespace Szakdolgozat.Repository
 {
-    partial class RepositoryDatabaseTablePalyazatSQL
+    partial class RepositoryDatabaseTableVezetoSQL
     {
         private readonly string connectionStringCreate;
         private readonly string connectionString;
-        public RepositoryDatabaseTablePalyazatSQL()
+        public RepositoryDatabaseTableVezetoSQL()
         {
             ConnectionString cs = new ConnectionString();
             connectionStringCreate = cs.getCreateString();
             connectionString = cs.getConnectionString();
         }
-
-        public List<Palyazat> getPalyazatokFromDatabaseTable()
+        public List<Vezeto> getVezetoFromDatabaseTable()
         {
-            List<Palyazat> palyazatok = new List<Palyazat>();
+            List<Vezeto> vezetok = new List<Vezeto>();
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = Palyazat.getAllRecord();
+                string query = Vezeto.getAllRecord();
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dr;
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    string azonosito = dr["Azonosito"].ToString();
-                    string palyazatTipus = dr["Palyazat_tipus"].ToString();
-                    string palyazatNev = dr["Palyazat_neve"].ToString();
-                    string finanszirozasTipus = dr["Finanszirozas_tipus"].ToString();
-                    float tervezettOsszeg = Convert.ToSingle(dr["Tervezett_osszeg"]);
-                    float elnyertOsszeg = Convert.ToSingle(dr["Elnyert_osszeg"]);
-                    string penznem = dr["Penznem"].ToString();
-                    string felhasznIdoKezd = dr["Felhasznalasi_ido_kezd"].ToString();
-                    string felhasznIdoVege = dr["Felhasznalasi_ido_vege"].ToString();
-                    string tudomanyterulet = dr["Tudomanyterulet"].ToString();
-                    string szakmaiVezeto = dr["Szakmai_vezeto"].ToString();
-                    string penzugyiVezeto = dr["Penzugyi_vezeto"].ToString();
-                    Palyazat p = new Palyazat(azonosito, palyazatTipus, palyazatNev, finanszirozasTipus, tervezettOsszeg, elnyertOsszeg, penznem, felhasznIdoKezd, felhasznIdoVege, tudomanyterulet, szakmaiVezeto, penzugyiVezeto);
-                    palyazatok.Add(p);
+                    int id = Convert.ToInt32(dr["id"]);
+                    string nev = dr["Nev"].ToString();
+                    string telefonszam = dr["Telefonszam"].ToString();
+                    string email = dr["Email"].ToString();
+                    Vezeto t = new Vezeto(id, nev, telefonszam, email);
+                    vezetok.Add(t);
                 }
                 connection.Close();
             } 
@@ -56,18 +47,18 @@ namespace Szakdolgozat.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                throw new RepositoryException("Pályázat adatok beolvasása az adatbázisból nem sikerült!");
+                throw new RepositoryException("Vezető adatainak beolvasása az adatbázisból nem sikerült!");
             }
-            return palyazatok;
+            return vezetok;
         }
 
-        public void deletePalyazatFromDatabase(string Azonosito)
+        public void deleteVezetoFromDatabase(int id)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string queryDelete = "DELETE FROM palyazat WHERE Azonosito = " + "'" + Azonosito + "'";
+                string queryDelete = "DELETE FROM vezetok WHERE id = " + id;
                 MySqlCommand cmd = new MySqlCommand(queryDelete, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -76,18 +67,18 @@ namespace Szakdolgozat.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine(Azonosito + " -jú palyazat törlése nem sikerült.");
+                Debug.WriteLine(id + " -jú vezető törlése nem sikerült.");
                 throw new RepositoryException("Sikertelen törlés az adatbázisból.");
             }
         }
 
-        public void updatePalyazatInDatabase(/*string Azonosito,*/ Palyazat modified)
+        public void updateVezetokInDatabase(int id, Vezeto modified)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = modified.getUpdate(/*Azonosito*/);
+                string query = modified.getUpdate(id);
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -96,18 +87,18 @@ namespace Szakdolgozat.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine("Pályázat módosítása nem sikerült.");
+                Debug.WriteLine("Vezető módosítása nem sikerült.");
                 throw new RepositoryException("Sikertelen módosítás az adatbázisból.");
             }
         }
 
-        public void insertPalyazatIntoDatabase(Palyazat ujPalyazat)
+        public void insertVezetoIntoDatabase(Vezeto ujVezeto)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = ujPalyazat.getInsert();
+                string query = ujVezeto.getInsertIntoVezetok();
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -116,28 +107,37 @@ namespace Szakdolgozat.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine(ujPalyazat + " palyazat beszúrása adatbázisba nem sikerült.");
-                throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
+                Debug.WriteLine(ujVezeto + " vezető beszúrása adatbázisba nem sikerült.");
+                throw new RepositoryException("Sikertelen beszúrás az adatbázisba.");
             }
         }
-        public void insertPosztokIntoDatabase(string palyazatAzonosito, string nev, string poszt)
+        public int getVezetoID()
         {
+            int legnagyobbID;
+            List<int> id = new List<int>();
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = Palyazat.getPosztokInsert(palyazatAzonosito, nev, poszt);
+                string query = Vezeto.getVezetokLegnagyobbID();
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
+                MySqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    int vezetoID = Convert.ToInt32(dr["id"]);
+                    id.Add(vezetoID);
+                }
                 connection.Close();
             }
             catch (Exception e)
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine(poszt + " beszúrása adatbázisba nem sikerült.");
-                throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
+                throw new RepositoryException("A legnagyobb vezető id lekérése nem sikerült az adatbázisból nem sikerült!");
             }
+            legnagyobbID = id.Max();
+            return legnagyobbID;
         }
     }
 }

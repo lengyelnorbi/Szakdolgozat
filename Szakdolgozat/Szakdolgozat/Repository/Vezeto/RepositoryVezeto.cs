@@ -8,7 +8,7 @@ using Szakdolgozat.model;
 
 namespace Szakdolgozat.Repository
 {
-    partial class Repository
+    partial class Tarolo
     {
         List<Vezeto> vezetok;
 
@@ -21,22 +21,53 @@ namespace Szakdolgozat.Repository
         {
             this.vezetok = vezetok;
         }
-        public DataTable VezetoListToDataTable()
+        public void deleteVezetoFromList(int id)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Azonosító", typeof(int));
-            dt.Columns.Add("Nev", typeof(string));
-            dt.Columns.Add("Telefonszám", typeof(string));
-            dt.Columns.Add("Email", typeof(string));
+            Vezeto v = vezetok.Find(x => x.getId() == id);
+            if (v != null)
+                vezetok.Remove(v);
+            else
+                throw new RepositoryExceptionCantDelete("A vezetőt nem lehetett törölni.");
+        }
+        public void torolVezetokAzonositokodAlapjan(int id)
+        {
+            vezetok.RemoveAt(vezetok.FindIndex(p => p.getId() == id));
+        }
+        public void updateVezetokInList(int id, Vezeto modified)
+        {
+            Vezeto v = vezetok.Find(x => x.getId() == id);
+            if (v != null)
+                v.update(modified);
+            else
+                throw new RepositoryExceptionCantModified("A vezető módosítása nem sikerült");
+        }
+        public void vezetokHozzaadListahoz(Vezeto ujVezeto)
+        {
+            try
+            {
+                vezetok.Add(ujVezeto);
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryExceptionCantAdd("A vezető hozzáadása nem sikerült");
+            }
+        }
+        public DataTable getVezetokDataTableFromList()
+        {
+            DataTable vezetoDT = new DataTable();
+            vezetoDT.Columns.Add("Azonosító", typeof(int));
+            vezetoDT.Columns.Add("Név", typeof(string));
+            vezetoDT.Columns.Add("Telefonszám", typeof(string));
+            vezetoDT.Columns.Add("Email", typeof(string));
             foreach (Vezeto sz in vezetok)
             {
-                dt.Rows.Add(sz.getId(), sz.getNev(), sz.getTelefonszam(), sz.getEmail());
+                vezetoDT.Rows.Add(sz.getId(), sz.getNev(), sz.getTelefonszam(), sz.getEmail());
             }
-            return dt;
+            return vezetoDT;
         }
-        public void DataTableToVezetoList(DataTable dt)
+        public void DataTableToVezetoList(DataTable vezetodt)
         {
-            foreach (DataRow row in dt.Rows)
+            foreach (DataRow row in vezetodt.Rows)
             {
                 int id = Convert.ToInt32(row[0]);
                 string nev = row[1].ToString();

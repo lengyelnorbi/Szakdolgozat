@@ -12,19 +12,17 @@ namespace Szakdolgozat.model
         {
             return "SELECT vezetok.nev FROM vezetok;";
         }
-        public string getVezetokLegnagyobbID()
+        public static string getVezetokLegnagyobbID()
         {
             return "SELECT vezetok.id FROM vezetok;";
         }
-        public string getInsertIntoVezetok(string palyazatAzonosito, string poszt)
+        public string getInsertIntoVezetok()
         {
             return "INSERT INTO vezetok (`id`, `nev`, `telefonszam`, `email`)" +
-                "VALUES(NULL,'" + getNev() + "', " + getTelefonszam() + ",' " + getEmail() + "');" + 
-                "INSERT INTO posztok (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `poszt`)" +
-                "VALUES(NULL,'" + palyazatAzonosito + "',(SELECT vezetok.id FROM vezetok WHERE vezetok.nev = '" + getNev() + "'), '" + poszt + "');";
+                "VALUES(NULL,'" + getNev() + "', '" + getTelefonszam() + "','" + getEmail() + "');";
         }
 
-        public string getUpdate()
+        public string getUpdate(int id)
         {
             return
                    "UPDATE `vezetok` SET `Nev` = '" +
@@ -40,11 +38,6 @@ namespace Szakdolgozat.model
         public static string getAllRecord()
         {
             return "SELECT * FROM vezetok";
-        }
-
-        public static string getDeleteAllRecord()
-        {
-            return "DELETE FROM vezetok";
         }
     }
 }

@@ -21,7 +21,13 @@ namespace Szakdolgozat.model
             this.telefonszam = telefonszam;
             this.email = email;
         }
-
+        public void update(Vezeto modified)
+        {
+            this.id = modified.id;
+            this.nev = modified.nev;
+            this.telefonszam = modified.telefonszam;
+            this.email = modified.email;
+        }
         //Setterek kezdete
         public void setId(int id)
         {

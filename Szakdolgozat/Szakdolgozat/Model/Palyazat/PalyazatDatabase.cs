@@ -11,7 +11,7 @@ namespace Szakdolgozat.Model
         public string getInsert()
         {
             return "INSERT INTO `palyazat`" +
-                    "(`id`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Elnyert_osszeg`, `Penznem`, `Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`)" +
+                    "(`Azonosito`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Elnyert_osszeg`, `Penznem`, `Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`)" +
                     "VALUES ('" +
                     getAzonosito() +
                     "', '" +
@@ -64,9 +64,13 @@ namespace Szakdolgozat.Model
         }
         public static string getAllRecord()
         {
-            return "SELECT Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_osszeg)/2 AS Tervezett_osszeg, Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet," +
+            return "SELECT Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, IF(CASE WHEN koltseg_terv.TervezettOsszeg > 0 THEN SUM(koltseg_terv.Tervezett_osszeg)/2 ELSE NULL END) AS Tervezett_osszeg, Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet," +
                 "MAX(CASE WHEN posztok.poszt = 'Szakmai vezető' THEN vezetok.Nev ELSE NULL END) AS Szakmai_vezeto, MAX(CASE WHEN posztok.poszt = 'Pénzügyi vezető' THEN vezetok.Nev ELSE NULL END) AS Penzugyi_vezeto" +
                 " FROM palyazat inner join koltseg_terv on palyazat.Azonosito = koltseg_terv.Palyazat_Azonosito inner join posztok on palyazat.Azonosito = posztok.Palyazat_Azonosito inner join vezetok on posztok.Vezeto_id = vezetok.id group by Azonosito;";
+        }
+        public static string getPosztokInsert(string palyazatAzonosito,string nev, string poszt)
+        {
+            return "INSERT INTO posztok (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `poszt`) VALUES (NULL,'" + palyazatAzonosito + "',(SELECT id FROM vezetok WHERE vezetok.nev = '" + nev + "'),'" + poszt + "');";
         }
     }
 }

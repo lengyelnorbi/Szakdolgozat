@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Szakdolgozat.Formok.UjVezetoForm;
+using Szakdolgozat.Formok.VezetoForm;
 using Szakdolgozat.Model;
 using Szakdolgozat.Repository;
 
@@ -18,7 +18,7 @@ namespace Szakdolgozat
         string Azonosito;
         private Tarolo palyazatRepo = new Tarolo();
         RepositoryDatabaseTablePalyazatSQL repoSql = new RepositoryDatabaseTablePalyazatSQL();
-        FormUjVezetoHozzaad FormUjVezetoHozzaad;
+        FormVezetok FormVezetok;
         public FormPalyazatUjHozzaad()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace Szakdolgozat
 
         void f_Closed(object sender, EventArgs e)
         {
-            FormUjVezetoHozzaad = null;
+            FormVezetok = null;
         }
 
         public delegate void UpdateDelegate(object sender, UpdateEventArgs args);
@@ -59,25 +59,28 @@ namespace Szakdolgozat
 
         private void buttonMentes_Click(object sender, EventArgs e)
         {
-            Palyazat ujPalyazat = new Palyazat(textBoxPalyazatAzonosito.Text + "Pótlék azonosító", comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text,
-                Convert.ToSingle(textBoxTervezettOsszeg.Text), Convert.ToSingle(textBoxElnyertOsszeg.Text), textBoxPenznem.Text, textBoxFelhasznIdoKezd.Text, textBoxFelhasznIdoVege.Text, textBoxTudomanyTerulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
+            string palyazatAzonosito = comboBoxPalyazatTipus.Text + "1";
+            Palyazat ujPalyazat = new Palyazat(palyazatAzonosito, comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text,0,
+                Convert.ToSingle(textBoxElnyertOsszeg.Text), comboBoxPenznem.Text, textBoxFelhasznIdoKezd.Text, textBoxFelhasznIdoVege.Text, comboBoxTudomanyTerulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
 
             palyazatRepo.palyazatHozzaadListahoz(ujPalyazat);
 
             repoSql.insertPalyazatIntoDatabase(ujPalyazat);
+            repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxSzakmaiVezeto.Text, "Szakmai vezető");
+            repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxPenzugyiVezeto.Text, "Pénzügyi vezető");
 
             formModosit();
             this.Close();
         }
 
-        private void buttonUjVezetoFelveteleForm_Click(object sender, EventArgs e)
+        private void buttonVezetokForm_Click_1(object sender, EventArgs e)
         {
 
-            if (FormUjVezetoHozzaad == null)
+            if (FormVezetok == null)
             {
-                FormUjVezetoHozzaad = new FormUjVezetoHozzaad();
-                FormUjVezetoHozzaad.Closed += f_Closed;
-                FormUjVezetoHozzaad.Show();
+                FormVezetok = new FormVezetok();
+                FormVezetok.Closed += f_Closed;
+                FormVezetok.Show();
                 this.Close();
             }
         }

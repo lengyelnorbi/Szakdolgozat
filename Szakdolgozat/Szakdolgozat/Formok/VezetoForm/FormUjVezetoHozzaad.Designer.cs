@@ -41,49 +41,49 @@
             // buttonVezetoFelvetele
             // 
             this.buttonVezetoFelvetele.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonVezetoFelvetele.Location = new System.Drawing.Point(53, 218);
-            this.buttonVezetoFelvetele.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonVezetoFelvetele.Location = new System.Drawing.Point(40, 177);
             this.buttonVezetoFelvetele.Name = "buttonVezetoFelvetele";
-            this.buttonVezetoFelvetele.Size = new System.Drawing.Size(151, 28);
+            this.buttonVezetoFelvetele.Size = new System.Drawing.Size(113, 23);
             this.buttonVezetoFelvetele.TabIndex = 44;
             this.buttonVezetoFelvetele.Text = "Hozzáad";
             this.buttonVezetoFelvetele.UseVisualStyleBackColor = true;
+            this.buttonVezetoFelvetele.Click += new System.EventHandler(this.buttonVezetoFelvetele_Click);
             // 
             // buttonMegsem
             // 
             this.buttonMegsem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonMegsem.Location = new System.Drawing.Point(246, 218);
-            this.buttonMegsem.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonMegsem.Location = new System.Drawing.Point(184, 177);
             this.buttonMegsem.Name = "buttonMegsem";
-            this.buttonMegsem.Size = new System.Drawing.Size(151, 28);
+            this.buttonMegsem.Size = new System.Drawing.Size(113, 23);
             this.buttonMegsem.TabIndex = 43;
             this.buttonMegsem.Text = "Mégsem";
             this.buttonMegsem.UseVisualStyleBackColor = true;
+            this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
             // 
             // textBoxVezetoEmail
             // 
-            this.textBoxVezetoEmail.Location = new System.Drawing.Point(248, 162);
-            this.textBoxVezetoEmail.Margin = new System.Windows.Forms.Padding(5);
+            this.textBoxVezetoEmail.Location = new System.Drawing.Point(186, 132);
+            this.textBoxVezetoEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxVezetoEmail.Name = "textBoxVezetoEmail";
-            this.textBoxVezetoEmail.Size = new System.Drawing.Size(149, 22);
+            this.textBoxVezetoEmail.Size = new System.Drawing.Size(113, 20);
             this.textBoxVezetoEmail.TabIndex = 41;
             // 
             // textBoxVezetoNev
             // 
-            this.textBoxVezetoNev.Location = new System.Drawing.Point(248, 47);
-            this.textBoxVezetoNev.Margin = new System.Windows.Forms.Padding(5);
+            this.textBoxVezetoNev.Location = new System.Drawing.Point(186, 38);
+            this.textBoxVezetoNev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxVezetoNev.Name = "textBoxVezetoNev";
-            this.textBoxVezetoNev.Size = new System.Drawing.Size(149, 22);
+            this.textBoxVezetoNev.Size = new System.Drawing.Size(113, 20);
             this.textBoxVezetoNev.TabIndex = 40;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(51, 164);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Location = new System.Drawing.Point(38, 133);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 20);
+            this.label4.Size = new System.Drawing.Size(71, 17);
             this.label4.TabIndex = 39;
             this.label4.Text = "Email cím:";
             // 
@@ -91,10 +91,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(51, 105);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(38, 85);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 20);
+            this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 37;
             this.label2.Text = "Telefonszám:";
             // 
@@ -102,26 +102,26 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(51, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(38, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 20);
+            this.label1.Size = new System.Drawing.Size(37, 17);
             this.label1.TabIndex = 36;
             this.label1.Text = "Név:";
             // 
             // textBoxVezetoTelefonszam
             // 
-            this.textBoxVezetoTelefonszam.Location = new System.Drawing.Point(248, 105);
-            this.textBoxVezetoTelefonszam.Margin = new System.Windows.Forms.Padding(5);
+            this.textBoxVezetoTelefonszam.Location = new System.Drawing.Point(186, 85);
+            this.textBoxVezetoTelefonszam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxVezetoTelefonszam.Name = "textBoxVezetoTelefonszam";
-            this.textBoxVezetoTelefonszam.Size = new System.Drawing.Size(149, 22);
+            this.textBoxVezetoTelefonszam.Size = new System.Drawing.Size(113, 20);
             this.textBoxVezetoTelefonszam.TabIndex = 48;
             // 
             // FormUjVezetoHozzaad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 278);
+            this.ClientSize = new System.Drawing.Size(318, 226);
             this.Controls.Add(this.textBoxVezetoTelefonszam);
             this.Controls.Add(this.buttonVezetoFelvetele);
             this.Controls.Add(this.buttonMegsem);
@@ -130,7 +130,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormUjVezetoHozzaad";
             this.Text = "FormUjVezetoHozzaad";
             this.ResumeLayout(false);
