@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Formok.VezetoForm;
 using Szakdolgozat.Repository;
 
 namespace Szakdolgozat
@@ -31,6 +32,7 @@ namespace Szakdolgozat
         private FormPalyazatUjHozzaad FormUjHozzaad;
         private FormKoltsegTerv FormKoltsegTerv;
         private FormTenyfelhasznalas FormTenyfelhasznalas;
+        private FormVezetok FormVezetok;
         private void FormPalyazat_Load(object sender, EventArgs e)
         {
             palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());

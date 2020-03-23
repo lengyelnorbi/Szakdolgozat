@@ -33,7 +33,7 @@ namespace Szakdolgozat.Model
                     "');";
         }
 
-        public string getUpdate()
+        public string getUpdatePalyazat(string azonosito)
         {
             return
                    "UPDATE palyazat, posztok, vezetok SET Palyazat_tipus = '" +
@@ -52,15 +52,8 @@ namespace Szakdolgozat.Model
                    getFelhasznalasiIdoVege() +
                    "', Tudomanyterulet = '" +
                    getTudomanyterulet() +
-                   "', vezetok.Nev = '" +
-                   getSzakmaiVezeto() +
                    "' WHERE palyazat.Azonosito = '" +
-                   azonosito +
-                   "' AND vezetok.id = (SELECT posztok.Vezeto_id FROM posztok WHERE posztok.poszt = 'Szakmai Vezető');" +
-                   " UPDATE palyazat, vezetok SET vezetok.Nev = '" +
-                   getPenzugyiVezeto() +
-                   "' WHERE palyazat.Azonosito = '" +
-                   azonosito + "' AND vezetok.id = (SELECT posztok.Vezeto_id FROM posztok WHERE posztok.poszt = 'Pénzügyi Vezető');";
+                   azonosito + "';";
         }
         /*public static string getAllRecord()
         {

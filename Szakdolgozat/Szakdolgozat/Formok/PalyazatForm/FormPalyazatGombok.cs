@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Formok.VezetoForm;
 using Szakdolgozat.Repository;
 
 namespace Szakdolgozat
@@ -20,6 +21,7 @@ namespace Szakdolgozat
             FormModosit = null;
             FormKoltsegTerv = null;
             FormTenyfelhasznalas = null;
+            FormVezetok = null;
         }
         private void buttonPalyazatUjPalyazatForm_Click(object sender, EventArgs e)
         {
@@ -60,7 +62,15 @@ namespace Szakdolgozat
                 FormTenyfelhasznalas.Show();
             }
         }
-
+        private void buttonVezetok_Click(object sender, EventArgs e)
+        {
+            if (FormVezetok == null)
+            {
+                FormVezetok = new FormVezetok();
+                FormVezetok.Closed += f_Closed;
+                FormVezetok.Show();
+            }
+        }
         private void buttonPalyazatTorol_Click(object sender, EventArgs e)
         {
             if ((dataGridViewPalyazatok.Rows == null) ||

@@ -44,20 +44,16 @@ namespace Szakdolgozat.Formok.VezetoForm
                 this.Close();
             }
         }
-
         private void buttonVissza_Click(object sender, EventArgs e)
         {
-            FormPalyazatUjHozzaad palyazatUjHozzaad = new FormPalyazatUjHozzaad();
             this.Close();
-            palyazatUjHozzaad.ShowDialog();
         }
         private void buttonVezetoTorol_Click(object sender, EventArgs e)
         {
-
             if ((dataGridViewVezetok.Rows == null) ||
                 (dataGridViewVezetok.Rows.Count == 0))
                 return;
-            //A felhasználó által kiválasztott sor a DataGridView-ban            
+            //A felhasználó által kiválasztott sor a DataGridView-ban
             int sor = dataGridViewVezetok.SelectedRows[0].Index;
             if (MessageBox.Show(
                 "Valóban törölni akarja a sort?",

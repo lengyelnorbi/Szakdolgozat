@@ -58,9 +58,9 @@
             // 
             // buttonMentes
             // 
-            this.buttonMentes.Location = new System.Drawing.Point(427, 263);
+            this.buttonMentes.Location = new System.Drawing.Point(436, 263);
             this.buttonMentes.Name = "buttonMentes";
-            this.buttonMentes.Size = new System.Drawing.Size(121, 23);
+            this.buttonMentes.Size = new System.Drawing.Size(133, 23);
             this.buttonMentes.TabIndex = 76;
             this.buttonMentes.Text = "Mentés";
             this.buttonMentes.UseVisualStyleBackColor = true;
@@ -68,9 +68,9 @@
             // 
             // buttonMegsem
             // 
-            this.buttonMegsem.Location = new System.Drawing.Point(645, 263);
+            this.buttonMegsem.Location = new System.Drawing.Point(623, 263);
             this.buttonMegsem.Name = "buttonMegsem";
-            this.buttonMegsem.Size = new System.Drawing.Size(121, 23);
+            this.buttonMegsem.Size = new System.Drawing.Size(143, 23);
             this.buttonMegsem.TabIndex = 73;
             this.buttonMegsem.Text = "Mégsem";
             this.buttonMegsem.UseVisualStyleBackColor = true;

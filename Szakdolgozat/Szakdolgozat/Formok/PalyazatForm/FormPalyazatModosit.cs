@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Formok.VezetoForm;
 using Szakdolgozat.Model;
 using Szakdolgozat.Repository;
 
@@ -78,7 +79,9 @@ namespace Szakdolgozat
             //1. módosítani a listába
             palyazatRepo.updatePalyazatInList(Azonosito, modosult);
             //2. módosítani az adatbázisban
-            repoSql.updatePalyazatInDatabase(/*Azonosito,*/ modosult);
+            repoSql.updatePalyazatInDatabase(Azonosito, modosult);
+            repoSql.insertPosztokIntoDatabase(Azonosito, textBoxSzakmaiVezeto.Text, "Szakmai vezető");
+            repoSql.insertPosztokIntoDatabase(Azonosito, textBoxPenzugyiVezeto.Text, "Pénzügyi vezető");
             formModosit();
         }
 

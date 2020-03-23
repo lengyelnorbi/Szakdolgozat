@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Szakdolgozat.Formok.VezetoForm;
 using Szakdolgozat.Model;
 using Szakdolgozat.Repository;
 
@@ -18,15 +17,9 @@ namespace Szakdolgozat
         string Azonosito;
         private Tarolo palyazatRepo = new Tarolo();
         RepositoryDatabaseTablePalyazatSQL repoSql = new RepositoryDatabaseTablePalyazatSQL();
-        FormVezetok FormVezetok;
         public FormPalyazatUjHozzaad()
         {
             InitializeComponent();
-        }
-
-        void f_Closed(object sender, EventArgs e)
-        {
-            FormVezetok = null;
         }
 
         public delegate void UpdateDelegate(object sender, UpdateEventArgs args);
@@ -66,24 +59,13 @@ namespace Szakdolgozat
             palyazatRepo.palyazatHozzaadListahoz(ujPalyazat);
 
             repoSql.insertPalyazatIntoDatabase(ujPalyazat);
+            repoSql.insertEmptyKoltsegTervIntoDatabase(palyazatAzonosito);
             repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxSzakmaiVezeto.Text, "Szakmai vezető");
             repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxPenzugyiVezeto.Text, "Pénzügyi vezető");
-            repoSql.insertEmptyKoltsegTervIntoDatabase(palyazatAzonosito);
+
 
             formModosit();
             this.Close();
-        }
-
-        private void buttonVezetokForm_Click_1(object sender, EventArgs e)
-        {
-
-            if (FormVezetok == null)
-            {
-                FormVezetok = new FormVezetok();
-                FormVezetok.Closed += f_Closed;
-                FormVezetok.Show();
-                this.Close();
-            }
         }
     }
 }

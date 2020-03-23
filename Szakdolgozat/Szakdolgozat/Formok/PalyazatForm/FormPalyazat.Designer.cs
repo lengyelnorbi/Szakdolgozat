@@ -62,6 +62,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxSzakmaiVezeto = new System.Windows.Forms.TextBox();
             this.buttonDataTableFrissit = new System.Windows.Forms.Button();
+            this.buttonVezetok = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPalyazatok)).BeginInit();
             this.SuspendLayout();
             // 
@@ -311,7 +312,7 @@
             // buttonPalyazatTorol
             // 
             this.buttonPalyazatTorol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonPalyazatTorol.Location = new System.Drawing.Point(1195, 90);
+            this.buttonPalyazatTorol.Location = new System.Drawing.Point(1195, 71);
             this.buttonPalyazatTorol.Name = "buttonPalyazatTorol";
             this.buttonPalyazatTorol.Size = new System.Drawing.Size(103, 23);
             this.buttonPalyazatTorol.TabIndex = 31;
@@ -396,7 +397,7 @@
             // buttonDataTableFrissit
             // 
             this.buttonDataTableFrissit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonDataTableFrissit.Location = new System.Drawing.Point(1313, 90);
+            this.buttonDataTableFrissit.Location = new System.Drawing.Point(1313, 71);
             this.buttonDataTableFrissit.Name = "buttonDataTableFrissit";
             this.buttonDataTableFrissit.Size = new System.Drawing.Size(103, 23);
             this.buttonDataTableFrissit.TabIndex = 39;
@@ -404,12 +405,23 @@
             this.buttonDataTableFrissit.UseVisualStyleBackColor = true;
             this.buttonDataTableFrissit.Click += new System.EventHandler(this.buttonDataTableFrissit_Click);
             // 
+            // buttonVezetok
+            // 
+            this.buttonVezetok.Location = new System.Drawing.Point(1244, 113);
+            this.buttonVezetok.Name = "buttonVezetok";
+            this.buttonVezetok.Size = new System.Drawing.Size(121, 23);
+            this.buttonVezetok.TabIndex = 106;
+            this.buttonVezetok.Text = "Vezetők kezelése";
+            this.buttonVezetok.UseVisualStyleBackColor = true;
+            this.buttonVezetok.Click += new System.EventHandler(this.buttonVezetok_Click);
+            // 
             // FormPalyazat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1438, 622);
+            this.Controls.Add(this.buttonVezetok);
             this.Controls.Add(this.buttonDataTableFrissit);
             this.Controls.Add(this.textBoxSzakmaiVezeto);
             this.Controls.Add(this.label12);
@@ -489,6 +501,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxSzakmaiVezeto;
         private System.Windows.Forms.Button buttonDataTableFrissit;
+        private System.Windows.Forms.Button buttonVezetok;
     }
 }
 

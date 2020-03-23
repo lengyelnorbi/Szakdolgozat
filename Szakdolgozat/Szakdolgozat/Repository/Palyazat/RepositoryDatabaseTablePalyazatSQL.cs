@@ -92,6 +92,8 @@ namespace Szakdolgozat.Repository
                     string penzugyiVezeto = penzugyiVezetoNeve;
                     Palyazat p = new Palyazat(azonosito, palyazatTipus, palyazatNev, finanszirozasTipus, tervezettOsszeg, elnyertOsszeg, penznem, felhasznIdoKezd, felhasznIdoVege, tudomanyterulet, szakmaiVezeto, penzugyiVezeto);
                     palyazatok.Add(p);
+                    szakmaiVezetoNeve = "";
+                    penzugyiVezetoNeve = "";
                 }
                 connection.Close();
             } 
@@ -124,13 +126,13 @@ namespace Szakdolgozat.Repository
             }
         }
 
-        public void updatePalyazatInDatabase(/*string Azonosito,*/ Palyazat modified)
+        public void updatePalyazatInDatabase(string Azonosito, Palyazat modified)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = modified.getUpdate(/*Azonosito*/);
+                string query = modified.getUpdatePalyazat(Azonosito);
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

@@ -223,7 +223,6 @@
             this.buttonVezetokForm.TabIndex = 105;
             this.buttonVezetokForm.Text = "Vezetők kezelése";
             this.buttonVezetokForm.UseVisualStyleBackColor = true;
-            this.buttonVezetokForm.Click += new System.EventHandler(this.buttonVezetokForm_Click_1);
             // 
             // comboBoxPalyazatTipus
             // 
