@@ -133,6 +133,7 @@
             // 
             // comboBoxKoltsegTipus
             // 
+            this.comboBoxKoltsegTipus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKoltsegTipus.FormattingEnabled = true;
             this.comboBoxKoltsegTipus.Items.AddRange(new object[] {
             "Bérköltség",

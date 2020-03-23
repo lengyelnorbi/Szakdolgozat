@@ -63,7 +63,10 @@
             this.textBoxSzakmaiVezeto = new System.Windows.Forms.TextBox();
             this.buttonDataTableFrissit = new System.Windows.Forms.Button();
             this.buttonVezetok = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.kilépToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPalyazatok)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewPalyazatok
@@ -415,6 +418,23 @@
             this.buttonVezetok.UseVisualStyleBackColor = true;
             this.buttonVezetok.Click += new System.EventHandler(this.buttonVezetok_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kilépToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1438, 24);
+            this.menuStrip1.TabIndex = 107;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // kilépToolStripMenuItem
+            // 
+            this.kilépToolStripMenuItem.Name = "kilépToolStripMenuItem";
+            this.kilépToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.kilépToolStripMenuItem.Text = "Kilép";
+            this.kilépToolStripMenuItem.Click += new System.EventHandler(this.kilépToolStripMenuItem_Click);
+            // 
             // FormPalyazat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,10 +476,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxAzonosito);
             this.Controls.Add(this.dataGridViewPalyazatok);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormPalyazat";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormPalyazat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPalyazatok)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,6 +526,8 @@
         private System.Windows.Forms.TextBox textBoxSzakmaiVezeto;
         private System.Windows.Forms.Button buttonDataTableFrissit;
         private System.Windows.Forms.Button buttonVezetok;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem kilépToolStripMenuItem;
     }
 }
 

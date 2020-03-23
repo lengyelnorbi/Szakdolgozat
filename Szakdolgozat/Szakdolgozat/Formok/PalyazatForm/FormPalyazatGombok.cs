@@ -111,5 +111,10 @@ namespace Szakdolgozat
                 //beallitFutarDataGriViewt();
             }
         }
+        private void kilépToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            databaseRepo.getDeleteDatabase();
+            this.Close();
+        }
     }
 }

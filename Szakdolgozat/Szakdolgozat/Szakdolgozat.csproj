@@ -161,11 +161,15 @@
     <Compile Include="Repository\KoltsegTerv\RepositoryKoltsegTerv.cs" />
     <Compile Include="Exceptions\TaroloException.cs" />
     <Compile Include="Repository\Poszt\RepositoryPoszt.cs" />
+    <Compile Include="Repository\TestData\RepositoryDatabase.cs" />
+    <Compile Include="Repository\TestData\RepositoryAlterTable.cs" />
     <Compile Include="Repository\Tarolo.cs" />
     <Compile Include="Repository\Tenyfelhasznalas\RepositoryDatabaseTableTenyfelhasznalasSQL.cs" />
     <Compile Include="Exceptions\RepositoryExceptionCantAdd.cs" />
     <Compile Include="Repository\Tenyfelhasznalas\RepositoryTenyfelhasznalasRecordModify.cs" />
     <Compile Include="Repository\Tenyfelhasznalas\RepositoryTenyfelhasznalas.cs" />
+    <Compile Include="Repository\TestData\RepositoryInsertInto.cs" />
+    <Compile Include="Repository\TestData\RepositoryCreateTable.cs" />
     <Compile Include="Repository\Vezeto\RepositoryDatabaseTableVezetoSQL.cs" />
     <Compile Include="Repository\Vezeto\RepositoryVezetoRecordModify.cs" />
     <Compile Include="Repository\Vezeto\RepositoryVezeto.cs" />

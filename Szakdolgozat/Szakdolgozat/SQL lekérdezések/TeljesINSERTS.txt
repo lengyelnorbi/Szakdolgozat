@@ -1,6 +1,7 @@
 ﻿//Költség típus tábla teljes feltöltése
 
-INSERT INTO `koltseg_tipusok` (`id`, `Koltseg_tipus`) VALUES (NULL, 'Bérköltség'),
+INSERT INTO `koltseg_tipusok` (`id`, `Koltseg_tipus`) VALUES (NULL, 'Költség_típus'),
+(NULL, 'Bérköltség'),
 (NULL, 'Járulék'),
 (NULL, 'Szakmai anyag'),
 (NULL, 'Szolgáltatás'),

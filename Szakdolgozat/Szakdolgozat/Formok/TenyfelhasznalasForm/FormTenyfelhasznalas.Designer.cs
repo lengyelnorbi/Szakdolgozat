@@ -160,6 +160,7 @@
             // 
             // comboBoxKoltsegTipus
             // 
+            this.comboBoxKoltsegTipus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKoltsegTipus.Enabled = false;
             this.comboBoxKoltsegTipus.FormattingEnabled = true;
             this.comboBoxKoltsegTipus.Items.AddRange(new object[] {

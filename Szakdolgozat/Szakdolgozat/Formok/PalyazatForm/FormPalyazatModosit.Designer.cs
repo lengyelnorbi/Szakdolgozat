@@ -256,6 +256,7 @@
             // 
             // comboBoxPenznem
             // 
+            this.comboBoxPenznem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPenznem.FormattingEnabled = true;
             this.comboBoxPenznem.Items.AddRange(new object[] {
             "Forint",
@@ -268,6 +269,7 @@
             // 
             // comboBoxTudomanyTerulet
             // 
+            this.comboBoxTudomanyTerulet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTudomanyTerulet.FormattingEnabled = true;
             this.comboBoxTudomanyTerulet.Items.AddRange(new object[] {
             "Műszaki",
@@ -281,6 +283,7 @@
             // 
             // comboBoxFinanszirozasTipus
             // 
+            this.comboBoxFinanszirozasTipus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFinanszirozasTipus.FormattingEnabled = true;
             this.comboBoxFinanszirozasTipus.Items.AddRange(new object[] {
             "Előfinanszírozott",
@@ -292,6 +295,7 @@
             // 
             // comboBoxPalyazatTipus
             // 
+            this.comboBoxPalyazatTipus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPalyazatTipus.FormattingEnabled = true;
             this.comboBoxPalyazatTipus.Items.AddRange(new object[] {
             "Minisztériumi",

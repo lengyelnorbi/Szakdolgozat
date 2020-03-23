@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Szakdolgozat.Formok.VezetoForm;
 using Szakdolgozat.Repository;
+using Szakdolgozat.Repository.TestDatabase;
 
 namespace Szakdolgozat
 {
@@ -33,8 +34,26 @@ namespace Szakdolgozat
         private FormKoltsegTerv FormKoltsegTerv;
         private FormTenyfelhasznalas FormTenyfelhasznalas;
         private FormVezetok FormVezetok;
+        private RepositoryDatabase databaseRepo = new RepositoryDatabase();
         private void FormPalyazat_Load(object sender, EventArgs e)
         {
+            databaseRepo.getCreateDatabase();
+            databaseRepo.getCreatePalyazatTable();
+            databaseRepo.getCreateKoltsegTipusTable();
+            databaseRepo.getCreateKoltsegTervTable();
+            databaseRepo.getCreateTenyfelhasznalasTable();
+            databaseRepo.getCreateVezetokTable();
+            databaseRepo.getCreatePosztokTable();
+            databaseRepo.getAlterTableAddForeignKeysToKoltsegTerv();
+            databaseRepo.getAlterTableAddForeignKeysToPosztok();
+            databaseRepo.getAlterTableAddForeignKeysToTenyfelhasznalas();
+            databaseRepo.getInsertPalyazatIntoDatabase();
+            databaseRepo.getInsertKoltsegTipusokIntoDatabase();
+            databaseRepo.getInsertKoltsegTervIntoDatabase();
+            databaseRepo.getInsertTenyfelhasznalasIntoDatabase();
+            databaseRepo.getInsertVezetokIntoDatabase();
+            databaseRepo.getInsertPosztokIntoDatabase();
+
             palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
             frissitAdatokkalDataGriedViewt();
             beallitPalyazatDataGriViewt();

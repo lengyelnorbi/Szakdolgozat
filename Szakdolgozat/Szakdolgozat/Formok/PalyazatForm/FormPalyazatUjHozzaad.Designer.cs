@@ -46,7 +46,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxPenzugyiVezeto = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.buttonVezetokForm = new System.Windows.Forms.Button();
             this.comboBoxPalyazatTipus = new System.Windows.Forms.ComboBox();
             this.comboBoxFinanszirozasTipus = new System.Windows.Forms.ComboBox();
             this.comboBoxTudomanyTerulet = new System.Windows.Forms.ComboBox();
@@ -55,7 +54,7 @@
             // 
             // buttonMentes
             // 
-            this.buttonMentes.Location = new System.Drawing.Point(285, 240);
+            this.buttonMentes.Location = new System.Drawing.Point(427, 239);
             this.buttonMentes.Name = "buttonMentes";
             this.buttonMentes.Size = new System.Drawing.Size(121, 23);
             this.buttonMentes.TabIndex = 100;
@@ -215,17 +214,9 @@
             this.label11.TabIndex = 101;
             this.label11.Text = "Pénzügyi vezető:";
             // 
-            // buttonVezetokForm
-            // 
-            this.buttonVezetokForm.Location = new System.Drawing.Point(446, 240);
-            this.buttonVezetokForm.Name = "buttonVezetokForm";
-            this.buttonVezetokForm.Size = new System.Drawing.Size(121, 23);
-            this.buttonVezetokForm.TabIndex = 105;
-            this.buttonVezetokForm.Text = "Vezetők kezelése";
-            this.buttonVezetokForm.UseVisualStyleBackColor = true;
-            // 
             // comboBoxPalyazatTipus
             // 
+            this.comboBoxPalyazatTipus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPalyazatTipus.FormattingEnabled = true;
             this.comboBoxPalyazatTipus.Items.AddRange(new object[] {
             "Minisztériumi",
@@ -241,6 +232,7 @@
             // 
             // comboBoxFinanszirozasTipus
             // 
+            this.comboBoxFinanszirozasTipus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFinanszirozasTipus.FormattingEnabled = true;
             this.comboBoxFinanszirozasTipus.Items.AddRange(new object[] {
             "Előfinanszírozott",
@@ -252,6 +244,7 @@
             // 
             // comboBoxTudomanyTerulet
             // 
+            this.comboBoxTudomanyTerulet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTudomanyTerulet.FormattingEnabled = true;
             this.comboBoxTudomanyTerulet.Items.AddRange(new object[] {
             "Műszaki",
@@ -265,6 +258,7 @@
             // 
             // comboBoxPenznem
             // 
+            this.comboBoxPenznem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPenznem.FormattingEnabled = true;
             this.comboBoxPenznem.Items.AddRange(new object[] {
             "Forint",
@@ -285,7 +279,6 @@
             this.Controls.Add(this.comboBoxTudomanyTerulet);
             this.Controls.Add(this.comboBoxFinanszirozasTipus);
             this.Controls.Add(this.comboBoxPalyazatTipus);
-            this.Controls.Add(this.buttonVezetokForm);
             this.Controls.Add(this.textBoxSzakmaiVezeto);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBoxPenzugyiVezeto);
@@ -332,7 +325,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxPenzugyiVezeto;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button buttonVezetokForm;
         private System.Windows.Forms.ComboBox comboBoxPalyazatTipus;
         private System.Windows.Forms.ComboBox comboBoxFinanszirozasTipus;
         private System.Windows.Forms.ComboBox comboBoxTudomanyTerulet;
