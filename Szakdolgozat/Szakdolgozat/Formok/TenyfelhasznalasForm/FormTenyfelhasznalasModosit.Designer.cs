@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonTenyfelhasznMentes = new System.Windows.Forms.Button();
             this.buttonMegsem = new System.Windows.Forms.Button();
             this.textBoxFizetesDatuma = new System.Windows.Forms.TextBox();
@@ -38,6 +39,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxKoltsegTipus = new System.Windows.Forms.ComboBox();
+            this.errorProviderTenyfelhasznalasKoltsegTipus = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTenyfelhasznalasOsszeg = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTenyfelhasznalasFizetesDatum = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasKoltsegTipus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasOsszeg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasFizetesDatum)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonTenyfelhasznMentes
@@ -150,12 +157,24 @@
             this.comboBoxKoltsegTipus.Size = new System.Drawing.Size(132, 21);
             this.comboBoxKoltsegTipus.TabIndex = 36;
             // 
+            // errorProviderTenyfelhasznalasKoltsegTipus
+            // 
+            this.errorProviderTenyfelhasznalasKoltsegTipus.ContainerControl = this;
+            // 
+            // errorProviderTenyfelhasznalasOsszeg
+            // 
+            this.errorProviderTenyfelhasznalasOsszeg.ContainerControl = this;
+            // 
+            // errorProviderTenyfelhasznalasFizetesDatum
+            // 
+            this.errorProviderTenyfelhasznalasFizetesDatum.ContainerControl = this;
+            // 
             // FormTenyfelhasznalasModosit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(335, 264);
+            this.ClientSize = new System.Drawing.Size(349, 262);
             this.Controls.Add(this.comboBoxKoltsegTipus);
             this.Controls.Add(this.buttonTenyfelhasznMentes);
             this.Controls.Add(this.buttonMegsem);
@@ -169,6 +188,9 @@
             this.Name = "FormTenyfelhasznalasModosit";
             this.Text = "FormTenyfelhasznalasModosit";
             this.Load += new System.EventHandler(this.FormTenyfelhasznalasModosit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasKoltsegTipus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasOsszeg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasFizetesDatum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +207,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxKoltsegTipus;
+        private System.Windows.Forms.ErrorProvider errorProviderTenyfelhasznalasKoltsegTipus;
+        private System.Windows.Forms.ErrorProvider errorProviderTenyfelhasznalasOsszeg;
+        private System.Windows.Forms.ErrorProvider errorProviderTenyfelhasznalasFizetesDatum;
     }
 }

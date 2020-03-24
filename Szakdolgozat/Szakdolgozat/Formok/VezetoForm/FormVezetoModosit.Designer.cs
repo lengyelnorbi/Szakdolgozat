@@ -57,9 +57,9 @@
             // buttonVezetoModositMentes
             // 
             this.buttonVezetoModositMentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonVezetoModositMentes.Location = new System.Drawing.Point(12, 175);
+            this.buttonVezetoModositMentes.Location = new System.Drawing.Point(37, 175);
             this.buttonVezetoModositMentes.Name = "buttonVezetoModositMentes";
-            this.buttonVezetoModositMentes.Size = new System.Drawing.Size(140, 23);
+            this.buttonVezetoModositMentes.Size = new System.Drawing.Size(115, 23);
             this.buttonVezetoModositMentes.TabIndex = 55;
             this.buttonVezetoModositMentes.Text = "Mentes";
             this.buttonVezetoModositMentes.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             this.buttonMegsem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.buttonMegsem.Location = new System.Drawing.Point(182, 175);
             this.buttonMegsem.Name = "buttonMegsem";
-            this.buttonMegsem.Size = new System.Drawing.Size(140, 23);
+            this.buttonMegsem.Size = new System.Drawing.Size(113, 23);
             this.buttonMegsem.TabIndex = 54;
             this.buttonMegsem.Text = "Mégsem";
             this.buttonMegsem.UseVisualStyleBackColor = true;

@@ -82,5 +82,13 @@ namespace Szakdolgozat.Model
         {
             return "INSERT INTO `koltseg_terv` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_osszeg`, `Modositott_Osszeg`) VALUES ('NULL', '" + palyazatAzonosito + "', '1', '', '');";
         }
+        public static string getDeletePoszt(string palyazatAzonosito, string poszt)
+        {
+            return "DELETE FROM Posztok WHERE Palyazat_Azonosito = '" + palyazatAzonosito +"' AND poszt = '" + poszt + "';";
+        }
+        public static string updatePoszt(string palyazatAzonosito, string poszt, string vezetoNev)
+        {
+            return "UPDATE Posztok SET posztok.vezeto_id = (SELECT vezetok.id FROM vezetok WHERE vezetok.nev = '" + vezetoNev + "') WHERE posztok.Palyazat_Azonosito = '" + palyazatAzonosito + "' AND posztok.poszt = '" + poszt + "';";
+        }
     }
 }

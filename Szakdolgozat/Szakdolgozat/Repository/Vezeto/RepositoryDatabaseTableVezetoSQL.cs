@@ -139,5 +139,43 @@ namespace Szakdolgozat.Repository
             legnagyobbID = id.Max();
             return legnagyobbID;
         }
+        public void deletePosztFromDatabase(string palyazatAzonosito, string poszt)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = Palyazat.getDeletePoszt(palyazatAzonosito, poszt);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine("A poszt törlése adatbázisból nem sikerült.");
+                throw new RepositoryException("Sikertelen törlés az adatbázisban.");
+            }
+        }
+        public void updatePosztInDatabase(string palyazatAzonosito, string vezetoNev, string poszt)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = Palyazat.updatePoszt(palyazatAzonosito, vezetoNev, poszt);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine("A poszt törlése adatbázisból nem sikerült.");
+                throw new RepositoryException("Sikertelen törlés az adatbázisban.");
+            }
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBoxKoltsegTipus = new System.Windows.Forms.ComboBox();
             this.buttonTenyfelhasznalasLetrehoz = new System.Windows.Forms.Button();
             this.buttonMegsem = new System.Windows.Forms.Button();
@@ -38,6 +39,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProviderTenyfelhasznalasKoltsegTipus = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTenyfelhasznalasOsszeg = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTenyfelhasznalasFizetesDatum = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasKoltsegTipus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasOsszeg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasFizetesDatum)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxKoltsegTipus
@@ -150,11 +157,23 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Pályázat azonosító:";
             // 
+            // errorProviderTenyfelhasznalasKoltsegTipus
+            // 
+            this.errorProviderTenyfelhasznalasKoltsegTipus.ContainerControl = this;
+            // 
+            // errorProviderTenyfelhasznalasOsszeg
+            // 
+            this.errorProviderTenyfelhasznalasOsszeg.ContainerControl = this;
+            // 
+            // errorProviderTenyfelhasznalasFizetesDatum
+            // 
+            this.errorProviderTenyfelhasznalasFizetesDatum.ContainerControl = this;
+            // 
             // FormUjTenyfelhasznHozzaad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 267);
+            this.ClientSize = new System.Drawing.Size(356, 265);
             this.Controls.Add(this.comboBoxKoltsegTipus);
             this.Controls.Add(this.buttonTenyfelhasznalasLetrehoz);
             this.Controls.Add(this.buttonMegsem);
@@ -167,6 +186,9 @@
             this.Controls.Add(this.label1);
             this.Name = "FormUjTenyfelhasznHozzaad";
             this.Text = "FormUjTenyfelhasznHozzaad";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasKoltsegTipus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasOsszeg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasFizetesDatum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +206,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProviderTenyfelhasznalasKoltsegTipus;
+        private System.Windows.Forms.ErrorProvider errorProviderTenyfelhasznalasOsszeg;
+        private System.Windows.Forms.ErrorProvider errorProviderTenyfelhasznalasFizetesDatum;
     }
 }

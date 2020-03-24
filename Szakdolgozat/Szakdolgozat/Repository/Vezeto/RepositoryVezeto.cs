@@ -41,6 +41,13 @@ namespace Szakdolgozat.Repository
             else
                 throw new RepositoryExceptionCantModified("A vezető módosítása nem sikerült");
         }
+        public bool isVezetoInList(string vezetoNeve)
+        {
+            Vezeto v = vezetok.Find(x => x.getNev() == vezetoNeve);
+            if (v != null)
+                return true;
+            return false;
+        }
         public void vezetokHozzaadListahoz(Vezeto ujVezeto)
         {
             try

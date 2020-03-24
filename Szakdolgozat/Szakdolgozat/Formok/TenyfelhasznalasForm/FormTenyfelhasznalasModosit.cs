@@ -32,18 +32,70 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
         }
         private void buttonTenyfelhasznMentes_Click(object sender, EventArgs e)
         {
-            Tenyfelhasznalas modosult = new Tenyfelhasznalas(tenyfelhasznID, textBoxPalyazatAZ.Text,
-            comboBoxKoltsegTipus.Text,
-            Convert.ToSingle(textBoxFizetettOsszeg.Text),
-            textBoxFizetesDatuma.Text
-            );
-            //1. módosítani a listába
-            tenyfelhasznalasRepo.updateTenyfelhasznalasInList(tenyfelhasznID, modosult);
-            //2. módosítani az adatbázisban
-            repoSql.updateTenyfelhasznalasInDatabase(tenyfelhasznID, modosult);
-            FormTenyfelhasznalas tenyfelhasznalas = new FormTenyfelhasznalas(textBoxPalyazatAZ.Text);
-            this.Close();
-            tenyfelhasznalas.ShowDialog();
+            errorProviderTenyfelhasznalasKoltsegTipus.SetError(comboBoxKoltsegTipus, "");
+            errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "");
+            errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "");
+            bool vanHiba = false;
+            string vezetoNev = "";
+            try
+            {
+                vezetoNev = Convert.ToString(comboBoxKoltsegTipus.Text);
+                if (comboBoxKoltsegTipus.Text == string.Empty)
+                {
+                    errorProviderTenyfelhasznalasKoltsegTipus.SetError(comboBoxKoltsegTipus, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderTenyfelhasznalasKoltsegTipus.SetError(comboBoxKoltsegTipus, "Hibás adat!");
+                vanHiba = true;
+            }
+            string vezetoTelefonszam = "";
+            try
+            {
+                vezetoTelefonszam = Convert.ToString(textBoxFizetettOsszeg.Text);
+                if (textBoxFizetettOsszeg.Text == string.Empty)
+                {
+                    errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Hibás adat!");
+                vanHiba = true;
+            }
+            string vezetoEmail = "";
+            try
+            {
+                vezetoEmail = Convert.ToString(textBoxFizetesDatuma.Text);
+                if (textBoxFizetesDatuma.Text == string.Empty)
+                {
+                    errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "Hibás adat!");
+                vanHiba = true;
+            }
+            if (!vanHiba)
+            {
+                Tenyfelhasznalas modosult = new Tenyfelhasznalas(tenyfelhasznID, textBoxPalyazatAZ.Text,
+                                                                comboBoxKoltsegTipus.Text,
+                                                                Convert.ToSingle(textBoxFizetettOsszeg.Text),
+                                                                textBoxFizetesDatuma.Text
+                                                                );
+                //1. módosítani a listába
+                tenyfelhasznalasRepo.updateTenyfelhasznalasInList(tenyfelhasznID, modosult);
+                //2. módosítani az adatbázisban
+                repoSql.updateTenyfelhasznalasInDatabase(tenyfelhasznID, modosult);
+                FormTenyfelhasznalas tenyfelhasznalas = new FormTenyfelhasznalas(textBoxPalyazatAZ.Text);
+                this.Close();
+                tenyfelhasznalas.ShowDialog();
+            }
         }
 
         private void buttonMegsem_Click(object sender, EventArgs e)

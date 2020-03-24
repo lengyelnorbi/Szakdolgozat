@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonVezetoFelvetele = new System.Windows.Forms.Button();
             this.buttonMegsem = new System.Windows.Forms.Button();
             this.textBoxVezetoEmail = new System.Windows.Forms.TextBox();
@@ -36,6 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxVezetoTelefonszam = new System.Windows.Forms.TextBox();
+            this.errorProviderVezetoNev = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderVezetoTelefonszam = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderVezetoEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoNev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoTelefonszam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoEmail)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonVezetoFelvetele
@@ -119,11 +126,23 @@
             this.textBoxVezetoTelefonszam.TabIndex = 48;
             this.textBoxVezetoTelefonszam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVezetoTelefonszam_KeyPress);
             // 
+            // errorProviderVezetoNev
+            // 
+            this.errorProviderVezetoNev.ContainerControl = this;
+            // 
+            // errorProviderVezetoTelefonszam
+            // 
+            this.errorProviderVezetoTelefonszam.ContainerControl = this;
+            // 
+            // errorProviderVezetoEmail
+            // 
+            this.errorProviderVezetoEmail.ContainerControl = this;
+            // 
             // FormUjVezetoHozzaad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 226);
+            this.ClientSize = new System.Drawing.Size(345, 226);
             this.Controls.Add(this.textBoxVezetoTelefonszam);
             this.Controls.Add(this.buttonVezetoFelvetele);
             this.Controls.Add(this.buttonMegsem);
@@ -134,6 +153,9 @@
             this.Controls.Add(this.label1);
             this.Name = "FormUjVezetoHozzaad";
             this.Text = "FormUjVezetoHozzaad";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoNev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoTelefonszam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoEmail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +170,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxVezetoTelefonszam;
+        private System.Windows.Forms.ErrorProvider errorProviderVezetoNev;
+        private System.Windows.Forms.ErrorProvider errorProviderVezetoTelefonszam;
+        private System.Windows.Forms.ErrorProvider errorProviderVezetoEmail;
     }
 }

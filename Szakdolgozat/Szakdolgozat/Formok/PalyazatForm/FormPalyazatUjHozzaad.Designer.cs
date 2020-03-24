@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonMentes = new System.Windows.Forms.Button();
             this.buttonMegsem = new System.Windows.Forms.Button();
             this.textBoxFelhasznIdoVege = new System.Windows.Forms.TextBox();
@@ -50,6 +51,26 @@
             this.comboBoxFinanszirozasTipus = new System.Windows.Forms.ComboBox();
             this.comboBoxTudomanyTerulet = new System.Windows.Forms.ComboBox();
             this.comboBoxPenznem = new System.Windows.Forms.ComboBox();
+            this.errorProviderPalyazatTipus = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPalyazatNev = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderFinanszirozasTipus = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPalyazatTudomanyterulet = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPalyazatSzakmaiVezeto = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPalyazatPenzugyiVezeto = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPalyazatElnyertOsszeg = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPalyazatPenznem = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPalyazatFelhasznIdoKezd = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPalyazatFelhasznIdoVege = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatTipus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatNev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFinanszirozasTipus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatTudomanyterulet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatSzakmaiVezeto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatPenzugyiVezeto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatElnyertOsszeg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatPenznem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatFelhasznIdoKezd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatFelhasznIdoVege)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonMentes
@@ -275,12 +296,52 @@
             this.comboBoxPenznem.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPenznem.TabIndex = 109;
             // 
+            // errorProviderPalyazatTipus
+            // 
+            this.errorProviderPalyazatTipus.ContainerControl = this;
+            // 
+            // errorProviderPalyazatNev
+            // 
+            this.errorProviderPalyazatNev.ContainerControl = this;
+            // 
+            // errorProviderFinanszirozasTipus
+            // 
+            this.errorProviderFinanszirozasTipus.ContainerControl = this;
+            // 
+            // errorProviderPalyazatTudomanyterulet
+            // 
+            this.errorProviderPalyazatTudomanyterulet.ContainerControl = this;
+            // 
+            // errorProviderPalyazatSzakmaiVezeto
+            // 
+            this.errorProviderPalyazatSzakmaiVezeto.ContainerControl = this;
+            // 
+            // errorProviderPalyazatPenzugyiVezeto
+            // 
+            this.errorProviderPalyazatPenzugyiVezeto.ContainerControl = this;
+            // 
+            // errorProviderPalyazatElnyertOsszeg
+            // 
+            this.errorProviderPalyazatElnyertOsszeg.ContainerControl = this;
+            // 
+            // errorProviderPalyazatPenznem
+            // 
+            this.errorProviderPalyazatPenznem.ContainerControl = this;
+            // 
+            // errorProviderPalyazatFelhasznIdoKezd
+            // 
+            this.errorProviderPalyazatFelhasznIdoKezd.ContainerControl = this;
+            // 
+            // errorProviderPalyazatFelhasznIdoVege
+            // 
+            this.errorProviderPalyazatFelhasznIdoVege.ContainerControl = this;
+            // 
             // FormPalyazatUjHozzaad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(743, 274);
+            this.ClientSize = new System.Drawing.Size(758, 274);
             this.Controls.Add(this.comboBoxPenznem);
             this.Controls.Add(this.comboBoxTudomanyTerulet);
             this.Controls.Add(this.comboBoxFinanszirozasTipus);
@@ -306,6 +367,16 @@
             this.Name = "FormPalyazatUjHozzaad";
             this.Text = "FormPalyazatUjHozzaad";
             this.Load += new System.EventHandler(this.FormPalyazatUjHozzaad_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatTipus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatNev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFinanszirozasTipus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatTudomanyterulet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatSzakmaiVezeto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatPenzugyiVezeto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatElnyertOsszeg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatPenznem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatFelhasznIdoKezd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatFelhasznIdoVege)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,5 +406,15 @@
         private System.Windows.Forms.ComboBox comboBoxFinanszirozasTipus;
         private System.Windows.Forms.ComboBox comboBoxTudomanyTerulet;
         private System.Windows.Forms.ComboBox comboBoxPenznem;
+        private System.Windows.Forms.ErrorProvider errorProviderPalyazatTipus;
+        private System.Windows.Forms.ErrorProvider errorProviderPalyazatNev;
+        private System.Windows.Forms.ErrorProvider errorProviderFinanszirozasTipus;
+        private System.Windows.Forms.ErrorProvider errorProviderPalyazatTudomanyterulet;
+        private System.Windows.Forms.ErrorProvider errorProviderPalyazatSzakmaiVezeto;
+        private System.Windows.Forms.ErrorProvider errorProviderPalyazatPenzugyiVezeto;
+        private System.Windows.Forms.ErrorProvider errorProviderPalyazatElnyertOsszeg;
+        private System.Windows.Forms.ErrorProvider errorProviderPalyazatPenznem;
+        private System.Windows.Forms.ErrorProvider errorProviderPalyazatFelhasznIdoKezd;
+        private System.Windows.Forms.ErrorProvider errorProviderPalyazatFelhasznIdoVege;
     }
 }

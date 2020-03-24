@@ -30,16 +30,68 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
 
         private void buttonTenyfelhasznalasLetrehoz_Click(object sender, EventArgs e)
         {
-            int id = repoSql.getTenyfelhasznalasID() + 1;
-            Tenyfelhasznalas ujTenyfelhasznalas = new Tenyfelhasznalas(id, textBoxPalyazatAZ.Text, comboBoxKoltsegTipus.Text, Convert.ToSingle(textBoxFizetettOsszeg.Text), textBoxFizetesDatuma.Text);
+            errorProviderTenyfelhasznalasKoltsegTipus.SetError(comboBoxKoltsegTipus, "");
+            errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "");
+            errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "");
+            bool vanHiba = false;
+            string vezetoNev = "";
+            try
+            {
+                vezetoNev = Convert.ToString(comboBoxKoltsegTipus.Text);
+                if (comboBoxKoltsegTipus.Text == string.Empty)
+                {
+                    errorProviderTenyfelhasznalasKoltsegTipus.SetError(comboBoxKoltsegTipus, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderTenyfelhasznalasKoltsegTipus.SetError(comboBoxKoltsegTipus, "Hibás adat!");
+                vanHiba = true;
+            }
+            string vezetoTelefonszam = "";
+            try
+            {
+                vezetoTelefonszam = Convert.ToString(textBoxFizetettOsszeg.Text);
+                if (textBoxFizetettOsszeg.Text == string.Empty)
+                {
+                    errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Hibás adat!");
+                vanHiba = true;
+            }
+            string vezetoEmail = "";
+            try
+            {
+                vezetoEmail = Convert.ToString(textBoxFizetesDatuma.Text); 
+                if (textBoxFizetesDatuma.Text == string.Empty)
+                {
+                    errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "Hibás adat!");
+                vanHiba = true;
+            }
+            if (!vanHiba)
+            {
+                int id = repoSql.getTenyfelhasznalasID() + 1;
+                Tenyfelhasznalas ujTenyfelhasznalas = new Tenyfelhasznalas(id, textBoxPalyazatAZ.Text, comboBoxKoltsegTipus.Text, Convert.ToSingle(textBoxFizetettOsszeg.Text), textBoxFizetesDatuma.Text);
 
-            tenyfelhasznalasRepo.tenyfelhasznalasHozzaadListahoz(ujTenyfelhasznalas);
+                tenyfelhasznalasRepo.tenyfelhasznalasHozzaadListahoz(ujTenyfelhasznalas);
 
-            repoSql.insertTenyfelhasznalasIntoDatabase(ujTenyfelhasznalas);
+                repoSql.insertTenyfelhasznalasIntoDatabase(ujTenyfelhasznalas);
 
-            FormTenyfelhasznalas tenyfelhasznalas = new FormTenyfelhasznalas(textBoxPalyazatAZ.Text);
-            this.Close();
-            tenyfelhasznalas.ShowDialog();
+                FormTenyfelhasznalas tenyfelhasznalas = new FormTenyfelhasznalas(textBoxPalyazatAZ.Text);
+                this.Close();
+                tenyfelhasznalas.ShowDialog();
+            }
         }
 
         private void textBoxFizetettOsszeg_KeyPress(object sender, KeyPressEventArgs e)

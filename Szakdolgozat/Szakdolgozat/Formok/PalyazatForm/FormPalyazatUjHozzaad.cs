@@ -14,7 +14,6 @@ namespace Szakdolgozat
 {
     public partial class FormPalyazatUjHozzaad : Form
     {
-        string Azonosito;
         private Tarolo palyazatRepo = new Tarolo();
         RepositoryDatabaseTablePalyazatSQL repoSql = new RepositoryDatabaseTablePalyazatSQL();
         public FormPalyazatUjHozzaad()
@@ -52,24 +51,172 @@ namespace Szakdolgozat
 
         private void buttonMentes_Click(object sender, EventArgs e)
         {
-            string palyazatAzonosito = comboBoxPalyazatTipus.Text + "1";
-            if(textBoxElnyertOsszeg.Text == string.Empty)
+            errorProviderPalyazatTipus.SetError(comboBoxPalyazatTipus, "");
+            errorProviderPalyazatNev.SetError(textBoxPalyazatNev, "");
+            errorProviderFinanszirozasTipus.SetError(comboBoxFinanszirozasTipus, "");
+            errorProviderPalyazatTudomanyterulet.SetError(comboBoxTudomanyTerulet, "");
+            errorProviderPalyazatSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "");
+            errorProviderPalyazatPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "");
+            errorProviderPalyazatElnyertOsszeg.SetError(textBoxElnyertOsszeg, "");
+            errorProviderPalyazatPenznem.SetError(comboBoxPenznem, "");
+            errorProviderPalyazatFelhasznIdoKezd.SetError(textBoxFelhasznIdoKezd, "");
+            errorProviderPalyazatFelhasznIdoVege.SetError(textBoxFelhasznIdoVege, "");
+            bool vanHiba = false;
+            bool nincsSzakmaiVezeto = false;
+            bool nincsPenzugyiVezeto = false;
+            string palyazatTipus = "";
+            try
             {
-                textBoxElnyertOsszeg.Text = "0";
+                palyazatTipus = Convert.ToString(comboBoxPalyazatTipus.Text);
+                if (comboBoxPalyazatTipus.Text == string.Empty)
+                {
+                    errorProviderPalyazatTipus.SetError(comboBoxPalyazatTipus, "Hibás adat!");
+                    vanHiba = true;
+                }
             }
-            Palyazat ujPalyazat = new Palyazat(palyazatAzonosito, comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text,Convert.ToSingle(textBoxElnyertOsszeg.Text),
-                Convert.ToSingle(textBoxElnyertOsszeg.Text), comboBoxPenznem.Text, textBoxFelhasznIdoKezd.Text, textBoxFelhasznIdoVege.Text, comboBoxTudomanyTerulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
+            catch (Exception ex)
+            {
+                errorProviderPalyazatTipus.SetError(comboBoxPalyazatTipus, "Hibás adat!");
+                vanHiba = true;
+            }
+            string palyazatNev = "";
+            try
+            {
+                palyazatNev = Convert.ToString(textBoxPalyazatNev.Text);
+                if (textBoxPalyazatNev.Text == string.Empty)
+                {
+                    errorProviderPalyazatNev.SetError(textBoxPalyazatNev, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderPalyazatNev.SetError(textBoxPalyazatNev, "Hibás adat!");
+                vanHiba = true;
+            }
+            string finanszirozasTipus = "";
+            try
+            {
+                finanszirozasTipus = Convert.ToString(comboBoxFinanszirozasTipus.Text);
+                if (comboBoxFinanszirozasTipus.Text == string.Empty)
+                {
+                    errorProviderFinanszirozasTipus.SetError(comboBoxFinanszirozasTipus, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderFinanszirozasTipus.SetError(comboBoxFinanszirozasTipus, "Hibás adat!");
+                vanHiba = true;
+            }
+            string tudomanyterulet = "";
+            try
+            {
+                tudomanyterulet = Convert.ToString(comboBoxTudomanyTerulet.Text);
+                if (comboBoxTudomanyTerulet.Text == string.Empty)
+                {
+                    errorProviderPalyazatTudomanyterulet.SetError(comboBoxTudomanyTerulet, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderPalyazatTudomanyterulet.SetError(comboBoxTudomanyTerulet, "Hibás adat!");
+                vanHiba = true;
+            }
+            string szakmaiVezeto = "";
+            try
+            {
+                szakmaiVezeto = Convert.ToString(textBoxSzakmaiVezeto.Text);
+                if (textBoxSzakmaiVezeto.Text == string.Empty)
+                {
+                    nincsSzakmaiVezeto = true; 
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderPalyazatSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "Hibás adat!");
+                vanHiba = true;
+            }
+            string penzugyiVezeto = "";
+            try
+            {
+                penzugyiVezeto = Convert.ToString(textBoxPenzugyiVezeto.Text);
+                if(textBoxPenzugyiVezeto.Text == string.Empty)
+                {
+                    nincsPenzugyiVezeto = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderPalyazatPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "Hibás adat!");
+                vanHiba = true;
+            }
+            string elnyertOsszeg = "";
+            try
+            {
+                elnyertOsszeg = Convert.ToString(textBoxElnyertOsszeg.Text);
+                if(textBoxElnyertOsszeg.Text == string.Empty)
+                {
+                    textBoxElnyertOsszeg.Text = "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderPalyazatElnyertOsszeg.SetError(textBoxElnyertOsszeg, "Hibás adat!");
+                vanHiba = true;
+            }
+            string penznem = "";
+            try
+            {
+                penznem = Convert.ToString(comboBoxPenznem.Text);
+            }
+            catch (Exception ex)
+            {
+                errorProviderPalyazatPenznem.SetError(comboBoxPenznem, "Hibás adat!");
+                vanHiba = true;
+            }
+            string felhasznalasiIdoKezd = "";
+            try
+            {
+                felhasznalasiIdoKezd = Convert.ToString(textBoxFelhasznIdoKezd.Text);
+            }
+            catch (Exception ex)
+            {
+                errorProviderPalyazatFelhasznIdoKezd.SetError(textBoxFelhasznIdoKezd, "Hibás adat!");
+                vanHiba = true;
+            }
+            string felhasznalasiIdoVege = "";
+            try
+            {
+                felhasznalasiIdoVege = Convert.ToString(textBoxFelhasznIdoVege.Text);
+            }
+            catch (Exception ex)
+            {
+                errorProviderPalyazatFelhasznIdoVege.SetError(textBoxFelhasznIdoVege, "Hibás adat!");
+                vanHiba = true;
+            }
+            if (!vanHiba)
+            {
+                string palyazatAzonosito = comboBoxPalyazatTipus.Text + "2";
+                Palyazat ujPalyazat = new Palyazat(palyazatAzonosito, comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text, 0,
+                    Convert.ToSingle(textBoxElnyertOsszeg.Text), comboBoxPenznem.Text, textBoxFelhasznIdoKezd.Text, textBoxFelhasznIdoVege.Text, comboBoxTudomanyTerulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
 
-            palyazatRepo.palyazatHozzaadListahoz(ujPalyazat);
+                palyazatRepo.palyazatHozzaadListahoz(ujPalyazat);
 
-            repoSql.insertPalyazatIntoDatabase(ujPalyazat);
-            repoSql.insertEmptyKoltsegTervIntoDatabase(palyazatAzonosito);
-            repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxSzakmaiVezeto.Text, "Szakmai vezető");
-            repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxPenzugyiVezeto.Text, "Pénzügyi vezető");
-
-
-            formModosit();
-            this.Close();
+                repoSql.insertPalyazatIntoDatabase(ujPalyazat);
+                repoSql.insertEmptyKoltsegTervIntoDatabase(palyazatAzonosito);
+                if (!nincsSzakmaiVezeto)
+                {
+                    repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxSzakmaiVezeto.Text, "Szakmai vezető");
+                }
+                if (!nincsPenzugyiVezeto)
+                {
+                    repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxPenzugyiVezeto.Text, "Pénzügyi vezető");
+                }
+                formModosit();
+                this.Close();
+            }
         }
     }
 }

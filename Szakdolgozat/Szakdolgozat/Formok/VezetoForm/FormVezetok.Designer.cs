@@ -50,7 +50,7 @@
             this.dataGridViewVezetok.Name = "dataGridViewVezetok";
             this.dataGridViewVezetok.RowHeadersWidth = 51;
             this.dataGridViewVezetok.RowTemplate.Height = 24;
-            this.dataGridViewVezetok.Size = new System.Drawing.Size(424, 122);
+            this.dataGridViewVezetok.Size = new System.Drawing.Size(438, 136);
             this.dataGridViewVezetok.TabIndex = 2;
             // 
             // textBoxVezetoTelefonszam
@@ -65,7 +65,7 @@
             // buttonUjVezetoForm
             // 
             this.buttonUjVezetoForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonUjVezetoForm.Location = new System.Drawing.Point(291, 54);
+            this.buttonUjVezetoForm.Location = new System.Drawing.Point(304, 55);
             this.buttonUjVezetoForm.Name = "buttonUjVezetoForm";
             this.buttonUjVezetoForm.Size = new System.Drawing.Size(72, 23);
             this.buttonUjVezetoForm.TabIndex = 55;
@@ -76,7 +76,7 @@
             // buttonVezetoModositForm
             // 
             this.buttonVezetoModositForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonVezetoModositForm.Location = new System.Drawing.Point(392, 54);
+            this.buttonVezetoModositForm.Location = new System.Drawing.Point(405, 55);
             this.buttonVezetoModositForm.Name = "buttonVezetoModositForm";
             this.buttonVezetoModositForm.Size = new System.Drawing.Size(72, 23);
             this.buttonVezetoModositForm.TabIndex = 54;
@@ -138,7 +138,7 @@
             // buttonVezetoTorol
             // 
             this.buttonVezetoTorol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonVezetoTorol.Location = new System.Drawing.Point(291, 102);
+            this.buttonVezetoTorol.Location = new System.Drawing.Point(304, 103);
             this.buttonVezetoTorol.Name = "buttonVezetoTorol";
             this.buttonVezetoTorol.Size = new System.Drawing.Size(72, 23);
             this.buttonVezetoTorol.TabIndex = 59;
@@ -149,7 +149,7 @@
             // buttonVissza
             // 
             this.buttonVissza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.buttonVissza.Location = new System.Drawing.Point(392, 102);
+            this.buttonVissza.Location = new System.Drawing.Point(405, 103);
             this.buttonVissza.Name = "buttonVissza";
             this.buttonVissza.Size = new System.Drawing.Size(72, 23);
             this.buttonVissza.TabIndex = 60;
@@ -161,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 314);
+            this.ClientSize = new System.Drawing.Size(496, 314);
             this.Controls.Add(this.buttonVissza);
             this.Controls.Add(this.buttonVezetoTorol);
             this.Controls.Add(this.textBoxVezetoTelefonszam);

@@ -31,16 +31,58 @@ namespace Szakdolgozat.Formok.UjVezetoForm
 
         private void buttonVezetoFelvetele_Click(object sender, EventArgs e)
         {
-            int id = repoSql.getVezetoID() + 1;
-            Vezeto ujVezeto = new Vezeto(id, textBoxVezetoNev.Text, textBoxVezetoTelefonszam.Text, textBoxVezetoEmail.Text);
+            errorProviderVezetoNev.SetError(textBoxVezetoNev, "");
+            errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "");
+            errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "");
+            bool vanHiba = false;
+            string vezetoNev = "";
+            try
+            {
+                vezetoNev = Convert.ToString(textBoxVezetoNev.Text);
+            }
+            catch (Exception ex)
+            {
+                errorProviderVezetoNev.SetError(textBoxVezetoNev, "Hibás adat!");
+                vanHiba = true;
+            }
+            string vezetoTelefonszam = "";
+            try
+            {
+                vezetoTelefonszam = Convert.ToString(textBoxVezetoTelefonszam.Text);
+                if (textBoxVezetoTelefonszam.Text == string.Empty)
+                {
+                    errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "Hibás adat!");
+                vanHiba = true;
+            }
+            string vezetoEmail = "";
+            try
+            {
+                vezetoEmail = Convert.ToString(textBoxVezetoEmail.Text);
+            }
+            catch (Exception ex)
+            {
+                errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                vanHiba = true;
+            }
+            if (!vanHiba)
+            {
+                int id = repoSql.getVezetoID() + 1;
+                Vezeto ujVezeto = new Vezeto(id, textBoxVezetoNev.Text, textBoxVezetoTelefonszam.Text, textBoxVezetoEmail.Text);
 
-            vezetoRepo.vezetokHozzaadListahoz(ujVezeto);
+                vezetoRepo.vezetokHozzaadListahoz(ujVezeto);
 
-            repoSql.insertVezetoIntoDatabase(ujVezeto);
+                repoSql.insertVezetoIntoDatabase(ujVezeto);
 
-            FormVezetok vezetok = new FormVezetok();
-            this.Close();
-            vezetok.ShowDialog();
+                FormVezetok vezetok = new FormVezetok();
+                this.Close();
+                vezetok.ShowDialog();
+            }
         }
 
         private void textBoxVezetoNev_KeyPress(object sender, KeyPressEventArgs e)
