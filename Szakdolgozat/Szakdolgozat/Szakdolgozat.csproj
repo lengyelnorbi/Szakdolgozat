@@ -71,6 +71,12 @@
     <Compile Include="Formok\PalyazatForm\FormPalyazatGombok.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formok\PalyazatForm\FormPalyazatModositKeyPress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\PalyazatForm\FormPalyazatUjHozzaadKeyPress.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formok\PalyazatForm\FormPalyazatValidations.cs">
       <SubType>Form</SubType>
     </Compile>

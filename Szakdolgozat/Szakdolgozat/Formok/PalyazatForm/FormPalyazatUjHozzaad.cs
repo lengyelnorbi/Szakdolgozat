@@ -53,7 +53,11 @@ namespace Szakdolgozat
         private void buttonMentes_Click(object sender, EventArgs e)
         {
             string palyazatAzonosito = comboBoxPalyazatTipus.Text + "1";
-            Palyazat ujPalyazat = new Palyazat(palyazatAzonosito, comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text,0,
+            if(textBoxElnyertOsszeg.Text == string.Empty)
+            {
+                textBoxElnyertOsszeg.Text = "0";
+            }
+            Palyazat ujPalyazat = new Palyazat(palyazatAzonosito, comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text,Convert.ToSingle(textBoxElnyertOsszeg.Text),
                 Convert.ToSingle(textBoxElnyertOsszeg.Text), comboBoxPenznem.Text, textBoxFelhasznIdoKezd.Text, textBoxFelhasznIdoVege.Text, comboBoxTudomanyTerulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
 
             palyazatRepo.palyazatHozzaadListahoz(ujPalyazat);

@@ -46,6 +46,7 @@
             this.textBoxTervezettOsszeg.Name = "textBoxTervezettOsszeg";
             this.textBoxTervezettOsszeg.Size = new System.Drawing.Size(100, 20);
             this.textBoxTervezettOsszeg.TabIndex = 29;
+            this.textBoxTervezettOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTervezettOsszeg_KeyPress);
             // 
             // textBoxPalyazatAZ
             // 
@@ -61,9 +62,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.Location = new System.Drawing.Point(41, 130);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.Size = new System.Drawing.Size(121, 17);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Összeg:";
+            this.label4.Text = "Tervezett összeg:";
             // 
             // label2
             // 
@@ -91,6 +92,7 @@
             this.textBoxModositottOsszeg.Name = "textBoxModositottOsszeg";
             this.textBoxModositottOsszeg.Size = new System.Drawing.Size(100, 20);
             this.textBoxModositottOsszeg.TabIndex = 32;
+            this.textBoxModositottOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxModositottOsszeg_KeyPress);
             // 
             // label3
             // 

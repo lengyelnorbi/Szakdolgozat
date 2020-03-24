@@ -40,17 +40,77 @@ namespace Szakdolgozat.Formok.VezetoForm
 
         private void buttonVezetoModositMentes_Click(object sender, EventArgs e)
         {
-            Vezeto modosult = new Vezeto(vezetoID, textBoxVezetoNev.Text,
-            textBoxVezetoTelefonszam.Text,
-            textBoxVezetoEmail.Text
-            );
-            //1. módosítani a listába
-            vezetoRepo.updateVezetokInList(vezetoID, modosult);
-            //2. módosítani az adatbázisban
-            repoSql.updateVezetokInDatabase(vezetoID, modosult);
-            FormVezetok vezetok = new FormVezetok();
-            this.Close();
-            vezetok.ShowDialog();
+            errorProviderVezetoNev.SetError(textBoxVezetoNev, "");
+            errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "");
+            errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "");
+            bool vanHiba = false;
+            string vezetoNev = "";
+            try
+            {
+                vezetoNev = Convert.ToString(textBoxVezetoNev.Text);
+            }
+            catch (Exception ex)
+            {
+                errorProviderVezetoNev.SetError(textBoxVezetoNev, "Hibás adat!");
+                vanHiba = true;
+            }
+            string vezetoTelefonszam = "";
+            try
+            {
+                vezetoTelefonszam = Convert.ToString(textBoxVezetoTelefonszam.Text);
+                if (textBoxVezetoTelefonszam.Text == string.Empty)
+                {
+                    errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "Hibás adat!");
+                vanHiba = true;
+            }
+            string vezetoEmail = "";
+            try
+            {
+                vezetoEmail = Convert.ToString(textBoxVezetoEmail.Text);
+            }
+            catch (Exception ex)
+            {
+                errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                vanHiba = true;
+            }
+            if (!vanHiba)
+            {
+                Vezeto modosult = new Vezeto(vezetoID, textBoxVezetoNev.Text,
+                                            textBoxVezetoTelefonszam.Text,
+                                            textBoxVezetoEmail.Text
+                                            );
+                //1. módosítani a listába
+                vezetoRepo.updateVezetokInList(vezetoID, modosult);
+                //2. módosítani az adatbázisban
+                repoSql.updateVezetokInDatabase(vezetoID, modosult);
+                FormVezetok vezetok = new FormVezetok();
+                this.Close();
+                vezetok.ShowDialog();
+            }
+        }
+
+        private void textBoxVezetoNev_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsLetter(ch) && ch != 8 && !char.IsWhiteSpace(ch))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxVezetoTelefonszam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

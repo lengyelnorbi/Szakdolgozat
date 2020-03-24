@@ -69,6 +69,7 @@
             this.textBoxFizetesDatuma.Name = "textBoxFizetesDatuma";
             this.textBoxFizetesDatuma.Size = new System.Drawing.Size(132, 20);
             this.textBoxFizetesDatuma.TabIndex = 32;
+            this.textBoxFizetesDatuma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFizetesDatuma_KeyPress);
             // 
             // textBoxFizetettOsszeg
             // 
@@ -77,6 +78,7 @@
             this.textBoxFizetettOsszeg.Name = "textBoxFizetettOsszeg";
             this.textBoxFizetettOsszeg.Size = new System.Drawing.Size(132, 20);
             this.textBoxFizetettOsszeg.TabIndex = 31;
+            this.textBoxFizetettOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFizetettOsszeg_KeyPress);
             // 
             // textBoxPalyazatAZ
             // 

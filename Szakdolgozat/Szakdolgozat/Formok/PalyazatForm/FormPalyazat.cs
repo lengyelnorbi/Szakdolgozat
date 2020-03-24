@@ -37,16 +37,20 @@ namespace Szakdolgozat
         private RepositoryDatabase databaseRepo = new RepositoryDatabase();
         private void FormPalyazat_Load(object sender, EventArgs e)
         {
+            //Adatbázis létrehozása
             databaseRepo.getCreateDatabase();
+            //Táblák létrehozása
             databaseRepo.getCreatePalyazatTable();
             databaseRepo.getCreateKoltsegTipusTable();
             databaseRepo.getCreateKoltsegTervTable();
             databaseRepo.getCreateTenyfelhasznalasTable();
             databaseRepo.getCreateVezetokTable();
             databaseRepo.getCreatePosztokTable();
+            //Idegenkulcsok létrehozása
             databaseRepo.getAlterTableAddForeignKeysToKoltsegTerv();
             databaseRepo.getAlterTableAddForeignKeysToPosztok();
             databaseRepo.getAlterTableAddForeignKeysToTenyfelhasznalas();
+            //Adatok feltöltése
             databaseRepo.getInsertPalyazatIntoDatabase();
             databaseRepo.getInsertKoltsegTipusokIntoDatabase();
             databaseRepo.getInsertKoltsegTervIntoDatabase();
@@ -61,7 +65,7 @@ namespace Szakdolgozat
         }
         private void frissitAdatokkalDataGriedViewt()
         {
-            palyazatDT = palyazatRepo.getPalyazatDataTableFromList();//szarul frissít
+            palyazatDT = palyazatRepo.getPalyazatDataTableFromList();
             dataGridViewPalyazatok.DataSource = null;
             dataGridViewPalyazatok.DataSource = palyazatDT;
         }
@@ -129,7 +133,6 @@ namespace Szakdolgozat
                     dataGridViewPalyazatok.SelectedRows[0].Cells[11].Value.ToString();
             }
         }
-
         private void buttonDataTableFrissit_Click(object sender, EventArgs e)
         {
             palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());

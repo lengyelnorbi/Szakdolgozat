@@ -42,5 +42,23 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
             this.Close();
             koltsegTerv.ShowDialog();
         }
+
+        private void textBoxTervezettOsszeg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxModositottOsszeg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

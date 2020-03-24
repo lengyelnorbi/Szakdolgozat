@@ -78,6 +78,7 @@
             this.textBoxFelhasznIdoVege.Name = "textBoxFelhasznIdoVege";
             this.textBoxFelhasznIdoVege.Size = new System.Drawing.Size(122, 20);
             this.textBoxFelhasznIdoVege.TabIndex = 94;
+            this.textBoxFelhasznIdoVege.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFelhasznIdoVege_KeyPress);
             // 
             // textBoxFelhasznIdoKezd
             // 
@@ -85,6 +86,7 @@
             this.textBoxFelhasznIdoKezd.Name = "textBoxFelhasznIdoKezd";
             this.textBoxFelhasznIdoKezd.Size = new System.Drawing.Size(121, 20);
             this.textBoxFelhasznIdoKezd.TabIndex = 93;
+            this.textBoxFelhasznIdoKezd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFelhasznIdoKezd_KeyPress);
             // 
             // textBoxElnyertOsszeg
             // 
@@ -92,6 +94,7 @@
             this.textBoxElnyertOsszeg.Name = "textBoxElnyertOsszeg";
             this.textBoxElnyertOsszeg.Size = new System.Drawing.Size(121, 20);
             this.textBoxElnyertOsszeg.TabIndex = 90;
+            this.textBoxElnyertOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxElnyertOsszeg_KeyPress);
             // 
             // textBoxPalyazatNev
             // 
@@ -99,6 +102,7 @@
             this.textBoxPalyazatNev.Name = "textBoxPalyazatNev";
             this.textBoxPalyazatNev.Size = new System.Drawing.Size(121, 20);
             this.textBoxPalyazatNev.TabIndex = 88;
+            this.textBoxPalyazatNev.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPalyazatNev_KeyPress);
             // 
             // label8
             // 
@@ -186,6 +190,7 @@
             this.textBoxSzakmaiVezeto.Name = "textBoxSzakmaiVezeto";
             this.textBoxSzakmaiVezeto.Size = new System.Drawing.Size(121, 20);
             this.textBoxSzakmaiVezeto.TabIndex = 104;
+            this.textBoxSzakmaiVezeto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSzakmaiVezeto_KeyPress);
             // 
             // label12
             // 
@@ -203,6 +208,7 @@
             this.textBoxPenzugyiVezeto.Name = "textBoxPenzugyiVezeto";
             this.textBoxPenzugyiVezeto.Size = new System.Drawing.Size(121, 20);
             this.textBoxPenzugyiVezeto.TabIndex = 102;
+            this.textBoxPenzugyiVezeto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPenzugyiVezeto_KeyPress);
             // 
             // label11
             // 

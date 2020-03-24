@@ -17,7 +17,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryPalyazat = "CREATE TABLE `palyazatszamontarto`.`palyazat` ( `Azonosito` VARCHAR(40) NOT NULL ," +
+                string queryPalyazat = "CREATE TABLE IF NOT EXISTS `palyazatszamontarto`.`palyazat` ( `Azonosito` VARCHAR(40) NOT NULL ," +
                                        "`Palyazat_tipus` VARCHAR(30) NOT NULL ," +
                                        "`Palyazat_neve` VARCHAR(50) NOT NULL ," +
                                        "`Finanszirozas_tipus` VARCHAR(25) NOT NULL," +
@@ -45,7 +45,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryKoltsegTerv = "CREATE TABLE `palyazatszamontarto`.`koltseg_terv` ( `id` INT AUTO_INCREMENT ," +
+                string queryKoltsegTerv = "CREATE TABLE IF NOT EXISTS `palyazatszamontarto`.`koltseg_terv` ( `id` INT AUTO_INCREMENT ," +
                                        "`Palyazat_Azonosito` VARCHAR(40) NOT NULL ," +
                                        "`KoltTip_id` INT NOT NULL ," +
                                        "`Tervezett_osszeg` INT NOT NULL ," +
@@ -69,7 +69,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryTenyfelhasznalas = "CREATE TABLE `palyazatszamontarto`.`tenyfelhasznalas` ( `id` INT AUTO_INCREMENT ," +
+                string queryTenyfelhasznalas = "CREATE TABLE IF NOT EXISTS `palyazatszamontarto`.`tenyfelhasznalas` ( `id` INT AUTO_INCREMENT ," +
                                           "`Palyazat_Azonosito` VARCHAR(40) NOT NULL ," +
                                           "`KoltTip_id` INT NOT NULL ," +
                                           "`Fizetett_osszeg` INT NOT NULL ," +
@@ -93,7 +93,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryKoltsegTipus = "CREATE TABLE `palyazatszamontarto`.`koltseg_tipusok` ( `id` INT NOT NULL AUTO_INCREMENT ," +
+                string queryKoltsegTipus = "CREATE TABLE IF NOT EXISTS `palyazatszamontarto`.`koltseg_tipusok` ( `id` INT NOT NULL AUTO_INCREMENT ," +
                                                "`Koltseg_tipus` VARCHAR(30) UNIQUE NOT NULL ," +
                                                "PRIMARY KEY (`id`)) ENGINE = InnoDB;";
                 MySqlCommand cmd = new MySqlCommand(queryKoltsegTipus, connection);
@@ -114,7 +114,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryVezetok = "CREATE TABLE `palyazatszamontarto`.`vezetok` ( `id` INT AUTO_INCREMENT ," +
+                string queryVezetok = "CREATE TABLE IF NOT EXISTS `palyazatszamontarto`.`vezetok` ( `id` INT AUTO_INCREMENT ," +
                                            "`Nev` VARCHAR(30) NOT NULL ," +
                                            "`Telefonszam` VARCHAR(20)," +
                                            "`Email` VARCHAR(50) UNIQUE," +
@@ -137,7 +137,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryPosztok = "CREATE TABLE `palyazatszamontarto`.`posztok` ( `id` INT AUTO_INCREMENT ," +
+                string queryPosztok = "CREATE TABLE IF NOT EXISTS `palyazatszamontarto`.`posztok` ( `id` INT AUTO_INCREMENT ," +
                                       "`Palyazat_Azonosito` VARCHAR(40) NOT NULL ," +
                                       "`Vezeto_id` INT NOT NULL," +
                                       "`Poszt` VARCHAR(30) NOT NULL ," +

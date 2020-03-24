@@ -17,7 +17,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryInsert = "INSERT INTO `palyazat` (`Azonosito`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Elnyert_osszeg`, `Penznem`," +
+                string queryInsert = "INSERT IGNORE INTO `palyazat` (`Azonosito`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Elnyert_osszeg`, `Penznem`," +
                                                              "`Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`)" +
                                      "VALUES('NKFIH1', 'NKFIH', 'Lengyel Kft', 'Előfinanszírozott', '10000000', 'Forint', '2020.03.12', '2020.03.31', 'Informatika')," +
                                            "('Minisztériumi1', 'Minisztériumi', 'Lengyel Kft', 'Utófinanszírozott', '2500000', 'Forint', '2020.03.13', '2020.04.06', 'Műszaki')," +
@@ -43,7 +43,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryInsert = "INSERT INTO `koltseg_tipusok` (`id`, `Koltseg_tipus`)" +
+                string queryInsert = "INSERT IGNORE INTO `koltseg_tipusok` (`id`, `Koltseg_tipus`)" +
                                      "VALUES (NULL, 'Költség_típus')," +
                                             "(NULL, 'Bérköltség')," +
                                             "(NULL, 'Járulék')," +
@@ -70,7 +70,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryInsert = "INSERT INTO `tenyfelhasznalas` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Fizetett_osszeg`, `Fizetes_datum`)" +
+                string queryInsert = "INSERT IGNORE INTO `tenyfelhasznalas` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Fizetett_osszeg`, `Fizetes_datum`)" +
                                      "VALUES ('null', 'NKFIH1', '2', '1500000', '2020.03.23')," +
                                             "('null', 'NKFIH1', '3', '3000000', '2020.03.23')," +
                                             "('null', 'Minisztériumi1', '3', '1000000', '2020.03.23')," +
@@ -101,7 +101,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryInsert = "INSERT INTO `koltseg_terv` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_osszeg`, `Modositott_Osszeg`)" +
+                string queryInsert = "INSERT IGNORE INTO `koltseg_terv` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_osszeg`, `Modositott_Osszeg`)" +
                                      "VALUES ('NULL', 'NKFIH1', '3', '102121', '')," +
                                             "('NULL', 'NKFIH1', '3', '102121', '')," +
                                             "('NULL', 'NKFIH1', '2', '102121', '')," +
@@ -138,7 +138,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryInsert = "INSERT INTO `vezetok` (`id`, `Nev`, `Telefonszam`, `Email`)" +
+                string queryInsert = "INSERT IGNORE INTO `vezetok` (`id`, `Nev`, `Telefonszam`, `Email`)" +
                                      "VALUES (NULL, 'Lengyel Norbert', '06501234567', 'lengyelnorbi5@gmail.com')," +
                                             "(NULL, 'Lengyel Péter', '06306515234', 'lenpet@gmail.com')," +
                                             "(NULL, 'Pördi Jóska', '06700156568', 'unknown@gmail.com')," +
@@ -167,7 +167,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryInsert = "INSERT INTO `posztok` (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `Poszt`)" +
+                string queryInsert = "INSERT IGNORE INTO `posztok` (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `Poszt`)" +
                                      "VALUES (NULL, 'NKFIH1', '1', 'Szakmai Vezető')," +
                                             "(NULL, 'NKFIH1', '4', 'Pénzügyi Vezető')," +
                                             "(NULL, 'Minisztériumi1', '2', 'Pénzügyi Vezető')," +

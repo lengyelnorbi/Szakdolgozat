@@ -13,6 +13,5 @@ namespace Szakdolgozat
 {
     public partial class FormPalyazat : Form
     {
-       
     }
 }

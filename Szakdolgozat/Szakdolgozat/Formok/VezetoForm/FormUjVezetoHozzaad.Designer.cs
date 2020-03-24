@@ -63,7 +63,7 @@
             // textBoxVezetoEmail
             // 
             this.textBoxVezetoEmail.Location = new System.Drawing.Point(186, 132);
-            this.textBoxVezetoEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxVezetoEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxVezetoEmail.Name = "textBoxVezetoEmail";
             this.textBoxVezetoEmail.Size = new System.Drawing.Size(113, 20);
             this.textBoxVezetoEmail.TabIndex = 41;
@@ -71,10 +71,11 @@
             // textBoxVezetoNev
             // 
             this.textBoxVezetoNev.Location = new System.Drawing.Point(186, 38);
-            this.textBoxVezetoNev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxVezetoNev.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxVezetoNev.Name = "textBoxVezetoNev";
             this.textBoxVezetoNev.Size = new System.Drawing.Size(113, 20);
             this.textBoxVezetoNev.TabIndex = 40;
+            this.textBoxVezetoNev.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVezetoNev_KeyPress);
             // 
             // label4
             // 
@@ -112,10 +113,11 @@
             // textBoxVezetoTelefonszam
             // 
             this.textBoxVezetoTelefonszam.Location = new System.Drawing.Point(186, 85);
-            this.textBoxVezetoTelefonszam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxVezetoTelefonszam.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxVezetoTelefonszam.Name = "textBoxVezetoTelefonszam";
             this.textBoxVezetoTelefonszam.Size = new System.Drawing.Size(113, 20);
             this.textBoxVezetoTelefonszam.TabIndex = 48;
+            this.textBoxVezetoTelefonszam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVezetoTelefonszam_KeyPress);
             // 
             // FormUjVezetoHozzaad
             // 

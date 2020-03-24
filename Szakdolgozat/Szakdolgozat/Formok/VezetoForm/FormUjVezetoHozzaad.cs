@@ -42,5 +42,23 @@ namespace Szakdolgozat.Formok.UjVezetoForm
             this.Close();
             vezetok.ShowDialog();
         }
+
+        private void textBoxVezetoNev_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsLetter(ch) && ch != 8 && !char.IsWhiteSpace(ch))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxVezetoTelefonszam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -86,6 +86,7 @@
             this.textBoxModositottOsszeg.Name = "textBoxModositottOsszeg";
             this.textBoxModositottOsszeg.Size = new System.Drawing.Size(113, 20);
             this.textBoxModositottOsszeg.TabIndex = 42;
+            this.textBoxModositottOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxModositottOsszeg_KeyPress);
             // 
             // textBoxTervezettOsszeg
             // 
@@ -94,6 +95,7 @@
             this.textBoxTervezettOsszeg.Name = "textBoxTervezettOsszeg";
             this.textBoxTervezettOsszeg.Size = new System.Drawing.Size(113, 20);
             this.textBoxTervezettOsszeg.TabIndex = 41;
+            this.textBoxTervezettOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTervezettOsszeg_KeyPress);
             // 
             // textBoxPalyazatAZ
             // 

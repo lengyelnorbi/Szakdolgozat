@@ -17,8 +17,8 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryForeignKeys = "ALTER TABLE tenyfelhasznalas ADD FOREIGN KEY (Palyazat_Azonosito) REFERENCES palyazat(Azonosito) ON DELETE CASCADE;" +
-                                          "ALTER TABLE tenyfelhasznalas ADD FOREIGN KEY (KoltTip_id) REFERENCES koltseg_tipusok(id);";
+                string queryForeignKeys = "ALTER TABLE tenyfelhasznalas ADD FOREIGN KEY IF NOT EXISTS (Palyazat_Azonosito) REFERENCES palyazat(Azonosito) ON DELETE CASCADE;" +
+                                          "ALTER TABLE tenyfelhasznalas ADD FOREIGN KEY IF NOT EXISTS (KoltTip_id) REFERENCES koltseg_tipusok(id);";
                 MySqlCommand cmd = new MySqlCommand(queryForeignKeys, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -37,8 +37,8 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryForeignKeys = "ALTER TABLE posztok ADD FOREIGN KEY (Palyazat_Azonosito) REFERENCES palyazat(Azonosito) ON UPDATE CASCADE ON DELETE CASCADE;" +
-                                          "ALTER TABLE posztok ADD FOREIGN KEY(Vezeto_id) REFERENCES vezetok(id) ON UPDATE CASCADE ON DELETE CASCADE;";
+                string queryForeignKeys = "ALTER TABLE posztok ADD FOREIGN KEY IF NOT EXISTS (Palyazat_Azonosito) REFERENCES palyazat(Azonosito) ON UPDATE CASCADE ON DELETE CASCADE;" +
+                                          "ALTER TABLE posztok ADD FOREIGN KEY IF NOT EXISTS (Vezeto_id) REFERENCES vezetok(id) ON UPDATE CASCADE ON DELETE CASCADE;";
 
                 MySqlCommand cmd = new MySqlCommand(queryForeignKeys, connection);
                 cmd.ExecuteNonQuery();
@@ -58,8 +58,8 @@ namespace Szakdolgozat.Repository.TestDatabase
             try
             {
                 connection.Open();
-                string queryForeignKeys = "ALTER TABLE koltseg_terv ADD FOREIGN KEY (KoltTip_id) REFERENCES koltseg_tipusok(id);" +
-                                          "ALTER TABLE koltseg_terv ADD FOREIGN KEY(Palyazat_Azonosito) REFERENCES palyazat(Azonosito) ON DELETE CASCADE;";
+                string queryForeignKeys = "ALTER TABLE koltseg_terv ADD FOREIGN KEY IF NOT EXISTS (KoltTip_id) REFERENCES koltseg_tipusok(id);" +
+                                          "ALTER TABLE koltseg_terv ADD FOREIGN KEY IF NOT EXISTS (Palyazat_Azonosito) REFERENCES palyazat(Azonosito) ON DELETE CASCADE;";
 
                 MySqlCommand cmd = new MySqlCommand(queryForeignKeys, connection);
                 cmd.ExecuteNonQuery();
