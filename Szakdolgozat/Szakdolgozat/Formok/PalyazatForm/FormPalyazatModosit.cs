@@ -237,6 +237,7 @@ namespace Szakdolgozat
                         else
                         {
                         errorProviderSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "Hiba!");
+                        vanHiba = true;
                         }
                 }
                 else
@@ -259,6 +260,7 @@ namespace Szakdolgozat
                             else
                             {
                                 errorProviderSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "Hibás adat!");
+                                vanHiba = true;
                             }
                         }
                     }
@@ -272,6 +274,7 @@ namespace Szakdolgozat
                     else
                     {
                         errorProviderPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "Hibás adat!");
+                        vanHiba = true;
                     }
                 }
                 else
@@ -295,14 +298,17 @@ namespace Szakdolgozat
                             else
                             {
                                 errorProviderSzakmaiVezeto.SetError(textBoxPenzugyiVezeto, "Hibás adat!");
+                                vanHiba = true;
                             }
                         }
                     }
                 }
-                //Nem működik rendesen, mert minden if else ágon végigjut és az errorokat nem jelzi
-                palyazatRepo.updatePalyazatInList(Azonosito, modosult);
-                palyazatRepoSql.updatePalyazatInDatabase(Azonosito, modosult);
-                formModosit();
+                if (!vanHiba)
+                {
+                    palyazatRepo.updatePalyazatInList(Azonosito, modosult);
+                    palyazatRepoSql.updatePalyazatInDatabase(Azonosito, modosult);
+                    formModosit();
+                }
             }
         }
 
