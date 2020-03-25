@@ -20,6 +20,11 @@ namespace Szakdolgozat
             palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
             frissitAdatokkalDataGriedViewt();
         }
+        private void F3_UpdateEventHandler1(object sender, FormPalyazatUjHozzaad.UpdateEventArgs args)
+        {
+            palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
+            frissitAdatokkalDataGriedViewt();
+        }
 
         public FormPalyazat()
         {

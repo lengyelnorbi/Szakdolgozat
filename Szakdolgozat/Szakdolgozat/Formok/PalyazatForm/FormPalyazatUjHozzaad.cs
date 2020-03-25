@@ -16,6 +16,7 @@ namespace Szakdolgozat
     {
         private Tarolo palyazatRepo = new Tarolo();
         RepositoryDatabaseTablePalyazatSQL repoSql = new RepositoryDatabaseTablePalyazatSQL();
+        RepositoryDatabaseTableVezetoSQL vezetoRepoSql = new RepositoryDatabaseTableVezetoSQL();
         public FormPalyazatUjHozzaad()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace Szakdolgozat
 
         private void FormPalyazatUjHozzaad_Load(object sender, EventArgs e)
         {
+            palyazatRepo.setVezeto(vezetoRepoSql.getVezetoFromDatabaseTable());
             palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
         }
 
@@ -132,6 +134,14 @@ namespace Szakdolgozat
                 {
                     nincsSzakmaiVezeto = true; 
                 }
+                else
+                {
+                    if (palyazatRepo.isVezetoInList(szakmaiVezeto) == false)
+                    {
+                        errorProviderPalyazatSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "Hibás adat!");
+                        vanHiba = true;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -146,6 +156,14 @@ namespace Szakdolgozat
                 {
                     nincsPenzugyiVezeto = true;
                 }
+                else
+                {
+                    if (palyazatRepo.isVezetoInList(penzugyiVezeto) == false)
+                    {
+                        errorProviderPalyazatPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "Hibás adat!");
+                        vanHiba = true;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -156,9 +174,20 @@ namespace Szakdolgozat
             try
             {
                 elnyertOsszeg = Convert.ToString(textBoxElnyertOsszeg.Text);
-                if(textBoxElnyertOsszeg.Text == string.Empty)
+                if (textBoxElnyertOsszeg.Text == string.Empty)
                 {
                     textBoxElnyertOsszeg.Text = "0";
+                }
+                else
+                {
+                    if (textBoxElnyertOsszeg.Text != string.Empty)
+                    {
+                        if (palyazatRepo.IsValidValue(elnyertOsszeg) == false)
+                        {
+                            errorProviderPalyazatElnyertOsszeg.SetError(textBoxElnyertOsszeg, "Hibás adat!");
+                            vanHiba = true;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -180,6 +209,14 @@ namespace Szakdolgozat
             try
             {
                 felhasznalasiIdoKezd = Convert.ToString(textBoxFelhasznIdoKezd.Text);
+                if (textBoxFelhasznIdoVege.Text != string.Empty)
+                {
+                    if (palyazatRepo.IsValidDate(felhasznalasiIdoKezd) == false)
+                    {
+                        errorProviderPalyazatFelhasznIdoKezd.SetError(textBoxFelhasznIdoVege, "Hibás adat!");
+                        vanHiba = true;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -190,6 +227,14 @@ namespace Szakdolgozat
             try
             {
                 felhasznalasiIdoVege = Convert.ToString(textBoxFelhasznIdoVege.Text);
+                if (textBoxFelhasznIdoVege.Text != string.Empty)
+                {
+                    if (palyazatRepo.IsValidDate(felhasznalasiIdoVege) == false)
+                    {
+                        errorProviderPalyazatFelhasznIdoVege.SetError(textBoxFelhasznIdoVege, "Hibás adat!");
+                        vanHiba = true;
+                    }
+                }
             }
             catch (Exception ex)
             {

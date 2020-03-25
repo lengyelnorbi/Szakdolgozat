@@ -29,6 +29,7 @@ namespace Szakdolgozat
             {
                 FormUjHozzaad = new FormPalyazatUjHozzaad();
                 FormUjHozzaad.Closed += f_Closed;
+                FormUjHozzaad.UpdateEventHandler += F3_UpdateEventHandler1;
                 FormUjHozzaad.Show();
             }
         }

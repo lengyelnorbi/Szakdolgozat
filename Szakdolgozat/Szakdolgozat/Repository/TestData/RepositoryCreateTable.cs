@@ -115,7 +115,7 @@ namespace Szakdolgozat.Repository.TestDatabase
             {
                 connection.Open();
                 string queryVezetok = "CREATE TABLE IF NOT EXISTS `palyazatszamontarto`.`vezetok` ( `id` INT AUTO_INCREMENT ," +
-                                           "`Nev` VARCHAR(30) NOT NULL ," +
+                                           "`Nev` VARCHAR(30) NOT NULL UNIQUE," +
                                            "`Telefonszam` VARCHAR(20)," +
                                            "`Email` VARCHAR(50) UNIQUE," +
                                            "PRIMARY KEY (`id`)) ENGINE = InnoDB;";

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Szakdolgozat.model;
@@ -22,8 +23,22 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
             InitializeComponent();
             textBoxPalyazatAZ.Text = palyazatAZ;
             comboBoxKoltsegTipus.Text = koltsegTip;
-            textBoxTervezettOsszeg.Text = tervezettOsszeg;
-            textBoxModositottOsszeg.Text = modositottOsszeg;
+            if(Convert.ToInt32(tervezettOsszeg) == 0)
+            {
+                textBoxTervezettOsszeg.Text = "";
+            }
+            else
+            {
+                textBoxTervezettOsszeg.Text = tervezettOsszeg;
+            }
+            if (Convert.ToInt32(modositottOsszeg) == 0)
+            {
+                textBoxModositottOsszeg.Text = "";
+            }
+            else
+            {
+                textBoxModositottOsszeg.Text = modositottOsszeg;
+            }
             koltsegTervID = Convert.ToInt32(id);
         }
         private void FormKoltsegTervModosit_Load(object sender, EventArgs e)
@@ -33,18 +48,79 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
 
         private void buttonKoltsegTervMentes_Click(object sender, EventArgs e)
         {
-            KoltsegTerv modosult = new KoltsegTerv(koltsegTervID, textBoxPalyazatAZ.Text,
-            comboBoxKoltsegTipus.Text,
-            Convert.ToSingle(textBoxTervezettOsszeg.Text),
-            Convert.ToSingle(textBoxModositottOsszeg.Text)
-            );
-            //1. módosítani a listába
-            koltsegTervRepo.updateKoltsegTervInList(koltsegTervID, modosult);
-            //2. módosítani az adatbázisban
-            repoSql.updateKoltsegTervInDatabase(koltsegTervID, modosult);
-            FormKoltsegTerv koltsegTerv = new FormKoltsegTerv(textBoxPalyazatAZ.Text);
-            this.Close();
-            koltsegTerv.ShowDialog();
+            errorProviderKoltsegTipus.SetError(comboBoxKoltsegTipus, "");
+            errorProviderTervezettOsszeg.SetError(textBoxTervezettOsszeg, "");
+            errorProviderModositottOsszeg.SetError(textBoxModositottOsszeg, "");
+            bool vanHiba = false;
+            string koltsegTipus = "";
+            try
+            {
+                koltsegTipus = Convert.ToString(comboBoxKoltsegTipus.Text);
+                if (comboBoxKoltsegTipus.Text == string.Empty)
+                {
+                    errorProviderKoltsegTipus.SetError(comboBoxKoltsegTipus, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderKoltsegTipus.SetError(textBoxTervezettOsszeg, "Hibás adat!");
+                vanHiba = true;
+            }
+            string tervezettOsszeg = "";
+            try
+            {
+                tervezettOsszeg = Convert.ToString(textBoxTervezettOsszeg.Text);
+                if (textBoxTervezettOsszeg.Text == string.Empty)
+                {
+                    errorProviderTervezettOsszeg.SetError(textBoxTervezettOsszeg, "Hibás adat!");
+                    vanHiba = true;
+                }
+                if (koltsegTervRepo.IsValidValue(tervezettOsszeg) == false)
+                {
+                    errorProviderTervezettOsszeg .SetError(textBoxTervezettOsszeg, "Hibás adat!");
+                    vanHiba = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderTervezettOsszeg.SetError(textBoxTervezettOsszeg, "Hibás adat!");
+                vanHiba = true;
+            }
+            string modositottOsszeg = "0";
+            try
+            {
+                if (textBoxModositottOsszeg.Text != string.Empty)
+                {
+                    modositottOsszeg = Convert.ToString(textBoxModositottOsszeg.Text);
+                    if (koltsegTervRepo.IsValidValue(modositottOsszeg) == false)
+                    {
+                        errorProviderModositottOsszeg.SetError(textBoxModositottOsszeg, "Hibás adat!");
+                        vanHiba = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                errorProviderModositottOsszeg.SetError(textBoxModositottOsszeg, "Hibás adat!");
+                vanHiba = true;
+            }
+            if (!vanHiba)
+            {
+                textBoxModositottOsszeg.Text = modositottOsszeg;
+                KoltsegTerv modosult = new KoltsegTerv(koltsegTervID, textBoxPalyazatAZ.Text,
+                                                       comboBoxKoltsegTipus.Text,
+                                                       Convert.ToSingle(textBoxTervezettOsszeg.Text),
+                                                       Convert.ToSingle(textBoxModositottOsszeg.Text)
+                                                       );
+                //1. módosítani a listába
+                koltsegTervRepo.updateKoltsegTervInList(koltsegTervID, modosult);
+                //2. módosítani az adatbázisban
+                repoSql.updateKoltsegTervInDatabase(koltsegTervID, modosult);
+                FormKoltsegTerv koltsegTerv = new FormKoltsegTerv(textBoxPalyazatAZ.Text);
+                this.Close();
+                koltsegTerv.ShowDialog();
+            }
         }
         private void buttonMegsem_Click(object sender, EventArgs e)
         {

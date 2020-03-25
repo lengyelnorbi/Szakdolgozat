@@ -13,12 +13,10 @@ namespace Szakdolgozat.Repository
 {
     partial class RepositoryDatabaseTableKoltsegTervSQL
     {
-        private readonly string connectionStringCreate;
         private readonly string connectionString;
         public RepositoryDatabaseTableKoltsegTervSQL()
         {
             ConnectionString cs = new ConnectionString();
-            connectionStringCreate = cs.getCreateString();
             connectionString = cs.getConnectionString();
         }
 

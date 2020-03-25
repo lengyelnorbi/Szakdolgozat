@@ -13,12 +13,10 @@ namespace Szakdolgozat.Repository
 {
     partial class RepositoryDatabaseTableVezetoSQL
     {
-        private readonly string connectionStringCreate;
         private readonly string connectionString;
         public RepositoryDatabaseTableVezetoSQL()
         {
             ConnectionString cs = new ConnectionString();
-            connectionStringCreate = cs.getCreateString();
             connectionString = cs.getConnectionString();
         }
         public List<Vezeto> getVezetoFromDatabaseTable()

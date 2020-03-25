@@ -36,10 +36,10 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
             errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "");
             errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "");
             bool vanHiba = false;
-            string vezetoNev = "";
+            string koltsegTipus = "";
             try
             {
-                vezetoNev = Convert.ToString(comboBoxKoltsegTipus.Text);
+                koltsegTipus = Convert.ToString(comboBoxKoltsegTipus.Text);
                 if (comboBoxKoltsegTipus.Text == string.Empty)
                 {
                     errorProviderTenyfelhasznalasKoltsegTipus.SetError(comboBoxKoltsegTipus, "Hibás adat!");
@@ -51,11 +51,16 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
                 errorProviderTenyfelhasznalasKoltsegTipus.SetError(comboBoxKoltsegTipus, "Hibás adat!");
                 vanHiba = true;
             }
-            string vezetoTelefonszam = "";
+            string fizetettOsszeg = "";
             try
             {
-                vezetoTelefonszam = Convert.ToString(textBoxFizetettOsszeg.Text);
+                fizetettOsszeg = Convert.ToString(textBoxFizetettOsszeg.Text);
                 if (textBoxFizetettOsszeg.Text == string.Empty)
+                {
+                    errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Hibás adat!");
+                    vanHiba = true;
+                }
+                if (tenyfelhasznalasRepo.IsValidValue(fizetettOsszeg) == false)
                 {
                     errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Hibás adat!");
                     vanHiba = true;
@@ -66,11 +71,16 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
                 errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Hibás adat!");
                 vanHiba = true;
             }
-            string vezetoEmail = "";
+            string fizetesDatuma = "";
             try
             {
-                vezetoEmail = Convert.ToString(textBoxFizetesDatuma.Text);
+                fizetesDatuma = Convert.ToString(textBoxFizetesDatuma.Text);
                 if (textBoxFizetesDatuma.Text == string.Empty)
+                {
+                    errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "Hibás adat!");
+                    vanHiba = true;
+                }
+                if (tenyfelhasznalasRepo.IsValidDate(fizetesDatuma) == false)
                 {
                     errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "Hibás adat!");
                     vanHiba = true;
@@ -117,7 +127,7 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
         private void textBoxFizetesDatuma_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            if (!Char.IsDigit(ch) && ch != 8)
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 47)
             {
                 e.Handled = true;
             }

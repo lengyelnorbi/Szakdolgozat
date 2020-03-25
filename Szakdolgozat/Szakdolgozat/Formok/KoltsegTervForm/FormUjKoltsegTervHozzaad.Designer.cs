@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBoxKoltsegTipus = new System.Windows.Forms.ComboBox();
             this.buttonKoltsegTervLetrehoz = new System.Windows.Forms.Button();
             this.buttonMegsem = new System.Windows.Forms.Button();
@@ -38,6 +39,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProviderKoltsegTipus = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTervezettOsszeg = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderModositottOsszeg = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderKoltsegTipus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTervezettOsszeg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderModositottOsszeg)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxKoltsegTipus
@@ -150,6 +157,18 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Pályázat azonosító:";
             // 
+            // errorProviderKoltsegTipus
+            // 
+            this.errorProviderKoltsegTipus.ContainerControl = this;
+            // 
+            // errorProviderTervezettOsszeg
+            // 
+            this.errorProviderTervezettOsszeg.ContainerControl = this;
+            // 
+            // errorProviderModositottOsszeg
+            // 
+            this.errorProviderModositottOsszeg.ContainerControl = this;
+            // 
             // FormUjKoltsegTervHozzaad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +186,9 @@
             this.Controls.Add(this.label1);
             this.Name = "FormUjKoltsegTervHozzaad";
             this.Text = "FormUjKoltsegTervHozzaad";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderKoltsegTipus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTervezettOsszeg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderModositottOsszeg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +206,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProviderKoltsegTipus;
+        private System.Windows.Forms.ErrorProvider errorProviderTervezettOsszeg;
+        private System.Windows.Forms.ErrorProvider errorProviderModositottOsszeg;
     }
 }

@@ -13,12 +13,10 @@ namespace Szakdolgozat.Repository
 {
     partial class RepositoryDatabaseTableTenyfelhasznalasSQL
     {
-        private readonly string connectionStringCreate;
         private readonly string connectionString;
         public RepositoryDatabaseTableTenyfelhasznalasSQL()
         {
             ConnectionString cs = new ConnectionString();
-            connectionStringCreate = cs.getCreateString();
             connectionString = cs.getConnectionString();
         }
 

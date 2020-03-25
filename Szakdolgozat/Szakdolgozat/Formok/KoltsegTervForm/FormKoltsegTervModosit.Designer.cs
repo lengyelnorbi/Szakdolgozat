@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxTervezettOsszeg = new System.Windows.Forms.TextBox();
             this.textBoxPalyazatAZ = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,6 +39,12 @@
             this.buttonMegsem = new System.Windows.Forms.Button();
             this.buttonKoltsegTervMentes = new System.Windows.Forms.Button();
             this.comboBoxKoltsegTipus = new System.Windows.Forms.ComboBox();
+            this.errorProviderKoltsegTipus = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTervezettOsszeg = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderModositottOsszeg = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderKoltsegTipus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTervezettOsszeg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderModositottOsszeg)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxTervezettOsszeg
@@ -143,6 +150,18 @@
             this.comboBoxKoltsegTipus.Size = new System.Drawing.Size(100, 21);
             this.comboBoxKoltsegTipus.TabIndex = 35;
             // 
+            // errorProviderKoltsegTipus
+            // 
+            this.errorProviderKoltsegTipus.ContainerControl = this;
+            // 
+            // errorProviderTervezettOsszeg
+            // 
+            this.errorProviderTervezettOsszeg.ContainerControl = this;
+            // 
+            // errorProviderModositottOsszeg
+            // 
+            this.errorProviderModositottOsszeg.ContainerControl = this;
+            // 
             // FormKoltsegTervModosit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +180,9 @@
             this.Name = "FormKoltsegTervModosit";
             this.Text = "FormKoltsegTervModosit";
             this.Load += new System.EventHandler(this.FormKoltsegTervModosit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderKoltsegTipus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTervezettOsszeg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderModositottOsszeg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +199,8 @@
         private System.Windows.Forms.Button buttonMegsem;
         private System.Windows.Forms.Button buttonKoltsegTervMentes;
         private System.Windows.Forms.ComboBox comboBoxKoltsegTipus;
+        private System.Windows.Forms.ErrorProvider errorProviderKoltsegTipus;
+        private System.Windows.Forms.ErrorProvider errorProviderTervezettOsszeg;
+        private System.Windows.Forms.ErrorProvider errorProviderModositottOsszeg;
     }
 }

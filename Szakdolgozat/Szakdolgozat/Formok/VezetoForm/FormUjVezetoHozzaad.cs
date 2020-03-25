@@ -64,6 +64,30 @@ namespace Szakdolgozat.Formok.UjVezetoForm
             try
             {
                 vezetoEmail = Convert.ToString(textBoxVezetoEmail.Text);
+                if (textBoxVezetoEmail.Text == string.Empty)
+                {
+                    errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                    vanHiba = true;
+                }
+                else
+                {
+                    if (vezetoRepo.IsValidEmail(vezetoEmail) == false)
+                    {
+                        errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                        vanHiba = true;
+                    }
+                    else
+                    {
+                        if (vezetoRepo.isEmailInList(vezetoEmail) == false)
+                        {
+                        }
+                        else
+                        {
+                            errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                            vanHiba = true;
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {

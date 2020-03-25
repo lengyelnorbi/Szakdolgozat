@@ -77,9 +77,6 @@
     <Compile Include="Formok\PalyazatForm\FormPalyazatUjHozzaadKeyPress.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formok\PalyazatForm\FormPalyazatValidations.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formok\PalyazatForm\FormPalyazat.cs">
       <SubType>Form</SubType>
     </Compile>

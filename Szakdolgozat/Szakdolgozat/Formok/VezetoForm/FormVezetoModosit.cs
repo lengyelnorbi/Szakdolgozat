@@ -15,6 +15,7 @@ namespace Szakdolgozat.Formok.VezetoForm
     public partial class FormVezetoModosit : Form
     {
         int vezetoID;
+        string vezetoKezdoEmail = "";
         private Tarolo vezetoRepo = new Tarolo();
         RepositoryDatabaseTableVezetoSQL repoSql = new RepositoryDatabaseTableVezetoSQL();
         public FormVezetoModosit(int id, string nev, string telefonszam, string email)
@@ -24,6 +25,7 @@ namespace Szakdolgozat.Formok.VezetoForm
             textBoxVezetoNev.Text = nev;
             textBoxVezetoTelefonszam.Text = telefonszam;
             textBoxVezetoEmail.Text = email;
+            vezetoKezdoEmail = email;
         }
 
         private void buttonMegsem_Click(object sender, EventArgs e)
@@ -48,6 +50,11 @@ namespace Szakdolgozat.Formok.VezetoForm
             try
             {
                 vezetoNev = Convert.ToString(textBoxVezetoNev.Text);
+                if (textBoxVezetoNev.Text == string.Empty)
+                {
+                    errorProviderVezetoNev.SetError(textBoxVezetoNev, "Hibás adat!");
+                    vanHiba = true;
+                }
             }
             catch (Exception ex)
             {
@@ -73,6 +80,33 @@ namespace Szakdolgozat.Formok.VezetoForm
             try
             {
                 vezetoEmail = Convert.ToString(textBoxVezetoEmail.Text);
+                if (vezetoEmail != vezetoKezdoEmail)
+                {
+                    if(textBoxVezetoEmail.Text == string.Empty)
+                    {
+                        errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                        vanHiba = true;
+                    }
+                    else
+                    {
+                        if (vezetoRepo.IsValidEmail(vezetoEmail) == false)
+                        {
+                            errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                            vanHiba = true;
+                        }
+                        else
+                        {
+                            if (vezetoRepo.isEmailInList(vezetoEmail) == false)
+                            {
+                            }
+                            else
+                            {
+                                errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                                vanHiba = true;
+                            }
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {

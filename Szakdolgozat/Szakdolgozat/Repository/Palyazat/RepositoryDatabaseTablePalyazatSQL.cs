@@ -13,14 +13,12 @@ namespace Szakdolgozat.Repository
 {
     partial class RepositoryDatabaseTablePalyazatSQL
     {
-        private readonly string connectionStringCreate;
         private readonly string connectionString;
         private readonly string connectionString2;
         private readonly string connectionString3;
         public RepositoryDatabaseTablePalyazatSQL()
         {
             ConnectionString cs = new ConnectionString();
-            connectionStringCreate = cs.getCreateString();
             connectionString = cs.getConnectionString();
             connectionString2 = cs.getConnectionString();
             connectionString3 = cs.getConnectionString();

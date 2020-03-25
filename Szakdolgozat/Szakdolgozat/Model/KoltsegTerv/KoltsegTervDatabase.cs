@@ -43,7 +43,8 @@ namespace Szakdolgozat.model
         public static string getKoltsegTervRecords(string palyazatAzonosito)
         {
             return "SELECT koltseg_terv.id, koltseg_terv.Palyazat_Azonosito, koltseg_tipusok.Koltseg_tipus, koltseg_terv.Tervezett_osszeg, koltseg_terv.Modositott_osszeg "
-                + "FROM koltseg_terv INNER JOIN palyazat ON koltseg_terv.Palyazat_Azonosito = palyazat.Azonosito INNER JOIN koltseg_tipusok ON koltseg_terv.KoltTip_id = koltseg_tipusok.id WHERE koltseg_terv.Palyazat_Azonosito = '"
+                + "FROM koltseg_terv INNER JOIN palyazat ON koltseg_terv.Palyazat_Azonosito = palyazat.Azonosito " +
+                "INNER JOIN koltseg_tipusok ON koltseg_terv.KoltTip_id = koltseg_tipusok.id WHERE koltseg_terv.Palyazat_Azonosito = '"
                 + palyazatAzonosito + "' ;";
         }
 
