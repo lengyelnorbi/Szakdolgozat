@@ -36,7 +36,7 @@ namespace Szakdolgozat.Formok.VezetoForm
         }
         private void buttonVezetoModositForm_Click(object sender, EventArgs e)
         {
-            if (FormVezetoModosit == null)
+            if (FormVezetoModosit == null && dataGridViewVezetok.SelectedRows.Count == 1)
             {
                 FormVezetoModosit = new FormVezetoModosit(Convert.ToInt32(dataGridViewVezetok.SelectedRows[0].Cells[0].Value.ToString()), textBoxVezetoNev.Text, textBoxVezetoTelefonszam.Text, textBoxVezetoEmail.Text);
                 FormVezetoModosit.Closed += f_Closed;

@@ -25,7 +25,7 @@ namespace Szakdolgozat
 
         private void buttonTenyfelhasznalasModositForm_Click(object sender, EventArgs e)
         {
-            if (FormModosit == null)
+            if (FormModosit == null && dataGridViewTenyfelhasznalas.SelectedRows.Count == 1)
             {
                 FormModosit = new FormTenyfelhasznalasModosit(dataGridViewTenyfelhasznalas.SelectedRows[0].Cells[0].Value.ToString(), textBoxPalyazatAZ.Text, comboBoxKoltsegTipus.Text, textBoxFizetettOsszeg.Text, textBoxFizetesDatuma.Text);
                 FormModosit.Closed += f_Closed;

@@ -60,7 +60,6 @@ namespace Szakdolgozat.Repository.TestDatabase
                 connection.Open();
                 string queryForeignKeys = "ALTER TABLE koltseg_terv ADD FOREIGN KEY IF NOT EXISTS (KoltTip_id) REFERENCES koltseg_tipusok(id);" +
                                           "ALTER TABLE koltseg_terv ADD FOREIGN KEY IF NOT EXISTS (Palyazat_Azonosito) REFERENCES palyazat(Azonosito) ON DELETE CASCADE;";
-
                 MySqlCommand cmd = new MySqlCommand(queryForeignKeys, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

@@ -52,7 +52,7 @@
             this.textBoxTervezettOsszeg.Location = new System.Drawing.Point(177, 130);
             this.textBoxTervezettOsszeg.Name = "textBoxTervezettOsszeg";
             this.textBoxTervezettOsszeg.Size = new System.Drawing.Size(100, 20);
-            this.textBoxTervezettOsszeg.TabIndex = 29;
+            this.textBoxTervezettOsszeg.TabIndex = 1;
             this.textBoxTervezettOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTervezettOsszeg_KeyPress);
             // 
             // textBoxPalyazatAZ
@@ -98,7 +98,7 @@
             this.textBoxModositottOsszeg.Location = new System.Drawing.Point(176, 175);
             this.textBoxModositottOsszeg.Name = "textBoxModositottOsszeg";
             this.textBoxModositottOsszeg.Size = new System.Drawing.Size(100, 20);
-            this.textBoxModositottOsszeg.TabIndex = 32;
+            this.textBoxModositottOsszeg.TabIndex = 2;
             this.textBoxModositottOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxModositottOsszeg_KeyPress);
             // 
             // label3
@@ -117,7 +117,7 @@
             this.buttonMegsem.Location = new System.Drawing.Point(176, 222);
             this.buttonMegsem.Name = "buttonMegsem";
             this.buttonMegsem.Size = new System.Drawing.Size(101, 23);
-            this.buttonMegsem.TabIndex = 34;
+            this.buttonMegsem.TabIndex = 4;
             this.buttonMegsem.Text = "Mégsem";
             this.buttonMegsem.UseVisualStyleBackColor = true;
             this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
@@ -128,7 +128,7 @@
             this.buttonKoltsegTervMentes.Location = new System.Drawing.Point(44, 222);
             this.buttonKoltsegTervMentes.Name = "buttonKoltsegTervMentes";
             this.buttonKoltsegTervMentes.Size = new System.Drawing.Size(105, 23);
-            this.buttonKoltsegTervMentes.TabIndex = 33;
+            this.buttonKoltsegTervMentes.TabIndex = 3;
             this.buttonKoltsegTervMentes.Text = "Mentés";
             this.buttonKoltsegTervMentes.UseVisualStyleBackColor = true;
             this.buttonKoltsegTervMentes.Click += new System.EventHandler(this.buttonKoltsegTervMentes_Click);
@@ -148,7 +148,7 @@
             this.comboBoxKoltsegTipus.Location = new System.Drawing.Point(177, 86);
             this.comboBoxKoltsegTipus.Name = "comboBoxKoltsegTipus";
             this.comboBoxKoltsegTipus.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxKoltsegTipus.TabIndex = 35;
+            this.comboBoxKoltsegTipus.TabIndex = 0;
             // 
             // errorProviderKoltsegTipus
             // 
@@ -166,6 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(310, 283);
             this.Controls.Add(this.comboBoxKoltsegTipus);
             this.Controls.Add(this.buttonMegsem);

@@ -42,8 +42,6 @@ namespace Szakdolgozat
         private RepositoryDatabase databaseRepo = new RepositoryDatabase();
         private void FormPalyazat_Load(object sender, EventArgs e)
         {
-            //Adatbázis létrehozása
-            databaseRepo.getCreateDatabase();
             //Táblák létrehozása
             databaseRepo.getCreatePalyazatTable();
             databaseRepo.getCreateKoltsegTipusTable();

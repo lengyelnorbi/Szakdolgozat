@@ -85,7 +85,7 @@
             this.buttonMentes.Location = new System.Drawing.Point(436, 263);
             this.buttonMentes.Name = "buttonMentes";
             this.buttonMentes.Size = new System.Drawing.Size(133, 23);
-            this.buttonMentes.TabIndex = 76;
+            this.buttonMentes.TabIndex = 11;
             this.buttonMentes.Text = "Mentés";
             this.buttonMentes.UseVisualStyleBackColor = true;
             this.buttonMentes.Click += new System.EventHandler(this.buttonMentes_Click);
@@ -95,7 +95,7 @@
             this.buttonMegsem.Location = new System.Drawing.Point(623, 263);
             this.buttonMegsem.Name = "buttonMegsem";
             this.buttonMegsem.Size = new System.Drawing.Size(143, 23);
-            this.buttonMegsem.TabIndex = 73;
+            this.buttonMegsem.TabIndex = 12;
             this.buttonMegsem.Text = "Mégsem";
             this.buttonMegsem.UseVisualStyleBackColor = true;
             this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
@@ -105,7 +105,7 @@
             this.textBoxFelhasznIdoVege.Location = new System.Drawing.Point(610, 225);
             this.textBoxFelhasznIdoVege.Name = "textBoxFelhasznIdoVege";
             this.textBoxFelhasznIdoVege.Size = new System.Drawing.Size(156, 20);
-            this.textBoxFelhasznIdoVege.TabIndex = 70;
+            this.textBoxFelhasznIdoVege.TabIndex = 10;
             this.textBoxFelhasznIdoVege.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFelhasznIdoVege_KeyPress);
             // 
             // textBoxFelhasznIdoKezd
@@ -113,7 +113,7 @@
             this.textBoxFelhasznIdoKezd.Location = new System.Drawing.Point(610, 186);
             this.textBoxFelhasznIdoKezd.Name = "textBoxFelhasznIdoKezd";
             this.textBoxFelhasznIdoKezd.Size = new System.Drawing.Size(156, 20);
-            this.textBoxFelhasznIdoKezd.TabIndex = 69;
+            this.textBoxFelhasznIdoKezd.TabIndex = 9;
             this.textBoxFelhasznIdoKezd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFelhasznIdoKezd_KeyPress);
             // 
             // textBoxElnyertOsszeg
@@ -121,7 +121,7 @@
             this.textBoxElnyertOsszeg.Location = new System.Drawing.Point(610, 100);
             this.textBoxElnyertOsszeg.Name = "textBoxElnyertOsszeg";
             this.textBoxElnyertOsszeg.Size = new System.Drawing.Size(156, 20);
-            this.textBoxElnyertOsszeg.TabIndex = 66;
+            this.textBoxElnyertOsszeg.TabIndex = 7;
             this.textBoxElnyertOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxElnyertOsszeg_KeyPress);
             // 
             // textBoxTervezettOsszeg
@@ -130,14 +130,14 @@
             this.textBoxTervezettOsszeg.Location = new System.Drawing.Point(610, 59);
             this.textBoxTervezettOsszeg.Name = "textBoxTervezettOsszeg";
             this.textBoxTervezettOsszeg.Size = new System.Drawing.Size(156, 20);
-            this.textBoxTervezettOsszeg.TabIndex = 65;
+            this.textBoxTervezettOsszeg.TabIndex = 6;
             // 
             // textBoxPalyazatNev
             // 
             this.textBoxPalyazatNev.Location = new System.Drawing.Point(220, 101);
             this.textBoxPalyazatNev.Name = "textBoxPalyazatNev";
             this.textBoxPalyazatNev.Size = new System.Drawing.Size(155, 20);
-            this.textBoxPalyazatNev.TabIndex = 64;
+            this.textBoxPalyazatNev.TabIndex = 1;
             this.textBoxPalyazatNev.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPalyazatNev_KeyPress);
             // 
             // label8
@@ -253,7 +253,7 @@
             this.textBoxSzakmaiVezeto.Location = new System.Drawing.Point(220, 228);
             this.textBoxSzakmaiVezeto.Name = "textBoxSzakmaiVezeto";
             this.textBoxSzakmaiVezeto.Size = new System.Drawing.Size(155, 20);
-            this.textBoxSzakmaiVezeto.TabIndex = 82;
+            this.textBoxSzakmaiVezeto.TabIndex = 4;
             this.textBoxSzakmaiVezeto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSzakmaiVezeto_KeyPress);
             // 
             // label12
@@ -271,7 +271,7 @@
             this.textBoxPenzugyiVezeto.Location = new System.Drawing.Point(610, 18);
             this.textBoxPenzugyiVezeto.Name = "textBoxPenzugyiVezeto";
             this.textBoxPenzugyiVezeto.Size = new System.Drawing.Size(156, 20);
-            this.textBoxPenzugyiVezeto.TabIndex = 80;
+            this.textBoxPenzugyiVezeto.TabIndex = 5;
             this.textBoxPenzugyiVezeto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPenzugyiVezeto_KeyPress);
             // 
             // label11
@@ -295,7 +295,7 @@
             this.comboBoxPenznem.Location = new System.Drawing.Point(610, 143);
             this.comboBoxPenznem.Name = "comboBoxPenznem";
             this.comboBoxPenznem.Size = new System.Drawing.Size(156, 21);
-            this.comboBoxPenznem.TabIndex = 86;
+            this.comboBoxPenznem.TabIndex = 8;
             // 
             // comboBoxTudomanyTerulet
             // 
@@ -309,7 +309,7 @@
             this.comboBoxTudomanyTerulet.Location = new System.Drawing.Point(220, 185);
             this.comboBoxTudomanyTerulet.Name = "comboBoxTudomanyTerulet";
             this.comboBoxTudomanyTerulet.Size = new System.Drawing.Size(155, 21);
-            this.comboBoxTudomanyTerulet.TabIndex = 85;
+            this.comboBoxTudomanyTerulet.TabIndex = 3;
             // 
             // comboBoxFinanszirozasTipus
             // 
@@ -321,7 +321,7 @@
             this.comboBoxFinanszirozasTipus.Location = new System.Drawing.Point(220, 144);
             this.comboBoxFinanszirozasTipus.Name = "comboBoxFinanszirozasTipus";
             this.comboBoxFinanszirozasTipus.Size = new System.Drawing.Size(155, 21);
-            this.comboBoxFinanszirozasTipus.TabIndex = 84;
+            this.comboBoxFinanszirozasTipus.TabIndex = 2;
             // 
             // comboBoxPalyazatTipus
             // 
@@ -337,7 +337,7 @@
             this.comboBoxPalyazatTipus.Location = new System.Drawing.Point(220, 60);
             this.comboBoxPalyazatTipus.Name = "comboBoxPalyazatTipus";
             this.comboBoxPalyazatTipus.Size = new System.Drawing.Size(155, 21);
-            this.comboBoxPalyazatTipus.TabIndex = 83;
+            this.comboBoxPalyazatTipus.TabIndex = 0;
             // 
             // errorProviderPalyazatTipus
             // 

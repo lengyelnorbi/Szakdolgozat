@@ -62,7 +62,7 @@
             this.comboBoxKoltsegTipus.Location = new System.Drawing.Point(185, 69);
             this.comboBoxKoltsegTipus.Name = "comboBoxKoltsegTipus";
             this.comboBoxKoltsegTipus.Size = new System.Drawing.Size(113, 21);
-            this.comboBoxKoltsegTipus.TabIndex = 45;
+            this.comboBoxKoltsegTipus.TabIndex = 0;
             // 
             // buttonKoltsegTervLetrehoz
             // 
@@ -70,7 +70,7 @@
             this.buttonKoltsegTervLetrehoz.Location = new System.Drawing.Point(40, 212);
             this.buttonKoltsegTervLetrehoz.Name = "buttonKoltsegTervLetrehoz";
             this.buttonKoltsegTervLetrehoz.Size = new System.Drawing.Size(113, 23);
-            this.buttonKoltsegTervLetrehoz.TabIndex = 44;
+            this.buttonKoltsegTervLetrehoz.TabIndex = 3;
             this.buttonKoltsegTervLetrehoz.Text = "Hozzáad";
             this.buttonKoltsegTervLetrehoz.UseVisualStyleBackColor = true;
             this.buttonKoltsegTervLetrehoz.Click += new System.EventHandler(this.buttonKoltsegTervLetrehoz_Click);
@@ -81,7 +81,7 @@
             this.buttonMegsem.Location = new System.Drawing.Point(185, 212);
             this.buttonMegsem.Name = "buttonMegsem";
             this.buttonMegsem.Size = new System.Drawing.Size(113, 23);
-            this.buttonMegsem.TabIndex = 43;
+            this.buttonMegsem.TabIndex = 4;
             this.buttonMegsem.Text = "Mégsem";
             this.buttonMegsem.UseVisualStyleBackColor = true;
             this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
@@ -92,7 +92,7 @@
             this.textBoxModositottOsszeg.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxModositottOsszeg.Name = "textBoxModositottOsszeg";
             this.textBoxModositottOsszeg.Size = new System.Drawing.Size(113, 20);
-            this.textBoxModositottOsszeg.TabIndex = 42;
+            this.textBoxModositottOsszeg.TabIndex = 2;
             this.textBoxModositottOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxModositottOsszeg_KeyPress);
             // 
             // textBoxTervezettOsszeg
@@ -101,7 +101,7 @@
             this.textBoxTervezettOsszeg.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTervezettOsszeg.Name = "textBoxTervezettOsszeg";
             this.textBoxTervezettOsszeg.Size = new System.Drawing.Size(113, 20);
-            this.textBoxTervezettOsszeg.TabIndex = 41;
+            this.textBoxTervezettOsszeg.TabIndex = 1;
             this.textBoxTervezettOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTervezettOsszeg_KeyPress);
             // 
             // textBoxPalyazatAZ
@@ -173,6 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(346, 270);
             this.Controls.Add(this.comboBoxKoltsegTipus);
             this.Controls.Add(this.buttonKoltsegTervLetrehoz);

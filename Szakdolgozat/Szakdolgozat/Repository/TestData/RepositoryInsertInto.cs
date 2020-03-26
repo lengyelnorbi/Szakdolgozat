@@ -192,5 +192,26 @@ namespace Szakdolgozat.Repository.TestDatabase
                 throw new RepositoryException("Sikertelen adatbeszúrás az adatbázisban.");
             }
         }
+        public void getInsertFelhasznalokIntoDatabase()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string queryInsert = "INSERT IGNORE INTO `palyazatszamontarto`.`felhasznalok` (`id`, `felhasznalo_nev`, `jelszo`)" +
+                                     "VALUES (NULL, 'sz8lennor', 'Abc12345')," +
+                                            "(NULL, 'sz8goddan', 'Abc12345')";
+                MySqlCommand cmd = new MySqlCommand(queryInsert, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine("Felhasznalok adatainak insertálása nem sikerült.");
+                throw new RepositoryException("Sikertelen adatbeszúrás az adatbázisban.");
+            }
+        }
     }
 }

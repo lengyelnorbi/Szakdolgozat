@@ -424,15 +424,17 @@
             this.kilépToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1438, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1438, 28);
             this.menuStrip1.TabIndex = 107;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // kilépToolStripMenuItem
             // 
+            this.kilépToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.kilépToolStripMenuItem.Name = "kilépToolStripMenuItem";
-            this.kilépToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.kilépToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
             this.kilépToolStripMenuItem.Text = "Kilép";
+            this.kilépToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.kilépToolStripMenuItem.Click += new System.EventHandler(this.kilépToolStripMenuItem_Click);
             // 
             // FormPalyazat

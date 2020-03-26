@@ -51,7 +51,7 @@
             this.buttonVezetoFelvetele.Location = new System.Drawing.Point(40, 177);
             this.buttonVezetoFelvetele.Name = "buttonVezetoFelvetele";
             this.buttonVezetoFelvetele.Size = new System.Drawing.Size(113, 23);
-            this.buttonVezetoFelvetele.TabIndex = 44;
+            this.buttonVezetoFelvetele.TabIndex = 3;
             this.buttonVezetoFelvetele.Text = "Hozzáad";
             this.buttonVezetoFelvetele.UseVisualStyleBackColor = true;
             this.buttonVezetoFelvetele.Click += new System.EventHandler(this.buttonVezetoFelvetele_Click);
@@ -62,7 +62,7 @@
             this.buttonMegsem.Location = new System.Drawing.Point(184, 177);
             this.buttonMegsem.Name = "buttonMegsem";
             this.buttonMegsem.Size = new System.Drawing.Size(113, 23);
-            this.buttonMegsem.TabIndex = 43;
+            this.buttonMegsem.TabIndex = 4;
             this.buttonMegsem.Text = "Mégsem";
             this.buttonMegsem.UseVisualStyleBackColor = true;
             this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
@@ -73,7 +73,7 @@
             this.textBoxVezetoEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxVezetoEmail.Name = "textBoxVezetoEmail";
             this.textBoxVezetoEmail.Size = new System.Drawing.Size(113, 20);
-            this.textBoxVezetoEmail.TabIndex = 41;
+            this.textBoxVezetoEmail.TabIndex = 2;
             // 
             // textBoxVezetoNev
             // 
@@ -81,7 +81,7 @@
             this.textBoxVezetoNev.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxVezetoNev.Name = "textBoxVezetoNev";
             this.textBoxVezetoNev.Size = new System.Drawing.Size(113, 20);
-            this.textBoxVezetoNev.TabIndex = 40;
+            this.textBoxVezetoNev.TabIndex = 0;
             this.textBoxVezetoNev.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVezetoNev_KeyPress);
             // 
             // label4
@@ -123,7 +123,7 @@
             this.textBoxVezetoTelefonszam.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxVezetoTelefonszam.Name = "textBoxVezetoTelefonszam";
             this.textBoxVezetoTelefonszam.Size = new System.Drawing.Size(113, 20);
-            this.textBoxVezetoTelefonszam.TabIndex = 48;
+            this.textBoxVezetoTelefonszam.TabIndex = 1;
             this.textBoxVezetoTelefonszam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVezetoTelefonszam_KeyPress);
             // 
             // errorProviderVezetoNev
@@ -142,6 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(345, 226);
             this.Controls.Add(this.textBoxVezetoTelefonszam);
             this.Controls.Add(this.buttonVezetoFelvetele);

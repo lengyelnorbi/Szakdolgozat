@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Formok.Login;
 
 namespace Szakdolgozat
 {
@@ -16,7 +17,7 @@ namespace Szakdolgozat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPalyazat());
+            Application.Run(new FormLogin());
         }
     }
 }

@@ -53,7 +53,7 @@
             this.buttonTenyfelhasznMentes.Location = new System.Drawing.Point(42, 214);
             this.buttonTenyfelhasznMentes.Name = "buttonTenyfelhasznMentes";
             this.buttonTenyfelhasznMentes.Size = new System.Drawing.Size(98, 23);
-            this.buttonTenyfelhasznMentes.TabIndex = 35;
+            this.buttonTenyfelhasznMentes.TabIndex = 3;
             this.buttonTenyfelhasznMentes.Text = "Mentés";
             this.buttonTenyfelhasznMentes.UseVisualStyleBackColor = true;
             this.buttonTenyfelhasznMentes.Click += new System.EventHandler(this.buttonTenyfelhasznMentes_Click);
@@ -64,7 +64,7 @@
             this.buttonMegsem.Location = new System.Drawing.Point(214, 214);
             this.buttonMegsem.Name = "buttonMegsem";
             this.buttonMegsem.Size = new System.Drawing.Size(90, 23);
-            this.buttonMegsem.TabIndex = 34;
+            this.buttonMegsem.TabIndex = 4;
             this.buttonMegsem.Text = "Mégse";
             this.buttonMegsem.UseVisualStyleBackColor = true;
             this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
@@ -75,7 +75,7 @@
             this.textBoxFizetesDatuma.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFizetesDatuma.Name = "textBoxFizetesDatuma";
             this.textBoxFizetesDatuma.Size = new System.Drawing.Size(132, 20);
-            this.textBoxFizetesDatuma.TabIndex = 32;
+            this.textBoxFizetesDatuma.TabIndex = 2;
             this.textBoxFizetesDatuma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFizetesDatuma_KeyPress);
             // 
             // textBoxFizetettOsszeg
@@ -84,7 +84,7 @@
             this.textBoxFizetettOsszeg.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFizetettOsszeg.Name = "textBoxFizetettOsszeg";
             this.textBoxFizetettOsszeg.Size = new System.Drawing.Size(132, 20);
-            this.textBoxFizetettOsszeg.TabIndex = 31;
+            this.textBoxFizetettOsszeg.TabIndex = 1;
             this.textBoxFizetettOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFizetettOsszeg_KeyPress);
             // 
             // textBoxPalyazatAZ
@@ -155,7 +155,7 @@
             this.comboBoxKoltsegTipus.Location = new System.Drawing.Point(172, 73);
             this.comboBoxKoltsegTipus.Name = "comboBoxKoltsegTipus";
             this.comboBoxKoltsegTipus.Size = new System.Drawing.Size(132, 21);
-            this.comboBoxKoltsegTipus.TabIndex = 36;
+            this.comboBoxKoltsegTipus.TabIndex = 0;
             // 
             // errorProviderTenyfelhasznalasKoltsegTipus
             // 

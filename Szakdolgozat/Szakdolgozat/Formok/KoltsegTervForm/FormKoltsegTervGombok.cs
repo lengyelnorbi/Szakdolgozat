@@ -25,7 +25,7 @@ namespace Szakdolgozat
         }
         private void buttonKoltsegTervModositForm_Click(object sender, EventArgs e)
         {
-            if (koltsegTervModosit == null)
+            if (koltsegTervModosit == null && dataGridViewKoltsegTerv.SelectedRows.Count == 1)
             {
                 koltsegTervModosit = new FormKoltsegTervModosit(dataGridViewKoltsegTerv.SelectedRows[0].Cells[0].Value.ToString(), textBoxPalyazatAZ.Text, comboBoxKoltsegTipus.Text, textBoxTervezettOsszeg.Text, textBoxModositottOsszeg.Text);
                 koltsegTervModosit.Closed += f_Closed;

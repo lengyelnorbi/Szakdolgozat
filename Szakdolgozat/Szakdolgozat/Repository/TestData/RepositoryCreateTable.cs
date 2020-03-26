@@ -154,5 +154,26 @@ namespace Szakdolgozat.Repository.TestDatabase
                 throw new RepositoryException("Sikertelen táblalétrehozás adatbázisban.");
             }
         }
+        public void getCreateFelhasznalokTable()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string queryFelhasznalok = "CREATE TABLE IF NOT EXISTS `palyazatszamontarto`.`felhasznalok` (id INT PRIMARY KEY AUTO_INCREMENT," +
+                    "felhasznalo_nev VARCHAR(20) NOT NULL UNIQUE," +
+                    "jelszo VARCHAR(32) NOT NULL);";
+                MySqlCommand cmd = new MySqlCommand(queryFelhasznalok, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine("Felhasznalok tábla létrehozása nem sikerült.");
+                throw new RepositoryException("Sikertelen táblalétrehozás adatbázisban.");
+            }
+        }
     }
 }

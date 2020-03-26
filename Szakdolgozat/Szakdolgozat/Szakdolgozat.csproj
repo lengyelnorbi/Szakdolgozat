@@ -68,6 +68,12 @@
     <Compile Include="Formok\KoltsegTervForm\FormUjKoltsegTervHozzaad.Designer.cs">
       <DependentUpon>FormUjKoltsegTervHozzaad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formok\Login\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formok\Login\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formok\PalyazatForm\FormPalyazatGombok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,7 @@
     <Compile Include="Model\KoltsegTerv\KoltsegTerv.cs" />
     <Compile Include="Model\KoltsegTipus\KoltsegTipusDatabase.cs" />
     <Compile Include="Model\KoltsegTipus\KoltsegTipus.cs" />
+    <Compile Include="Model\Login\LoginDatabase.cs" />
     <Compile Include="Model\Palyazat\PalyazatDatabase.cs" />
     <Compile Include="Model\Palyazat\Palyazat.cs" />
     <Compile Include="Model\Poszt\PosztDatabase.cs" />
@@ -164,6 +171,7 @@
     <Compile Include="Repository\KoltsegTerv\RepositoryKoltsegTerv.cs" />
     <Compile Include="Exceptions\TaroloException.cs" />
     <Compile Include="Repository\Poszt\RepositoryPoszt.cs" />
+    <Compile Include="Repository\RepositoryLoginSql.cs" />
     <Compile Include="Repository\TestData\RepositoryDatabase.cs" />
     <Compile Include="Repository\TestData\RepositoryAlterTable.cs" />
     <Compile Include="Repository\Tarolo.cs" />
@@ -184,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\KoltsegTervForm\FormUjKoltsegTervHozzaad.resx">
       <DependentUpon>FormUjKoltsegTervHozzaad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formok\Login\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formok\PalyazatForm\FormPalyazat.resx">
       <DependentUpon>FormPalyazat.cs</DependentUpon>

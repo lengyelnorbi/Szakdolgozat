@@ -62,7 +62,7 @@
             this.comboBoxKoltsegTipus.Location = new System.Drawing.Point(195, 79);
             this.comboBoxKoltsegTipus.Name = "comboBoxKoltsegTipus";
             this.comboBoxKoltsegTipus.Size = new System.Drawing.Size(113, 21);
-            this.comboBoxKoltsegTipus.TabIndex = 35;
+            this.comboBoxKoltsegTipus.TabIndex = 0;
             // 
             // buttonTenyfelhasznalasLetrehoz
             // 
@@ -70,7 +70,7 @@
             this.buttonTenyfelhasznalasLetrehoz.Location = new System.Drawing.Point(50, 222);
             this.buttonTenyfelhasznalasLetrehoz.Name = "buttonTenyfelhasznalasLetrehoz";
             this.buttonTenyfelhasznalasLetrehoz.Size = new System.Drawing.Size(113, 23);
-            this.buttonTenyfelhasznalasLetrehoz.TabIndex = 34;
+            this.buttonTenyfelhasznalasLetrehoz.TabIndex = 3;
             this.buttonTenyfelhasznalasLetrehoz.Text = "Hozzáad";
             this.buttonTenyfelhasznalasLetrehoz.UseVisualStyleBackColor = true;
             this.buttonTenyfelhasznalasLetrehoz.Click += new System.EventHandler(this.buttonTenyfelhasznalasLetrehoz_Click);
@@ -81,7 +81,7 @@
             this.buttonMegsem.Location = new System.Drawing.Point(195, 222);
             this.buttonMegsem.Name = "buttonMegsem";
             this.buttonMegsem.Size = new System.Drawing.Size(113, 23);
-            this.buttonMegsem.TabIndex = 33;
+            this.buttonMegsem.TabIndex = 4;
             this.buttonMegsem.Text = "Mégsem";
             this.buttonMegsem.UseVisualStyleBackColor = true;
             this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
@@ -92,7 +92,7 @@
             this.textBoxFizetesDatuma.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFizetesDatuma.Name = "textBoxFizetesDatuma";
             this.textBoxFizetesDatuma.Size = new System.Drawing.Size(113, 20);
-            this.textBoxFizetesDatuma.TabIndex = 32;
+            this.textBoxFizetesDatuma.TabIndex = 2;
             this.textBoxFizetesDatuma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFizetesDatuma_KeyPress);
             // 
             // textBoxFizetettOsszeg
@@ -101,7 +101,7 @@
             this.textBoxFizetettOsszeg.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFizetettOsszeg.Name = "textBoxFizetettOsszeg";
             this.textBoxFizetettOsszeg.Size = new System.Drawing.Size(113, 20);
-            this.textBoxFizetettOsszeg.TabIndex = 31;
+            this.textBoxFizetettOsszeg.TabIndex = 1;
             this.textBoxFizetettOsszeg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFizetettOsszeg_KeyPress);
             // 
             // textBoxPalyazatAZ
@@ -173,6 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(356, 265);
             this.Controls.Add(this.comboBoxKoltsegTipus);
             this.Controls.Add(this.buttonTenyfelhasznalasLetrehoz);
