@@ -42,7 +42,7 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
                 koltsegTipus = Convert.ToString(comboBoxKoltsegTipus.Text);
                 if (comboBoxKoltsegTipus.Text == string.Empty)
                 {
-                    errorProviderTenyfelhasznalasKoltsegTipus.SetError(comboBoxKoltsegTipus, "Hibás adat!");
+                    errorProviderTenyfelhasznalasKoltsegTipus.SetError(comboBoxKoltsegTipus, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
             }
@@ -57,12 +57,12 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
                 fizetettOsszeg = Convert.ToString(textBoxFizetettOsszeg.Text);
                 if (textBoxFizetettOsszeg.Text == string.Empty)
                 {
-                    errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Hibás adat!");
+                    errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
                 if (tenyfelhasznalasRepo.IsValidValue(fizetettOsszeg) == false)
                 {
-                    errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Hibás adat!");
+                    errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Az összeg nem kezdődhet nullával!");
                     vanHiba = true;
                 }
             }
@@ -77,12 +77,12 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
                 fizetesDatuma = Convert.ToString(textBoxFizetesDatuma.Text);
                 if (textBoxFizetesDatuma.Text == string.Empty)
                 {
-                    errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "Hibás adat!");
+                    errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
                 if (tenyfelhasznalasRepo.IsValidDate(fizetesDatuma) == false)
                 {
-                    errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "Hibás adat!");
+                    errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "A dátum formája nem megfelelő!");
                     vanHiba = true;
                 }
             }

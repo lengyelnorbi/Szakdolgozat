@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -20,7 +21,8 @@ namespace Szakdolgozat.Repository
         }
         public bool IsValidEmail(string email)
         {
-            Regex reg = new Regex(@"^[\w!#$%&'+-/=?^_`{|}~]+(.[\w!#$%&'+-/=?^_`{|}~]+)*@((([-\w]+.)+[a-zA-Z]{2,4})|(([0-9]{1,3}.){3}[0-9]{1,3}))\z");
+            string pattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"+"@"+@"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$";
+            Regex reg = new Regex(pattern);
             bool result = reg.IsMatch(email);
             if(result == true)
             {
@@ -40,9 +42,22 @@ namespace Szakdolgozat.Repository
         }
         public bool IsValidName(string nev)
         {
-            Regex reg = new Regex("");
-            bool result = reg.IsMatch(nev);
-            if(result == true)
+            string[] nevDarabok = nev.Split(null);
+            if(nevDarabok.Length > 2)
+            {
+                return false;
+            }
+            Regex reg = new Regex("^[A-Z]{1}[a-z]{1,}$");
+            int joDarabok = 0;
+            for(int i = 0; i < nevDarabok.Length; i++)
+            {
+                bool result = reg.IsMatch(nevDarabok[i]);
+                if(result == true)
+                {
+                    joDarabok += 1;
+                }
+            }
+            if(nevDarabok.Length == joDarabok)
             {
                 return true;
             }
@@ -50,7 +65,7 @@ namespace Szakdolgozat.Repository
         }
         public bool IsValidPhoneNumber(string telefonszam)
         {
-            Regex reg = new Regex("");
+            Regex reg = new Regex(@"^(((\+)(3)(6)|(0)(6))(((1)[0-9]{7})|((2)(0)|(3)(0)|(5)(0)|(7)(0))[0-9]{7}|((6)(2)[0-9]{6})))$");
             bool result = reg.IsMatch(telefonszam);
             if(result == true)
             {

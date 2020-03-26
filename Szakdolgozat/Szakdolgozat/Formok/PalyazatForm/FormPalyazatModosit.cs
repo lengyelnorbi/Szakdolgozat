@@ -101,7 +101,7 @@ namespace Szakdolgozat
                 palyazatTipus = Convert.ToString(comboBoxPalyazatTipus.Text);
                 if (comboBoxPalyazatTipus.Text == string.Empty)
                 {
-                    errorProviderPalyazatTipus.SetError(comboBoxPalyazatTipus, "Hibás adat!");
+                    errorProviderPalyazatTipus.SetError(comboBoxPalyazatTipus, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
             }
@@ -116,7 +116,7 @@ namespace Szakdolgozat
                 palyazatNev = Convert.ToString(textBoxPalyazatNev.Text);
                 if (textBoxPalyazatNev.Text == string.Empty)
                 {
-                    errorProviderPalyazatNev.SetError(textBoxPalyazatNev, "Hibás adat!");
+                    errorProviderPalyazatNev.SetError(textBoxPalyazatNev, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
             }
@@ -131,7 +131,7 @@ namespace Szakdolgozat
                 finanszirozasTipus = Convert.ToString(comboBoxFinanszirozasTipus.Text);
                 if (comboBoxFinanszirozasTipus.Text == string.Empty)
                 {
-                    errorProviderFinanszirozasTipus.SetError(comboBoxFinanszirozasTipus, "Hibás adat!");
+                    errorProviderFinanszirozasTipus.SetError(comboBoxFinanszirozasTipus, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
             }
@@ -146,7 +146,7 @@ namespace Szakdolgozat
                 tudomanyterulet = Convert.ToString(comboBoxTudomanyTerulet.Text);
                 if (comboBoxTudomanyTerulet.Text == string.Empty)
                 {
-                    errorProviderTudomanyTerulet.SetError(comboBoxTudomanyTerulet, "Hibás adat!");
+                    errorProviderTudomanyTerulet.SetError(comboBoxTudomanyTerulet, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
             }
@@ -159,6 +159,19 @@ namespace Szakdolgozat
             try
             {
                 szakmaiVezeto = Convert.ToString(textBoxSzakmaiVezeto.Text);
+
+                if (szakmaiVezeto == string.Empty)
+                {
+
+                }
+                else
+                {
+                    if (palyazatRepo.IsValidName(szakmaiVezeto) == false)
+                    {
+                        errorProviderSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "A vezető neve nem megfelelő!");
+                        vanHiba = true;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -169,6 +182,18 @@ namespace Szakdolgozat
             try
             {
                 penzugyiVezeto = Convert.ToString(textBoxPenzugyiVezeto.Text);
+                if (penzugyiVezeto == string.Empty)
+                {
+
+                }
+                else
+                {
+                    if (palyazatRepo.IsValidName(penzugyiVezeto) == false)
+                    {
+                        errorProviderPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "A vezető neve nem megfelelő!");
+                        vanHiba = true;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -189,7 +214,7 @@ namespace Szakdolgozat
                     {
                         if (palyazatRepo.IsValidValue(elnyertOsszeg) == false)
                         {
-                            errorProviderElnyertOsszeg.SetError(textBoxElnyertOsszeg, "Hibás adat!");
+                            errorProviderElnyertOsszeg.SetError(textBoxElnyertOsszeg, "Az összeg nem kezdődhet nullával!");
                             vanHiba = true;
                         }
                     }
@@ -218,7 +243,7 @@ namespace Szakdolgozat
                 {
                     if (palyazatRepo.IsValidDate(felhasznalasiIdoKezd) == false)
                     {
-                        errorProviderFelhasznIdoKezd.SetError(textBoxFelhasznIdoKezd, "Hibás adat!");
+                        errorProviderFelhasznIdoKezd.SetError(textBoxFelhasznIdoKezd, "A dátum formája nem megfelelő!");
                         vanHiba = true;
                     }
                 }
@@ -236,7 +261,7 @@ namespace Szakdolgozat
                 {
                     if (palyazatRepo.IsValidDate(felhasznalasiIdoVege) == false)
                     {
-                        errorProviderFelhasznIdoVege.SetError(textBoxFelhasznIdoVege, "Hibás adat!");
+                        errorProviderFelhasznIdoVege.SetError(textBoxFelhasznIdoVege, "A dátum formája nem megfelelő!");
                         vanHiba = true;
                     }
                 }
@@ -252,8 +277,8 @@ namespace Szakdolgozat
                                                     comboBoxPalyazatTipus.Text,
                                                     textBoxPalyazatNev.Text,
                                                     comboBoxFinanszirozasTipus.Text,
-                                                    Convert.ToInt32(textBoxTervezettOsszeg.Text),
-                                                    Convert.ToInt32(textBoxElnyertOsszeg.Text),
+                                                    Convert.ToSingle(textBoxTervezettOsszeg.Text),
+                                                    Convert.ToSingle(textBoxElnyertOsszeg.Text),
                                                     comboBoxPenznem.Text,
                                                     textBoxFelhasznIdoKezd.Text,
                                                     textBoxFelhasznIdoVege.Text,
@@ -265,14 +290,21 @@ namespace Szakdolgozat
                 try { 
                     if (vaneSzakmaiVezeto == false)
                     {
-                        if (palyazatRepo.isVezetoInList(textBoxSzakmaiVezeto.Text) == true)
+                        if(szakmaiVezetoNev == szakmaiVezeto)
                         {
-                            palyazatRepoSql.insertPosztokIntoDatabase(Azonosito, textBoxSzakmaiVezeto.Text, "Szakmai vezető");
+
                         }
                         else
                         {
-                            errorProviderSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "Hiba!");
-                            vanHiba = true;
+                            if (palyazatRepo.isVezetoInList(textBoxSzakmaiVezeto.Text) == true)
+                            {
+                                palyazatRepoSql.insertPosztokIntoDatabase(Azonosito, textBoxSzakmaiVezeto.Text, "Szakmai vezető");
+                            }
+                            else
+                            {
+                                errorProviderSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "A vezető nincs benne az adatbázisban!");
+                                vanHiba = true;
+                            }
                         }
                     }
                     else
@@ -294,7 +326,7 @@ namespace Szakdolgozat
                                 }
                                 else
                                 {
-                                    errorProviderSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "Hibás adat!");
+                                    errorProviderSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "A vezető nincs benne az adatbázisban!");
                                     vanHiba = true;
                                 }
                             }
@@ -302,14 +334,21 @@ namespace Szakdolgozat
                     }
                     if (vanePenzugyiVezeto == false)
                     {
-                        if (palyazatRepo.isVezetoInList(textBoxPenzugyiVezeto.Text) == true)
+                        if (penzugyiVezetoNev == penzugyiVezeto)
                         {
-                            palyazatRepoSql.insertPosztokIntoDatabase(Azonosito, textBoxPenzugyiVezeto.Text, "Pénzügyi vezető");
+
                         }
                         else
                         {
-                            errorProviderPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "Hibás adat!");
-                            vanHiba = true;
+                            if (palyazatRepo.isVezetoInList(textBoxPenzugyiVezeto.Text) == true)
+                            {
+                                palyazatRepoSql.insertPosztokIntoDatabase(Azonosito, textBoxPenzugyiVezeto.Text, "Pénzügyi vezető");
+                            }
+                            else
+                            {
+                                errorProviderPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "A vezető nincs benne az adatbázisban!");
+                                vanHiba = true;
+                            }
                         }
                     }
                     else
@@ -332,7 +371,7 @@ namespace Szakdolgozat
                                 }
                                 else
                                 {
-                                    errorProviderSzakmaiVezeto.SetError(textBoxPenzugyiVezeto, "Hibás adat!");
+                                    errorProviderSzakmaiVezeto.SetError(textBoxPenzugyiVezeto, "A vezető nincs benne az adatbázisban!");
                                     vanHiba = true;
                                 }
                             }

@@ -23,7 +23,7 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
             InitializeComponent();
             textBoxPalyazatAZ.Text = palyazatAZ;
             comboBoxKoltsegTipus.Text = koltsegTip;
-            if(Convert.ToInt32(tervezettOsszeg) == 0)
+            if(Convert.ToSingle(tervezettOsszeg) == 0)
             {
                 textBoxTervezettOsszeg.Text = "";
             }
@@ -31,7 +31,7 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
             {
                 textBoxTervezettOsszeg.Text = tervezettOsszeg;
             }
-            if (Convert.ToInt32(modositottOsszeg) == 0)
+            if (Convert.ToSingle(modositottOsszeg) == 0)
             {
                 textBoxModositottOsszeg.Text = "";
             }
@@ -58,7 +58,7 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
                 koltsegTipus = Convert.ToString(comboBoxKoltsegTipus.Text);
                 if (comboBoxKoltsegTipus.Text == string.Empty)
                 {
-                    errorProviderKoltsegTipus.SetError(comboBoxKoltsegTipus, "Hibás adat!");
+                    errorProviderKoltsegTipus.SetError(comboBoxKoltsegTipus, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
             }
@@ -73,12 +73,12 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
                 tervezettOsszeg = Convert.ToString(textBoxTervezettOsszeg.Text);
                 if (textBoxTervezettOsszeg.Text == string.Empty)
                 {
-                    errorProviderTervezettOsszeg.SetError(textBoxTervezettOsszeg, "Hibás adat!");
+                    errorProviderTervezettOsszeg.SetError(textBoxTervezettOsszeg, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
                 if (koltsegTervRepo.IsValidValue(tervezettOsszeg) == false)
                 {
-                    errorProviderTervezettOsszeg .SetError(textBoxTervezettOsszeg, "Hibás adat!");
+                    errorProviderTervezettOsszeg .SetError(textBoxTervezettOsszeg, "Az összeg nem kezdődhet nullával!");
                     vanHiba = true;
                 }
             }
@@ -95,7 +95,7 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
                     modositottOsszeg = Convert.ToString(textBoxModositottOsszeg.Text);
                     if (koltsegTervRepo.IsValidValue(modositottOsszeg) == false)
                     {
-                        errorProviderModositottOsszeg.SetError(textBoxModositottOsszeg, "Hibás adat!");
+                        errorProviderModositottOsszeg.SetError(textBoxModositottOsszeg, "Az összeg nem kezdődhet nullával!");
                         vanHiba = true;
                     }
                 }

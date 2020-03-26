@@ -52,8 +52,24 @@ namespace Szakdolgozat.Formok.VezetoForm
                 vezetoNev = Convert.ToString(textBoxVezetoNev.Text);
                 if (textBoxVezetoNev.Text == string.Empty)
                 {
-                    errorProviderVezetoNev.SetError(textBoxVezetoNev, "Hibás adat!");
+                    errorProviderVezetoNev.SetError(textBoxVezetoNev, "Kötelező kitölteni!");
                     vanHiba = true;
+                }
+                else
+                {
+                    if (vezetoRepo.IsValidName(vezetoNev) == false)
+                    {
+                        errorProviderVezetoNev.SetError(textBoxVezetoNev, "A név nem megfelelő!");
+                        vanHiba = true;
+                    }
+                    else
+                    {
+                        if (vezetoRepo.isVezetoInList(vezetoNev) == true)
+                        {
+                            errorProviderVezetoNev.SetError(textBoxVezetoNev, "Hibás adat!");
+                            vanHiba = true;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -67,7 +83,17 @@ namespace Szakdolgozat.Formok.VezetoForm
                 vezetoTelefonszam = Convert.ToString(textBoxVezetoTelefonszam.Text);
                 if (textBoxVezetoTelefonszam.Text == string.Empty)
                 {
-                    errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "Hibás adat!");
+                    errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "Kötelező kitölteni!");
+                    vanHiba = true;
+                }
+                if (vezetoTelefonszam.Length > 12)
+                {
+                    errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "A telefonszám túl hosszú!");
+                    vanHiba = true;
+                }
+                if(vezetoRepo.IsValidPhoneNumber(vezetoTelefonszam) == false)
+                {
+                    errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "A telefonszám hibásan lett megadva!");
                     vanHiba = true;
                 }
             }
@@ -84,24 +110,21 @@ namespace Szakdolgozat.Formok.VezetoForm
                 {
                     if(textBoxVezetoEmail.Text == string.Empty)
                     {
-                        errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                        errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Kötelező kitölteni!");
                         vanHiba = true;
                     }
                     else
                     {
                         if (vezetoRepo.IsValidEmail(vezetoEmail) == false)
                         {
-                            errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                            errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Az email nem megfelelő!");
                             vanHiba = true;
                         }
                         else
                         {
-                            if (vezetoRepo.isEmailInList(vezetoEmail) == false)
+                            if (vezetoRepo.isEmailInList(vezetoEmail) == true)
                             {
-                            }
-                            else
-                            {
-                                errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Hibás adat!");
+                                errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Az email már hozzá van adva egy másik vezetőhöz!");
                                 vanHiba = true;
                             }
                         }
@@ -141,7 +164,11 @@ namespace Szakdolgozat.Formok.VezetoForm
         private void textBoxVezetoTelefonszam_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            if (!Char.IsDigit(ch) && ch != 8)
+            if (!Char.IsLetter(ch) && ch != 8)
+            {
+                e.Handled = false;
+            }
+            else
             {
                 e.Handled = true;
             }

@@ -50,7 +50,6 @@ namespace Szakdolgozat
             palyazatRepo.setVezeto(vezetoRepoSql.getVezetoFromDatabaseTable());
             palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
         }
-
         private void buttonMentes_Click(object sender, EventArgs e)
         {
             errorProviderPalyazatTipus.SetError(comboBoxPalyazatTipus, "");
@@ -72,7 +71,7 @@ namespace Szakdolgozat
                 palyazatTipus = Convert.ToString(comboBoxPalyazatTipus.Text);
                 if (comboBoxPalyazatTipus.Text == string.Empty)
                 {
-                    errorProviderPalyazatTipus.SetError(comboBoxPalyazatTipus, "Hibás adat!");
+                    errorProviderPalyazatTipus.SetError(comboBoxPalyazatTipus, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
             }
@@ -87,7 +86,7 @@ namespace Szakdolgozat
                 palyazatNev = Convert.ToString(textBoxPalyazatNev.Text);
                 if (textBoxPalyazatNev.Text == string.Empty)
                 {
-                    errorProviderPalyazatNev.SetError(textBoxPalyazatNev, "Hibás adat!");
+                    errorProviderPalyazatNev.SetError(textBoxPalyazatNev, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
             }
@@ -102,7 +101,7 @@ namespace Szakdolgozat
                 finanszirozasTipus = Convert.ToString(comboBoxFinanszirozasTipus.Text);
                 if (comboBoxFinanszirozasTipus.Text == string.Empty)
                 {
-                    errorProviderFinanszirozasTipus.SetError(comboBoxFinanszirozasTipus, "Hibás adat!");
+                    errorProviderFinanszirozasTipus.SetError(comboBoxFinanszirozasTipus, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
             }
@@ -117,7 +116,7 @@ namespace Szakdolgozat
                 tudomanyterulet = Convert.ToString(comboBoxTudomanyTerulet.Text);
                 if (comboBoxTudomanyTerulet.Text == string.Empty)
                 {
-                    errorProviderPalyazatTudomanyterulet.SetError(comboBoxTudomanyTerulet, "Hibás adat!");
+                    errorProviderPalyazatTudomanyterulet.SetError(comboBoxTudomanyTerulet, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
             }
@@ -136,10 +135,18 @@ namespace Szakdolgozat
                 }
                 else
                 {
-                    if (palyazatRepo.isVezetoInList(szakmaiVezeto) == false)
+                    if (palyazatRepo.IsValidName(szakmaiVezeto) == false)
                     {
-                        errorProviderPalyazatSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "Hibás adat!");
+                        errorProviderPalyazatSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "A vezető neve nem megfelelő!");
                         vanHiba = true;
+                    }
+                    else
+                    {
+                        if (palyazatRepo.isVezetoInList(szakmaiVezeto) == false)
+                        {
+                            errorProviderPalyazatSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "A vezető nincs benne az adatbázisban!");
+                            vanHiba = true;
+                        }
                     }
                 }
             }
@@ -158,10 +165,18 @@ namespace Szakdolgozat
                 }
                 else
                 {
-                    if (palyazatRepo.isVezetoInList(penzugyiVezeto) == false)
+                    if(palyazatRepo.IsValidName(penzugyiVezeto) == false)
                     {
-                        errorProviderPalyazatPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "Hibás adat!");
+                        errorProviderPalyazatPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "A vezető neve nem megfelelő!");
                         vanHiba = true;
+                    }
+                    else
+                    {
+                        if (palyazatRepo.isVezetoInList(penzugyiVezeto) == false)
+                        {
+                            errorProviderPalyazatPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "A vezető nincs benne az adatbázisban!");
+                            vanHiba = true;
+                        }
                     }
                 }
             }
@@ -184,7 +199,7 @@ namespace Szakdolgozat
                     {
                         if (palyazatRepo.IsValidValue(elnyertOsszeg) == false)
                         {
-                            errorProviderPalyazatElnyertOsszeg.SetError(textBoxElnyertOsszeg, "Hibás adat!");
+                            errorProviderPalyazatElnyertOsszeg.SetError(textBoxElnyertOsszeg, "Az összeg nem kezdődhet nullával!");
                             vanHiba = true;
                         }
                     }
@@ -213,7 +228,7 @@ namespace Szakdolgozat
                 {
                     if (palyazatRepo.IsValidDate(felhasznalasiIdoKezd) == false)
                     {
-                        errorProviderPalyazatFelhasznIdoKezd.SetError(textBoxFelhasznIdoVege, "Hibás adat!");
+                        errorProviderPalyazatFelhasznIdoKezd.SetError(textBoxFelhasznIdoVege, "A dátum formája nem megfelelő!");
                         vanHiba = true;
                     }
                 }
@@ -231,7 +246,7 @@ namespace Szakdolgozat
                 {
                     if (palyazatRepo.IsValidDate(felhasznalasiIdoVege) == false)
                     {
-                        errorProviderPalyazatFelhasznIdoVege.SetError(textBoxFelhasznIdoVege, "Hibás adat!");
+                        errorProviderPalyazatFelhasznIdoVege.SetError(textBoxFelhasznIdoVege, "A dátum formája nem megfelelő!");
                         vanHiba = true;
                     }
                 }
@@ -243,7 +258,19 @@ namespace Szakdolgozat
             }
             if (!vanHiba)
             {
-                string palyazatAzonosito = comboBoxPalyazatTipus.Text + "2";
+                string palyazatAzonosito = "";
+                do
+                {
+                    palyazatAzonosito = "";
+                    char[] chars = "qwertzuiopasdfghjklyxcvbnm1234567890QWERTZUUIOPASDFGHJKLYXCVBNM".ToCharArray();
+                    Random r = new Random();
+                    for (int i = 0; i < 10; i++)
+                    {
+                        palyazatAzonosito += chars[r.Next(0, 63)].ToString();
+                    }
+                }
+                while (!palyazatRepo.isPalyazatAzonositoInList(palyazatAzonosito));
+
                 Palyazat ujPalyazat = new Palyazat(palyazatAzonosito, comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text, 0,
                     Convert.ToSingle(textBoxElnyertOsszeg.Text), comboBoxPenznem.Text, textBoxFelhasznIdoKezd.Text, textBoxFelhasznIdoVege.Text, comboBoxTudomanyTerulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
 

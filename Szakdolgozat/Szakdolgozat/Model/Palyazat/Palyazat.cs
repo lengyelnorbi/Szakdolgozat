@@ -12,8 +12,8 @@ namespace Szakdolgozat.Model
         private string palyazatTipus;
         private string palyazatNeve;
         private string finanszirozasTipus;
-        private float tervezettOsszeg;
-        private float elnyertOsszeg;
+        private double tervezettOsszeg;
+        private double elnyertOsszeg;
         private string penznem;
         private string felhasznalasiIdoKezd;
         private string felhasznalasiIdoVege;
@@ -74,12 +74,12 @@ namespace Szakdolgozat.Model
             this.finanszirozasTipus = finanszirozasTipus;
         }
 
-        public void setTervezettOsszeg(float tervezettOsszeg)
+        public void setTervezettOsszeg(double tervezettOsszeg)
         {
             this.tervezettOsszeg = tervezettOsszeg;
         }
 
-        public void setElnyertOsszeg(float elnyertOsszeg)
+        public void setElnyertOsszeg(double elnyertOsszeg)
         {
             this.elnyertOsszeg = elnyertOsszeg;
         }
@@ -134,12 +134,12 @@ namespace Szakdolgozat.Model
             return finanszirozasTipus;
         }
 
-        public float getTervezettOsszeg()
+        public double getTervezettOsszeg()
         {
             return tervezettOsszeg;
         }
 
-        public float getElnyertOsszeg()
+        public double getElnyertOsszeg()
         {
             return elnyertOsszeg;
         }

@@ -115,7 +115,7 @@ namespace Szakdolgozat
         private void kilépToolStripMenuItem_Click(object sender, EventArgs e)
         {
             databaseRepo.getDeleteDatabase();
-            this.Close();
+            Application.Exit();
         }
     }
 }

@@ -33,6 +33,13 @@ namespace Szakdolgozat.Repository
             else
                 throw new RepositoryExceptionCantModified("A pályázat módosítása nem sikerült");
         }
+        public bool isPalyazatAzonositoInList(string palyazatAzonosito)
+        {
+            Palyazat f = palyazatok.Find(x => x.getAzonosito() == palyazatAzonosito);
+            if (f != null)
+                return false;
+            return true;
+        }
         public void palyazatHozzaadListahoz(Palyazat ujPalyazat)
         {
             try
@@ -59,8 +66,8 @@ namespace Szakdolgozat.Repository
             palyazatDT.Columns.Add("Palyazat_tipus", typeof(string));
             palyazatDT.Columns.Add("Palyazat_neve", typeof(string));
             palyazatDT.Columns.Add("Finanszirozas_tipus", typeof(string));
-            palyazatDT.Columns.Add("Tervezett_osszeg", typeof(float));    
-            palyazatDT.Columns.Add("Elnyert_osszeg", typeof(float));    
+            palyazatDT.Columns.Add("Tervezett_osszeg", typeof(double));    
+            palyazatDT.Columns.Add("Elnyert_osszeg", typeof(double));    
             palyazatDT.Columns.Add("Penznem", typeof(string));
             palyazatDT.Columns.Add("Felhasznalasi_ido_kezd", typeof(string));
             palyazatDT.Columns.Add("Felhasznalasi_ido_vege", typeof(string));
