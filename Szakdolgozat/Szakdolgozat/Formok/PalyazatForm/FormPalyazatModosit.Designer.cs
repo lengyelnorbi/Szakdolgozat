@@ -66,6 +66,7 @@
             this.errorProviderFelhasznIdoKezd = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderFelhasznIdoVege = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderHiba = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonFormVezetok = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatTipus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatNev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFinanszirozasTipus)).BeginInit();
@@ -382,12 +383,23 @@
             // 
             this.errorProviderHiba.ContainerControl = this;
             // 
+            // buttonFormVezetok
+            // 
+            this.buttonFormVezetok.Location = new System.Drawing.Point(237, 263);
+            this.buttonFormVezetok.Name = "buttonFormVezetok";
+            this.buttonFormVezetok.Size = new System.Drawing.Size(121, 23);
+            this.buttonFormVezetok.TabIndex = 111;
+            this.buttonFormVezetok.Text = "Vezetők";
+            this.buttonFormVezetok.UseVisualStyleBackColor = true;
+            this.buttonFormVezetok.Click += new System.EventHandler(this.buttonFormVezetok_Click);
+            // 
             // FormPalyazatModosit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(804, 296);
+            this.Controls.Add(this.buttonFormVezetok);
             this.Controls.Add(this.comboBoxPenznem);
             this.Controls.Add(this.comboBoxTudomanyTerulet);
             this.Controls.Add(this.comboBoxFinanszirozasTipus);
@@ -472,5 +484,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderFelhasznIdoKezd;
         private System.Windows.Forms.ErrorProvider errorProviderFelhasznIdoVege;
         private System.Windows.Forms.ErrorProvider errorProviderHiba;
+        private System.Windows.Forms.Button buttonFormVezetok;
     }
 }

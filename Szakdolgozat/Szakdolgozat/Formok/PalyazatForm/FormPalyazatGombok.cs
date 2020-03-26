@@ -35,7 +35,7 @@ namespace Szakdolgozat
         }
         private void buttonPalyazatModositForm_Click(object sender, EventArgs e)
         {
-            if (FormModosit == null)
+            if (FormModosit == null && dataGridViewPalyazatok.SelectedRows.Count == 1)
             {
                 FormModosit = new FormPalyazatModosit(this, textBoxAzonosito.Text, comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text, textBoxTervezettOsszeg.Text, textBoxElnyertOsszeg.Text, comboBoxPenznem.Text, textBoxFelhasznIdoKezd.Text, textBoxFelhasznIdoVege.Text, comboBoxTudomanyterulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
                 FormModosit.Closed += f_Closed;
@@ -46,7 +46,7 @@ namespace Szakdolgozat
 
         private void buttonKoltsegTerv_Click(object sender, EventArgs e)
         {
-            if (FormKoltsegTerv == null)
+            if (FormKoltsegTerv == null && dataGridViewPalyazatok.SelectedRows.Count == 1)
             {
                 FormKoltsegTerv = new FormKoltsegTerv(textBoxAzonosito.Text);
                 FormKoltsegTerv.Closed += f_Closed;
@@ -56,7 +56,7 @@ namespace Szakdolgozat
 
         private void buttonTenyfelhasznalas_Click(object sender, EventArgs e)
         {
-            if (FormTenyfelhasznalas == null)
+            if (FormTenyfelhasznalas == null && dataGridViewPalyazatok.SelectedRows.Count == 1)
             {
                 FormTenyfelhasznalas = new FormTenyfelhasznalas(textBoxAzonosito.Text);
                 FormTenyfelhasznalas.Closed += f_Closed;

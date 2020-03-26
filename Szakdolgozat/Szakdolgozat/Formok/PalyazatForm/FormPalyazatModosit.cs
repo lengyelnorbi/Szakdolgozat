@@ -36,6 +36,7 @@ namespace Szakdolgozat
         string szakmaiVezetoNev = "";
         string penzugyiVezetoNev = "";
         string elnyertOsszegKezd = "";
+        private FormVezetok FormVezetok;
         private Tarolo palyazatRepo = new Tarolo();
         RepositoryDatabaseTablePalyazatSQL palyazatRepoSql = new RepositoryDatabaseTablePalyazatSQL();
         RepositoryDatabaseTableVezetoSQL vezetoRepoSql = new RepositoryDatabaseTableVezetoSQL();
@@ -70,7 +71,10 @@ namespace Szakdolgozat
                 vaneElnyertOsszeg = true;
             }
         }
-
+        void f_Closed(object sender, EventArgs e)
+        {
+            FormVezetok = null;
+        }
         public void formModosit()
         {
             update();
@@ -81,6 +85,15 @@ namespace Szakdolgozat
         {
             palyazatRepo.setVezeto(vezetoRepoSql.getVezetoFromDatabaseTable());
             palyazatRepo.setPalyazat(palyazatRepoSql.getPalyazatokFromDatabaseTable());
+        }
+        private void buttonFormVezetok_Click(object sender, EventArgs e)
+        {
+            if (FormVezetok == null)
+            {
+                FormVezetok = new FormVezetok();
+                FormVezetok.Closed += f_Closed;
+                FormVezetok.Show();
+            }
         }
         private void buttonMentes_Click(object sender, EventArgs e)
         {
@@ -210,7 +223,7 @@ namespace Szakdolgozat
                 }
                 else
                 {
-                    if (textBoxElnyertOsszeg.Text != string.Empty && textBoxElnyertOsszeg.Text != "0")
+                    if (textBoxElnyertOsszeg.Text != string.Empty && Convert.ToInt32(textBoxElnyertOsszeg.Text) != 0)
                     {
                         if (palyazatRepo.IsValidValue(elnyertOsszeg) == false)
                         {
@@ -390,7 +403,6 @@ namespace Szakdolgozat
                 }
             }
         }
-
         private void buttonMegsem_Click(object sender, EventArgs e)
         {
             this.Close();

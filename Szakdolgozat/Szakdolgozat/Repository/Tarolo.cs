@@ -43,11 +43,11 @@ namespace Szakdolgozat.Repository
         public bool IsValidName(string nev)
         {
             string[] nevDarabok = nev.Split(null);
-            if(nevDarabok.Length > 2)
+            if(nevDarabok.Length < 2)
             {
                 return false;
             }
-            Regex reg = new Regex("^[A-Z]{1}[a-z]{1,}$");
+            Regex reg = new Regex("^([A-Z]|[ÍÉÁŐŰÚÓ]){1}([a-z]|[íéáőűúó]){1,}$");
             int joDarabok = 0;
             for(int i = 0; i < nevDarabok.Length; i++)
             {

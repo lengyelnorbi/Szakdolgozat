@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Formok.VezetoForm;
 using Szakdolgozat.Model;
 using Szakdolgozat.Repository;
 
@@ -17,6 +18,7 @@ namespace Szakdolgozat
         private Tarolo palyazatRepo = new Tarolo();
         RepositoryDatabaseTablePalyazatSQL repoSql = new RepositoryDatabaseTablePalyazatSQL();
         RepositoryDatabaseTableVezetoSQL vezetoRepoSql = new RepositoryDatabaseTableVezetoSQL();
+        private FormVezetok FormVezetok;
         public FormPalyazatUjHozzaad()
         {
             InitializeComponent();
@@ -29,7 +31,10 @@ namespace Szakdolgozat
         {
             public string Data { get; set; }
         }
-
+        void f_Closed(object sender, EventArgs e)
+        {
+            FormVezetok = null;
+        }
         protected void update()
         {
             UpdateEventArgs args = new UpdateEventArgs();
@@ -44,14 +49,23 @@ namespace Szakdolgozat
         {
             this.Close();
         }
-
         private void FormPalyazatUjHozzaad_Load(object sender, EventArgs e)
         {
             palyazatRepo.setVezeto(vezetoRepoSql.getVezetoFromDatabaseTable());
             palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
         }
+        private void buttonFormVezetok_Click(object sender, EventArgs e)
+        {
+            if (FormVezetok == null)
+            {
+                FormVezetok = new FormVezetok();
+                FormVezetok.Closed += f_Closed;
+                FormVezetok.Show();
+            }
+        }
         private void buttonMentes_Click(object sender, EventArgs e)
         {
+            palyazatRepo.setVezeto(vezetoRepoSql.getVezetoFromDatabaseTable());
             errorProviderPalyazatTipus.SetError(comboBoxPalyazatTipus, "");
             errorProviderPalyazatNev.SetError(textBoxPalyazatNev, "");
             errorProviderFinanszirozasTipus.SetError(comboBoxFinanszirozasTipus, "");
@@ -195,7 +209,7 @@ namespace Szakdolgozat
                 }
                 else
                 {
-                    if (textBoxElnyertOsszeg.Text != string.Empty)
+                    if (textBoxElnyertOsszeg.Text != string.Empty && textBoxElnyertOsszeg.Text != "0")
                     {
                         if (palyazatRepo.IsValidValue(elnyertOsszeg) == false)
                         {
@@ -258,7 +272,7 @@ namespace Szakdolgozat
             }
             if (!vanHiba)
             {
-                string palyazatAzonosito = "";
+                string palyazatAzonosito;
                 do
                 {
                     palyazatAzonosito = "";
