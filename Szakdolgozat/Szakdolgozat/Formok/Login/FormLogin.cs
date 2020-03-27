@@ -63,7 +63,6 @@ namespace Szakdolgozat.Formok.Login
                 formPalyazat.Show();
                 this.Hide();
             }
-
         }
 
         private void checkBoxJelszoElrejt_CheckedChanged(object sender, EventArgs e)

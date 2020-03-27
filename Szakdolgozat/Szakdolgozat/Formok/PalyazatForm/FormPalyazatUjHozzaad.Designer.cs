@@ -376,6 +376,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPalyazatUjHozzaad";
             this.Text = "FormPalyazatUjHozzaad";
             this.Load += new System.EventHandler(this.FormPalyazatUjHozzaad_Load);

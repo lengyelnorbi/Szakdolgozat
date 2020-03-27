@@ -207,6 +207,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewTenyfelhasznalas);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTenyfelhasznalas";
             this.Text = "FormTenyfelhasznalas";

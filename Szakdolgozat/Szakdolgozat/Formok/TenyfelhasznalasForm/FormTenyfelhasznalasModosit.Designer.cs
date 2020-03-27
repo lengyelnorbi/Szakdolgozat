@@ -185,6 +185,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormTenyfelhasznalasModosit";
             this.Text = "FormTenyfelhasznalasModosit";
             this.Load += new System.EventHandler(this.FormTenyfelhasznalasModosit_Load);

@@ -426,6 +426,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPalyazatAzonosito);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPalyazatModosit";
             this.Text = " ";
             this.Load += new System.EventHandler(this.FormPalyazatModosit_Load);

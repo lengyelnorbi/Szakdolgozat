@@ -125,51 +125,51 @@ namespace Szakdolgozat
                 {
                     if (comboBoxKeresesTipus.Text == "Azonosító")
                     {
-                        keresesTipus = "WHERE Azonosito";
+                        keresesTipus = "WHERE Azonosito LIKE '%";
                         keresettSzoveg = textBoxKeresesSzoveg.Text;
+                        keresettSzoveg += "%' GROUP BY Azonosito";
                     }
                     else if (comboBoxKeresesTipus.Text == "Pályázat típus")
                     {
-                        keresesTipus = "WHERE Palyazat_tipus";
+                        keresesTipus = "WHERE Palyazat_tipus LIKE '%";
                         keresettSzoveg = textBoxKeresesSzoveg.Text;
-                        keresettSzoveg += "' GROUP BY Azonosito";
+                        keresettSzoveg += "%' GROUP BY Azonosito";
                     }
                     else if (comboBoxKeresesTipus.Text == "Pályázat neve")
                     {
-                        keresesTipus = "WHERE Palyazat_neve";
+                        keresesTipus = "WHERE Palyazat_neve LIKE '%";
                         keresettSzoveg = textBoxKeresesSzoveg.Text;
-                        keresettSzoveg += "' GROUP BY Azonosito";
+                        keresettSzoveg += "%' GROUP BY Azonosito";
                     }
                     else if (comboBoxKeresesTipus.Text == "Finanszírozás típusa")
                     {
-                        keresesTipus = "WHERE Finanszirozas_tipus";
+                        keresesTipus = "WHERE Finanszirozas_tipus LIKE '%";
                         keresettSzoveg = textBoxKeresesSzoveg.Text;
-                        keresettSzoveg += "' GROUP BY Azonosito";
+                        keresettSzoveg += "%' GROUP BY Azonosito";
                     }
                     else if(comboBoxKeresesTipus.Text == "Tudományterület")
                     {
-                        keresesTipus = "WHERE Tudomanyterulet";
+                        keresesTipus = "WHERE Tudomanyterulet LIKE '%";
                         keresettSzoveg = textBoxKeresesSzoveg.Text;
-                        keresettSzoveg += "' GROUP BY Azonosito";
+                        keresettSzoveg += "%' GROUP BY Azonosito";
                     }
                     else if(comboBoxKeresesTipus.Text == "Tervezett összeg")
                     {
                         keresesTipus = "GROUP BY Azonosito ";
-                        keresesTipus += "HAVING SUM(koltseg_terv.Tervezett_osszeg)";
+                        keresesTipus += "HAVING SUM(koltseg_terv.Tervezett_osszeg) = ";
                         keresettSzoveg = textBoxKeresesSzoveg.Text;
-                        keresettSzoveg += "'";
                     }
                     else if(comboBoxKeresesTipus.Text == "Elnyert összeg")
                     {
-                        keresesTipus = "WHERE Elnyert_osszeg";
+                        keresesTipus = "WHERE Elnyert_osszeg ='";
                         keresettSzoveg = textBoxKeresesSzoveg.Text;
                         keresettSzoveg += "' GROUP BY Azonosito";
                     }
                     else if(comboBoxKeresesTipus.Text == "Pénznem")
                     {
-                        keresesTipus = "WHERE Penznem";
+                        keresesTipus = "WHERE Penznem LIKE '%";
                         keresettSzoveg = textBoxKeresesSzoveg.Text;
-                        keresettSzoveg += "' GROUP BY Azonosito";
+                        keresettSzoveg += "%' GROUP BY Azonosito";
                     }
                 }
                 else

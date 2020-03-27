@@ -197,6 +197,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewKoltsegTerv);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormKoltsegTerv";
             this.Text = "1";
             this.Load += new System.EventHandler(this.FormKoltsegTerv_Load);

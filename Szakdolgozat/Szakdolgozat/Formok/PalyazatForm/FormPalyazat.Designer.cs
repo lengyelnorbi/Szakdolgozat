@@ -505,6 +505,7 @@
             this.Controls.Add(this.textBoxAzonosito);
             this.Controls.Add(this.dataGridViewPalyazatok);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormPalyazat";
             this.Text = "Form1";
