@@ -154,6 +154,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormUjVezetoHozzaad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUjVezetoHozzaad";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoNev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoTelefonszam)).EndInit();

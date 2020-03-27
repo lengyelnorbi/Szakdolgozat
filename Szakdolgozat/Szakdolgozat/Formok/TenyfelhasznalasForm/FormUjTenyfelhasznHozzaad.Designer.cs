@@ -187,6 +187,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormUjTenyfelhasznHozzaad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUjTenyfelhasznHozzaad";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasKoltsegTipus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasOsszeg)).EndInit();

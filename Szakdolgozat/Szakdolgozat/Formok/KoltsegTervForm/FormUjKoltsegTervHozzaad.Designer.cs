@@ -187,6 +187,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormUjKoltsegTervHozzaad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUjKoltsegTervHozzaad";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderKoltsegTipus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTervezettOsszeg)).EndInit();

@@ -177,6 +177,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormVezetok";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormVezetok";
             this.Load += new System.EventHandler(this.FormVezetok_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVezetok)).EndInit();

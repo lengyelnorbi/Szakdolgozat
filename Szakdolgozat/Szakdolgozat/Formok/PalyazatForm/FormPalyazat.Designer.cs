@@ -78,7 +78,7 @@
             // 
             this.dataGridViewPalyazatok.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPalyazatok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPalyazatok.Location = new System.Drawing.Point(11, 231);
+            this.dataGridViewPalyazatok.Location = new System.Drawing.Point(12, 228);
             this.dataGridViewPalyazatok.Name = "dataGridViewPalyazatok";
             this.dataGridViewPalyazatok.Size = new System.Drawing.Size(1405, 361);
             this.dataGridViewPalyazatok.TabIndex = 0;
@@ -508,6 +508,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormPalyazat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormPalyazat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPalyazatok)).EndInit();

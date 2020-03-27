@@ -428,6 +428,7 @@
             this.Controls.Add(this.textBoxPalyazatAzonosito);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPalyazatModosit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.FormPalyazatModosit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPalyazatTipus)).EndInit();

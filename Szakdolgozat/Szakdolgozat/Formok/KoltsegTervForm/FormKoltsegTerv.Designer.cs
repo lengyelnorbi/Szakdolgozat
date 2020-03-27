@@ -199,6 +199,7 @@
             this.Controls.Add(this.dataGridViewKoltsegTerv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormKoltsegTerv";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "1";
             this.Load += new System.EventHandler(this.FormKoltsegTerv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKoltsegTerv)).EndInit();

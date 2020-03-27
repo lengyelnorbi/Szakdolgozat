@@ -155,6 +155,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormVezetoModosit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormVezetoModosit";
             this.Load += new System.EventHandler(this.FormVezetoModosit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoNev)).EndInit();

@@ -63,6 +63,7 @@ namespace Szakdolgozat.Formok.VezetoForm
             frissitAdatokkalDataGriedViewt();
             beallitTenyfelhasznalasDataGriViewt();
             dataGridViewVezetok.SelectionChanged += dataGridViewVezetok_SelectionChanged;
+            dataGridViewVezetok.AutoResizeColumn(3);
         }
     }
 }
