@@ -83,6 +83,7 @@ namespace Szakdolgozat.Repository
         }
         public void fillPalyazatListFromDataTable(DataTable palyazatdt)
         {
+            palyazatok.Clear();
             foreach (DataRow row in palyazatdt.Rows)
             {
                 string Azonosito = row[0].ToString();

@@ -112,6 +112,109 @@ namespace Szakdolgozat
                 //beallitFutarDataGriViewt();
             }
         }
+        private void buttonPalyazatKereses_Click(object sender, EventArgs e)
+        {
+            string keresesTipus = "";
+            string keresettSzoveg = "";
+            bool vanHiba = false;
+            errorProviderKeresesTipus.SetError(textBoxKeresesSzoveg, "");
+            errorProviderKeresesSzoveg.SetError(comboBoxKeresesTipus, "");
+            try
+            {
+                if (comboBoxKeresesTipus.Text != string.Empty && textBoxKeresesSzoveg.Text != string.Empty)
+                {
+                    if (comboBoxKeresesTipus.Text == "Azonosító")
+                    {
+                        keresesTipus = "WHERE Azonosito";
+                        keresettSzoveg = textBoxKeresesSzoveg.Text;
+                    }
+                    else if (comboBoxKeresesTipus.Text == "Pályázat típus")
+                    {
+                        keresesTipus = "WHERE Palyazat_tipus";
+                        keresettSzoveg = textBoxKeresesSzoveg.Text;
+                        keresettSzoveg += "' GROUP BY Azonosito";
+                    }
+                    else if (comboBoxKeresesTipus.Text == "Pályázat neve")
+                    {
+                        keresesTipus = "WHERE Palyazat_neve";
+                        keresettSzoveg = textBoxKeresesSzoveg.Text;
+                        keresettSzoveg += "' GROUP BY Azonosito";
+                    }
+                    else if (comboBoxKeresesTipus.Text == "Finanszírozás típusa")
+                    {
+                        keresesTipus = "WHERE Finanszirozas_tipus";
+                        keresettSzoveg = textBoxKeresesSzoveg.Text;
+                        keresettSzoveg += "' GROUP BY Azonosito";
+                    }
+                    else if(comboBoxKeresesTipus.Text == "Tudományterület")
+                    {
+                        keresesTipus = "WHERE Tudomanyterulet";
+                        keresettSzoveg = textBoxKeresesSzoveg.Text;
+                        keresettSzoveg += "' GROUP BY Azonosito";
+                    }
+                    else if(comboBoxKeresesTipus.Text == "Tervezett összeg")
+                    {
+                        keresesTipus = "GROUP BY Azonosito ";
+                        keresesTipus += "HAVING SUM(koltseg_terv.Tervezett_osszeg)";
+                        keresettSzoveg = textBoxKeresesSzoveg.Text;
+                        keresettSzoveg += "'";
+                    }
+                    else if(comboBoxKeresesTipus.Text == "Elnyert összeg")
+                    {
+                        keresesTipus = "WHERE Elnyert_osszeg";
+                        keresettSzoveg = textBoxKeresesSzoveg.Text;
+                        keresettSzoveg += "' GROUP BY Azonosito";
+                    }
+                    else if(comboBoxKeresesTipus.Text == "Pénznem")
+                    {
+                        keresesTipus = "WHERE Penznem";
+                        keresettSzoveg = textBoxKeresesSzoveg.Text;
+                        keresettSzoveg += "' GROUP BY Azonosito";
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        if (comboBoxKeresesTipus.Text == "Minden pályázat")
+                        {
+                            palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
+                            frissitAdatokkalDataGriedViewt();
+                            beallitPalyazatDataGriViewt();
+                            dataGridViewPalyazatok.SelectionChanged += dataGridViewPalyazatok_SelectionChanged;
+                        }
+                        else
+                        {
+                            if(comboBoxKeresesTipus.Text == string.Empty)
+                            {
+                                errorProviderKeresesTipus.SetError(comboBoxKeresesTipus, "Nem lehet üres a keresés feltétele!");
+                                vanHiba = true;
+                            }
+                            if(textBoxKeresesSzoveg.Text == string.Empty)
+                            {
+                                errorProviderKeresesSzoveg.SetError(textBoxKeresesSzoveg, "Nem lehet üres a keresés feltétele!");
+                                vanHiba = true;
+                            }
+                        }
+                    }
+                    catch (Exception x)
+                    {
+                        vanHiba = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                vanHiba = true;
+            }
+            if (!vanHiba && comboBoxKeresesTipus.Text != "Minden pályázat")
+            {
+                palyazatRepo.setPalyazat(repoSql.getFilteredPalyazatokFromDatabaseTable(keresesTipus, keresettSzoveg));
+                frissitAdatokkalDataGriedViewt();
+                beallitPalyazatDataGriViewt();
+                dataGridViewPalyazatok.SelectionChanged += dataGridViewPalyazatok_SelectionChanged;
+            }
+        }
         private void kilépToolStripMenuItem_Click(object sender, EventArgs e)
         {
             databaseRepo.getDeleteDatabase();

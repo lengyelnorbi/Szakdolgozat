@@ -42,6 +42,7 @@ namespace Szakdolgozat
         private RepositoryDatabase databaseRepo = new RepositoryDatabase();
         private void FormPalyazat_Load(object sender, EventArgs e)
         {
+            textBoxKeresesSzoveg.Enabled = false;
             //Táblák létrehozása
             databaseRepo.getCreatePalyazatTable();
             databaseRepo.getCreateKoltsegTipusTable();
@@ -142,6 +143,20 @@ namespace Szakdolgozat
             frissitAdatokkalDataGriedViewt();
             beallitPalyazatDataGriViewt();
             dataGridViewPalyazatok.SelectionChanged += dataGridViewPalyazatok_SelectionChanged;
+        }
+
+        private void comboBoxKeresesTipus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxKeresesTipus.Text == "Minden pályázat")
+            {
+                textBoxKeresesSzoveg.Enabled = false;
+                textBoxKeresesSzoveg.Text = "";
+            }
+            else
+            {
+                textBoxKeresesSzoveg.Enabled = true;
+            }
+
         }
     }
 }

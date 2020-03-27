@@ -54,7 +54,11 @@ namespace Szakdolgozat
         private void textBoxFelhasznIdoKezd_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            if (!Char.IsDigit(ch) && ch != 8)
+            if (!Char.IsLetter(ch))
+            {
+                e.Handled = false;
+            }
+            else
             {
                 e.Handled = true;
             }
@@ -63,7 +67,11 @@ namespace Szakdolgozat
         private void textBoxFelhasznIdoVege_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            if (!Char.IsDigit(ch) && ch != 8)
+            if (!Char.IsLetter(ch))
+            {
+                e.Handled = false;
+            }
+            else
             {
                 e.Handled = true;
             }

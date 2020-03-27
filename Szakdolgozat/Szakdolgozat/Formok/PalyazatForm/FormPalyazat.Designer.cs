@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridViewPalyazatok = new System.Windows.Forms.DataGridView();
             this.textBoxAzonosito = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,8 +66,12 @@
             this.buttonVezetok = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.kilépToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProviderKeresesSzoveg = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderKeresesTipus = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPalyazatok)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderKeresesSzoveg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderKeresesTipus)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewPalyazatok
@@ -244,11 +249,23 @@
             // 
             // comboBoxKeresesTipus
             // 
+            this.comboBoxKeresesTipus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKeresesTipus.FormattingEnabled = true;
+            this.comboBoxKeresesTipus.Items.AddRange(new object[] {
+            "Minden pályázat",
+            "Azonosító",
+            "Pályázat típus",
+            "Pályázat neve",
+            "Finanszírozás típusa",
+            "Tudományterület",
+            "Tervezett összeg",
+            "Elnyert összeg",
+            "Pénznem"});
             this.comboBoxKeresesTipus.Location = new System.Drawing.Point(839, 146);
             this.comboBoxKeresesTipus.Name = "comboBoxKeresesTipus";
             this.comboBoxKeresesTipus.Size = new System.Drawing.Size(185, 21);
             this.comboBoxKeresesTipus.TabIndex = 24;
+            this.comboBoxKeresesTipus.SelectedIndexChanged += new System.EventHandler(this.comboBoxKeresesTipus_SelectedIndexChanged);
             // 
             // buttonPalyazatKereses
             // 
@@ -259,6 +276,7 @@
             this.buttonPalyazatKereses.TabIndex = 25;
             this.buttonPalyazatKereses.Text = "Keresés";
             this.buttonPalyazatKereses.UseVisualStyleBackColor = true;
+            this.buttonPalyazatKereses.Click += new System.EventHandler(this.buttonPalyazatKereses_Click);
             // 
             // textBoxKeresesSzoveg
             // 
@@ -437,6 +455,14 @@
             this.kilépToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.kilépToolStripMenuItem.Click += new System.EventHandler(this.kilépToolStripMenuItem_Click);
             // 
+            // errorProviderKeresesSzoveg
+            // 
+            this.errorProviderKeresesSzoveg.ContainerControl = this;
+            // 
+            // errorProviderKeresesTipus
+            // 
+            this.errorProviderKeresesTipus.ContainerControl = this;
+            // 
             // FormPalyazat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +512,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPalyazatok)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderKeresesSzoveg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderKeresesTipus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,6 +558,8 @@
         private System.Windows.Forms.Button buttonVezetok;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem kilépToolStripMenuItem;
+        private System.Windows.Forms.ErrorProvider errorProviderKeresesSzoveg;
+        private System.Windows.Forms.ErrorProvider errorProviderKeresesTipus;
     }
 }
 

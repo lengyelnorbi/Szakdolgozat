@@ -60,10 +60,13 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
                     errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
-                if (tenyfelhasznalasRepo.IsValidValue(fizetettOsszeg) == false)
+                else
                 {
-                    errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Az összeg nem kezdődhet nullával!");
-                    vanHiba = true;
+                    if (tenyfelhasznalasRepo.IsValidValue(fizetettOsszeg) == false)
+                    {
+                        errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Az összeg nem kezdődhet nullával!");
+                        vanHiba = true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -80,10 +83,13 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
                     errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
-                if (tenyfelhasznalasRepo.IsValidDate(fizetesDatuma) == false)
+                else
                 {
-                    errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "A dátum formája nem megfelelő!");
-                    vanHiba = true;
+                    if (tenyfelhasznalasRepo.IsValidDate(fizetesDatuma) == false)
+                    {
+                        errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "A dátum formája nem megfelelő!");
+                        vanHiba = true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -127,7 +133,11 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
         private void textBoxFizetesDatuma_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            if (!Char.IsDigit(ch) && ch != 8 && ch != 47)
+            if (!Char.IsLetter(ch))
+            {
+                e.Handled = false;
+            }
+            else
             {
                 e.Handled = true;
             }
