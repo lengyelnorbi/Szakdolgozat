@@ -168,18 +168,18 @@ namespace Szakdolgozat.Repository.TestDatabase
             {
                 connection.Open();
                 string queryInsert = "INSERT IGNORE INTO `posztok` (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `Poszt`)" +
-                                     "VALUES (NULL, 'NKFIH1', '1', 'Szakmai Vezető')," +
-                                            "(NULL, 'NKFIH1', '4', 'Pénzügyi Vezető')," +
-                                            "(NULL, 'Minisztériumi1', '2', 'Pénzügyi Vezető')," +
-                                            "(NULL, 'Minisztériumi1', '5', 'Szakmai Vezető')," +
-                                            "(NULL, 'GINOP1', '7', 'Pénzügyi Vezető')," +
-                                            "(NULL, 'GINOP1', '7', 'Szakmai Vezető')," +
-                                            "(NULL, 'EFOP1', '3', 'Pénzügyi Vezető')," +
-                                            "(NULL, 'EFOP1', '8', 'Szakmai Vezető')," +
-                                            "(NULL, 'NTKA1', '9', 'Pénzügyi Vezető')," +
-                                            "(NULL, 'NTKA1', '4', 'Szakmai Vezető')," +
-                                            "(NULL, 'NKA1', '1', 'Pénzügyi Vezető')," +
-                                            "(NULL, 'NKA1', '6', 'Szakmai Vezető');";
+                                     "VALUES (1, 'NKFIH1', '1', 'Szakmai Vezető')," +
+                                            "(2, 'NKFIH1', '4', 'Pénzügyi Vezető')," +
+                                            "(3, 'Minisztériumi1', '2', 'Pénzügyi Vezető')," +
+                                            "(4, 'Minisztériumi1', '5', 'Szakmai Vezető')," +
+                                            "(5, 'GINOP1', '7', 'Pénzügyi Vezető')," +
+                                            "(6, 'GINOP1', '7', 'Szakmai Vezető')," +
+                                            "(7, 'EFOP1', '3', 'Pénzügyi Vezető')," +
+                                            "(8, 'EFOP1', '8', 'Szakmai Vezető')," +
+                                            "(9, 'NTKA1', '9', 'Pénzügyi Vezető')," +
+                                            "(10, 'NTKA1', '4', 'Szakmai Vezető')," +
+                                            "(11, 'NKA1', '1', 'Pénzügyi Vezető')," +
+                                            "(12, 'NKA1', '6', 'Szakmai Vezető');";
                 MySqlCommand cmd = new MySqlCommand(queryInsert, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
