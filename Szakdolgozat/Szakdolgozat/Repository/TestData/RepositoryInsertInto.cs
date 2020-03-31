@@ -213,5 +213,30 @@ namespace Szakdolgozat.Repository.TestDatabase
                 throw new RepositoryException("Sikertelen adatbeszúrás az adatbázisban.");
             }
         }
+        public void getInsertLeirasokIntoDatabase()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string queryInsert = "INSERT IGNORE INTO `leirasok` (`id`, `Palyazat_Azonosito`, `Leiras`)" +
+                                     "VALUES(NULL,'NKFIH1','')," +
+                                           "(NULL,'Minisztériumi1','')," +
+                                           "(NULL,'GINOP1','')," +
+                                           "(NULL,'EFOP1','')," +
+                                           "(NULL,'NTKA1','')," +
+                                           "(NULL,'NKA1','');";
+                MySqlCommand cmd = new MySqlCommand(queryInsert, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine("Leirasok adatainak insertálása nem sikerült.");
+                throw new RepositoryException("Sikertelen adatbeszúrás az adatbázisban.");
+            }
+        }
     }
 }

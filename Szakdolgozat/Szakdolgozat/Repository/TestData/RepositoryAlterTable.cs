@@ -72,5 +72,24 @@ namespace Szakdolgozat.Repository.TestDatabase
                 throw new RepositoryException("Sikertelen idegenkulcs hozzáadása az adatbázisban.");
             }
         }
+        public void getAlterTableAddForeignKeysToLeirasok()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string queryForeignKeys = "ALTER TABLE leirasok ADD FOREIGN KEY IF NOT EXISTS (Palyazat_Azonosito) REFERENCES palyazat(Azonosito) ON DELETE CASCADE;";
+                MySqlCommand cmd = new MySqlCommand(queryForeignKeys, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine("Leirasok idegenkulcsának létrehozása nem sikerült.");
+                throw new RepositoryException("Sikertelen idegenkulcs hozzáadása az adatbázisban.");
+            }
+        }
     }
 }

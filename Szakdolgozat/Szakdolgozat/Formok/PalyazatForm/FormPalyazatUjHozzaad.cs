@@ -292,6 +292,7 @@ namespace Szakdolgozat
 
                 repoSql.insertPalyazatIntoDatabase(ujPalyazat);
                 repoSql.insertEmptyKoltsegTervIntoDatabase(palyazatAzonosito);
+                repoSql.insertEmptyLeirasIntoDatabase(palyazatAzonosito);
                 if (!nincsSzakmaiVezeto)
                 {
                     repoSql.insertPosztokIntoDatabase(palyazatAzonosito, textBoxSzakmaiVezeto.Text, "Szakmai vezető");

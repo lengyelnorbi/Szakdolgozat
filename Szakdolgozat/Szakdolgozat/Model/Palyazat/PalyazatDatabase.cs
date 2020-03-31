@@ -79,6 +79,10 @@ namespace Szakdolgozat.Model
         {
             return "INSERT INTO `koltseg_terv` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_osszeg`, `Modositott_Osszeg`) VALUES ('NULL', '" + palyazatAzonosito + "', '1', '', '');";
         }
+        public static string getInsertEmptyLeiras(string palyazatAzonosito)
+        {
+            return "INSERT INTO `leirasok` (`id`, `Palyazat_Azonosito`, `Leiras`) VALUES ('NULL', '" + palyazatAzonosito + "','');";
+        }
         public static string getDeletePoszt(string palyazatAzonosito, string poszt)
         {
             return "DELETE FROM Posztok WHERE Palyazat_Azonosito = '" + palyazatAzonosito +"' AND poszt = '" + poszt + "';";

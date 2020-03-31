@@ -280,5 +280,24 @@ namespace Szakdolgozat.Repository
                 throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
             }
         }
+        public void insertEmptyLeirasIntoDatabase(string palyazatAzonosito)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = Palyazat.getInsertEmptyLeiras(palyazatAzonosito);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine("Üres költségterv beszúrása adatbázisba nem sikerült.");
+                throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
+            }
+        }
     }
 }

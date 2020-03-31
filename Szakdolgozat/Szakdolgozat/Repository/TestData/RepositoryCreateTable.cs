@@ -175,5 +175,26 @@ namespace Szakdolgozat.Repository.TestDatabase
                 throw new RepositoryException("Sikertelen táblalétrehozás adatbázisban.");
             }
         }
+        public void getCreateLeirasokTable()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string queryFelhasznalok = "CREATE TABLE IF NOT EXISTS `palyazatszamontarto`.`leirasok` (id INT PRIMARY KEY AUTO_INCREMENT," +
+                    "Palyazat_Azonosito VARCHAR(20) NOT NULL UNIQUE," +
+                    "Leiras VARCHAR(500) NOT NULL);";
+                MySqlCommand cmd = new MySqlCommand(queryFelhasznalok, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine("Leirasok tábla létrehozása nem sikerült.");
+                throw new RepositoryException("Sikertelen táblalétrehozás adatbázisban.");
+            }
+        }
     }
 }

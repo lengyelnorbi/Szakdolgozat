@@ -50,10 +50,12 @@ namespace Szakdolgozat
             databaseRepo.getCreateTenyfelhasznalasTable();
             databaseRepo.getCreateVezetokTable();
             databaseRepo.getCreatePosztokTable();
+            databaseRepo.getCreateLeirasokTable();
             //Idegenkulcsok létrehozása
             databaseRepo.getAlterTableAddForeignKeysToKoltsegTerv();
             databaseRepo.getAlterTableAddForeignKeysToPosztok();
             databaseRepo.getAlterTableAddForeignKeysToTenyfelhasznalas();
+            databaseRepo.getAlterTableAddForeignKeysToLeirasok();
             //Adatok feltöltése
             databaseRepo.getInsertPalyazatIntoDatabase();
             databaseRepo.getInsertKoltsegTipusokIntoDatabase();
@@ -61,6 +63,7 @@ namespace Szakdolgozat
             databaseRepo.getInsertTenyfelhasznalasIntoDatabase();
             databaseRepo.getInsertVezetokIntoDatabase();
             databaseRepo.getInsertPosztokIntoDatabase();
+            databaseRepo.getInsertLeirasokIntoDatabase();
 
             palyazatRepo.setPalyazat(repoSql.getPalyazatokFromDatabaseTable());
             frissitAdatokkalDataGriedViewt();
