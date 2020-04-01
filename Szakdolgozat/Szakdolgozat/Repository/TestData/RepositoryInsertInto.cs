@@ -200,7 +200,7 @@ namespace Szakdolgozat.Repository.TestDatabase
                 connection.Open();
                 string queryInsert = "INSERT IGNORE INTO `palyazatszamontarto`.`felhasznalok` (`id`, `felhasznalo_nev`, `jelszo`)" +
                                      "VALUES (NULL, 'sz8lennor', 'Abc12345')," +
-                                            "(NULL, 'sz8goddan', 'Abc12345')";
+                                            "(NULL, 'admin', 'admin')";
                 MySqlCommand cmd = new MySqlCommand(queryInsert, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

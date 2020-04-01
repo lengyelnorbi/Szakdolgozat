@@ -183,7 +183,7 @@ namespace Szakdolgozat.Repository.TestDatabase
                 connection.Open();
                 string queryFelhasznalok = "CREATE TABLE IF NOT EXISTS `palyazatszamontarto`.`leirasok` (id INT PRIMARY KEY AUTO_INCREMENT," +
                     "Palyazat_Azonosito VARCHAR(20) NOT NULL UNIQUE," +
-                    "Leiras VARCHAR(500) NOT NULL);";
+                    "Leiras VARCHAR(600) NOT NULL);";
                 MySqlCommand cmd = new MySqlCommand(queryFelhasznalok, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
