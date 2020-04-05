@@ -242,7 +242,7 @@ namespace Szakdolgozat
                 {
                     if (palyazatRepo.IsValidDate(felhasznalasiIdoKezd) == false)
                     {
-                        errorProviderPalyazatFelhasznIdoKezd.SetError(textBoxFelhasznIdoVege, "A dátum formája nem megfelelő!");
+                        errorProviderPalyazatFelhasznIdoKezd.SetError(textBoxFelhasznIdoKezd, "A dátum formája nem megfelelő!");
                         vanHiba = true;
                     }
                 }

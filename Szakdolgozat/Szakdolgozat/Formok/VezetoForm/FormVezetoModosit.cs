@@ -164,7 +164,7 @@ namespace Szakdolgozat.Formok.VezetoForm
         private void textBoxVezetoTelefonszam_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            if (!Char.IsLetter(ch) && ch != 8)
+            if (!Char.IsLetter(ch) && !Char.IsWhiteSpace(ch))
             {
                 e.Handled = false;
             }
