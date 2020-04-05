@@ -51,20 +51,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(20, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(126, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Felhasználónév:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(20, 190);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 17);
+            this.label3.Size = new System.Drawing.Size(59, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Jelszó:";
             // 
@@ -106,10 +106,10 @@
             // checkBoxJelszoElrejt
             // 
             this.checkBoxJelszoElrejt.AutoSize = true;
-            this.checkBoxJelszoElrejt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.checkBoxJelszoElrejt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.checkBoxJelszoElrejt.Location = new System.Drawing.Point(279, 190);
             this.checkBoxJelszoElrejt.Name = "checkBoxJelszoElrejt";
-            this.checkBoxJelszoElrejt.Size = new System.Drawing.Size(59, 21);
+            this.checkBoxJelszoElrejt.Size = new System.Drawing.Size(65, 21);
             this.checkBoxJelszoElrejt.TabIndex = 7;
             this.checkBoxJelszoElrejt.Text = "Elrejt";
             this.checkBoxJelszoElrejt.UseVisualStyleBackColor = true;
@@ -120,6 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(350, 299);
             this.Controls.Add(this.checkBoxJelszoElrejt);
             this.Controls.Add(this.labelHiba);
@@ -129,10 +130,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormLogin";
+            this.Text = "Belépés";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

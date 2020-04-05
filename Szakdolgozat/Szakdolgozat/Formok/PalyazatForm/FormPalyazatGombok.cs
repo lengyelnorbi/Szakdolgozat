@@ -215,9 +215,19 @@ namespace Szakdolgozat
                 dataGridViewPalyazatok.SelectionChanged += dataGridViewPalyazatok_SelectionChanged;
             }
         }
-        private void kilépToolStripMenuItem_Click(object sender, EventArgs e)
+        private void adatabazisTorolEsKilépToolStripMenuItem_Click(object sender, EventArgs e)
         {
             databaseRepo.getDeleteDatabase();
+            Application.Exit();
+        }
+
+        private void kilépToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FormPalyazat_FormClosed(object sender, FormClosedEventArgs e)
+        {
             Application.Exit();
         }
     }

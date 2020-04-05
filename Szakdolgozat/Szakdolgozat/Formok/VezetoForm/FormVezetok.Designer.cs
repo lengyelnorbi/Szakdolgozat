@@ -153,7 +153,7 @@
             this.buttonVissza.Name = "buttonVissza";
             this.buttonVissza.Size = new System.Drawing.Size(72, 23);
             this.buttonVissza.TabIndex = 60;
-            this.buttonVissza.Text = "Vissza";
+            this.buttonVissza.Text = "OK";
             this.buttonVissza.UseVisualStyleBackColor = true;
             this.buttonVissza.Click += new System.EventHandler(this.buttonVissza_Click);
             // 
@@ -174,11 +174,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewVezetok);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormVezetok";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormVezetok";
+            this.Text = "Vezetők";
             this.Load += new System.EventHandler(this.FormVezetok_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVezetok)).EndInit();
             this.ResumeLayout(false);

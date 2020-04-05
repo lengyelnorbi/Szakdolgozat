@@ -185,10 +185,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormUjKoltsegTervHozzaad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormUjKoltsegTervHozzaad";
+            this.Text = "Új költségterv felvétele";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderKoltsegTipus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTervezettOsszeg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderModositottOsszeg)).EndInit();

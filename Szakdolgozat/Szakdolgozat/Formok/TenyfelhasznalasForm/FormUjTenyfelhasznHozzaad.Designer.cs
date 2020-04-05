@@ -185,10 +185,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormUjTenyfelhasznHozzaad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormUjTenyfelhasznHozzaad";
+            this.Text = "Új tényfelhasználás hozzáadása";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasKoltsegTipus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasOsszeg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasFizetesDatum)).EndInit();

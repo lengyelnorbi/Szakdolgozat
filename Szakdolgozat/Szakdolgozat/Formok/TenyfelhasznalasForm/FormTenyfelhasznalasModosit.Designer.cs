@@ -65,7 +65,7 @@
             this.buttonMegsem.Name = "buttonMegsem";
             this.buttonMegsem.Size = new System.Drawing.Size(90, 23);
             this.buttonMegsem.TabIndex = 4;
-            this.buttonMegsem.Text = "Mégse";
+            this.buttonMegsem.Text = "Mégsem";
             this.buttonMegsem.UseVisualStyleBackColor = true;
             this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
             // 
@@ -185,10 +185,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormTenyfelhasznalasModosit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormTenyfelhasznalasModosit";
+            this.Text = "Tényfelhasználás módosítása";
             this.Load += new System.EventHandler(this.FormTenyfelhasznalasModosit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasKoltsegTipus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTenyfelhasznalasOsszeg)).EndInit();

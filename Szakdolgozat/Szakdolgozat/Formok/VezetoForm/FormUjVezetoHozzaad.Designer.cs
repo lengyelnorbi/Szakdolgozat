@@ -152,10 +152,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormUjVezetoHozzaad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormUjVezetoHozzaad";
+            this.Text = "Új vezető hozzáadása";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoNev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoTelefonszam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderVezetoEmail)).EndInit();
