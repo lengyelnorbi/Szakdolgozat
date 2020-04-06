@@ -17,6 +17,7 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
         int tenyfelhasznID;
         private Tarolo tenyfelhasznalasRepo = new Tarolo();
         RepositoryDatabaseTableTenyfelhasznalasSQL repoSql = new RepositoryDatabaseTableTenyfelhasznalasSQL();
+        private Validations valdiationsRepo = new Validations();
         public FormTenyfelhasznalasModosit(string id, string palyazatAZ, string koltsegTip, string osszeg, string datum)
         {
             InitializeComponent();
@@ -62,7 +63,7 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
                 }
                 else
                 {
-                    if (tenyfelhasznalasRepo.IsValidValue(fizetettOsszeg) == false)
+                    if (valdiationsRepo.IsValidValue(fizetettOsszeg) == false)
                     {
                         errorProviderTenyfelhasznalasOsszeg.SetError(textBoxFizetettOsszeg, "Az összeg nem kezdődhet nullával!");
                         vanHiba = true;
@@ -85,7 +86,7 @@ namespace Szakdolgozat.Formok.TenyfelhasznalasForm
                 }
                 else
                 {
-                    if (tenyfelhasznalasRepo.IsValidDate(fizetesDatuma) == false)
+                    if (valdiationsRepo.IsValidDate(fizetesDatuma) == false)
                     {
                         errorProviderTenyfelhasznalasFizetesDatum.SetError(textBoxFizetesDatuma, "A dátum formája nem megfelelő!");
                         vanHiba = true;

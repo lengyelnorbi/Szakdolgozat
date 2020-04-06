@@ -18,6 +18,7 @@ namespace Szakdolgozat.Formok.VezetoForm
         string vezetoKezdoEmail = "";
         private Tarolo vezetoRepo = new Tarolo();
         RepositoryDatabaseTableVezetoSQL repoSql = new RepositoryDatabaseTableVezetoSQL();
+        private Validations valdiationsRepo = new Validations();
         public FormVezetoModosit(int id, string nev, string telefonszam, string email)
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace Szakdolgozat.Formok.VezetoForm
                 }
                 else
                 {
-                    if (vezetoRepo.IsValidName(vezetoNev) == false)
+                    if (valdiationsRepo.IsValidName(vezetoNev) == false)
                     {
                         errorProviderVezetoNev.SetError(textBoxVezetoNev, "A név nem megfelelő!");
                         vanHiba = true;
@@ -91,7 +92,7 @@ namespace Szakdolgozat.Formok.VezetoForm
                     errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "A telefonszám túl hosszú!");
                     vanHiba = true;
                 }
-                if(vezetoRepo.IsValidPhoneNumber(vezetoTelefonszam) == false)
+                if(valdiationsRepo.IsValidPhoneNumber(vezetoTelefonszam) == false)
                 {
                     errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "A telefonszám hibásan lett megadva!");
                     vanHiba = true;
@@ -115,7 +116,7 @@ namespace Szakdolgozat.Formok.VezetoForm
                     }
                     else
                     {
-                        if (vezetoRepo.IsValidEmail(vezetoEmail) == false)
+                        if (valdiationsRepo.IsValidEmail(vezetoEmail) == false)
                         {
                             errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Az email nem megfelelő!");
                             vanHiba = true;

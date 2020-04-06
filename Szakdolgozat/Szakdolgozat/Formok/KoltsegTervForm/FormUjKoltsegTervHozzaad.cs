@@ -16,6 +16,7 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
     public partial class FormUjKoltsegTervHozzaad : Form
     {
         private Tarolo koltsegTervRepo = new Tarolo();
+        private Validations valdiationsRepo = new Validations();
         RepositoryDatabaseTableKoltsegTervSQL repoSql = new RepositoryDatabaseTableKoltsegTervSQL();
         public FormUjKoltsegTervHozzaad(string palyazatAZ)
         {
@@ -60,7 +61,7 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
                     errorProviderTervezettOsszeg.SetError(textBoxTervezettOsszeg, "Kötelező kitölteni!");
                     vanHiba = true;
                 }
-                if (koltsegTervRepo.IsValidValue(tervezettOsszeg) == false)
+                if (valdiationsRepo.IsValidValue(tervezettOsszeg) == false)
                 {
                     errorProviderTervezettOsszeg.SetError(textBoxTervezettOsszeg, "Az összeg nem kezdődhet nullával!");
                     vanHiba = true;
@@ -77,7 +78,7 @@ namespace Szakdolgozat.Formok.KoltsegTervForm
                 if (textBoxModositottOsszeg.Text != string.Empty)
                 {
                     modositottOsszeg = Convert.ToString(textBoxModositottOsszeg.Text);
-                    if (koltsegTervRepo.IsValidValue(modositottOsszeg) == false)
+                    if (valdiationsRepo.IsValidValue(modositottOsszeg) == false)
                     {
                         errorProviderModositottOsszeg.SetError(textBoxModositottOsszeg, "A módosított összeg nem kezdődhet nullával!");
                         vanHiba = true;

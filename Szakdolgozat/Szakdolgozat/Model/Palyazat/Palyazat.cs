@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Szakdolgozat.Repository;
 
 namespace Szakdolgozat.Model
 {
@@ -21,6 +22,7 @@ namespace Szakdolgozat.Model
         private string szakmaiVezeto;
         private string penzugyiVezeto;
 
+        Tarolo tarolo = new Tarolo();
         //Konstruktor
         public Palyazat(string azonosito, string palyazatTipus, string palyazatNeve, string finanszirozasTipus, float tervezettOsszeg, float elnyertOsszeg, string penznem,
             string felhasznalasiIdoKezd, string felhasznalasiIdoVege, string tudomanyterulet, string szakmaiVezeto, string penzugyiVezeto)

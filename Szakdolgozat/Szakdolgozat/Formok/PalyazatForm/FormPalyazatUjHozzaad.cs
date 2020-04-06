@@ -18,6 +18,7 @@ namespace Szakdolgozat
         private Tarolo palyazatRepo = new Tarolo();
         RepositoryDatabaseTablePalyazatSQL repoSql = new RepositoryDatabaseTablePalyazatSQL();
         RepositoryDatabaseTableVezetoSQL vezetoRepoSql = new RepositoryDatabaseTableVezetoSQL();
+        private Validations valdiationsRepo = new Validations();
         private FormVezetok FormVezetok;
         public FormPalyazatUjHozzaad()
         {
@@ -149,7 +150,7 @@ namespace Szakdolgozat
                 }
                 else
                 {
-                    if (palyazatRepo.IsValidName(szakmaiVezeto) == false)
+                    if (valdiationsRepo.IsValidName(szakmaiVezeto) == false)
                     {
                         errorProviderPalyazatSzakmaiVezeto.SetError(textBoxSzakmaiVezeto, "A vezető neve nem megfelelő!");
                         vanHiba = true;
@@ -179,7 +180,7 @@ namespace Szakdolgozat
                 }
                 else
                 {
-                    if(palyazatRepo.IsValidName(penzugyiVezeto) == false)
+                    if(valdiationsRepo.IsValidName(penzugyiVezeto) == false)
                     {
                         errorProviderPalyazatPenzugyiVezeto.SetError(textBoxPenzugyiVezeto, "A vezető neve nem megfelelő!");
                         vanHiba = true;
@@ -211,7 +212,7 @@ namespace Szakdolgozat
                 {
                     if (textBoxElnyertOsszeg.Text != string.Empty && textBoxElnyertOsszeg.Text != "0")
                     {
-                        if (palyazatRepo.IsValidValue(elnyertOsszeg) == false)
+                        if (valdiationsRepo.IsValidValue(elnyertOsszeg) == false)
                         {
                             errorProviderPalyazatElnyertOsszeg.SetError(textBoxElnyertOsszeg, "Az összeg nem kezdődhet nullával!");
                             vanHiba = true;
@@ -240,7 +241,7 @@ namespace Szakdolgozat
                 felhasznalasiIdoKezd = Convert.ToString(textBoxFelhasznIdoKezd.Text);
                 if (textBoxFelhasznIdoVege.Text != string.Empty)
                 {
-                    if (palyazatRepo.IsValidDate(felhasznalasiIdoKezd) == false)
+                    if (valdiationsRepo.IsValidDate(felhasznalasiIdoKezd) == false)
                     {
                         errorProviderPalyazatFelhasznIdoKezd.SetError(textBoxFelhasznIdoKezd, "A dátum formája nem megfelelő!");
                         vanHiba = true;
@@ -258,7 +259,7 @@ namespace Szakdolgozat
                 felhasznalasiIdoVege = Convert.ToString(textBoxFelhasznIdoVege.Text);
                 if (textBoxFelhasznIdoVege.Text != string.Empty)
                 {
-                    if (palyazatRepo.IsValidDate(felhasznalasiIdoVege) == false)
+                    if (valdiationsRepo.IsValidDate(felhasznalasiIdoVege) == false)
                     {
                         errorProviderPalyazatFelhasznIdoVege.SetError(textBoxFelhasznIdoVege, "A dátum formája nem megfelelő!");
                         vanHiba = true;

@@ -181,6 +181,7 @@
     <Compile Include="Repository\Tenyfelhasznalas\RepositoryTenyfelhasznalas.cs" />
     <Compile Include="Repository\TestData\RepositoryInsertInto.cs" />
     <Compile Include="Repository\TestData\RepositoryCreateTable.cs" />
+    <Compile Include="Repository\Validations.cs" />
     <Compile Include="Repository\Vezeto\RepositoryDatabaseTableVezetoSQL.cs" />
     <Compile Include="Repository\Vezeto\RepositoryVezetoRecordModify.cs" />
     <Compile Include="Repository\Vezeto\RepositoryVezeto.cs" />

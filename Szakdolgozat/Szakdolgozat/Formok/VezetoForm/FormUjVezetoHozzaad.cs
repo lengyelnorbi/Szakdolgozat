@@ -17,6 +17,7 @@ namespace Szakdolgozat.Formok.UjVezetoForm
     {
         private Tarolo vezetoRepo = new Tarolo();
         RepositoryDatabaseTableVezetoSQL repoSql = new RepositoryDatabaseTableVezetoSQL();
+        private Validations valdiationsRepo = new Validations();
         public FormUjVezetoHozzaad()
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace Szakdolgozat.Formok.UjVezetoForm
                 }
                 else
                 {
-                    if(vezetoRepo.IsValidName(vezetoNev) == false)
+                    if(valdiationsRepo.IsValidName(vezetoNev) == false)
                     {
                         errorProviderVezetoNev.SetError(textBoxVezetoNev, "A név nem megfelelő!");
                         vanHiba = true;
@@ -80,7 +81,7 @@ namespace Szakdolgozat.Formok.UjVezetoForm
                     errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "A telefonszám túl hosszú!");
                     vanHiba = true;
                 }
-                if (vezetoRepo.IsValidPhoneNumber(vezetoTelefonszam) == false)
+                if (valdiationsRepo.IsValidPhoneNumber(vezetoTelefonszam) == false)
                 {
                     errorProviderVezetoTelefonszam.SetError(textBoxVezetoTelefonszam, "A telefonszám hibásan lett megadva! Példa: +3611234567/0611234567");
                     vanHiba = true;
@@ -102,7 +103,7 @@ namespace Szakdolgozat.Formok.UjVezetoForm
                 }
                 else
                 {
-                    if (vezetoRepo.IsValidEmail(vezetoEmail) == false)
+                    if (valdiationsRepo.IsValidEmail(vezetoEmail) == false)
                     {
                         errorProviderVezetoEmail.SetError(textBoxVezetoEmail, "Az email nem megfelelő!");
                         vanHiba = true;
