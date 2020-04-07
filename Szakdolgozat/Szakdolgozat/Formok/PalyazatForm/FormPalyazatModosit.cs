@@ -59,6 +59,7 @@ namespace Szakdolgozat
             szakmaiVezetoNev = pSzvezeto;
             penzugyiVezetoNev = pPenzvezeto;
             elnyertOsszegKezd = pEOssz;
+            //az adatok ellenőrzése, hogy üresek-e a betöltés során
             if(szakmaiVezetoNev != string.Empty)
             {
                 vaneSzakmaiVezeto = true;

@@ -9,6 +9,7 @@ namespace Szakdolgozat.Repository
 {
     public class Validations
     {
+        //Az email címeket validálja
         public bool IsValidEmail(string email)
         {
             string pattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*" + "@" + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$";

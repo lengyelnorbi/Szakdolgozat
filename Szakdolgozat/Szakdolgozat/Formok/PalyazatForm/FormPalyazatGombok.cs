@@ -33,11 +33,20 @@ namespace Szakdolgozat
                 FormUjHozzaad.Show();
             }
         }
+        /// <summary>
+        /// A kijelölt pályázat adataival feltölti a módisít form mezőit.
+        /// Egyszerre csak egyszer lehet megnyitva.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonPalyazatModositForm_Click(object sender, EventArgs e)
         {
             if (FormModosit == null && dataGridViewPalyazatok.SelectedRows.Count == 1)
             {
-                FormModosit = new FormPalyazatModosit(this, textBoxAzonosito.Text, comboBoxPalyazatTipus.Text, textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text, textBoxTervezettOsszeg.Text, textBoxElnyertOsszeg.Text, comboBoxPenznem.Text, textBoxFelhasznIdoKezd.Text, textBoxFelhasznIdoVege.Text, comboBoxTudomanyterulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
+                FormModosit = new FormPalyazatModosit(this, textBoxAzonosito.Text, comboBoxPalyazatTipus.Text,
+                    textBoxPalyazatNev.Text, comboBoxFinanszirozasTipus.Text, textBoxTervezettOsszeg.Text,
+                    textBoxElnyertOsszeg.Text, comboBoxPenznem.Text, textBoxFelhasznIdoKezd.Text,
+                    textBoxFelhasznIdoVege.Text, comboBoxTudomanyterulet.Text, textBoxSzakmaiVezeto.Text, textBoxPenzugyiVezeto.Text);
                 FormModosit.Closed += f_Closed;
                 FormModosit.UpdateEventHandler += F2_UpdateEventHandler1;
                 FormModosit.Show();

@@ -273,6 +273,7 @@ namespace Szakdolgozat
             }
             if (!vanHiba)
             {
+                //Az új pályázat azonosítójának generálása
                 string palyazatAzonosito;
                 do
                 {

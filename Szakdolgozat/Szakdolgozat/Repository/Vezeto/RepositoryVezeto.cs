@@ -49,6 +49,7 @@ namespace Szakdolgozat.Repository
             else
                 return false;
         }
+        //Mengézi, hogy az adott vezetőt tartalmazza-e az adatbázis.
         public bool isVezetoInList(string vezetoNeve)
         {
             Vezeto v = vezetok.Find(x => x.getNev() == vezetoNeve);

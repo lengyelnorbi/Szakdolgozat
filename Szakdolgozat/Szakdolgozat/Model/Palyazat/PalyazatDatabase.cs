@@ -76,9 +76,12 @@ namespace Szakdolgozat.Model
         {
             return "SELECT (CASE WHEN vezetok.nev IS NOT NULL THEN vezetok.Nev ELSE NULL END) AS Penzugyi_vezeto FROM palyazat inner join posztok on palyazat.Azonosito = posztok.Palyazat_Azonosito inner join vezetok on posztok.Vezeto_id = vezetok.id WHERE Azonosito = '" + palyazatAZ + "' AND posztok.poszt = 'Pénzügyi vezető';";
         }
+        //Új record felvétele a posztok táblába
         public static string getPosztokInsert(string palyazatAzonosito, string nev, string poszt)
         {
-            return "INSERT INTO posztok (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `poszt`) VALUES (NULL,'" + palyazatAzonosito + "',(SELECT id FROM vezetok WHERE vezetok.nev = '" + nev + "'),'" + poszt + "');";
+            return "INSERT INTO posztok (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `poszt`) " +
+                "VALUES (NULL,'" + palyazatAzonosito + "'," +
+                "(SELECT id FROM vezetok WHERE vezetok.nev = '" + nev + "'),'" + poszt + "');";
         }
         //Üres recordot ad meg a pályázat azonosítójával
         public static string getInsertEmptyKoltsegTerv(string palyazatAzonosito)
@@ -91,13 +94,17 @@ namespace Szakdolgozat.Model
         {
             return "INSERT INTO `leirasok` (`id`, `Palyazat_Azonosito`, `Leiras`) VALUES ('NULL', '" + palyazatAzonosito + "','');";
         }
+        //Poszt törlése pályázat azonosító és poszt alapján
         public static string getDeletePoszt(string palyazatAzonosito, string poszt)
         {
             return "DELETE FROM Posztok WHERE Palyazat_Azonosito = '" + palyazatAzonosito +"' AND poszt = '" + poszt + "';";
         }
+        //Módosít egy létező recordot az adatbázisba.
         public static string updatePoszt(string palyazatAzonosito, string poszt, string vezetoNev)
         {
-            return "UPDATE Posztok SET posztok.vezeto_id = (SELECT vezetok.id FROM vezetok WHERE vezetok.nev = '" + vezetoNev + "') WHERE posztok.Palyazat_Azonosito = '" + palyazatAzonosito + "' AND posztok.poszt = '" + poszt + "';";
+            return "UPDATE Posztok SET posztok.vezeto_id = (SELECT vezetok.id FROM vezetok" +
+                "WHERE vezetok.nev = '" + vezetoNev + "') WHERE posztok.Palyazat_Azonosito = '" +
+                palyazatAzonosito + "' AND posztok.poszt = '" + poszt + "';";
         }
     }
 }
