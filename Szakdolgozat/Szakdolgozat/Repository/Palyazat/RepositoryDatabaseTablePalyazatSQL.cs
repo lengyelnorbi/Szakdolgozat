@@ -222,7 +222,10 @@ namespace Szakdolgozat.Repository
                 throw new RepositoryException("Sikertelen módosítás az adatbázisból.");
             }
         }
-
+        /// <summary>
+        /// Új pályázat felvétele az adatbázis pályázat táblájába.
+        /// </summary>
+        /// <param name="ujPalyazat"></param>
         public void insertPalyazatIntoDatabase(Palyazat ujPalyazat)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);

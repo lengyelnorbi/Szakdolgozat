@@ -146,7 +146,11 @@ namespace Szakdolgozat.Formok.UjVezetoForm
                 e.Handled = true;
             }
         }
-
+        /// <summary>
+        /// A telefonszámban nem lehet betű sem space.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxVezetoTelefonszam_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;

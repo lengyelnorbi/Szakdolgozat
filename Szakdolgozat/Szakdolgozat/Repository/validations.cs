@@ -20,6 +20,10 @@ namespace Szakdolgozat.Repository
             }
             return false;
         }
+        /// <summary>
+        /// Nullával nem kezdődhet az érték.
+        /// </summary>
+        /// <returns></returns>
         public bool IsValidValue(string osszeg)
         {
             Regex reg = new Regex("^[1-9]");
@@ -30,6 +34,11 @@ namespace Szakdolgozat.Repository
             }
             return true;
         }
+        /// <summary>
+        /// A megadott neveket ellenőrzi. Nagy betűvel kell kezdődnie és legalább 
+        /// vezetéknévnek és keresztnévnek kell lennie (2 részből kell állnia)
+        /// </summary>
+        /// <returns></returns>
         public bool IsValidName(string nev)
         {
             string[] nevDarabok = nev.Split(null);
@@ -53,6 +62,11 @@ namespace Szakdolgozat.Repository
             }
             return false;
         }
+        /// <summary>
+        /// Telefonszám 
+        /// </summary>
+        /// <param name="telefonszam"></param>
+        /// <returns></returns>
         public bool IsValidPhoneNumber(string telefonszam)
         {
             Regex reg = new Regex(@"^(((\+)(3)(6)|(0)(6))(((1)[0-9]{7})|((2)(0)|(3)(0)|(5)(0)|(7)(0))[0-9]{7}|((6)(2)[0-9]{6})))$");
@@ -63,6 +77,10 @@ namespace Szakdolgozat.Repository
             }
             return false;
         }
+        /// <summary>
+        /// Év/Hónap/Nap formátum és elválaszthatóak ponttal, vesszővel, és per jellel.
+        /// </summary>
+        /// <returns></returns>
         public bool IsValidDate(string datum)
         {
             Regex reg = new Regex(@"^\d{4}[/.-]((0\d)|(1[012]))[/.-](([012]\d)|3[01])$");

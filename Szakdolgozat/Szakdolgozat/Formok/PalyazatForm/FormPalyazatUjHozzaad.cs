@@ -292,6 +292,7 @@ namespace Szakdolgozat
                 palyazatRepo.palyazatHozzaadListahoz(ujPalyazat);
 
                 repoSql.insertPalyazatIntoDatabase(ujPalyazat);
+                //Üres költségterv a megfelelő pályázatok lekérés érdekében és egy üres leírás a későbbi módosításhoz és lekérdezésekhez a weblapon.
                 repoSql.insertEmptyKoltsegTervIntoDatabase(palyazatAzonosito);
                 repoSql.insertEmptyLeirasIntoDatabase(palyazatAzonosito);
                 if (!nincsSzakmaiVezeto)

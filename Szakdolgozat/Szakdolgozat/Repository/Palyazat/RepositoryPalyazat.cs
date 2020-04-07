@@ -40,6 +40,10 @@ namespace Szakdolgozat.Repository
                 return false;
             return true;
         }
+        /// <summary>
+        /// Új pályázat hozzáadása a pályázatok listához.
+        /// </summary>
+        /// <param name="ujPalyazat"></param>
         public void palyazatHozzaadListahoz(Palyazat ujPalyazat)
         {
             try

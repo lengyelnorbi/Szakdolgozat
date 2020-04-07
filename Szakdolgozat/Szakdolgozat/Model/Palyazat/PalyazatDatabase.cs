@@ -8,10 +8,15 @@ namespace Szakdolgozat.Model
 {
     partial class Palyazat
     {
+        /// <summary>
+        /// Új record felvétele a pályázatok táblába.
+        /// </summary>
+        /// <returns></returns>
         public string getInsert()
         {
             return "INSERT INTO `palyazat`" +
-                    "(`Azonosito`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Elnyert_osszeg`, `Penznem`, `Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`)" +
+                    "(`Azonosito`, `Palyazat_tipus`, `Palyazat_neve`, `Finanszirozas_tipus`, `Elnyert_osszeg`," +
+                    "`Penznem`, `Felhasznalasi_ido_kezd`, `Felhasznalasi_ido_vege`, `Tudomanyterulet`)" +
                     "VALUES ('" +
                     getAzonosito() +
                     "', '" +
@@ -75,10 +80,13 @@ namespace Szakdolgozat.Model
         {
             return "INSERT INTO posztok (`id`, `Palyazat_Azonosito`, `Vezeto_id`, `poszt`) VALUES (NULL,'" + palyazatAzonosito + "',(SELECT id FROM vezetok WHERE vezetok.nev = '" + nev + "'),'" + poszt + "');";
         }
+        //Üres recordot ad meg a pályázat azonosítójával
         public static string getInsertEmptyKoltsegTerv(string palyazatAzonosito)
         {
-            return "INSERT INTO `koltseg_terv` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_osszeg`, `Modositott_Osszeg`) VALUES ('NULL', '" + palyazatAzonosito + "', '1', '', '');";
+            return "INSERT INTO `koltseg_terv` (`id`, `Palyazat_Azonosito`, `KoltTip_id`, `Tervezett_osszeg`, `Modositott_Osszeg`)" +
+                " VALUES ('NULL', '" + palyazatAzonosito + "', '1', '', '');";
         }
+        //Üres leírás sort ad a pályázat azonosítójával
         public static string getInsertEmptyLeiras(string palyazatAzonosito)
         {
             return "INSERT INTO `leirasok` (`id`, `Palyazat_Azonosito`, `Leiras`) VALUES ('NULL', '" + palyazatAzonosito + "','');";
