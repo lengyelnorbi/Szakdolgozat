@@ -182,7 +182,7 @@ namespace Szakdolgozat.Repository
             }
             return palyazatok;
         }
-
+        //Pályázat törlése adatbázisból azonosító alapján.
         public void deletePalyazatFromDatabase(string Azonosito)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);

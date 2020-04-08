@@ -64,9 +64,13 @@ namespace Szakdolgozat.Model
         {
             return "SELECT ALL Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_osszeg) AS Tervezett_osszeg, Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet FROM palyazat inner join koltseg_terv on palyazat.Azonosito = koltseg_terv.Palyazat_Azonosito GROUP BY Azonosito";
         }
+        //A kereséshez szükséges lekérdezés
         public static string getFilteredRecords(string keresesTipus, string keresettSzoveg)
         {
-            return "SELECT ALL Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus, SUM(koltseg_terv.Tervezett_osszeg) AS Tervezett_osszeg, Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd, Felhasznalasi_ido_vege, Tudomanyterulet FROM palyazat inner join koltseg_terv on palyazat.Azonosito = koltseg_terv.Palyazat_Azonosito " + keresesTipus + keresettSzoveg + ";";
+            return "SELECT ALL Azonosito, Palyazat_tipus, Palyazat_neve, Finanszirozas_tipus," +
+                "SUM(koltseg_terv.Tervezett_osszeg) AS Tervezett_osszeg, Elnyert_osszeg, Penznem, Felhasznalasi_ido_kezd," +
+                " Felhasznalasi_ido_vege, Tudomanyterulet FROM palyazat inner join koltseg_terv on" +
+                " palyazat.Azonosito = koltseg_terv.Palyazat_Azonosito " + keresesTipus + keresettSzoveg + ";";
         }
         public static string getSzakmaiVezetoNeve(string palyazatAZ)
         {

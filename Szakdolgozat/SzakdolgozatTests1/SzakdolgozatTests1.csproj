@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Szakdolgozat\Szakdolgozat.csproj">
+    <ProjectReference Include="..\Szakdolgozat\ProjectSystem.csproj">
       <Project>{1F8BD8EA-E862-4E3B-B465-14961FE49D0C}</Project>
-      <Name>Szakdolgozat</Name>
+      <Name>ProjectSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

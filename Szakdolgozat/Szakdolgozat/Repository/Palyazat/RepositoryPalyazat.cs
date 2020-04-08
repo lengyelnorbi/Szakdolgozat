@@ -12,7 +12,7 @@ namespace Szakdolgozat.Repository
     partial class Tarolo
     {
         List<Palyazat> palyazatok;
-
+        //Pályázat törlése listából
         public void deletePalyazatFromList(string azonosito)
         {
             Palyazat f = palyazatok.Find(x => x.getAzonosito() == azonosito);

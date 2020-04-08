@@ -1,3 +1,0 @@
-﻿FROM koltseg_terv INNER JOIN palyazat ON koltseg_terv.Palyazat_Azonosito = palyazat.Azonosito INNER JOIN tenyfelhasznalas
-ON palyazat.Azonosito = tenyfelhasznalas.Palyazat_Azonosito INNER JOIN posztok ON posztok.Palyazat_Azonosito = palyazat.Azonosito
-INNER JOIN vezetok ON posztok.Vezeto_id = vezetok.id INNER JOIN koltseg_tipusok ON koltseg_tipusok.id = koltseg_terv.KoltTip_id

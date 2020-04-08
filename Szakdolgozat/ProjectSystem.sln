@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szakdolgozat", "Szakdolgozat\Szakdolgozat.csproj", "{1F8BD8EA-E862-4E3B-B465-14961FE49D0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectSystem", "Szakdolgozat\ProjectSystem.csproj", "{1F8BD8EA-E862-4E3B-B465-14961FE49D0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzakdolgozatTests1", "SzakdolgozatTests1\SzakdolgozatTests1.csproj", "{F642C992-9291-423B-B70F-EDE5CEE237B8}"
 EndProject
