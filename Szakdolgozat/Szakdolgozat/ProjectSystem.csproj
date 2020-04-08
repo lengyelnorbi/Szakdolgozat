@@ -146,13 +146,9 @@
     <Compile Include="Model\ConnectionString.cs" />
     <Compile Include="Model\KoltsegTerv\KoltsegTervDatabase.cs" />
     <Compile Include="Model\KoltsegTerv\KoltsegTerv.cs" />
-    <Compile Include="Model\KoltsegTipus\KoltsegTipusDatabase.cs" />
-    <Compile Include="Model\KoltsegTipus\KoltsegTipus.cs" />
     <Compile Include="Model\Login\LoginDatabase.cs" />
     <Compile Include="Model\Palyazat\PalyazatDatabase.cs" />
     <Compile Include="Model\Palyazat\Palyazat.cs" />
-    <Compile Include="Model\Poszt\PosztDatabase.cs" />
-    <Compile Include="Model\Poszt\Poszt.cs" />
     <Compile Include="Model\Tenyfelhasznalas\TenyfelhasznalasDatabase.cs" />
     <Compile Include="Model\Tenyfelhasznalas\Tenyfelhasznalas.cs" />
     <Compile Include="Model\Vezeto\VezetoDatabase.cs" />
@@ -167,10 +163,8 @@
     <Compile Include="Repository\Palyazat\RepositoryDatabaseTablePalyazatSQL.cs" />
     <Compile Include="Exceptions\RepositoryException.cs" />
     <Compile Include="Repository\Palyazat\RepositoryPalyazat.cs" />
-    <Compile Include="Repository\KoltsegTipus\RepositoryKoltsegTipus.cs" />
     <Compile Include="Repository\KoltsegTerv\RepositoryKoltsegTerv.cs" />
     <Compile Include="Exceptions\TaroloException.cs" />
-    <Compile Include="Repository\Poszt\RepositoryPoszt.cs" />
     <Compile Include="Repository\RepositoryLoginSql.cs" />
     <Compile Include="Repository\TestData\RepositoryDatabase.cs" />
     <Compile Include="Repository\TestData\RepositoryAlterTable.cs" />
@@ -245,12 +239,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SQL lekérdezések\INNERJOIN.txt" />
-    <Content Include="SQL lekérdezések\TeljesINSERTS.txt" />
-    <Content Include="SQL lekérdezések\SELECTS.txt" />
-    <Content Include="SQL lekérdezések\INSERTS.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

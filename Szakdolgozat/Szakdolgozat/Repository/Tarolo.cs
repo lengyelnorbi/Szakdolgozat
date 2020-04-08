@@ -19,6 +19,5 @@ namespace Szakdolgozat.Repository
             koltsegtervek = new List<KoltsegTerv>();
             vezetok = new List<Vezeto>();
         }
-        
     }
 }
