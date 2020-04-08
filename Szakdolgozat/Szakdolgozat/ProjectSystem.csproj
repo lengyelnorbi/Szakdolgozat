@@ -7,7 +7,7 @@
     <ProjectGuid>{1F8BD8EA-E862-4E3B-B465-14961FE49D0C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Szakdolgozat</RootNamespace>
-    <AssemblyName>Szakdolgozat</AssemblyName>
+    <AssemblyName>ProjectSystem</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
